@@ -2,7 +2,7 @@
 {% block memberrequests %}
 
     {% comment %}The tab menu starts here!{% endcomment %}
-    
+
     {% for i in Club_member %}
     {% if i.status == "open" %}
         <div class="ui small modal {{ i.member.id.id }}{{ i.club.club_name}}" >
@@ -31,18 +31,18 @@
     {% endif %}
 {% endfor %}
 
-    
+
     <!-- modal script enable -->
     <script type="text/javascript">
         function view(a,b) {
             // body...
-            //$('.ui.modal').find("input").val({'name':id}); 
+            //$('.ui.modal').find("input").val({'name':id});
             var id = '.ui.small.modal.'+a+b;
             $(id).modal('show');
         }
     </script>
 
-    
+
 
     <div class="ui pointing secondary menu">
         <a class="active item" data-tab="memberrequests">
@@ -112,7 +112,7 @@
 
                         <td>
                             <textarea rows="1" name="remarks{{ i.member.id }},{{ i.club }}"></textarea>
-                        </td> 
+                        </td>
                     </tr>
                     {% endif %}
                 {% endfor %}
@@ -141,5 +141,5 @@
 
         </div>
     </div>
-    
+
 {% endblock %}

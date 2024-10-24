@@ -26,13 +26,13 @@
 
         <div class="ui stackable doubling grid">
             <div class="column"></div>
-    
+
             <div class="three wide column">
                 {%block usercard%}
                 {% include 'globals/usercard.html' %}
                 {%endblock%}
                 <div class="ui divider"></div>
-    
+
                 <div class="ui huge fluid vertical pointing menu" style="max-width: 320px;">
                         <a href="/otheracademic/leavePG" class="item">Leave Form
                             <i class="right floated chevron right icon"></i>
@@ -40,10 +40,10 @@
                         <a href="/otheracademic/leaveStatusPG" class="active item">Leave Status
                             <i class="right floated chevron right icon"></i>
                         </a>
-                        
-        
+
+
                 </div>
-                
+
             </div>
 
             <div class="twelve wide column">
@@ -53,7 +53,7 @@
                         <table class="ui celled table">
                             <thead>
                                 <tr>
-                                    
+
                                     <th>Roll No.</th>
                                     <th>Student Name</th>
                                     <th>Programme</th>
@@ -78,7 +78,7 @@
                                 {% for entry in form_data %}
                                 {% if entry.roll_no_id == roll_no%}
                                 <tr>
-                                    
+
                                     <td>{{ entry.roll_no_id }}</td>
                                     <td>{{ entry.student_name }}</td>
                                     <td>{{ entry.programme}}</td>
@@ -93,7 +93,7 @@
                                         {%else%}
                                             <a href={{ entry.upload_file.url }}>Download</a>
                                         {%endif%}
-                                    </td> 
+                                    </td>
                                     <td>{{ entry.purpose }}</td>
                                     <td>{{ entry.address }}</td>
                                     <td>{{ entry.mobile_no }}</td>
@@ -111,15 +111,15 @@
                                         {% else%} Pending
                                         {% endif%}
 
-                                    </td>  
+                                    </td>
                                     <td>
                                         {%if entry.hod_approved%} Approved
                                         {%elif entry.hod_rejected or entry.ta_rejected or entry.thesis_rejected%} Rejected
                                         {% else%} Pending
                                         {% endif%}
 
-                                    </td>    
-                                    
+                                    </td>
+
                                 </tr>
                                 {% endif %}
                                 {% endfor %}

@@ -2,15 +2,15 @@
 
     {% comment %}The tab menu starts here!{% endcomment %}
     <div class="ui pointing secondary menu">
-       
+
         <a class="active item" data-tab="viewbudget">
             View Budget
-        </a>   
+        </a>
         {% if "co-ordinator" in global_var or "Convener" in global_var and "Counsellor" not in global_var and "Dean_s" not in global_var %}
         <a class="item" data-tab="clubbudgetform">
             Club Budget Form
-        </a>   
-        {% endif %}    
+        </a>
+        {% endif %}
     </div>
 
     <script type="text/javascript">
@@ -45,20 +45,20 @@
                             {% for i in Club_name %}
                                 {% if i.status ==  "confirmed" and i.co_ordinator_id == club_details.co_ordinator_id%}
                                     <option value="{{ i.club_name }}">{{ i.club_name }} </option>
-                                {% endif %}  
+                                {% endif %}
                             {% endfor %}
-                            {% endif %} 
+                            {% endif %}
                             {% if "Convener" in global_var%}
                             {% for i in Club_name %}
                                 {% if i.status ==  "confirmed" %}
                                     <option value="{{ i.club_name }}">{{ i.club_name }} </option>
-                                {% endif %}  
+                                {% endif %}
                             {% endfor %}
-                            {% endif %}  
+                            {% endif %}
                             {% comment %} {% for i in Club_name %}
                                 {% if i.status ==  "confirmed" and i.co_ordinator_id == club_details.co_ordinator_id%}
                                     <option value="{{ i.club_name }}">{{ i.club_name }} </option>
-                                {% endif %}  
+                                {% endif %}
                             {% endfor %} {% endcomment %}
                         </select>
                     </div>
@@ -111,9 +111,9 @@
                 $('div[data-tab="viewbudget"] .dropdown').dropdown('hide');
             }
         }
-        
+
     </script>
-    
+
     <div class="ui active tab" data-tab="viewbudget">
         <div class="ui vertical segment">
             <form class="ui form" style="padding-left: 32px; padding-right: 32px">
@@ -130,7 +130,7 @@
                 </div>
             </form>
             <br />
-    
+
             <h4 class="ui dividing header" style="margin-left: 32px; margin-right: 32px">Budget Information</h4>
 
             <table class="ui very basic collapsing celled sortable table" style="padding-left: 2.5%; padding-right: 2.5%; padding-top: 1%; padding-bottom: 1.5%; margin: auto;" id="record_table">
@@ -168,7 +168,7 @@
         <br>
         <div class="extra content"></div>
     </div>
-    
+
 <script type="text/javascript">
 
 
@@ -211,8 +211,8 @@ window.onload = function() {
         }
       }
     };
-   
-   
+
+
   xhr.send(
   'req_id=' +
     encodeURIComponent("spent") +
@@ -228,7 +228,7 @@ window.onload = function() {
           encodeURIComponent(budgetId) +
           '&new_budget=' +
           encodeURIComponent(newBudget)+
-       
+
       );
     });
   });

@@ -36,7 +36,7 @@
                     <button id="edit-button" class="ui positive medium button" onclick="editFine('{{ hostel_fine.fine_id }}')">Edit</button>
 
                 </td>
-                
+
 
             </tr>
             {% endfor %}
@@ -109,10 +109,10 @@
                 if (response.ok) {
                     alert("Fine deleted successfully");
                     window.location.reload(); // Refresh the page to reflect changes
-                } 
+                }
                 else {
                     // alert("Failed to delete inventory");
-                    alert("You are not authorized to access this page"); 
+                    alert("You are not authorized to access this page");
                     window.location.href = "/hostelmanagement/"
                 }
             })
@@ -123,5 +123,3 @@
     </script>
 
 {% endblock %}
-
-

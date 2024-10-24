@@ -121,7 +121,7 @@
                         <br>
                         {% endfor %}
                     </td>
-                    
+
                 </tr>
                 {% endfor %}
             </tbody>
@@ -164,7 +164,7 @@
                                         <input type="text" name='semester' value='{{ next_sem.id }}' hidden="True">
                                     </td>
                                     <td id="credit_values_course" class="credit_values">{{course_slot.courses.all.0.credit}} </td>
-                                    <td> 
+                                    <td>
                                         <div style="margin-top: 5px;margin-bottom:5px;">
                                             <select  class="ui dropdown choicesBox" required="True" name="course_priority-{{course_slot.id}}">
                                                 <option value="NULL">Choices</option>
@@ -181,7 +181,7 @@
                             {% endfor %}
                         {% endwith %}
                     {% else %}
-                    
+
                         <input type="text" name='course_slot' value='{{ course_slot.id }}' hidden="True"
                             data-value2='{{course_slot.type}}'>
                         <tr>
@@ -192,7 +192,7 @@
                                 <input type="text" name='semester' value='{{ next_sem.id }}' hidden="True">
                             </td>
                             <td id="credit_values_course" class="credit_values">{{course_slot.courses.all.0.credit}} </td>
-                            <td> 
+                            <td>
                                 <div style="margin-top: 5px;margin-bottom:5px;">
                                     <select  class="ui dropdown choicesBox" required="True" name="course_priority-{{course_slot.id}}">
                                         <option value="NULL">Choices</option>
@@ -206,13 +206,13 @@
                             </td>
                         </tr>
                         <input type="text" name="ct" value="{{forloop.counter}}" hidden="True">
-                    
+
                     {% endif %}
                 {% endfor %}
                 <input type="text" name='user' value='{{ details.current_user}}' hidden="True">
 
             </tbody>
-            
+
         </table>
         <div class="extra content">
             <div class="" style="text-align: center;">
@@ -277,7 +277,7 @@
                     let selected_course = course_priority[j].value.split("-");
                     unique_choices.add(selected_course[1]);
                 }
-                
+
                 if (course_priority[0].value != "NULL" ) {
                     count = count + parseInt(credits[i].innerHTML);
                 }
@@ -334,7 +334,7 @@
         var userId = document.querySelector('[name="user"]').value;
         var selectedOption = dropdown.querySelector('select').value;
         var selectedOptionElement = dropdown.querySelector('select option:checked');
-        var courseSlotType; 
+        var courseSlotType;
         var td = dropdown.closest('tr').querySelector('td:nth-child(3)');
         if (td) {
             courseSlotType = td.textContent.trim();
@@ -413,7 +413,7 @@
                             // console.log("credits : " + credit);
                             credit += selectedCourseCredit;
                             dropdown.classList.add("disabled-dropdown");
-                            // alert(response.message); 
+                            // alert(response.message);
                         }
                     });
                 } else {
@@ -432,6 +432,6 @@
         dropdown.addEventListener('change', function () {
         handleDropdownChangePreRegistration(event);
     });
-        
+
     });
 </script>

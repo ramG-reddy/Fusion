@@ -1,10 +1,10 @@
-{% extends 'programme_curriculum/faculty/common.html' %} 
+{% extends 'programme_curriculum/faculty/common.html' %}
 {% block content %}
 
 <div class="header"><h1>Forward Form</h1></div><br>
     <div>
-        
-        
+
+
                 {% csrf_token %}
                 {% if form.non_field_errors %}
                 <div class="ui message">
@@ -41,14 +41,14 @@
             <div class="ui two item menu">
             <a class="item"><b>Created By :</b><b class="meta" style="text-indent: 1em; color: #1B1C1D;">{{ proposal.uploader }} - {{proposal.designation}}</b></a>
         </div>
-            
+
             {% csrf_token %}
-            
+
 
                 <div>
                     <b>Receive date:</b><i>{{receive_date}}</i>
                 </div>
-                
+
                 <div class="field">
                     <label for="{{ form.file_id.id_for_label }}">File Id:</label>
                     {{ form.file_id }}
@@ -56,7 +56,7 @@
                  <div class="field">
                         <label for="{{ file_info.id_for_label }}">File info:</label>
                         {{ file_info}}
-                </div><div class="field"> 
+                </div><div class="field">
                     <label for="{{ form.current_id.id_for_label }}">Uploader:</label>
                     {{ form.current_id }}
                 <div class="field">
@@ -84,7 +84,7 @@
                     <a class="ui button" href="{% url 'programme_curriculum:reject_form' id%}">Reject</a>
                     <div class="or"></div>
                     <input class="ui primary button" type="Submit" name="Submit" value="Forward">
-        
+
                 </div>
             </form>
 
@@ -92,9 +92,8 @@
     </div>
 </div>
 
-{% block sidepanel%} 
-    {% include 'notifications/programme_curriculum.html' %} 
+{% block sidepanel%}
+    {% include 'notifications/programme_curriculum.html' %}
     {% endblock %}
 
 {% endblock %}
-

@@ -2,7 +2,7 @@
 {% block deleteclub %}
 
     {% comment %}The tab menu starts here!{% endcomment %}
-    
+
     {% comment %} {% for i in Club_info%}
     {% if i.status == "confirmed" %}
         <div class="ui small modal {{ i.member.id.id }}{{ i.club.club_name}}" >
@@ -31,18 +31,18 @@
     {% endif %}
 {% endfor %} {% endcomment %}
 
-    
+
     <!-- modal script enable -->
     {% comment %} <script type="text/javascript">
         function view(a,b) {
             // body...
-            //$('.ui.modal').find("input").val({'name':id}); 
+            //$('.ui.modal').find("input").val({'name':id});
             var id = '.ui.small.modal.'+a+b;
             $(id).modal('show');
         }
     </script> {% endcomment %}
 
-    
+
 
     <div class="ui pointing secondary menu">
         <a class="active item" data-tab="memberrequests">
@@ -79,7 +79,7 @@
                         Faculty incharge
                     </th>
 
-                    
+
                 </tr>
                 </thead>
                 {% comment %} <tr>{{club_details}}</tr> {% endcomment %}
@@ -128,7 +128,7 @@
                 <button class="ui red button right floated" type="submit" formaction="/gymkhana/del_club/">
                     Delete
                 </button>
-            </div> 
+            </div>
             <br>
             <br>
         </form>
@@ -136,5 +136,5 @@
 
         </div>
     </div>
-    
+
 {% endblock %}

@@ -114,7 +114,7 @@
             <option class="Prechoices" value="Phd">PhD</option>
         </select>
     </div>
-    
+
     <div >
         <!-- <label>Branch</label> -->
         <select class="ui dropdown" name="branch" id="branch_curr">
@@ -127,7 +127,7 @@
         </select>
     </div>
     </div>
-    
+
     <div class="field">
         <!-- <label>Semester</label>     -->
         <input class="ui input" placeholder="Semester" type="number" name="semester" id="semester_curr">
@@ -161,20 +161,20 @@
                                     width: 95%;">
             <thead id = "courseTableHead">
             </thead>
-            
+
             <tbody id = "courseTableBody">
             </tbody>
         </table>
     </form>
-    
+
     <br>
     <br>
 </div>
-            
-</center>          
-            
+
+</center>
+
 {% endblock %}
-            
+
 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
 <script>
     function fetchCourses() {
@@ -215,7 +215,7 @@
                     <td>${i}.</td>
                     <td>${course_slot.fields.name}</td>
                     <td>${course_slot.fields.type}</td>
-                    
+
                     <td>${nextSemId}</td>
                     <td>${course_slot.courses[0].credit}</td>
                     <td>
@@ -251,4 +251,3 @@
         return cookieValue;
     }
 </script>
-

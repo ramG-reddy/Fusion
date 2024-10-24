@@ -27,13 +27,13 @@
                 <a href="/otheracademic/bonafideStatus" class="item">Bonafide Status
                     <i class="right floated chevron right icon"></i>
                 </a>
-                
+
             </div>
         </div>
         <div class="twelve wide column">
             <div class="ui segment">
                 <h2 class="ui header">Bonafide Form</h2>
-               
+
                 <form id="bonafideForm" class="ui form" method="POST" action="{% url 'otheracademic:bonafide_form_submit' %}">
                     {% csrf_token %}
                     {% comment %} <div class="field">

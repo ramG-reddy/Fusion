@@ -171,7 +171,7 @@
             </div>
             <div class="fitted item">
                 <div class="fluid ui large secondary animated button">
-                        
+
                     <i class="dropdown icon"></i>
                     <div class="visible content">ADD NEW FROM<br>REPLICATE CURRICULUM</div>
                     <div class="hidden content">
@@ -183,12 +183,12 @@
                         <div class="item"><I>No Curriculum to Replicate</I></div>
                     {% else %}
                         {% for curriculum in working_curriculums %}
-                            <a class="item" 
+                            <a class="item"
                             href="{% url 'programme_curriculum:replicate_curriculum' curriculum.id %}"
                             type="Submit" name="Submit" target="_blank" rel="noopener"><i class="paste icon"></i>{{ curriculum }}</a>
                         {% endfor %}
                         {% for curriculum in past_curriculums %}
-                            <a class="item" 
+                            <a class="item"
                             href="{% url 'programme_curriculum:replicate_curriculum' curriculum.id %}"
                             type="Submit" name="Submit" target="_blank" rel="noopener"><i class="paste icon"></i>{{ curriculum }}</a>
                         {% endfor %}

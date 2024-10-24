@@ -105,7 +105,7 @@ table tr td {
 <script type="text/javascript">
   $(document).ready(function () {
     var i = $('#for_next_html_id').attr('data');
-   TotalMarks(); 
+   TotalMarks();
         $("#marks_verification_form").submit(function(event) {
              event.preventDefault();
             var form = $(this);
@@ -123,8 +123,8 @@ table tr td {
                 alert('verification Failed');
                 window.location = "/academic-procedures/acad_person/";
             });
-            
-    });  
+
+    });
     $('#back').on('click',function(e){
       $('#submitted_course_data').hide(400);
       $('#submitted_course_data').html("");
@@ -133,7 +133,7 @@ table tr td {
 });
 
 function TotalMarks(){
-  
+
     var count = $('#verify_tb tr').length;
     var table = document.getElementById('verify_tb');
 
@@ -146,7 +146,7 @@ function TotalMarks(){
       other = Number(table.rows[x].cells[5].innerText);
       total = q1+mid+q2+end+other;
       table.rows[x].cells[6].innerText = total;
-    } 
+    }
   }
 
 
@@ -155,6 +155,6 @@ function change_grade_ver(id){
   if (r != true) {
     data = $('#grade'+id).attr('data');
     $('#grade'+id).val(data);
-  } 
+  }
 }
 </script>

@@ -46,7 +46,7 @@ Course Management
                 </a>
                 {% endif %}
 
-                
+
 
                 {% if Lecturer == 1 %}   <!-- this is for faculty side only -->
           <!--        <a class="item sidetab" data-tab="fourth" data-num="14">
@@ -65,7 +65,7 @@ Course Management
                       Attendance
                     <i class="right floated chevron right icon"></i>
                   </a>
-                  
+
                 <!-- <a class="item sidetab" data-tab="sixth" data-num="16">
                   Question Bank
                   <i class="right floated chevron right icon"></i>
@@ -75,14 +75,14 @@ Course Management
                   <i class="right floated chevron right icon"></i>
                 </a> -->
               {% endif %}
-              
+
               <a class="item sidetab" data-tab="eighth" data-num="19">
                 Announcements
                 <i class="right floated chevron right icon"></i>
               </a>
 
               {% if Lecturer == 1 %}   <!-- this is for faculty side only -->
-              
+
               <a class="item sidetab" data-tab="ninth" data-num="20">
                 Create Grading Scheme
               <i class="right floated chevron right icon"></i>
@@ -92,10 +92,10 @@ Course Management
                 Manage Evaluations
               <i class="right floated chevron right icon"></i>
               </a>
- 
+
               {%  endif %}
             </div>
-            
+
         </div>
 
         <div class="eight wide column" >
@@ -265,13 +265,13 @@ Course Management
                   <!-- <a class="active item tabs" data-num="2" data-tab="assignment">
                    Assignment
                   </a> -->
-                  
-                 
+
+
                   <!-- <a class="item tabs" data-num="5" data-tab="time-table">
                      Time-Table/Quiz
                   </a> -->
                 </div>
-                
+
                 <!-- <div class="ui tab segment" id="1" data-tab="quiz" style="display:none">
                   <h4 class="ui dividing header">Quizzes</h4>
                   {% if Lecturer is 1 %}
@@ -350,16 +350,16 @@ Course Management
                 <div class="ui tab segment" id="2" data-tab="assignment" style="display:none">
                   {% if Lecturer == 1 %}
                   <div id="add_assign_block" style="display: block;">
-                  
+
                     {% block addassignments %} {% include 'coursemanagement/submitassignments.html' %} {% endblock %}
 
                   </div>
                   {% else %}
-                 
+
                  <div class="ui active tab segment box" id="21" data-tab="submitassignment" style="height: 60vh;">
-                  
+
                     <h4 class="ui dividing header">Assignments </h4>
-                    
+
 
                     <table class="ui fixed single line sortable celled table">
                         <thead>
@@ -391,16 +391,16 @@ Course Management
                 <!-- <div class="ui tab segment" id="2" data-tab="assignment" style="display:none">
                    {% if Lecturer == 1 %}
                   <div id="add_assign_block" style="display: block;">
-                  
-                  
+
+
 
                   </div>
                   {% else %}
-                 
+
                  <div class="ui active tab segment box" id="21" data-tab="submitassignment">
-                  
+
                     <h4 class="ui dividing header">Submitable Assignments </h4>
-                    
+
 
                     <table class="ui fixed single line sortable celled table">
                         <thead>
@@ -427,7 +427,7 @@ Course Management
                 </div>
                 {% endif%}
                 </div> -->
-                
+
                 <div class="ui tab segment" id="3" data-tab="videos" style="display:none">
                   <div class="ui four column grid">
                       <div id="add_video_block" style="display: block;">
@@ -435,13 +435,13 @@ Course Management
                     </div>
                   </div>
                 </div>
- 
+
                 <div class="ui tab segment" id="4" data-tab="slides" style="display:block">
-                    
+
                     <div class="ui four column grid">
                        {% if Lecturer == 1 %}
                             <div id="add_slides_block">
-                  
+
                               {% block addcontent %} {% include 'coursemanagement/addcontent.html' %} {% endblock %}
                             </div>
                         {% else %}
@@ -473,24 +473,24 @@ Course Management
                           </div>
                           {% endfor %}
                         </div>
-                        
+
                         <!-- <div class="ui form">
                           <div class="field">
                               <label>Select Module:</label>
                               <select id="moduleDropdown" class="ui dropdown">
                                   <option value="">Select Module</option>
-                                  
+
                                       <option value="1">Module 1</option>
-                                  
+
                               </select>
                           </div>
                         </div>
                         <div id="slidesContainer" class="ui four column grid">
                         </div> -->
                         <!-- {% if slides %}
-                          
+
                           {% for slide in slides %}
-                            <div class="row">     
+                            <div class="row">
                               <div class="column">
                                 <button class="ui primary button" style="mae">
                                  <a id='visualize' href="{{slide.document_url}}"style="color:white;">{{slide.document_name}}</a>
@@ -500,9 +500,9 @@ Course Management
                               </div>
 
                             </div>
-                          
+
                           {% endfor %}
-                          
+
                         {% else %}
                         <div class="row" style="margin-left: 20px">
                             <h4 class="ui header">No modules</h4><br>
@@ -582,7 +582,7 @@ Course Management
     <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'globals/js/editProfile.js' %}"></script>
     <script type="text/javascript" src="{% static 'globals/js/tablesort.js' %}"></script>
-<!--     
+<!--
     <script type="text/javascript" src="{% static 'globals/js/jquery-3.0.0.min.js' %}"></script> -->
     <script type="text/javascript" src="{% static 'globals/js/semantic.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'semantic/dist/components/semantic-ui-alerts.js' %}"></script>
@@ -605,11 +605,11 @@ Course Management
         $('#tab'+pk).addClass('active');
         $('#tabdata'+prevassessmenttab).removeClass('active');
         $('#tabdata'+pk).addClass('active');
- 
+
         prevassessmenttab = pk;
       });
       var vptab = 'assignmenttab';
- 
+
       $('#assignmenttab').addClass('active');
       $('#assignmenttabdata').addClass('active');
       $('.vptab').click(function(){
@@ -619,20 +619,20 @@ Course Management
         $('#'+id).addClass('active');
         $('#'+vptab+"data").removeClass('active');
         $('#'+id+"data").addClass('active');
- 
+
         vptab = id;
       });
       });
- 
- 
+
+
     </script>
- 
+
     <script>
          $(".pointing.pagination.menu")
             .tab()
         ;
-    
-    
+
+
     function successAlert(data){
       $.suiAlert({
       title: 'Success',
@@ -642,11 +642,11 @@ Course Management
       position: 'top-center',
       });
     }
- 
+
     function assess_student(element){
       if(event.key === 'Enter') {
         var pk=element.getAttribute("data-assign");
- 
+
         var csrf = $('input[name=csrfmiddlewaretoken]').val();
         // alert(pk);
         $.ajax({
@@ -667,7 +667,7 @@ Course Management
         });
       }
     }
- 
+
     function assess_feedback(element){
       if(event.key === 'Enter') {
         var pk=element.getAttribute("data-feedback");
@@ -691,11 +691,11 @@ Course Management
         });
       }
     }
- 
+
     $('.qbremove').click(function(){
       var pk=$(this).attr('data-pk');
       var csrf = $('input[name=csrfmiddlewaretoken]').val();
- 
+
       $.ajax({
           type: 'POST',
           url: '/ocms/{{course.code}}/remove_bank',
@@ -712,7 +712,7 @@ Course Management
               var y = document.getElementById("qbtable");
               y.style.display="none";
               $('<div class="row" style="margin-left:20px"><h4 class="ui header">No Question Banks added till Now</h4><br></div>').insertBefore('#create_qbank');
- 
+
             }
           },
           error: function(data, err) {
@@ -720,12 +720,12 @@ Course Management
           }
       });
     });
- 
- 
+
+
     $('.topicremove').click(function(){
       var pk=$(this).attr('data-pk');
       var csrf = $('input[name=csrfmiddlewaretoken]').val();
- 
+
       $.ajax({
           type: 'POST',
           url: '/ocms/{{course.code}}/remove_topic',
@@ -742,7 +742,7 @@ Course Management
               var y = document.getElementById("topictable");
               y.style.display="none";
               $('<div class="row" style="margin-left:20px"><h4 class="ui header">No Topics added till Now</h4><br></div>').insertBefore('#create_qbank');
- 
+
             }
           },
           error: function(data, err) {
@@ -750,7 +750,7 @@ Course Management
           }
       });
     });
- 
+
     $('#create_qbank').click(function(){
       var x = document.getElementById("qbank");
       if(x.style.display === "none")
@@ -767,7 +767,7 @@ Course Management
         x.style.display = "none";
       }
     });
- 
+
     $(document).ready(function(){
       var quiz_btn=document.getElementsByClassName('quiz_btn');
       for (i = 0; i < quiz_btn.length; i++) {
@@ -786,7 +786,7 @@ Course Management
           }
         }
       });
- 
+
       $('.remove_quiz').click(function(){
         var pk=$(this).attr('data-pk');
         var csrf = $('input[name=csrfmiddlewaretoken]').val();
@@ -800,7 +800,7 @@ Course Management
             success: function(data) {
               alert(data);
                $("#1").load(" #1 > *");           //refresh the quiz div(in tabs) that is in viewcourse.html
- 
+
             },
             error: function(data, err) {
                 alert(err.message);
@@ -854,7 +854,7 @@ Course Management
                 console.log(data);
             }
         });
- 
+
       });
       $('.quiz_btn').click(function(){
           var pk=$(this).attr('data-pk');
@@ -878,9 +878,9 @@ Course Management
           // alert("ASD");
           event.preventDefault();
           var x = document.getElementById(ini1);
- 
+
           num = $(this).attr('data-tab');
- 
+
           var y = document.getElementById("result"+num);
           x.style.display = "none";
           $(x).removeClass("active");
@@ -888,7 +888,7 @@ Course Management
           y.style.display = "block";
           ini1 = "result"+num;
         });
- 
+
     $('.tabs').click(function() {
         event.preventDefault();
         var x = document.getElementById(ini);
@@ -902,8 +902,8 @@ Course Management
      //   $(x).removeClass("active");
         ini = num;
     });
- 
- 
+
+
         var assini = 21;
     $('.assitabs').click(function() {
         event.preventDefault();
@@ -916,7 +916,7 @@ Course Management
         $(x).removeClass("active");
         assini = num;
     });
- 
+
     var sideini = 11;
     $('.sidetab').click(function() {
         event.preventDefault();
@@ -937,7 +937,7 @@ Course Management
               $('#pdf_modal').modal('show').height('80%');
           });
         });
-        
+
         /*JS  of timer starts*/
       $(document).ready(function(){
         var deadline = new Date("2017/11/01");
@@ -969,23 +969,23 @@ Course Management
           .modal('show');
       });
     </script>
- 
+
     <script type="text/javascript">
       //reseting the form
       function resetForm($form1) {
           $form1.find('input:text, input:password').val('');
       }
- 
- 
+
+
       //on clicking enter submit text in the new added text box
       function key_down(input_r){
- 
+
           var pk=input_r.getAttribute('data-pk');
           if(event.keyCode == 13){
               $("#button_r"+pk).click();
           }
       }
- 
+
       // submitting a new announcement
        $(document).on('click','.submit_new',function(event) {
         event.preventDefault();
@@ -1020,7 +1020,7 @@ Course Management
                 $('input[name=new_comment]').css('border-color', 'rgba(34,36,38,0.15)')
             }, 1000);
         }
- 
+
     });
     // submittin a new reply
       $(document).on('click','.submit_r',function(event){
@@ -1097,7 +1097,7 @@ Course Management
             errAlert("You are not authorized to remove the comment");
             return 0;
           }
- 
+
         }
       }
       //removing an old reply
@@ -1155,7 +1155,7 @@ Course Management
           }
         });
       }
- 
+
       //deleting a question just created
       function func_q(btn){
         var pk=btn.getAttribute('data-pk');
@@ -1176,7 +1176,7 @@ Course Management
     $(document).ready(function() {
         $('table').tablesort();
     });
- 
+
     $(document).on('click','#submit_vid',function() {
         var data = new FormData();
         var img = $('#vid')[0].files;
@@ -1296,7 +1296,7 @@ Course Management
         }
     });
     });
- 
+
     $(document).on('click','#add_assignment',function() {
         var data = new FormData();
         var img = $('#assignment')[0].files;
@@ -1327,7 +1327,7 @@ Course Management
             }
         });
     });
- 
+
     $(document).on('click','#submit_assign',function() {
         var data = new FormData();
         var img = $('#assign')[0].files
@@ -1362,27 +1362,27 @@ Course Management
         var x = document.getElementById("form4");
          if (x.style.display == "none") {
             x.style.display = "block";
- 
+
         } else {
             x.style.display = "none";
         }
-        
+
        });
       $(document).on('click','#add_video_button',function(){
         var x = document.getElementById("form1");
          if (x.style.display == "none") {
             x.style.display = "block";
- 
+
         } else {
             x.style.display = "none";
         }
-        
+
        });
       $(document).on('click','#add_slide_button',function(){
         var x = document.getElementById("form2");
          if (x.style.display == "none") {
             x.style.display = "block";
- 
+
         } else {
             x.style.display = "none";
         }
@@ -1392,11 +1392,11 @@ Course Management
         var x = document.getElementById("form5");
          if (x.style.display == "none") {
             x.style.display = "block";
- 
+
         } else {
             x.style.display = "none";
         }
-        
+
        });
        $(document).on('click','#add_module_button',function(){
         var moduleForm = $('#module_form');
@@ -1408,7 +1408,7 @@ Course Management
       });
     //     $(document).on('click','#submit_marks',function(e) {
     //     var pk=$(this).attr("enteredmarks");
- 
+
     //     var marks = document.getElementById("enteredmarks").value;
     //     console.log(marks);
     //     var csrf = $('input[name=csrfmiddlewaretoken]').val();
@@ -1432,18 +1432,18 @@ Course Management
     //     });
     // });
 
- 
- 
+
+
 //for practice objective assignment
   /*  $(document).ready(function(){
-       var objective = document.getElementsByClassName('objective'); 
+       var objective = document.getElementsByClassName('objective');
     });
     $('.objective').click(function(){
     });*/
- 
- 
+
+
 </script>
- 
- 
- 
+
+
+
 {% endblock %}

@@ -13,11 +13,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .thesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 .pthesis {
   background-color: #f1f1f1;
@@ -32,11 +32,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .pthesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .panel {
@@ -54,7 +54,7 @@ table{
 .td6
 {
     padding:0 15px;
-    
+
 }
 .td7
 {
@@ -62,27 +62,27 @@ table{
 }
 .td1{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td2{
     width: 30%;
-        padding-bottom:15px;    
+        padding-bottom:15px;
     padding-top: 15px;
 }
 .td3{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td4{
     width: 30%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td5{
     width: 2%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .previous {
@@ -128,10 +128,10 @@ table{
     </a>
 
     <a class="item" data-tab="acad_approve_assis" onclick="m()" style="width: 33%;">
-        <p style="margin-left: 40%;">Approved</p>  
+        <p style="margin-left: 40%;">Approved</p>
     </a>
     <a class="item" data-tab="operation_pallet" onclick="m2()" style="width: 34%;">
-        <p style="margin-left: 40%;">Operation Pallet</p>  
+        <p style="margin-left: 40%;">Operation Pallet</p>
     </a>
 
 </div>
@@ -143,17 +143,17 @@ table{
     <div  class="ui vertical segment" >
         {% if assistant_list %}
         <form class="form_class" id="acad_assis_form">
-            
+
             <table class="ui celled table"
             style="padding-left: 2.5%;
             padding-right: 2.5%;
             padding-top: 1%;
             padding-bottom: 1.5%;
             width: 100%" id="as">
-            
-               
+
+
                 <thead>
-                
+
                     <tr style="border-radius: 3px;">
                         <th rowspan="2">#</th>
                         <th rowspan="2">Name</th>
@@ -166,15 +166,15 @@ table{
                         <th rowspan="2">Bank Account No.</th>
 
                     </tr>
-                
+
                 </thead>
-                
-            
-        
+
+
+
                 <tbody>
-                
+
                     {% for obj in assistant_list reversed %}
-                        {% if obj.acad_approval == False  %} 
+                        {% if obj.acad_approval == False  %}
                                 <tr id="{{forloop.counter}}as">
                                     <td>{{forloop.counter}}</td>
                                     <td>{{obj.student.id.user.first_name}}&ensp;{{obj.student.id.user.last_name}}</td>
@@ -186,13 +186,13 @@ table{
                                     <td><center><input type="checkbox" id="{{forloop.counter}}check" /></center></td>
                                     <td>{{obj.bank_account}}</td>
                                 </tr>
-                                
+
                         {%endif%}
-                    {% endfor %} 
-                       
-                </tbody>            
-            </table> 
-           
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
             <div class="two fields">
                 <button class="ui primary button left floated " type="button" id="disapprove" style=" margin-left: 1%;padding: 10px 10px;">
                     Disapprove all
@@ -205,9 +205,9 @@ table{
                 <button class="ui primary button right floated" type="submit" id="su"  style="padding: 10px 10px; margin-right: 13%;" >
                     Submit
                 </button>
-            </div> 
-        
-        
+            </div>
+
+
         </form>
         {% else %}
             <h3>no requests</h3>
@@ -222,7 +222,7 @@ table{
     {% if assistant_approve_list %}
         {% for obj in assistant_approve_list reversed %}
             {% if obj.acad_approval %}
-                <div class="app" hidden>{{forloop.counter}}</div> 
+                <div class="app" hidden>{{forloop.counter}}</div>
                 <div class="pthesis acad_app" id="acadassisapproved{{forloop.counter}}">{{obj.student.id.user.first_name}}&ensp;{{obj.student.id.user.last_name}}&emsp;&emsp;&emsp;&emsp;{{obj.student.id.user.username}}&emsp;&emsp;{{obj.month}},{{obj.year}}<i hidden>{{obj.student.batch}}</i></div>
                 <div class="ui modal acadassisapproved{{forloop.counter}}">
                     <i class="close icon"></i>
@@ -245,7 +245,7 @@ table{
                                 <td class="td1">Year</td>
                                 <td class="td5">:</td>
                                 <td colspan="4" style="font-weight: bold;">{{obj.year}}</td>
-                            </tr>                        
+                            </tr>
                             <tr>
                                 <td class="td1">Bank Account</td>
                                 <td class="td5">:</td>
@@ -257,7 +257,7 @@ table{
                                 <td colspan="4" style="font-weight: bold;">{{obj.stipend}}</td>
                             </tr>
 
-                        </table> 
+                        </table>
                     </div>
                 </div>
                 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
@@ -271,7 +271,7 @@ table{
                         });
                         });
                     </script>
-              
+
            {% endif %}
 
         {% endfor %}
@@ -300,19 +300,19 @@ table{
                 <td style="margin: 20px 0;">
                     <button class="ui primary button " type="button" id="search" onclick="search()" style=" margin-left: 1%;padding: 10px 10px;">
                         Search
-                    </button> 
+                    </button>
                 </td>
                 <td style="margin: 20px 0;">
                     <button class="ui primary button " type="button" id="back" onclick="back()" style=" margin-left: 1%;padding: 10px 10px; display: none;" hidden>
                         Back
-                    </button> 
+                    </button>
                 </td>
             </tr>
-        </table> 
-        
+        </table>
+
     </div>
 </div>
- 
+
 <div class="ui tab segment" data-tab="operation_pallet" id="op" style="width: 100%;">
     <style>
         .switch {
@@ -332,7 +332,7 @@ table{
             border-radius: 30px;
             border: 2px solid gray;
         }
-                
+
         /* After slide changes */
         .toggle:after {
             content: '';
@@ -341,39 +341,39 @@ table{
             height: 50px;
             border-radius: 50%;
             background-color: gray;
-            top: 1px; 
+            top: 1px;
             left: 1px;
             transition:  all 0.5s;
         }
-                
+
         /* Toggle text */
         p {
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
         }
-                
+
         /* Checkbox cheked effect */
         .checkbox:checked + .toggle::after {
-            left : 49px; 
+            left : 49px;
         }
-                
+
         /* Checkbox cheked toggle label bg color */
         .checkbox:checked + .toggle {
             background-color: green;
         }
-                
+
         /* Checkbox vanished */
-        .checkbox { 
+        .checkbox {
             display : none;
         }
-    
-        
-        .switch input { 
+
+
+        .switch input {
           opacity: 0;
           width: 0;
           height: 0;
         }
-        
+
         .slider {
           position: absolute;
           cursor: pointer;
@@ -385,7 +385,7 @@ table{
           -webkit-transition: .4s;
           transition: .4s;
         }
-        
+
         .slider:before {
           position: absolute;
           content: "";
@@ -397,31 +397,31 @@ table{
           -webkit-transition: .4s;
           transition: .4s;
         }
-        
+
         input:checked + .slider {
           background-color: #2196F3;
         }
-        
+
         input:focus + .slider {
           box-shadow: 0 0 1px #2196F3;
         }
-        
+
         input:checked + .slider:before {
           -webkit-transform: translateX(26px);
           -ms-transform: translateX(26px);
           transform: translateX(26px);
         }
-        
+
         /* Rounded sliders */
         .slider.round {
           border-radius: 34px;
         }
-        
+
         .slider.round:before {
           border-radius: 50%;
         }
     </style>
-        
+
         <table class="gfg">
             <tr>
                 <td><h2><strong>ASSISTANTSHIP FORM STATUS FOR STUDENT: </strong></h2></td>
@@ -479,9 +479,9 @@ table{
                 </td>
             </tr>
         </table>
-        
-        
-        
+
+
+
 
 </div>
 
@@ -530,20 +530,20 @@ table{
 <script type="text/javascript">
 
 function m(){
-    
+
     document.getElementById('pa1').style="display:none";
     document.getElementById('paa2').style="display:block";
     document.getElementById('op').style="dispaly:none";
 }
 function m1(){
-    
+
     document.getElementById('pa1').style="display:block";
     document.getElementById('paa2').style="display:none";
     document.getElementById('op').style="dispaly:none";
 }
 
 function m2(){
-    
+
     document.getElementById('pa1').style="display:none";
     document.getElementById('paa2').style="display:none";
     document.getElementById('op').style="dispaly:block";
@@ -554,9 +554,9 @@ function search()
     var rollno = document.getElementById("rollno").value;
     var month = document.getElementById("mon").value;
     var year = document.getElementById("yea").value;
-    var batch = document.getElementById("batch").value; 
+    var batch = document.getElementById("batch").value;
     var len = document.getElementsByClassName("app").length;
-    
+
     $(".acad_app").hide();
     $("#back").show();
     for(var i=1 ; i<=len; i++)
@@ -585,8 +585,8 @@ $("#filter").click(function(){
         $("#SB").show();
     else
         $("#SB").hide();
-            
-        
+
+
 });
 $("#hodlive").click(function(){
     var shod;
@@ -595,7 +595,7 @@ $("#hodlive").click(function(){
         document.getElementById("hodstatus").innerHTML="ONLINE";
         shod="hodtrue";
     }
-    else 
+    else
     {
         document.getElementById("hodstatus").innerHTML="OFFLINE";
         shod="hodfalse";
@@ -622,7 +622,7 @@ $("#live").click(function(){
         document.getElementById("lstatus").innerHTML="ONLINE";
         sstud="studenttrue";
     }
-    else 
+    else
     {
         document.getElementById("lstatus").innerHTML="OFFLINE";
         sstud="studentfalse";
@@ -648,7 +648,7 @@ $("#acclive").click(function(){
         document.getElementById("accstatus").innerHTML="ONLINE";
         sacc="accounttrue";
     }
-    else 
+    else
     {
         document.getElementById("accstatus").innerHTML="OFFLINE";
         sacc="accountfalse";
@@ -667,34 +667,34 @@ $("#acclive").click(function(){
     });
 });
 $(function() {
-    
+
     $("#disapprove").click(function(){
         var length = $("#as tr").length;
         for(var i=1;i<length;i++)
         {
-            
+
             id = i + "check";
             if(document.getElementById(id).checked == true)
-            {  
+            {
                 document.getElementById(id).checked=false;
             }
 
         }
-        
+
     });
     $("#approve").click(function(){
         var length = $("#as tr").length;
         for(var i=1;i<length;i++)
         {
-            
+
             id = i + "check";
             if(document.getElementById(id).checked == false)
-            {  
+            {
                 document.getElementById(id).checked=true;
             }
 
         }
-        
+
     });
 
 
@@ -714,9 +714,9 @@ $(function() {
             var val="stipend"+key;
             var element=document.getElementById(val).value;
             console.log(element);
-            
+
             if(element != '' )
-            {  
+            {
                 dic[key]=element;
                 flag=0;
             }
@@ -726,7 +726,7 @@ $(function() {
                 flag=1;
                 break;
             }
-            
+
 
         }
     }
@@ -753,17 +753,17 @@ $(function() {
             length : length,
             csrfmiddlewaretoken: '{{ csrf_token }}'
         },
-        success: function( data ) 
+        success: function( data )
         {
             $(".succ").modal("show");
             window.location = "/aims/";
         }
         });
     }
-    
+
   });
 
 });
 
 
-</script> 
+</script>

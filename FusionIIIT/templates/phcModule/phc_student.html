@@ -123,7 +123,7 @@
                     {% block medical_relief %}
                         {% include 'phcModule/medical_relief.html'%}
                     {% endblock %}
-                </div> 
+                </div>
                 {% endif %}
 
                 {% if global_var == 'Accounts Admin' %}
@@ -131,7 +131,7 @@
                     {% block account_admin_medical_relief %}
                         {% include 'phcModule/account_admin_medical_relief.html' with acc_admin_inbox=acc_admin_inbox medicalRelief=medicalRelief %}
                     {% endblock %}
-                </div> 
+                </div>
                 {% endif %}
 
                 <div class="ui tab segment" data-tab="fifth">
@@ -145,7 +145,7 @@
                     {% include 'phcModule/medical_profile.html' with medical_profile=medical_profile %}
                 {% endblock %}
             </div> {% endcomment %}
-           
+
             {% comment %}The complaint/feedback ends here!{% endcomment %}
         </div>
         {% comment %}The central-rail segment ends here!{% endcomment %}

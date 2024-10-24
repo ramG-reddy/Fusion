@@ -97,7 +97,7 @@
         </thead>
 
         <tbody>
-        
+
         <form action = "/finance/printSalary/" method="post">
         {% csrf_token %}
                 {% for info in c %}
@@ -185,7 +185,7 @@
 
                     <td>
                         {{ info.net_payment }}
-                    </td>    
+                    </td>
                 </tr>
                 {% endfor %}
             </form>

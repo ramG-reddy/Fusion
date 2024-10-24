@@ -76,7 +76,7 @@
                             <option value="mess2">Mess2</option>
                         </select>
                     </td>
-                    
+
                     <td>
                             <div class="ui buttons">
                                     <button class="btn-req ui positive button" name="submit" value="accept"  data-var ="{{var.pk}}" onclick="acceptReq({{var.pk}})">A</button>
@@ -178,7 +178,7 @@
                     <td class="one wide">
                         <textarea rows="2" class="remark" name="remark" required="true" placeholder="Write your remark..."></textarea>
                     </td>
-                    
+
                     <td>
                             <div class="ui buttons">
                                     <button class="btn-req ui positive button" name="submit" value="accept"  data-var ="{{var.pk}}" onclick="acceptPaymentReq({{var.pk}})">A</button>
@@ -204,9 +204,9 @@
             $('#rvr').removeClass('active');
             $('#rlrtab').show();
             $('#rvrtab').hide();
-   
+
         });
-        
+
     });
     $(document).ready(function(){
         $('#rvr').on('click',function(){
@@ -214,9 +214,9 @@
             $('#rlr').removeClass('active');
            $('#rlrtab').hide();
            $('#rvrtab').show();
-           
+
         });
-        
+
     });
    </script>
 <script>
@@ -224,7 +224,7 @@
 function acceptReq(id){
     document.getElementById('accpt1-'+id).style.display="none";
     var messno=document.getElementById('messno-'+id).value;
-   
+
             $.ajax({
                    type: 'POST',
                    url: 'respond_to_reg_req',
@@ -240,16 +240,16 @@ function acceptReq(id){
                    success: function(data) {
 
                            alert(data.message);
-   
-   
+
+
                    },
                    error: function(data, err) {
                        alert(err.message);
                    }
                });
-   
+
             }
-            
+
             function rejectReq(id){
             document.getElementById('accpt1-'+id).style.display="none";
             $.ajax({
@@ -279,7 +279,7 @@ function acceptReq(id){
 
         function accptDReq(id){
     document.getElementById('dreg-'+id).style.display="none";
-   
+
             $.ajax({
                    type: 'POST',
                    url: 'respond_to_reg_req',
@@ -294,14 +294,14 @@ function acceptReq(id){
                    success: function(data) {
 
                            alert(data.message);
-   
-   
+
+
                    },
                    error: function(data, err) {
                        alert(err.message);
                    }
                });
-   
+
             }
 
             function rejectDReq(id){
@@ -331,7 +331,7 @@ function acceptReq(id){
         }
         function acceptPaymentReq(id){
     document.getElementById('update1-'+id).style.display="none";
-   
+
             $.ajax({
                    type: 'POST',
                    url: 'respond_to_updatePayment',
@@ -345,14 +345,14 @@ function acceptReq(id){
                    success: function(data) {
 
                            alert(data.message);
-   
-   
+
+
                    },
                    error: function(data, err) {
                        alert(err.message);
                    }
                });
-   
+
             }
             function rejectPaymentReq(id){
             document.getElementById('update1-'+id).style.display="none";
@@ -378,7 +378,7 @@ function acceptReq(id){
             });
 
         }
-            
+
    </script>
     {% endblock %}
     {% endblock %}

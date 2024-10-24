@@ -10,7 +10,7 @@
 {% endblock %} {% endcomment %}
 
 {% block body %}
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.js"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.css" rel="stylesheet"/>
@@ -24,7 +24,7 @@
             .ui.segment:first-child {
                 margin-top: 1rem;
             }
-            
+
             .bio{
                 display: flex;
                 justify-content: center;
@@ -33,7 +33,7 @@
                 display: none;
             }
         </style>
-        
+
     {% endblock %}
 
     {% comment %} Main Tabs for navigation {% endcomment %}
@@ -192,7 +192,7 @@
                             </div>
 
                             <div class="ui tab" data-tab="questions">
-                                
+
                                 <div class="ui relaxed divided list">
                                     {% for q in top_ques %}
                                     <div class="item">
@@ -208,7 +208,7 @@
                             </div>
 
                             <div class="ui tab" data-tab="hidden">
-                                
+
                                 <div class="ui relaxed divided list">
                                     {% for q in hidden_ques %}
                                     <div class="item">

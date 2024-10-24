@@ -174,11 +174,11 @@ Module
                                             id="advanceDueAdjustment"
                                             value="{{ cpda_reimbursement_request.advanceDueAdjustment}}">
                                     </div>
-                                    
-                                
+
+
                                 <br><br>
 
-                                
+
                                 <hr>
 
                                 {% if button == 1 %}
@@ -221,7 +221,7 @@ Module
                                 <input id="remark_id" name="remark_id"></input>
                                 {% endif %}
                             </div>
-                                
+
 
                         </div>
                         <input type="hidden" id="file_id" name="file_id" value="{{ file_id }}">
@@ -231,9 +231,9 @@ Module
                         <input type="hidden" id="form_id" name="form_id" value="{{ id }}">
                         <input type="hidden" id="user_id" name="user_id" value="{{ user_id }}">
                         </form>
-                        
+
                         <div id="data-of-past">
-                              
+
                         </div>
                         <br>
                         <br>
@@ -245,7 +245,7 @@ Module
 
                 {% endblock %}
             </div>
-        
+
     </div>
 </div>
 
@@ -343,7 +343,7 @@ Module
            //  var user_id = 5332;
 
             console.log(user_id)
-       
+
             var type = 'CPDAReimbursement'; // Assuming 'LTC' is the type for this request
            $.ajax({
             type: 'GET',
@@ -379,7 +379,7 @@ Module
            });
        });
    });
-  
+
 </script>
 
 <script>
@@ -417,7 +417,7 @@ Module
             var confirmation = confirm("Do you want to archive the file")
 
             if(confirmation){
-                handleForwardOrReject(3);   
+                handleForwardOrReject(3);
             }
         });
 

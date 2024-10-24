@@ -7,15 +7,15 @@
             Announcement for Students
         </a>
         <a class="item" data-tab="second" id="br_ann">
-            Browse Announcement          
+            Browse Announcement
         </a>
-        
+
     </div>
 
     <div class="ui active tab" data-tab="dep">
         <div class="ui vertical segment">
             <!-- fill the form details -->
-            <form class="ui form" style="padding-left: 24px; padding-right: 24px;" method="POST" enctype="multipart/form-data" 
+            <form class="ui form" style="padding-left: 24px; padding-right: 24px;" method="POST" enctype="multipart/form-data"
                   action="">
                 {% csrf_token %}
                 <div class="ui header">
@@ -46,7 +46,7 @@
                                 <div class="item" data-value="P.hD">
                                     P.hD
                                 </div>
-                            
+
                                 <div class="item" data-value="other" >
                                     Other
                                 </div>
@@ -112,7 +112,7 @@
                                 <div class="item" data-value="ECE">
                                     ECE
                                 </div>
-                            
+
                                 <div class="item" data-value="ME" >
                                     ME
                                 </div>
@@ -136,7 +136,7 @@
                       <input type="file" id="file" name="upload_announcement" accept=".pdf, .jpg, .jpeg, .png" >
                 </div>
 
-                    
+
 
                 <br>
 
@@ -153,7 +153,7 @@
             <div class="ui divider"></div>
         </div>
     </div>
-   
+
 {% endblock %}
 
 {% block javascript %}

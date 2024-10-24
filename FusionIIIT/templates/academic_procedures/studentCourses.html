@@ -3,15 +3,15 @@
 <script>
     let addCourseButton = document.querySelector(".addCourseButton");
     addCourseButton.addEventListener("click",()=>
-        { 
+        {
             $('.ui.addCourseForm.modal')
             .modal('show')
             ;
-        });  
+        });
         function courseDropCalled(event) {
         // Prevent the default action of the link
         event.preventDefault();
-        
+
         // Get the URL from the link's href attribute
         let url = event.target.href;
 
@@ -124,7 +124,7 @@
 
         <div class="ui divider"></div>
         {% comment %} <button class="ui fluid positive button addCourseButton">Add Course</button> {% endcomment %}
-        
+
         <div class="ui modal addCourseForm">
             <p>Fill details for the Course you want to add</p>
             <form class="ui form" action = "/academic-procedures/acad_person/addCourse/" method = "post">
@@ -150,10 +150,10 @@
 
                 <input type = "text" value = {{dict2.roll_no}} name="roll_no" hidden/>
                 <button class="ui fluid positive button" type="submit" name = "AddCourse" value = "submit">Add Course</button>
-                
+
             </form>
           </div>
 
-        
+
     </div>
 </div>

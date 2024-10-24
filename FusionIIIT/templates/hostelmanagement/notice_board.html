@@ -14,16 +14,16 @@
                         More
                     </div>
 
-                
+
                 <div class="content">
                     <h3 style="color:grey;">Description</h3>
                     <h4 class="transition hidden" style="color:black;">{{notice.description}}</h4>
                     <h4 class="ui dividing header"><a href="..\media\{{notice.content}}">Content Link</a></h4>
                 </div>
-                
+
             </div>
             <br>
-            
+
             {% if user in hall_caretaker or hall_warden %}
                 {% ifequal current_hall notice.hall.hall_id %}
                     <form method="post"  action="{% url 'hostelmanagement:delete_notice' %}" class="ui form" role="form">
@@ -35,7 +35,7 @@
             {% endif %}
         </div>
       </div>
-    
+
     {% endfor %}
 
 {% endblock %}

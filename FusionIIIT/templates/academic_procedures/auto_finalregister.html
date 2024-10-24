@@ -31,7 +31,7 @@
 
 
                 <div class="ui divider"></div>
- 
+
                 <div class="three fields" style="width: 100%">
                     <div class="field" style="width: 30%; margin-right: 5px">
                         <label for="mode">Mode of Payment</label>
@@ -51,9 +51,9 @@
                         <label for="fee_receipt">Fee receipt (.pdf)</label>
                         <input type="file" name="fee_receipt" id="fee_receipt" accept=".pdf" required >
                     </div>
- 
+
                 </div>
- 
+
                 <div class="three fields" style="width: 100%">
                     <div class="field" style="width: 30%; margin-left: 5px">
                         <label for="actual_fee">Actual Fee Amount</label>
@@ -79,7 +79,7 @@
                     <label for="deposit_date">Fee Deposit Date</label>
                     <input type="date" name="deposit_date" id="deposit_date" required="True" >
                 </div>
-                
+
                 <div class="three fields" style="width: 100%">
                     <div class="field ui checkbox" style="width:50%; margin-right: 5px">
                         <label for="edu_loan">Education Loan (UTR Number)</label>
@@ -91,26 +91,26 @@
                         <input placeholder="UTR Number" id="utr_number" name='utr_number' type="text" disabled> <br>
                     </div>
                 </div>
-                
- 
-                
+
+
+
                 <div class="extra content">
                     <div class="" style="text-align: center;">
                         <button class="ui primary button">Register</button>
                     </div>
                 </div>
-                
+
             </div>
         </form>
     </div>
- 
- 
+
+
     {% comment %} <form id='payment' action='/academic-procedures/final_registration/'>
         {% csrf_token %}
- 
+
         <h3>Fee Payment</h3>
- 
- 
+
+
         <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_p860XxWC2yFrgd"
             data-amount="2500000" data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Pay with Razorpay"
             data-name="IIITDM Jabalpur" data-description="Test transaction"
@@ -118,7 +118,7 @@
             data-prefill.name="{{ name }}" data-prefill.email="{{ email }}" data-prefill.contact="{{ phone }}"
             data-theme.color="#F37254"></script>
         <input type="hidden" custom="Hidden Element" name="hidden">
- 
+
     </form> {% endcomment %}
     {% endif %}
     {% else %}
@@ -133,12 +133,12 @@
     {% endif %}
 </div>
 {% endblock %}
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
 <script type="text/javascript">
     $(function () {
@@ -151,10 +151,10 @@
             $('#view_1').show();
         });
         /*$("#final_student_register").submit(function (event) {
- 
+
             event.preventDefault();
             var friendForm = $(this);
- 
+
             var posting = $.post(friendForm.attr('action'), friendForm.serialize());
             // if success:
             posting.done(function (data) {
@@ -168,7 +168,7 @@
             });
         });*/
         $("#change_course").submit(function (event) {
- 
+
             var inp = document.getElementsByClassName("choices");
             var count = 0;
             for (var i = 0; i < inp.length; i++) {
@@ -176,12 +176,12 @@
                     count = count + parseInt(inp[i].getAttribute("data-value2"));
                 }
             }
- 
+
             event.preventDefault();
             var friendForm = $(this);
- 
+
             var posting = $.post(friendForm.attr('action'), friendForm.serialize());
- 
+
             var min = parseInt(document.getElementById("mincr").value);
             if (count <= min) {
                 alert("You Can't Register as Minimum Credits: " + min);
@@ -210,7 +210,7 @@
                 //Disable edu_loan checkbox
                 if($("#edu_loan")[0].checked === false){
                     $("#edu_loan").trigger("click");
-                }  
+                }
                 $("#edu_loan")[0].disabled = true;
             }
             else {
@@ -220,7 +220,7 @@
                 $("#edu_loan")[0].disabled = false;
                 if($("#edu_loan")[0].checked === true){
                     $("#edu_loan").trigger("click");
-                }  
+                }
             }
         });
         //function for edu_loan checkbox and related utr_number field
@@ -247,5 +247,5 @@
             }
         });
     });
- 
+
 </script>

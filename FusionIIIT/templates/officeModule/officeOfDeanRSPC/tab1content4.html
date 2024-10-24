@@ -4,7 +4,7 @@
     {% comment %}The add a new skill Accordian starts here!{% endcomment %}
     <div class="ui form" style="padding: 8px; padding-left: 24px; padding-right: 24px;">
         {% csrf_token %}
-        
+
         <div class="three fields">
             <div class="six wide field">
                 <label>Project No.</label>
@@ -21,11 +21,11 @@
                 <!--<input value="" class="ui large input"  name="principal_investigator">-->
             <!--</div>-->
         </div>
-       
+
         <h4>Committed Expenses,if any</h4>
-        
+
         <div class="two fields">
-            
+
         <div class="six wide field">
                 <label>Please specify whether any dues outstanding</label>
                 <select class="ui search fluid dropdown" name="committed" required>
@@ -33,18 +33,18 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
-        </div>  
+        </div>
         <div class="ten wide field field">
             <label>Remarks & Description</label>
             <textarea rows="2" name ="remark1"></textarea>
         </div>
-            
+
         </div>
-        
+
                 <h4>Other direct payments under processing</h4>
-        
+
         <div class="two fields">
-            
+
         <div class="six wide field">
                 <label>Please specify whether any dues outstanding</label>
                 <select class="ui search fluid dropdown" name="payment" required>
@@ -52,18 +52,18 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
-        </div>  
+        </div>
         <div class="ten wide field field" >
             <label>Remarks & Description</label>
             <textarea rows="2" name="remark2"></textarea>
         </div>
-            
+
         </div>
-        
+
                 <h4>Salary/ Honorarium dues like last payment of employees etc. under processing</h4>
-        
+
         <div class="two fields">
-            
+
         <div class="six wide field">
                 <label>Please specify whether any dues outstanding</label>
                 <select class="ui search fluid dropdown" name="salary" required>
@@ -71,18 +71,18 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
-        </div>  
+        </div>
         <div class="ten wide field field">
             <label>Remarks & Description</label>
             <textarea rows="2" name="remark3"></textarea>
         </div>
-            
+
         </div>
-        
+
                 <h4>Advances outstanding</h4>
-        
+
         <div class="two fields">
-            
+
         <div class="six wide field">
                 <label>Please specify whether any dues outstanding</label>
                 <select class="ui search fluid dropdown" name="advance" required>
@@ -90,18 +90,18 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
-        </div>  
+        </div>
         <div class="ten wide field field">
             <label>Remarks & Description</label>
             <textarea rows="2" name="remark4"></textarea>
         </div>
-            
+
         </div>
-        
+
                 <h4>Others (If any)</h4>
-        
+
         <div class="two fields">
-            
+
         <div class="six wide field">
                 <label>Please specify whether any dues outstanding</label>
                 <select class="ui search fluid dropdown" name="other">
@@ -109,18 +109,18 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
-        </div>  
+        </div>
         <div class="ten wide field field">
             <label>Remarks & Description</label>
             <textarea rows="2" name="remark5"></textarea>
         </div>
-            
+
         </div>
-        
+
                 <h4>Full Overhead deducted</h4>
-        
+
         <div class="two fields">
-            
+
         <div class="six wide field">
                 <label>Please specify whether any dues outstanding</label>
                 <select class="ui search fluid dropdown" name="overhead" required>
@@ -128,19 +128,19 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
-        </div>  
+        </div>
         <div class="ten wide field field">
             <label>Remarks & Description</label>
             <textarea rows="2" name="remark6"></textarea>
         </div>
-            
+
         </div>
-        
+
         <!--<div class="field">-->
             <!--<label>Attach Application</label>-->
             <!--<input class="ui input" type="file"></input>-->
         <!--</div>-->
-        
+
         <div class="field">
             <button class="ui primary button right floated" type="submit">
                 Submit

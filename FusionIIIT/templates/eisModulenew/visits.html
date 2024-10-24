@@ -18,7 +18,7 @@
     {% comment %}The Foreign Visit segment starts here!{% endcomment %}
     <div class="{% if mark11 != 1 %}ui active tab segment{% else %}ui tab segment{% endif %}" data-tab="foreign">
         {% if request.user == user %}
-    
+
         <h4 class="ui dividing header" >Add a Foreign Visit</h4>
         <form class="ui form" id="foreignvisitform" name="foreignvisitform" method="POST" action="{% url 'eis:fvisit_insert' %}" enctype="multipart/form-data">
             {% csrf_token %}
@@ -289,7 +289,7 @@
                     <div class="eight wide field">
                         <label>From</label>
                         <!--  <input placeholder="From" type="date"> -->
-                       <!-- code change starts --> 
+                       <!-- code change starts -->
                          <div class="ui calendar" id="rangestart3">
                               <div class="ui input left icon">
                                 <i class="calendar icon"></i>
@@ -302,14 +302,14 @@
                     <div class="eight wide field">
                         <label>To</label>
                         <!--  <input placeholder="To" type="date"> -->
-                       <!-- code change starts --> 
+                       <!-- code change starts -->
                           <div class="ui calendar" id="rangeend3">
                               <div class="ui input left icon">
                                 <i class="calendar icon"></i>
                                 <input type="text" id="end_date" name="end_date" placeholder="End">
                               </div>
                             </div>
-                         <!-- code change ends --> 
+                         <!-- code change ends -->
                     </div>
                 </div>
 
@@ -402,7 +402,7 @@
                                    value = "Delete">
                                    <i class="ui red delete icon"></i>
                                 </a>
-                                
+
                             </td>
                         {% endif %}
                     </tr>
@@ -410,7 +410,7 @@
 
             </tbody>
 
-            
+
         </table>
         </div>
             <div class="pagination">
@@ -430,7 +430,7 @@
                     {% endif %}
                 </span></h4>
             </div>
-        
+
     </div>
     {% comment %}The Foreign Visit segment ends here!{% endcomment %}
 
@@ -463,7 +463,7 @@
                     <div class="eight wide field">
                         <label>From</label>
                          <!-- <input placeholder="From" type="date"> -->
-                          <!-- code change starts --> 
+                          <!-- code change starts -->
                          <div class="ui calendar" id="rangestart4">
                               <div class="ui input left icon">
                                 <i class="calendar icon"></i>
@@ -476,7 +476,7 @@
                     <div class="eight wide field">
                         <label>To</label>
                         <!--  <input placeholder="To" type="date"> -->
-                          <!-- code change starts --> 
+                          <!-- code change starts -->
                           <div class="ui calendar" id="rangeend4">
                               <div class="ui input left icon">
                                 <i class="calendar icon"></i>
@@ -575,7 +575,7 @@
                                    value = "Delete">
                                    <i class="ui red delete icon"></i>
                                 </a>
-                                
+
                             </td>
                         {% endif %}
                     </tr>
@@ -583,7 +583,7 @@
 
             </tbody>
 
-            
+
         </table>
         </div>
             <div class="pagination">
@@ -603,7 +603,7 @@
                     {% endif %}
                 </span></h4>
             </div>
-        
+
     </div>
     {% comment %}The Indian University visit segment ends here!{% endcomment %}
 {% endblock %}

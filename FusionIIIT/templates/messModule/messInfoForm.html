@@ -15,18 +15,18 @@ Central Mess
 
       {% comment %}The left-margin segment!{% endcomment %}
       <div class="column"></div>
-  
+
       {% comment %}
       The left-rail segment starts here!
       {% endcomment %}
       <div class="three wide column">
-  
+
           {% comment %}The user image card starts here!{% endcomment %}
           {% block usercard %}
           {% include 'globals/usercard.html' %}
           {% endblock %}
           {% comment %}The user image card ends here!{% endcomment %}
-  
+
       </div>
 <form action="{% url 'mess:info' %}" method="post" style='margin:0 auto;'>
   <h1>Mess registration</h1>

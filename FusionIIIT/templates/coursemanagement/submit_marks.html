@@ -6,8 +6,8 @@
 </div>
 <div class="ui tab segment active" id="refresh_marks_tab" data-tab="marks">
     <h4 class="ui dividing header">{{course.name}}</h4>
-    <form class="ui large form" id="entermarks" method="post" action="/ocms/{{course.code}}/{{course.version}}/edit_marks"> 
-    
+    <form class="ui large form" id="entermarks" method="post" action="/ocms/{{course.code}}/{{course.version}}/edit_marks">
+
         {% csrf_token %}
       <div id="refresh_table">
         <div style="display: flex; align-items: center;">
@@ -34,7 +34,7 @@
               <th style="width: 25%;">Marks Obtained</th>
             </tr>
           </thead>
-    
+
           <tbody>
             {% for x in registered_students %}
               <tr>
@@ -49,9 +49,9 @@
                   </div>
                 </td>
                 <td>
-                  
+
                   <input type="number" name="enteredmarks" id="enteredmarks{{x.student_id}}" required="true">
-    
+
                 </td>
               </tr>
             {% endfor %}
@@ -60,7 +60,7 @@
       </div>
       </div>
         <input type="submit" class="ui primary button" id="submit_marks" value="Upload">
-        
+
       </form>
 </div>
 
@@ -97,7 +97,7 @@ function successAlert(data){
         var friendForm = $(this);
 
         var posting = $.post(friendForm.attr('action'), friendForm.serialize());
-        
+
         // if success:
         posting.done(function(data) {
             if (data.message === "Upload Successful") {
@@ -119,7 +119,7 @@ function successAlert(data){
       console.log("reached");
       var exam_name = $(this).val();
       var csrf = $('input[name=csrfmiddlewaretoken]').val();
-  
+
       $.ajax({
         method: "POST",
         url: '/ocms/{{course.code}}/{{course.version}}/get_exam_data',
@@ -151,5 +151,3 @@ function successAlert(data){
 });
 
 </script>
-
-

@@ -16,11 +16,11 @@
         </a>
     </h3>
 
-   
 
-</div>       
 
-   
+</div>
+
+
     <div class="ui divider"></div>
     {% if IndentFiles %}
     <div class="table-container" style=" overflow-x: scroll;max-height: 550px;  overflow-y: scroll;">
@@ -32,8 +32,8 @@
             <th>Item Name</th>
             <th>Add New Stock</th>
             <th>Look for Transfer Options</th>
-            
-            
+
+
         </tr>
         </thead>
         <tbody>
@@ -44,8 +44,8 @@
                  <td>{{s.file_info.id}}</td>
                  <td>{{s.quantity}}</td>
                  <td>{{s.item_name}}</td>
-                 
-                
+
+
                  <td><form action="/purchase-and-store/entry/" method="POST" id="file_info">{% csrf_token %}
                     <input hidden  name = 'id' value="{{ s.file_info.id}}"><button class="ui primary button">
                         Add New Stock
@@ -55,9 +55,9 @@
                     <input hidden  name = 'id' value="{{ s.file_info.id}}"><button class="ui primary button">
                         Transfer Stock
                     </button></form></td>
-                
+
               </tr>
-              {% endif %}       
+              {% endif %}
               {% endfor %}
         </tbody>
 
@@ -70,7 +70,7 @@
      {% endif %}
 
 
-    </div>  
+    </div>
     <script type="text/javascript">
 
 

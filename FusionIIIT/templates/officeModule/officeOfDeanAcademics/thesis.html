@@ -57,7 +57,7 @@
                                 <td>
                                     {{assist.student_id.id.id}}
                                 </td>
-                                
+
                                 <td>
                                     {{assist.supervisor_id.id.user}}
                                 </td>
@@ -68,7 +68,7 @@
                                     <div class="ui checkbox">
                                       <input type="checkbox" name="example">
                                       <label></label>
-                                    </div> 
+                                    </div>
                                 </td>
                                 <td>
                                     <div class="ui form">
@@ -90,7 +90,7 @@
                                     </div>
                 </div>
                 <!--MCM content Ends-->
-  
+
              <script>
           $("input[type=radio]").change(function(){
               var filter = this.value;
@@ -102,11 +102,11 @@
           if (filter == "CSE")
                 $("tr.dataRow").css( "visibility", "visible" );
             else $("tr.dataRow").css( "visibility", "collapse" );
-            
+
             if (filter == "ECE")
                 $("tr.dataRow").css( "visibility", "visible" );
             else $("tr.dataRow").css( "visibility", "collapse" );
-            
+
             if (filter == "ME")
                 $("tr.dataRow").css( "visibility", "visible" );
             else $("tr.dataRow").css( "visibility", "collapse" );
@@ -123,7 +123,7 @@
 
               $("tr.dataRow").find("td").each(function() {
                 $this = $(this);
-                
+
                 if (!matchFound){
                     if ($this.html() == filter){
                       matchFound = true;
@@ -132,5 +132,5 @@
                 }
               });
           });
-              </script>          
+              </script>
 {% endblock form3 %}

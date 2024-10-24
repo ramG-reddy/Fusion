@@ -70,7 +70,7 @@
                                 {% if entry.HOD_approved%} Approved
                                 {% elif entry.HOD_rejected%} Rejected
                                 {% else%}
-                                
+
                                 <div style="display: flex; flex-direction: column;">
                                     <form action="{% url 'otheracademic:assistanship_hod_approve' ass_id=entry.id %}" method="post">
                                         {% csrf_token %}

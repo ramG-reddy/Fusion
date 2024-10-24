@@ -38,7 +38,7 @@
                         <td><a href="{% url 'programme_curriculum:admin_view_a_semester_of_a_curriculum' semester.id %}"><B>Semester<br>{{ semester.semester_no }}</B></a></td>
                         {% endfor %}
                     </tr>
-                
+
                     {% for course_slot in semester_slots %}
                     <tr class="compact ui celled small table"
                         style="text-align: center;
@@ -148,7 +148,7 @@
             </div>
             <div class="ui fitted item">
                 <div class="fluid ui large secondary animated button">
-        
+
                     <i class="dropdown icon"></i>
                     <div class="visible content">INSTIGATE SEMESTER</div>
                     <div class="hidden content">
@@ -157,7 +157,7 @@
                 </div>
                 <div class="ui vertical left menu">
                     {% for semester in semesters %}
-                        <a class="item" 
+                        <a class="item"
                         href="{% url 'programme_curriculum:instigate_semester' semester.id %}?curriculum_id={{ semester.curriculum.id }}"
                         type="Submit" name="Submit"><i class="bell icon"></i>Semester {{ semester.semester_no }}</a>
                     {% endfor %}
@@ -165,7 +165,7 @@
             </div>
             <div class="ui fitted item">
                 <div class="fluid ui large primary animated button">
-                    
+
                     <i class="dropdown icon"></i>
                     <div class="visible content">ADD COURSE SLOT</div>
                     <div class="hidden content">
@@ -177,7 +177,7 @@
                         <div class="item">No Semesters for this Curriculum</div>
                     {% else %}
                         {% for semester in semesters %}
-                            <a class="item" 
+                            <a class="item"
                             href="{% url 'programme_curriculum:add_courseslot_form' %}?semester_id={{ semester.id }}&curriculum_id={{ curriculum.id }}"
                             type="Submit" name="Submit"><i class="add icon"></i>Semester {{ semester.semester_no }}</a>
                         {% endfor %}
@@ -200,7 +200,7 @@
             </div>
             <div class="ui fitted item">
                 <div class="fluid ui large positive animated button">
-        
+
                     <i class="dropdown icon"></i>
                     <div class="visible content">EDIT BATCH</div>
                     <div class="hidden content">
@@ -212,7 +212,7 @@
                         <div class="item">No batches linked to this Curriculum</div>
                     {% else %}
                         {% for batch in curriculum.batches %}
-                            <a class="item" 
+                            <a class="item"
                             href="{% url 'programme_curriculum:edit_batch_form' batch.id %}"
                             type="Submit" name="Submit" target="_blank" rel="noopener"><i class="edit icon"></i>{{ batch }}</a>
                         {% endfor %}
@@ -221,7 +221,7 @@
             </div>
             <div class="ui fitted item">
                 <div class="fluid ui large secondary animated button">
-        
+
                     <i class="dropdown icon"></i>
                     <div class="visible content">LINK BATCH</div>
                     <div class="hidden content">
@@ -233,7 +233,7 @@
                         <div class="item">No other batches avaliable</div>
                     {% else %}
                         {% for a_batch in all_batches %}
-                            <a class="item" 
+                            <a class="item"
                             href="{% url 'programme_curriculum:edit_batch_form' a_batch.id %}?curriculum_id={{ curriculum.id }}"
                             type="Submit" name="Submit" target="_blank" rel="noopener"><i class="tag icon"></i>{{ a_batch }}</a>
                         {% endfor %}

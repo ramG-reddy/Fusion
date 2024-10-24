@@ -43,14 +43,14 @@
                             <th>Placement Cell</th>
                             <th>Alumni Office</th>
                             <th>Gymkhana</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
                         {% for entry in form_data %}
                         <tr>
                             {% if not entry.icard_dsa_clear and not entry.icard_dsa_notclear or not entry.placement_cell_clear and not entry.placement_cell_notclear   or not entry.alumni_clear and not entry.alumni_notclear or not entry.student_gymkhana_clear and not entry.student_gymkhana_notclear %}
-                         
+
                                 <td>{{ entry.roll_no }}</td>
                                 <td>{{ entry.name }}</td>
                                 <td>
@@ -67,7 +67,7 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:100%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                     {% endif %}
                                 </td>
                                 <td>
@@ -84,10 +84,10 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:100%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                     {% endif %}
                                 </td>
-                                
+
                                 <td>
                                     {% if entry.alumni_clear %}
                                         clear
@@ -102,7 +102,7 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:100%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                     {% endif %}
                                 </td>
                                 <td>
@@ -119,11 +119,11 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:100%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                     {% endif %}
                                 </td>
-                                
-                            
+
+
                              {% endif %}
                         </tr>
                         {% endfor %}

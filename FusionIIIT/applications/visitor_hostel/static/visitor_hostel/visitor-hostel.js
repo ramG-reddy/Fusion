@@ -7,12 +7,12 @@ var date = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
 
 $(document).ready(function(){
 
-    // $('.delete').hide(); 
+    // $('.delete').hide();
     // // Deleting an Individual Service
     // $('.intender_entry_row').hover( function() {
     //     $(this).find(".delete").show();
     // });
-    
+
     var calendarOpts = {
         type: 'date',
         formatter: {
@@ -152,7 +152,7 @@ function request_booking (event) {
     }
 
     // if number of people greater than 20
-    
+
     if (number_of_people > 20) {
         alertModal ("Oops! People can't be greater than 20 in number.");
         return;
@@ -166,20 +166,20 @@ function request_booking (event) {
     if (number_of_rooms > 15) {
         alertModal ("Oops! Number of rooms can't be greater than 15.");
         return;
-    } 
+    }
 
     if ( !category ) {
         alertModal ("Please fill the Category!");
         return;
-    } 
+    }
 
     if ( !nationality ) {
          nationality = ' ';
     }
-    console.log(nationality) 
+    console.log(nationality)
 
     // Checking conditions for visitor
-    
+
     if (name == '') {
             alertModal("You didn't fill a visitor name! Please refill the form.");
             return;
@@ -215,7 +215,7 @@ function request_booking (event) {
         return;
     }
 
-    
+
 
     if ( !arrival_hour) {
         alertModal ('Oops! Please enter the expected arrival time of the visitor');
@@ -281,12 +281,12 @@ function request_booking (event) {
             setTimeout(function() {
                 location.reload();
              }, 1500);
-           
+
         },
         error: function(data, err) {
             console.log(name + " " + phone + " " + email + " " + address);
             alertModal('Congratulations! Your booking has been placed successfully\n Please wait for confirmation.');
-          
+
         }
     });
 };
@@ -309,7 +309,7 @@ function bookameal_submit(event, htmlElement){
         'lunch': $(`input[name="lunch${booking_id}"]`).val(),
         'eve_tea': $(`input[name="eve_tea${booking_id}"]`).val(),
         'dinner': $(`input[name="dinner${booking_id}"]`).val(),
-            
+
             'csrfmiddlewaretoken': $('input[name="csrf"]').val(),
     }
     console.log(jsondata)
@@ -322,7 +322,7 @@ function bookameal_submit(event, htmlElement){
             setTimeout(function() {
                 location.reload();
              }, 1500);
-            
+
         },
         error: function (data, err) {
             alertModal('Something missing! Please refill the form ');
@@ -860,7 +860,7 @@ function bill_between_date_range() {
 
     start = $('input[name=start]').val();
     end = $('input[name=end]').val();
-    
+
     if(new Date(start)>new Date(end))
     {
         alertModal('Please check start date and end date.')
@@ -931,7 +931,7 @@ function next_action(event){
     event.preventDefault();
     console.log("next!!");
 
-    
+
     $("#booking-detail-data-tab").removeClass("active");
     $("#booking-detail-action-tab").removeClass("active");
     $("#visitor-detail-data-tab").addClass("active");
@@ -944,7 +944,7 @@ function next_button_action_form(event){
     event.preventDefault();
     console.log("next!!@@@");
 
-    
+
     $("#booking-detail-action-data-tab").addClass("active");
     $("#booking-detail-action-form-tab").addClass("active");
     $("#visitor-detail-action-data-tab").removeClass("active");
@@ -1004,4 +1004,3 @@ $('.info.circle.icon')
     inline: true
   })
 ;
-

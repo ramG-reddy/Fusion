@@ -1,11 +1,11 @@
 {% block applyform %}
     {% comment %}The tab menu starts here!{% endcomment %}
 
-    
+
     <!-- <script src = "https://code.jquery.com/jquery-1.10.2.js"></script> -->
     <!-- <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
-    
-    
+
+
 
     <div class="ui pointing secondary menu">
         <a class="active item" data-tab="mtechseminar">
@@ -28,65 +28,65 @@
                             <input type="date" name="date" required>
                         </div>
                     </div>
-                        
-                        
+
+
                     <div class="two fields">
                         <div class="field" >
                             <label>Place</label>
                             <input name="place" type="text" required/>
                         </div>
-                            
+
                         <div class="field">
                             <label>Time</label>
-                            <input type="time" name="time" required>                
-                        </div> 
-                    </div>       
+                            <input type="time" name="time" required>
+                        </div>
+                    </div>
                     <div class="field">
                         <label>Work done till last Semester</label>
                         <textarea rows="2" name="workdone" required /></textarea>
                     </div>
-                        
+
                     <div class="field">
                         <label>Specific contribution in current Semester</label>
                         <textarea rows="2" name="specificcontri" required /></textarea>
-                    </div>  
+                    </div>
 
                     <div class="field">
                         <label>Future Plan</label>
                         <textarea rows="2" name="futureplan" required /></textarea>
                     </div>
-                        
+
                     <div class="field">
                         <label>Brief Report</label>
                         <textarea rows="2" name="briefreport" required /></textarea>
                     </div>
-                        
+
                     <div class="two fields">
                         <div class=" field">
                             <label>Publication Submitted</label>
-                            <input type="number"  name="publicationsubmitted" value="0" required/>    
+                            <input type="number"  name="publicationsubmitted" value="0" required/>
                         </div>
                         <div class="field">
                             <label>Publication Accepted</label>
-                            <input type="number" name=" publicationaccepted" value="0" required/>                    
+                            <input type="number" name=" publicationaccepted" value="0" required/>
                         </div>
                     </div>
-    
+
                     <div class="two fields">
                         <div class="field">
                             <label>Paper Presented</label>
                             <input type="number" name="paperpresented" value="0" required>
-                        </div> 
+                        </div>
                         <div class="field">
                             <label>Paper Under Review</label>
                             <input type="number" name="paperunderreview" value="0" required>
-                        </div> 
-                    </div>     
+                        </div>
+                    </div>
                      <div class="field">
                         <button  class="ui primary button right floated" type="submit" onclick="validateMtech('new_mtechseminarreport',event)">
                             Submit
                         </button>
-                    </div>       
+                    </div>
                 </div>
             </form>
             <br>
@@ -95,13 +95,13 @@
         <br>
         <div class="extra content"></div>
     </div>
-    
+
 {% endblock %}
 
 {% block javascript %}
 
 <script>
-    
+
     function validateMtech(form,event){
         event.preventDefault();
         var form=document.getElementById(form);
@@ -111,15 +111,15 @@
             if(form.elements[i].name != "" && form.elements[i].value==="")
                 {
                     message = message + "<p><b>Please fill the " + form.elements[i].name + " field.</b></p>" ;
-                }  
-        
+                }
+
         var ret1 = 0 ;
         if (message != ""){
                 ret1 = 1 ;
                 $("#errorContent").html(message);
                 $(".formErrors").modal("show") ;
         }
-        
+
         if(ret1 == 0)
             {
                 var formData = new FormData(form);
@@ -153,7 +153,7 @@
 
 
     }
-    
-</script> 
+
+</script>
 
 {% endblock %}

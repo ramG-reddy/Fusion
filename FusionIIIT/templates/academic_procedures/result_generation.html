@@ -4,7 +4,7 @@
 <form id='result_generation_form' action='/academic-procedures/generate_result_pdf/' method="POST" class="ui form">
     {% csrf_token %}
 <h3 class="ui blue header">Generate Results as PDF :</h3>
-<div class="ui form" style="border: black" > 
+<div class="ui form" style="border: black" >
 <div class="two fields">
 	<div class="field">
         <select class="ui dropdown" name="programme">
@@ -35,4 +35,3 @@
 </div>
 	<center><button class="ui primary button" type="submit" id="res_generate"> Generate PDF </button></center>
 </form>
-

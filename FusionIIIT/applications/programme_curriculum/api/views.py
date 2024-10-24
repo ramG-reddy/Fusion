@@ -1,37 +1,18 @@
+from applications.programme_curriculum.models import (
+    Curriculum,
+    Discipline,
+    Programme,
+)
+from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-from rest_framework import status
-
-from applications.programme_curriculum.models import (
-    Programme,
-    Discipline,
-    Curriculum,
-    Semester,
-    Course,
-    Batch,
-    CourseSlot,
-    CourseInstructor,
-)
 
 from .serializers import (
-    ProgrammeSerializer,
     CurriculumSerializer,
-    ProgrammePostSerializer,
-    SemesterSerializer,
-    DisciplineSerializer,
-    CourseSerializer,
-    CourseSlotSerializer,
-    BatchSerializer,
     ProgrammeInfoSerializer,
+    ProgrammePostSerializer,
+    ProgrammeSerializer,
 )
-
-from applications.programme_curriculum.filters import (
-    CourseFilter,
-    BatchFilter,
-    CurriculumFilter,
-)
-from rest_framework import generics
 
 
 @api_view(["GET", "POST"])

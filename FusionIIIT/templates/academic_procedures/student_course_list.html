@@ -1,5 +1,5 @@
 {% load static %}
- 
+
 {% if course_list %}
     <table style="width: 100%">
     <tr>
@@ -13,7 +13,7 @@
             <center>Credits</center>
         </th>
     </tr>
-    {% for course in course_list %}    
+    {% for course in course_list %}
         <tr>
             <td style="width: 20%">
                 <center>{{course.course_id.code}}</center>
@@ -25,5 +25,5 @@
         </tr>
     {%endfor%}
 {%endif%}
- 
+
 </table>

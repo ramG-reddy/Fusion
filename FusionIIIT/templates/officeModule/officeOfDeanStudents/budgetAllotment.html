@@ -45,7 +45,7 @@
                         Category
                     </th>
                     <th class="four wide column">
-                    	
+
                     </th>
 
                 </tr>
@@ -56,7 +56,7 @@
         <!--backend the values off entries is being fetched from the budget_allotment table-->
         	{% for i in budget_allotment %}
 
-        		<tr > 
+        		<tr >
         				<td>{{ i.club_name }}</td>
         				<td> {{ i.category }}</td>
         				<td> <div class="ui animated button" tabindex="0" onclick="modalAllot('{{ i.club_name }}')">
@@ -67,7 +67,7 @@
 							</div></td>
         		</tr>
 
-        	
+
 
 
         </tbody>
@@ -102,7 +102,7 @@
         <!--backend the values off entries is being fetched from the budget_allotment table-->
         	{% for i in budget_alloted %}
 
-        		<tr> 
+        		<tr>
         				<td>{{ i.club_name }}</td>
         				<td> {{ i.category }}</td>
         				<td class="bold"> {{ i.alloted_budget }}</td>
@@ -115,7 +115,7 @@
 
         		</tr>
 
-        	
+
 
 
         </tbody>

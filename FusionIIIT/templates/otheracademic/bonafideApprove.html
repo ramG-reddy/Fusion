@@ -25,7 +25,7 @@
                 <a href="/otheracademic/bonafideApproveForm" class="active item">Bonafide Approve
                     <i class="right floated chevron right icon"></i>
                 </a>
-                
+
             </div>
         </div>
 
@@ -43,7 +43,7 @@
                             <th>Purpose</th>
                             <th>Upload Document</th>
                             <th>Action</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
@@ -56,7 +56,7 @@
                                 <td>{{ entry.semester_types }}</td>
                                 <td>{{ entry.date_of_applications }}</td>
                                 <td>{{ entry.purposes }}</td>
-                                <td> 
+                                <td>
                                     <form action="{% url 'otheracademic:upload_file' entry_id=entry.id %}" method="post" enctype="multipart/form-data">
                                         {% csrf_token %}
                                         <input type="file" name="related_document" accept=".pdf, .doc, .docx, .txt" >
@@ -71,7 +71,7 @@
                                     <form action="{% url 'otheracademic:reject_bonafide' leave_id=entry.id %}" method="post">
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" type="submit">Reject</button>
-                                    </form> 
+                                    </form>
                                 </td>
                             {% endif %}
                         </tr>

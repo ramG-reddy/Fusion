@@ -36,9 +36,9 @@ Module
                 {% comment %}
                 TODO: Add a If-Else here!
                 {% endcomment %}
-                
 
-               
+
+
             </div>
 
 
@@ -230,12 +230,12 @@ Module
                                                 <input type="text" name="designation_employee" id="designation_employee" readonly>
                                             </div>
                                             <div class="six wide field">
-                                                <h1></h1>   
+                                                <h1></h1>
                                                 <button id="check_button" class="ui primary button">Check</button>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="two fields">
                                         <button id="forward-btn" class="ui primary button right floated" type="submit"
                                             value="Forward">
@@ -270,7 +270,7 @@ Module
                             </form>
 
                             <div id="data-of-past">
-                              
+
                             </div>
 
                             <br>
@@ -335,7 +335,7 @@ Module
         }
     });
 
-    
+
 </script>
 
 
@@ -384,8 +384,8 @@ Module
            //  var user_id = 5332;
 
             console.log(user_id)
-       
-            var type = 'Leave'; 
+
+            var type = 'Leave';
            $.ajax({
             type: 'GET',
                url: '/hr2/getformLeave/',
@@ -420,7 +420,7 @@ Module
            });
        });
    });
-  
+
 </script>
 
 <script>
@@ -445,7 +445,7 @@ Module
             var confirmation = confirm("Do you want to approve the request?")
 
             if(confirmation){
-                handleForwardOrReject(2);   
+                handleForwardOrReject(2);
             }
         });
         $('#archive-btn').click(function (event) {
@@ -454,7 +454,7 @@ Module
             var confirmation = confirm("Do you want to archive the file")
 
             if(confirmation){
-                handleForwardOrReject(3);   
+                handleForwardOrReject(3);
             }
         });
 
@@ -469,7 +469,7 @@ Module
             var designation_employee = $('#designation_employee').val();
             var form_id = $('#form_id').val();
             var remark_id = $('#remark_id').val();
-            
+
 
             formData += '&context=' + JSON.stringify({
                 file_id: file_id,
@@ -479,7 +479,7 @@ Module
                 designation_employee:designation_employee,
                 form_id : form_id,
                 remark_id : remark_id
-                
+
             });
             // Fire an AJAX request to handle the action
             $.ajax({
@@ -487,7 +487,7 @@ Module
                 type: 'POST',
                 headers: {
                     'X-CSRFToken': getCookie('csrftoken')
-                 },  
+                 },
                 data: formData, // Send the serialized form data
                 success: function (data) {
                     // Handle success response, if needed

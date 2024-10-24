@@ -481,7 +481,7 @@ Module
                                             {% elif not awards %}
                                             <th>No Entries :-</th>
                                             {% endif%}
-                                            
+
                                             <tr>
                                                 <th>Sr.</th>
                                                 <th>Name</th>
@@ -681,7 +681,7 @@ Module
                 <div class="description">
                   <div class="ui items">
                     {% for app in appraisal_active_apps %}
-        
+
                       <div class="item">
                           <div class="content">
                               <div class="header">Status : {{app.status}}</div><br>
@@ -695,7 +695,7 @@ Module
                                   {% else %}
                                     <span><b>Hod Review: </b>Under Review</span>
                                   {% endif %} -->
-        
+
                                   <br>
                                   <span><b>Director Review: </b>{{app2.remark_director}}</span>
                                   <!-- {% if app2.remarks_director %}
@@ -724,16 +724,16 @@ Module
                                 <label>Application id : {{ app.id }}</label><br>
                                   <label>Status : {{ app.status }}</label><br>
                                   <hr style="height:5px;background-color:#333;">
-        
+
                                   <label><strong>Name: </strong> {{app.applicant.username}} </label><br>
                                   <label><strong>Designation: </strong>{{app.designation}}</label><br>
                                   <label><strong>Discipline: </strong>{{app.discipline}}</label><br>
                                   <label><strong>Specific Field Of Knowledge: </strong>{{app.knowledge_field}}</label><br>
                                   <label><strong>Current Research Element: </strong>{{app.research_interest}}</label><br>
                                   <hr style="height:5px;background-color:#333;">
-        
+
                                   <h2>1.&emsp; INSTRUCTION ELEMENT</h2>
-        
+
                                   <h3>1.1 &emsp; Courses Taught at UG/PG Level</h3>
                                   <table>  <!-- the container to add the TABLE -->
                                     <tr>
@@ -749,7 +749,7 @@ Module
                                           </tr>
                                       {% endfor %}
                                   </table>
-        
+
                                   <h3>1.2 &emsp; New Courses/Laboratory experiments Introduced and  Taught</h3>
                                   <table>  <!-- the container to add the TABLE -->
                                     <tr>
@@ -773,7 +773,7 @@ Module
                                       {% endif %}
                                     {% endfor %}
                                   </table>
-        
+
                                   <h3>1.3 &emsp; New Course Material / Instructional Software Developed</h3>
                                   <table>
                                     <tr>
@@ -793,15 +793,15 @@ Module
                                           <td>{{obj.availiability}}</td>
                                         </tr>
                                       {% endif %}
-                                  {% endfor %} 
+                                  {% endfor %}
                                   </table>
-        
-                                  
+
+
                                   <hr style="height:5px;background-color:#333;">
-        
-        
+
+
                                   <h2>2.&emsp; RESEARCH ELEMENT</h2>
-        
+
                                   <h3>2.1 &emsp; Thesis/Research Supervision</h3>
                                   <table>
                                     <tr>
@@ -823,7 +823,7 @@ Module
                                       {% endif %}
                                     {% endfor %}
                                   </table>
-        
+
                                   <h3>2.2 &emsp; Sponsored Research and Consultancy Projects</h3>
                                   <table>
                                     <tr>
@@ -846,7 +846,7 @@ Module
                                         </tr>
                                       {% endif %}
                                     {% endfor %}
-        
+
                                     {% for object in research_projects %}
                                       {% if app.start_date <= object.start_date and object.start_date <= app.end_date or app.start_date <= object.finish_date and object.finish_date <= app.end_date or app.start_date <= object.date_submission and object.date_submission <= app.end_date %}
                                       <tr>
@@ -859,10 +859,10 @@ Module
                                       </tr>
                                       {% endif %}
                                     {% endfor %}
-        
+
                                   </table>
                                   <br><br>
-        
+
                                   <label for="other_research_element"><h3>2.3 &emsp; Other Research Element:</h3></label>
                                   <!-- <textarea name= "other_research_element" rows="2" cols="30" placeholder="such as Development of Research Facilities, Patent(Applied For/Granted), Transfer of Technology, etc"></textarea> -->
                                   <br>
@@ -889,7 +889,7 @@ Module
                                     {% endfor %}
                                   </table>
                                   <br>
-        
+
                                   <table>
                                     {% for object in tech_transfer %}
                                       {% if app.start_date <= object.start_date and object.start_date <= app.end_date or app.start_date <= object.end_date and object.end_date <= app.end_date %}
@@ -905,7 +905,7 @@ Module
                                     {% endfor %}
                                   </table>
                                   <br><br>
-        
+
                                   <label for="publications"><h3>2.4 &emsp; Publication(s)</h3></label>
                                   <br>
                                   <table>
@@ -935,10 +935,10 @@ Module
                                     {% endfor %}
                                   </table>
                                   <br><br>
-        
+
                                   <label><h3>2.5 &emsp; Conferences Attended:</h3></label>
                                   <label>{{app.conferences_meeting_attended}}</label><br><br>
-        
+
                                   <label><h3>2.6 &emsp; Conferences Organized:</h3></label>
                                   <table>
                                     <tr>
@@ -957,7 +957,7 @@ Module
                                     {% endfor %}
                                   </table>
                                   <br><br>
-        
+
                                   <label><h3>2.7 &emsp; Professional Recognition</h3></label>
                                   <br>
                                   <label><h4>2.7.1 &emsp; Honours/Prizes/Awards/Fellowship etc.</h4></label>
@@ -976,7 +976,7 @@ Module
                                     {% endfor %}
                                   </table>
                                   <br>
-        
+
                                   <label><h4>2.7.2 &emsp; Expert/Invited Lecture Delivered</h4></label>
                                   <table>
                                     <tr>
@@ -999,33 +999,33 @@ Module
                                     {% endfor %}
                                   </table>
                                   <br>
-        
+
                                   <hr  style="height:5px;background-color:#333;">
-        
-        
+
+
                                   <h2>3.&emsp; ADMINISTRATION ASSIGNMENT</h2>
                                   <br>
                                   <label><h3>3.1 &emsp; Administrative Assignments: </h3></label>
                                   <label>{{app.admin_assign}}</label>
                                   <br><br>
-        
+
                                   <label><h3>3.2 &emsp; Service To Institute Community: </h3></label>
                                   <label>{{app.sevice_to_ins}}</label>
                                   <br><br>
-        
+
                                   <label><h3>3.3 &emsp; Any Other Contribution: </h3></label>
                                   <label>{{app.extra_info}}</label>
                                   <br><br>
                                   <hr  style="height:5px;background-color:#333;">
-        
+
                                   <label><h2>4.&emsp;SELF-APPRAISAL BY FACULTY</h2></label>
                                   <label>{{app.faculty_comments}}</label>
                                   <br><br>
-        
+
                                   <hr  style="height:5px;background-color:#333;">
                                   <br><br>
-        
-        
+
+
                               </div>
                               <button class="ui large primary button" onclick="printDiv('appraisal_form_v{{app.id}}')" value="Print">Print </button>
                           </div>

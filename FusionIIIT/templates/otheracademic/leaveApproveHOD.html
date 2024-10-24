@@ -32,7 +32,7 @@
                     {% include 'globals/usercard.html' %}
                 {% endblock %}
                 <div class="ui divider">
-                   
+
                 </div>
                 <div class="ui huge fluid vertical pointing menu" style="max-width: 320px;">
                     <a href="/otheracademic/leaveApproveForm/" class="item">Leave Approve HOD (UG)
@@ -63,7 +63,7 @@
                         <table class="ui celled table">
                             <thead>
                                 <tr>
-                                    
+
                                     <th>Roll No.</th>
                                     <th>Student Name</th>
                                     <th>Programme</th>
@@ -88,7 +88,7 @@
                                 {% if entry.ta_approved %}
                                 <tr>
                                     {% if not entry.hod_approved and not entry.hod_rejected %}
-                                    
+
                                     <td>{{ entry.roll_no_id }}</td>
                                     <td>{{ entry.student_name }}</td>
                                     <td>{{ entry.programme}}</td>
@@ -103,7 +103,7 @@
                                         {%else%}
                                             <a href={{ entry.upload_file.url }}>Download</a>
                                         {%endif%}
-                                    </td> 
+                                    </td>
                                     <td>{{ entry.purpose }}</td>
                                     <td>{{ entry.address }}</td>
                                     <td>{{ entry.mobile_no }}</td>

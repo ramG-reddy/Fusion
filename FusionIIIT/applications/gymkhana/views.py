@@ -1,40 +1,28 @@
-from django.db import transaction
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, redirect, render
-from django.utils.dateparse import parse_date
-from django.db.models import Q
-from bisect import bisect
-from django.contrib import messages
-from django.shortcuts import *
-from applications.filetracking.models import File, Tracking
-from django.template.defaulttags import csrf_token
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.contrib.auth.decorators import login_required
-from django.db import IntegrityError
-from django.core import serializers
-from django.contrib.auth.models import User
-from timeit import default_timer as time
-from django.core.exceptions import ObjectDoesNotExist
-from notification.views import (
-    gymkhana_voting,
-    office_module_notif,
-    gymkhana_session,
-    gymkhana_event,
-)
-from applications.globals.models import HoldsDesignation
-from django.views.decorators.csrf import ensure_csrf_cookie
-from applications.academic_information.models import Student
-from applications.globals.models import *
-from datetime import datetime
-from django.core import serializers
 import json
-from .models import *
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
-
 import logging
+from datetime import datetime
+
+from applications.academic_information.models import Student
+from applications.filetracking.models import File, Tracking
+from applications.globals.models import *
+from applications.globals.models import HoldsDesignation
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.core import serializers
+from django.core.exceptions import ObjectDoesNotExist
+from django.db import IntegrityError, transaction
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import *
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.csrf import csrf_exempt
+from notification.views import (
+    gymkhana_event,
+    gymkhana_session,
+    office_module_notif,
+)
+
+from .models import *
 
 logger = logging.getLogger(__name__)
 
@@ -94,7 +82,7 @@ def delete_sessions(request):
             delSession = Session_info.objects.get(id=ids)
             delSession.delete()
         return HttpResponse("success")
-    except Exception as e:
+    except Exception:
         logger.error("An error was encountered")
         return HttpResponse("error")
 
@@ -133,8 +121,7 @@ def editsession(request, session_id):
             end_time = body.get("end_time")
             desc = body.get("d_d")
             club_name = coordinator_club(request)
-            result = conflict_algorithm_session(
-                date, start_time, end_time, venue)
+            result = conflict_algorithm_session(date, start_time, end_time, venue)
             message = ""
             if result == "success":
                 event = Session_info.objects.select_related(
@@ -247,7 +234,7 @@ def delete_events(request):
             ).get(id=ids)
             delEvent.delete()
         return HttpResponse("success")
-    except Exception as e:
+    except Exception:
         logger.error("An error was encountered")
         return HttpResponse("error")
 
@@ -288,8 +275,7 @@ def edit_event(request, event_id):
             end_time = body.get("end_time")
             desc = body.get("d_d")
             club_name = coordinator_club(request)
-            result = conflict_algorithm_event(
-                date, start_time, end_time, venue)
+            result = conflict_algorithm_event(date, start_time, end_time, venue)
             message = ""
             if result == "success":
                 event = Event_info.objects.select_related(
@@ -316,7 +302,7 @@ def edit_event(request, event_id):
                 event.end_time = end_time
                 event.event_poster = event_poster
                 event.details = desc
-                event.status = 'confirmed'
+                event.status = "confirmed"
                 event.save()
                 # e = Event_info.objects.filter(id=event_id).update(club = club_name, event_name=event_name, incharge=incharge, venue = venue, date =date, start_time=start_time , end_time = end_time ,event_poster = event_poster , details = desc)
                 message += "Your form has been dispatched for further process"
@@ -409,7 +395,7 @@ def delete_memberform(request):
             ).get(id=ids)
             delMemberform.delete()
         return HttpResponse("success")
-    except Exception as e:
+    except Exception:
         logger.error("An error was encountered")
         return HttpResponse("error")
 
@@ -445,7 +431,7 @@ def facultyData(request):
                 facultyNames.append(name)
         faculty = json.dumps(facultyNames)
         return HttpResponse(faculty)
-    except Exception as e:
+    except Exception:
         return HttpResponse("error")
 
 
@@ -470,7 +456,7 @@ def studentsData(request):
         )
         students = serializers.serialize("json", students)
         return HttpResponse(students)
-    except Exception as e:
+    except Exception:
         return HttpResponse("error")
 
 
@@ -488,14 +474,10 @@ def studentsClubMembers(request):
     print(club_filter)
     try:
         # students = ExtraInfo.objects.all().filter(user_type="student").filter(id__startswith=current_value)
-        students = (
-            Club_member.objects.select_related()
-            .all()
-            .filter(club=club_filter)
-        )
+        students = Club_member.objects.select_related().all().filter(club=club_filter)
         students = serializers.serialize("json", students)
         return HttpResponse(students)
-    except Exception as e:
+    except Exception:
         return HttpResponse("error")
 
 
@@ -629,7 +611,7 @@ def new_club(request):
                 message
                 + "The form has been successfully dispatched for further process"
             )
-        except Exception as e:
+        except Exception:
             result = "error"
             message = "Some error occurred"
 
@@ -709,7 +691,7 @@ def delete_requests(request):
             register_objects = Registration_form.objects.all()
             register_objects.delete()
 
-        except Exception as e:
+        except Exception:
             result = "error"
             message = "Some error occured."
         content = {
@@ -743,8 +725,7 @@ def registration_form(request):
         try:
             # getting form data
             info = (
-                Student.objects.select_related(
-                    "id", "id__user", "id__department")
+                Student.objects.select_related("id", "id__user", "id__department")
                 .get(id__user=request.user)
                 .cpi
             )
@@ -920,12 +901,10 @@ def return_content(request, roll, name, desig, club__, student_clubs, notificati
         )
 
         try:
-            form_name = Form_available.objects.get(
-                roll=request.user.username).form_name
+            form_name = Form_available.objects.get(roll=request.user.username).form_name
             logger.info(f"{form_name} MKNCjncknisncs")
-            status = Form_available.objects.get(
-                roll=request.user.username).status
-        except Exception as e:
+            status = Form_available.objects.get(roll=request.user.username).status
+        except Exception:
             forms = Form_available.objects.all()
             for form in forms:
                 form_name = form.form_name
@@ -1050,7 +1029,6 @@ def sc(request):
 
     # Iterate over the clubs associated with the user
     for club in clubs:
-
         clubinfo.append(club.club)
 
     return clubinfo
@@ -1078,8 +1056,7 @@ def gymkhana(request):
     roll = request.user
     name = request.user.first_name + "_" + request.user.last_name
     designations = list(
-        HoldsDesignation.objects.select_related(
-            "user", "working", "designation")
+        HoldsDesignation.objects.select_related("user", "working", "designation")
         .all()
         .filter(working=request.user)
         .values_list("designation")
@@ -1106,7 +1083,7 @@ def gymkhana(request):
         "faculty_incharge__id__user",
         "faculty_incharge__id__department",
     ).all():
-        lines = str("")
+        lines = ""
         Types = lines.split(" ")
     club__ = coordinator_club(request)
     print(club__)
@@ -1114,7 +1091,9 @@ def gymkhana(request):
     return render(
         request,
         "gymkhanaModule/gymkhana.html",
-        return_content(request, roll, name, roll_, club__, student_clubs, notifications),
+        return_content(
+            request, roll, name, roll_, club__, student_clubs, notifications
+        ),
     )
 
 
@@ -1157,7 +1136,7 @@ def club_membership(request):
                 member=student, club=club_name, description=achievements
             )
             club_member.save()
-        except Exception as e:
+        except Exception:
             result = "error"
             message = "Some error occurred"
 
@@ -1391,44 +1370,73 @@ def club_report(request):
 def change_head(request):
     if request.method == "POST":
         club = request.POST.get("club")
-        co_ordinator = request.POST.get('co')
-        co_coordinator = request.POST.get('coco')
+        co_ordinator = request.POST.get("co")
+        co_coordinator = request.POST.get("coco")
 
-        desc = "co-ordinator and co co-ordinator changed on " + \
-            str(timezone.now())
+        desc = "co-ordinator and co co-ordinator changed on " + str(timezone.now())
         message = ""
 
         club_info = Club_info.objects.get(club_name=club)
 
         if co_ordinator:
             check = Club_member.objects.filter(
-                club_id=club, member_id=co_ordinator).exists()
+                club_id=club, member_id=co_ordinator
+            ).exists()
             if check == False:
-                return HttpResponse(json.dumps({'status': 'error', 'message': 'Selected student is not a member of the club'}))
+                return HttpResponse(
+                    json.dumps(
+                        {
+                            "status": "error",
+                            "message": "Selected student is not a member of the club",
+                        }
+                    )
+                )
             co_ordinator_student = Student.objects.get(id_id=co_ordinator)
             old_co_ordinator = club_info.co_ordinator_id
             club_info.co_ordinator_id = co_ordinator_student
-            new_co_ordinator = HoldsDesignation(user=User.objects.get(username=co_ordinator), working=User.objects.get(
-                username=co_ordinator), designation=Designation.objects.get(name="co-ordinator"))
+            new_co_ordinator = HoldsDesignation(
+                user=User.objects.get(username=co_ordinator),
+                working=User.objects.get(username=co_ordinator),
+                designation=Designation.objects.get(name="co-ordinator"),
+            )
             new_co_ordinator.save()
-            old_co_ordinator_obj = HoldsDesignation.objects.select_related('user', 'working', 'designation').filter(
-                user__username=old_co_ordinator, designation=Designation.objects.get(name="co-ordinator"))
+            old_co_ordinator_obj = HoldsDesignation.objects.select_related(
+                "user", "working", "designation"
+            ).filter(
+                user__username=old_co_ordinator,
+                designation=Designation.objects.get(name="co-ordinator"),
+            )
             old_co_ordinator_obj.delete()
             message += "Successfully changed co-ordinator !!!"
 
         if co_coordinator:
             check = Club_member.objects.filter(
-                club_id=club, member_id=co_coordinator).exists()
+                club_id=club, member_id=co_coordinator
+            ).exists()
             if check == False:
-                return HttpResponse(json.dumps({'status': 'error', 'message': 'Selected student is not a member of the club'}))
+                return HttpResponse(
+                    json.dumps(
+                        {
+                            "status": "error",
+                            "message": "Selected student is not a member of the club",
+                        }
+                    )
+                )
             co_coordinator_student = Student.objects.get(id_id=co_coordinator)
             old_co_coordinator = club_info.co_coordinator_id
             club_info.co_coordinator_id = co_coordinator_student
-            new_co_coordinator = HoldsDesignation(user=User.objects.get(username=co_coordinator), working=User.objects.get(
-                username=co_coordinator), designation=Designation.objects.get(name="co co-ordinator"))
+            new_co_coordinator = HoldsDesignation(
+                user=User.objects.get(username=co_coordinator),
+                working=User.objects.get(username=co_coordinator),
+                designation=Designation.objects.get(name="co co-ordinator"),
+            )
             new_co_coordinator.save()
-            old_co_coordinator_obj = HoldsDesignation.objects.select_related('user', 'working', 'designation').filter(
-                user__username=old_co_coordinator, designation=Designation.objects.get(name="co co-ordinator"))
+            old_co_coordinator_obj = HoldsDesignation.objects.select_related(
+                "user", "working", "designation"
+            ).filter(
+                user__username=old_co_coordinator,
+                designation=Designation.objects.get(name="co co-ordinator"),
+            )
             old_co_coordinator_obj.delete()
             message += " Successfully changed co-coordinator !!!"
 
@@ -1436,8 +1444,8 @@ def change_head(request):
         club_info.save()
 
         content = {
-            'status': "success",
-            'message': message,
+            "status": "success",
+            "message": message,
         }
 
         content = json.dumps(content)
@@ -1480,8 +1488,7 @@ def new_session(request):
             end_time = request.POST.get("end_time")
             desc = request.POST.get("d_d")
             club_name = coordinator_club(request)
-            result = conflict_algorithm_session(
-                date, start_time, end_time, venue)
+            result = conflict_algorithm_session(date, start_time, end_time, venue)
             message = ""
             getstudents = ExtraInfo.objects.select_related("user", "department").filter(
                 user_type="student"
@@ -1556,8 +1563,7 @@ def new_event(request):
             end_time = request.POST.get("end_time")
             desc = request.POST.get("d_d")
             club_name = coordinator_club(request)
-            result = conflict_algorithm_event(
-                date, start_time, end_time, venue)
+            result = conflict_algorithm_event(date, start_time, end_time, venue)
             message = ""
             getstudents = ExtraInfo.objects.select_related("user", "department").filter(
                 user_type="student"
@@ -1588,7 +1594,7 @@ def new_event(request):
                 )
             else:
                 message += "The selected time slot for the given date and venue conflicts with already booked session"
-        except Exception as e:
+        except Exception:
             result = "error"
             message = "Some error occurred"
 
@@ -1690,15 +1696,13 @@ def club_approve(request):
             club_info.created_on = timezone.now()
             club_info.save()
 
-            user_name1 = get_object_or_404(
-                User, username=club_info.co_ordinator)
+            user_name1 = get_object_or_404(User, username=club_info.co_ordinator)
             extra1 = get_object_or_404(
                 ExtraInfo, id=club_info.co_ordinator, user=user_name1
             )
             student1 = get_object_or_404(Student, id=extra1)
 
-            user_name2 = get_object_or_404(
-                User, username=club_info.co_coordinator)
+            user_name2 = get_object_or_404(User, username=club_info.co_coordinator)
             extra2 = get_object_or_404(
                 ExtraInfo, id=club_info.co_coordinator, user=user_name2
             )
@@ -1808,8 +1812,7 @@ def cancel(request):
         extra1 = get_object_or_404(ExtraInfo, id=info[0], user=user_name)
         student = get_object_or_404(Student, id=extra1)
 
-        club_member = get_object_or_404(
-            Club_member, club=user[1], member=student)
+        club_member = get_object_or_404(Club_member, club=user[1], member=student)
 
         club_member.delete()
         messages.success(request, "Successfully deleted !!!")
@@ -2136,7 +2139,8 @@ def budget_approve(request):
         for club in first_words:
             print(club)
             club_budget_list = Club_budget.objects.filter(
-                club_id=club, status="open")  # Ensure status is open
+                club_id=club, status="open"
+            )  # Ensure status is open
             print(club_budget)
             for single_club in club_budget_list:
                 single_club.status = "confirmed"
@@ -2144,9 +2148,7 @@ def budget_approve(request):
                 # single_club.alloted_budget = single_club.alloted_budget + single_club.budget_amt
                 single_club.save()
                 # club_budget.save()
-            messages.success(
-                request, f"Successfully budget approved for club."
-            )
+            messages.success(request, "Successfully budget approved for club.")
     return redirect("/gymkhana/")
 
 
@@ -2170,13 +2172,10 @@ def budget_reject(request):
 
         for club in first_words:
             print(club)
-            club_budget = Club_budget.objects.get(
-                club_id=club, status="open"
-            )
+            club_budget = Club_budget.objects.get(club_id=club, status="open")
             club_budget.status = "rejected"
             club_budget.save()
-            messages.success(
-                request, f"Successfully budget rejected for club.")
+            messages.success(request, "Successfully budget rejected for club.")
     return redirect("/gymkhana/")
 
 
@@ -2545,6 +2544,7 @@ def del_club(request):
 
     return redirect("/gymkhana/")
 
+
 def approve_events(request):
     selected_ids = request.POST.get("ids")
 
@@ -2559,7 +2559,12 @@ def approve_events(request):
                 event.status = "confirmed"
                 event.save()
             except ObjectDoesNotExist:
-                return JsonResponse({"status": "error", "message": f"Event with ID {event_id} does not exist"})
+                return JsonResponse(
+                    {
+                        "status": "error",
+                        "message": f"Event with ID {event_id} does not exist",
+                    }
+                )
 
         return JsonResponse({"status": "success"})
     except Exception as e:
@@ -2567,13 +2572,12 @@ def approve_events(request):
 
 
 def update_club_name(request):
-    club_id = request.POST.get('club_id')
-    new_name = request.POST.get('new_name')
+    club_id = request.POST.get("club_id")
+    new_name = request.POST.get("new_name")
 
     if club_id and new_name:
         try:
             with transaction.atomic():
-
                 club = Club_info.objects.get(club_name=club_id)
 
                 co_ordinator_id = club.co_ordinator_id
@@ -2594,73 +2598,85 @@ def update_club_name(request):
                     status="open",
                     description=description,
                     activity_calender=activity_calender,
-                    category=category
-
-
+                    category=category,
                 )
                 new_club.save()
 
-            return JsonResponse({'status': 'success'})
+            return JsonResponse({"status": "success"})
         except Club_info.DoesNotExist:
-            return JsonResponse({'status': 'error', 'message': 'Club not found'})
-        
-        
-  
+            return JsonResponse({"status": "error", "message": "Club not found"})
+
+
 @csrf_exempt
 def update_budget_amount(request):
     print("inside function")
-    if request.method == 'POST':
-        budget_id = request.POST.get('budget_id')
-        req_id=request.POST.get('req_id')
-        
+    if request.method == "POST":
+        budget_id = request.POST.get("budget_id")
+        req_id = request.POST.get("req_id")
+
         print(budget_id)
         print(req_id)
         # Fetch the budget object
-        
-        budget = Club_budget.objects.get(id=budget_id)
-        if req_id=="spent":
-            new_budget = float(request.POST.get('new_budget'))  # convert new_budget to float
 
-        # Fetch the budget object
+        budget = Club_budget.objects.get(id=budget_id)
+        if req_id == "spent":
+            new_budget = float(
+                request.POST.get("new_budget")
+            )  # convert new_budget to float
+
+            # Fetch the budget object
             budget = Club_budget.objects.get(id=budget_id)
 
-        # Update the budget amount
+            # Update the budget amount
             if new_budget > budget.budget_amt:
-                return JsonResponse({'status': 'error', 'message': 'Spent amount cannot be greater than available amount!'})
+                return JsonResponse(
+                    {
+                        "status": "error",
+                        "message": "Spent amount cannot be greater than available amount!",
+                    }
+                )
             budget.budget_amt = budget.budget_amt - new_budget
             budget.save()
-            
+
         else:
-        # Update the budget amount
-            new_budget = request.POST.get('new_budget')
+            # Update the budget amount
+            new_budget = request.POST.get("new_budget")
             budget.budget_amt = new_budget
             budget.save()
 
-        # Return a success response
-            return JsonResponse({'status': 'success', 'message': 'Budget amount updated successfully'})
+            # Return a success response
+            return JsonResponse(
+                {"status": "success", "message": "Budget amount updated successfully"}
+            )
 
     # Return an error response if not a POST request
-    return JsonResponse({'status': 'error', 'message': 'Invalid request'})
-
+    return JsonResponse({"status": "error", "message": "Invalid request"})
 
 
 @csrf_exempt
 def update_spent_amount(request):
-    if request.method == 'POST':
-        budget_id = request.POST.get('budget_id')
-        new_budget = float(request.POST.get('new_budget'))  # convert new_budget to float
+    if request.method == "POST":
+        budget_id = request.POST.get("budget_id")
+        new_budget = float(
+            request.POST.get("new_budget")
+        )  # convert new_budget to float
 
         # Fetch the budget object
         budget = Club_budget.objects.get(id=budget_id)
 
         # Update the budget amount
         if new_budget > budget.budget_amt:
-            return JsonResponse({'status': 'error', 'message': 'Spent amount cannot be greater than available amount!'})
+            return JsonResponse(
+                {
+                    "status": "error",
+                    "message": "Spent amount cannot be greater than available amount!",
+                }
+            )
         budget.budget_amt = budget.budget_amt - new_budget
         budget.save()
 
         # Return a success response
-        return redirect('/gymkhana/')
+        return redirect("/gymkhana/")
 
     # Return an error response if not a POST request
-    return JsonResponse({'status': 'error', 'message': 'Invalid request'})
+    return JsonResponse({"status": "error", "message": "Invalid request"})

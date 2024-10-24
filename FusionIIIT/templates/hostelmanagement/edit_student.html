@@ -24,7 +24,7 @@ Hostel
     <div class="eight wide column">
         <div class="row">
 
-            
+
             <h2>Edit Student Details</h2>
             <form method="post" class="ui form" action="{% url 'hostelmanagement:edit_student' student.id.id %}">
                 {% csrf_token %}
@@ -43,7 +43,7 @@ Hostel
                 <label for="batch">Batch:</label>
                 <input type="text" id="batch" name="batch" value="{{ student.batch }}"><br>
                 <span id="batch_error" style="color: red;"></span><br>
-                
+
                 <label for="hall_number">Hall Number:</label>
                 <input type="text" id="hall_number" name="hall_number" value="{{ student.hall_no }}"><br>
 
@@ -65,7 +65,7 @@ Hostel
                 <br>
                 <button type="submit" class="ui button primary" id="saveChangesBtn">Save Changes</button>
                 <a href="{% url 'hostelmanagement:hostel_view' %}" class="ui button">Back to Homepage</a>
-                
+
             </form>
             <br>
         </div>

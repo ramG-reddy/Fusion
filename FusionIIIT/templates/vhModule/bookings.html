@@ -11,7 +11,7 @@
 <!-- <div style="border: none; float: right; display: block;" class="ui tiny red button center floated" onclick="requestModal()">
     Place Request
 </div> -->
-<!-- 
+<!--
 <button style="background-color: white;border: none; float: right; font-size: 2em; display: block;" data-tooltip="Place Request" onclick="requestModal()"><i class="plus square icon"></i></button> -->
 
 <div class="ui pointing secondary menu">
@@ -34,7 +34,7 @@
     </a>
 
     {% endif %}
-<!-- 
+<!--
     <a class="item" data-tab="rejected-bookings">
         Rejected Bookings
     </a> -->
@@ -61,7 +61,7 @@
                             <th class="two wide column">Category</th>
                             {% if user_designation == "Intender" %}
 
-                            <th class="two wide column">Status</th> 
+                            <th class="two wide column">Status</th>
                             {% endif %}
                         </tr>
                     </thead>
@@ -92,7 +92,7 @@
                                     <!--<td>
                                         {% if booking.status == "Pending" %}
                                             <button class="tiny ui inverted basic button" data-tooltip="Pending"><i class="yellow exclamation icon"></i></button>
-                                        
+
                                         {% elif booking.status == "Confirmed" %}
                                             <button class="tiny ui inverted basic button" data-tooltip="Confirmed"><i class="green check icon"></i></button>
 
@@ -123,9 +123,9 @@
                                             <div class="ui medium green button center floated" onclick="bookingRequestModal('{{ booking.id }}')">
                                                 Confirm
                                             </div>
-                                            
+
                                     {% elif booking.status == "Confirmed" %}
-                                    
+
                                             <div class="ui medium button center floated">
                                                 Confirmed
                                             </div>
@@ -160,7 +160,7 @@
                                 <td>
                                     {% if booking.status == "Pending" %}
                                         <button class="tiny ui inverted basic button" data-tooltip="Pending"><i class="yellow exclamation icon"></i></button>
-                                    
+
                                     {% elif booking.status == "Confirmed" %}
                                         <button class="tiny ui inverted basic button" data-tooltip="Confirmed"><i class="green check icon"></i></button>
 
@@ -182,7 +182,7 @@
 
                                 </td>
                                 {% endif %}
-                                <td class="update" onclick="updateBookingModal('{{ booking.id }}')"> 
+                                <td class="update" onclick="updateBookingModal('{{ booking.id }}')">
                                     <button style="background-color: white;border: none; float: right; font-size: 2em; display: block;" data-tooltip="View Request">
                                     <i class="tiny eye icon"></i></button>
                                 </td>
@@ -192,12 +192,12 @@
 
 
                                 {% if user_designation == 'Intender' %}
-                            
+
 
                                 {% if booking.status == "Rejected" %}
-                                    
+
                                 {% else %}
-                                
+
                                 <td class="delete" onclick="bookingRequestModal('{{ booking.id }}')">
                                     <button style="background-color: white;border: none; float: right; font-size: 2em; display: block;" data-tooltip="Cancel Your Request">
                                     <i class="tiny close icon"></i></button></td>
@@ -212,7 +212,7 @@
                                             <i class="tiny close icon"></i>
                                         </button></td>
                                     {% else %}
-                                    
+
                                     <td class="delete" onclick="bookingRequestModal('{{ booking.id }}')">
                                         <button style="background-color: white;border: none; float: right; font-size: 2em; display: block;" data-tooltip="Cancel Your Request">
                                         <i class="tiny close icon"></i></button></td>
@@ -230,9 +230,9 @@
                                                 <div class="ui medium button center floated">
                                                     Confirmed
                                                 </div>
-                                                
+
                                         {% else %}
-                                        
+
                                                 <div class="ui medium green button center floated"  onclick="bookingRequestModal('{{ booking.id }}')">
                                                     Forward
                                                 </div>
@@ -256,7 +256,7 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
 
 
 {% if user_designation == "Intender" %}
@@ -294,7 +294,7 @@
                             <td>
                                 {% if booking.status == "Pending" %}
                                     <button class="tiny ui inverted basic button" data-tooltip="Pending"><i class="yellow exclamation icon"></i></button>
-                                
+
                                 {% elif booking.status == "Confirmed" %}
                                     <button class="tiny ui inverted basic button" data-tooltip="Confirmed"><i class="green check icon"></i></button>
 
@@ -363,7 +363,7 @@
                             <!-- <td>
                                 {% if booking.status == "Pending" %}
                                     <i class="yellow exclamation icon"></i>
-                                
+
                                 {% elif booking.status == "Confirmed" %}
                                     <i class="green check icon"></i>
 
@@ -496,7 +496,7 @@
                             <td>
                                 {% if booking.status == "Pending" %}
                                     <button class="tiny ui inverted basic button" data-tooltip="Pending"><i class="yellow exclamation icon"></i></button>
-                                
+
                                 {% elif booking.status == "Confirmed" %}
                                     <button class="tiny ui inverted basic button" data-tooltip="Confirmed"><i class="green check icon"></i></button>
 

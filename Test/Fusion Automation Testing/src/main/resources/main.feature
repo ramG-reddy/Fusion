@@ -1,4 +1,4 @@
-	
+
 Feature: Login Auth
 
 Scenario Outline: Login functionality exists
@@ -98,8 +98,3 @@ Scenario Outline: Login functionality exists
 |2018060|\he^Y_~|
 |2018071|YVd,t6%|
 |2018117|yxE^_6v|
-
-
-
-	
-	

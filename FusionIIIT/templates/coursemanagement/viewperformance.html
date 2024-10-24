@@ -245,7 +245,7 @@
           {% endfor %}
           </tbody>
         </table>
-        
+
     </div>
 
 
@@ -260,14 +260,14 @@
       <h4>Attendance % = {{attendance_percent}}</h4>
     </div>
   </div>
-  
+
 	<div style="overflow:scroll;height:20em;overflow-x:hidden;">
     <table class="ui fixed single line sortable celled table">
         <thead>
             <tr>
                 <th style="width: 30%;">Date.</th>
                 <th style="width: 30%;">Classes Attended</th>
-                      
+
             </tr>
         </thead>
         <tbody>
@@ -279,16 +279,16 @@
         		</tr>
             {% endfor %}
                        -->
-                   
-			  {% for date, present in present_attendance.items %}    
+
+			  {% for date, present in present_attendance.items %}
 			    <tr>
         		<td>{{date}}</td>
         		<td>{{present}}</td>
           </tr>
         {% endfor %}
         </tbody>
-    </table>  
-    
+    </table>
+
 </div>
 <div class="ui segment">
   <!-- <style>

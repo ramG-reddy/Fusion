@@ -615,4 +615,3 @@ $.extend( $.easing, {
 });
 
 })( jQuery, window, document );
-

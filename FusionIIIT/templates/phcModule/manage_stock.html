@@ -325,7 +325,7 @@
   <br />
   <div class="extra segment"></div>
 </div>
-{% comment %}the add stock tab ends here {% endcomment %} 
+{% comment %}the add stock tab ends here {% endcomment %}
 {% comment %}the addmedicine tab starts here {% endcomment %}
 <div class="ui tab" data-tab="addmedicine">
   <p id="med_add"></p>
@@ -547,7 +547,7 @@
   <br />
   <div class="extra segment"></div>
 </div>
-{% comment %}the add medicine tab ends here {% endcomment %} 
+{% comment %}the add medicine tab ends here {% endcomment %}
 {% comment %}the view stock tab starts here {% endcomment %}
 
 <div class="ui tab" data-tab="viewlivestock">
@@ -641,7 +641,7 @@
                 {% endfor %}
                 </tbody>
             </table>
-            
+
             <div class="pagination-stock-view" class="pagination-stock-view" style="display: flex; justify-content: center;align-items: center;gap: 15px;margin-top: 15px;">
               <button id="previous-page-stock" data-page="{{ live_meds.page_stock_view.previous_page_number }}" class="ui small muted button">Previous</button>
               <div>
@@ -672,11 +672,11 @@
           <!-- Download -->
           <i class="ui download icon right floated"></i>
         </button>
-    
+
         <script type="text/javascript">
           $("#exp_meds").click(function (e) {
             var sTable = document.getElementById("exmeds_print").innerHTML;
-    
+
             var style = "<style>";
             style = style + "table {width: 100%;font: 17px Calibri;}";
             style =
@@ -685,10 +685,10 @@
             style = style + "padding: 2px 3px;text-align: center;}";
             style+=".button{display:none}"
             style = style + "</style>";
-    
+
             // CREATE A WINDOW OBJECT.
             var win = window.open("", "", "height=700,width=700");
-    
+
             win.document.write("<html><head>");
             win.document.write("<title>Current Stock</title>"); // <title> FOR PDF HEADER.
             win.document.write(style); // ADD STYLE INSIDE THE HEAD TAG.
@@ -696,9 +696,9 @@
             win.document.write("<body>");
             win.document.write(sTable); // THE TABLE CONTENTS INSIDE THE BODY TAG.
             win.document.write("</body></html>");
-    
+
             win.document.close(); // CLOSE THE CURRENT WINDOW.
-    
+
             win.print(); // PRINT THE CONTENTS.
           });
         </script>
@@ -771,7 +771,7 @@
         </div>
     </div>
     {% comment %}the view stock tab ends here {% endcomment %}
-    
+
         {% comment %}the threshold stock tab starts here {% endcomment %}
         <div  class="ui tab" data-tab="thresholdstock">
           <form class="ui form" style="margin-bottom: 20px;" id="search_view_required">
@@ -836,24 +836,24 @@
                               '<td style="white-space:nowrap;">'+view.supplier +'</td>' +
                               '<td style="white-space:nowrap;">'+view.Expiry_date + '</td>' +
                               '<td style="white-space:nowrap;">'+view.quantity + '</td>' +
-                              
-                              
+
+
                               '</tr>'
                             );
                           });
-                          
+
                           if (data.stock_context.page_stock_view.has_previous) {
                             $('#previous-page-stock').data('page', data.stock_context.page_stock_view.previous_page_number).show();
                           } else {
                             $('#previous-page-stock').data('page', "None").show();
                           }
-                          
+
                           if (data.stock_context.page_stock_view.has_next) {
                             $('#next-page-stock').data('page', data.stock_context.page_stock_view.next_page_number).show();
                           } else {
                             $('#next-page-stock').data('page', "None").show();
                           }
-                          
+
                           $('.pagination-stock-view span').text('Page ' + data.stock_context.page_stock_view.number + ' of ' + data.stock_context.count_stock_view);
                           document.getElementById('live_stock_page_number').value=data.stock_context.page_stock_view.number
                           document.getElementById('live_stock_total_pages').innerHTML=data.stock_context.count_stock_view
@@ -865,7 +865,7 @@
                      $.ajax({
                          url: '',
                          type: 'POST',
-                         
+
                          data: {
                          csrfmiddlewaretoken: '{{ csrf_token }}',
                          page_stock_view: pageNumber,
@@ -875,7 +875,7 @@
                          success: function(data) {
                           console.log(data)
                              $('#view-stock-list').empty();
-                            
+
                              $.each(data.report_stock_view, function(index, view) {
                                 console.log("view",data)
                                  $('#view-stock-list').append(
@@ -887,13 +887,13 @@
                                      '</tr>'
                                  );
                              });
-                             
+
                              if (data.has_previous) {
                                  $('#previous-page-stock').data('page', data.previous_page_number).show();
                              } else {
                                 $('#previous-page-stock').data('page', "None").show();
                              }
-         
+
                              if (data.has_next) {
                                  $('#next-page-stock').data('page', data.next_page_number).show();
                              } else {
@@ -904,12 +904,12 @@
                          }
                      });
                  }
-         
+
                  $('#previous-page-stock').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPageManage(pageNumber);
                  });
-         
+
                  $('#next-page-stock').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPageManage(pageNumber);
@@ -934,7 +934,7 @@
                     },
                     success: function(data){
                       $('#manage-stock-expired').empty();
-                            
+
                             $.each(data.expired_context.page_stock_expired.object_list, function(index, view) {
                                 $('#manage-stock-expired').append(
                                     '<tr>' +
@@ -945,31 +945,31 @@
                                     '</tr>'
                                 );
                             });
-                            
+
                             if (data.expired_context.page_stock_expired.has_previous) {
                                 $('#previous-page-stock-expired').data('page', data.expired_context.page_stock_expired.previous_page_number).show();
                             } else {
                                 $('#previous-page-stock-expired').data('page', "None").show();
                             }
-        
+
                             if (data.expired_context.page_stock_expired.has_next) {
                                 $('#next-page-stock-expired').data('page', data.expired_context.page_stock_expired.next_page_number).show();
                             } else {
                                 $('#next-page-stock-expired').data('page', "None").show();
                             }
-        
+
                             $('.pagination-stock-expired span').text('Page ' + data.expired_context.page_stock_expired.number + ' of ' + data.expired_context.count_stock_expired);
                             document.getElementById('expired_page_number').value=data.expired_context.page_stock_expired.number
                             document.getElementById('expired_total_pages').innerHTML=data.expired_context.count_stock_expired
                         }
                       })
                     })
-                
+
                  function loadPageManageExpired(pageNumber) {
                      $.ajax({
                          url: '',
                          type: 'POST',
-                         
+
                          data: {
                          csrfmiddlewaretoken: '{{ csrf_token }}',
                          page_stock_expired: pageNumber,
@@ -978,7 +978,7 @@
                          },
                          success: function(data) {
                              $('#manage-stock-expired').empty();
-                            
+
                              $.each(data.report_stock_expired, function(index, view) {
                                 console.log("view",data)
                                  $('#manage-stock-expired').append(
@@ -990,31 +990,31 @@
                                      '</tr>'
                                  );
                              });
-                             
+
                              if (data.has_previous) {
                                  $('#previous-page-stock-expired').data('page', data.previous_page_number).show();
                              }
-         
+
                              if (data.has_next) {
                                  $('#next-page-stock-expired').data('page', data.next_page_number).show();
                              }
-         
+
                              $('.pagination-stock-expired span').text('Page ' + data.page_stock_expired + ' of ' + data.total_pages_stock_expired);
                              document.getElementById('expired_page_number').value=data.page_stock_expired
                              document.getElementById('expired_total_pages').innerHTML=data.total_pages_stock_expired
                          }
                      });
                  }
-         
+
                  $('#previous-page-stock-expired').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPageManageExpired(pageNumber);
                  });
-         
+
                  $('#next-page-stock-expired').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPageManageExpired(pageNumber);
-                     
+
                  });
                  $('#expired_page_number').change(function(){
                     if( document.getElementById('expired_page_number').value<=0 || document.getElementById('expired_page_number').value > document.getElementById('expired_total_pages').innerHTML){
@@ -1078,26 +1078,26 @@
                     },
                     success: function(data){
                       $('#req_med_tabel').empty();
-                            
+
                             $.each(data.stocks.page_stock_required.object_list, function(index, view) {
                                console.log("view",data)
                                 $('#req_med_tabel').append(
                                     '<tr>' +
                                        "<td>"+view.medicine_id +"</td>"+
                                        "<td>"+view.quantity+"</td>"+
-                                       "<td>"+view.threshold+"</td>"+                    
+                                       "<td>"+view.threshold+"</td>"+
                                     '</tr>'
                                 );
                             });
-                            
+
                             if (data.stocks.page_stock_required.has_previous) {
                                 $('#previous-page-stock-required').data('page', data.stocks.page_stock_required.previous_page_number).show();
                             }
-        
+
                             if (data.stocks.page_stock_required.has_next) {
                                 $('#next-page-stock-required').data('page', data.stocks.page_stock_required.next_page_number).show();
                             }
-        
+
                             $('.pagination-stock-required span').text('Page ' + data.stocks.page_stock_required.number + ' of ' + data.stocks.count_stock_required);
                             document.getElementById('required_page_number').value=data.stocks.page_stock_required.number
                             document.getElementById('required_total_pages').innerHTML=data.stocks.count_stock_required
@@ -1108,7 +1108,7 @@
                      $.ajax({
                          url: '',
                          type: 'POST',
-                         
+
                          data: {
                          csrfmiddlewaretoken: '{{ csrf_token }}',
                          page_stock_required: pageNumber,
@@ -1117,42 +1117,42 @@
                          },
                          success: function(data) {
                              $('#req_med_tabel').empty();
-                            
+
                              $.each(data.report_stock_required, function(index, view) {
                                 console.log("view",data)
                                  $('#req_med_tabel').append(
                                      '<tr>' +
                                         "<td>"+view.medicine_id +"</td>"+
                                         "<td>"+view.quantity+"</td>"+
-                                        "<td>"+view.threshold+"</td>"+                    
+                                        "<td>"+view.threshold+"</td>"+
                                      '</tr>'
                                  );
                              });
-                             
+
                              if (data.has_previous) {
                                  $('#previous-page-stock-required').data('page', data.previous_page_number).show();
                              }
-         
+
                              if (data.has_next) {
                                  $('#next-page-stock-required').data('page', data.next_page_number).show();
                              }
-         
+
                              $('.pagination-stock-required span').text('Page ' + data.page_stock_required + ' of ' + data.total_pages_stock_required);
                              document.getElementById('required_page_number').value=data.page_stock_required
                              document.getElementById('required_total_pages').innerHTML=data.total_pages_stock_required
                          }
                      });
                  }
-         
+
                  $('#previous-page-stock-required').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPageManageRequired(pageNumber);
                  });
-         
+
                  $('#next-page-stock-required').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPageManageRequired(pageNumber);
-                     
+
                  });
                  $('#required_page_number').change(function(){
                     if( document.getElementById('required_page_number').value<=0 || document.getElementById('required_page_number').value > document.getElementById('required_total_pages').innerHTML){

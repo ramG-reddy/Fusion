@@ -3,7 +3,7 @@
                 {% csrf_token %}
                 <h2 class="text-center" align="center">Assign Warden</h2>
                 <div class="field">
-                    
+
                   <label for="hall_id" class="form-label">Hall ID:</label>
                   <select name="hall_id" class="form-control" id="hallid" required>
                     <!-- Add an option for each hall ID dynamically -->
@@ -14,29 +14,29 @@
                 </div>
                 <div class="field">
                   <label for="warden_id" class="form-label">warden_id :</label>
-                  
+
                   <!-- <input type="text" name="caretaker_username" required class="form-control mb-3" id="caretaker_username"> -->
                   <select name="warden_id" class="form-control" id="warden_id" required>
-                   
+
                     {% for warden in warden_ids %}
                         <option value="{{warden.id.id }}">{{ warden.id.id}}</option>
                     {% endfor %}
                 </select>
-                
+
                 </div>
-                
+
                 <button type="submit" onclick="assignWarden()" class="ui primary button">Assign</button>
               </form>
-        
 
 
-    
+
+
 
     <script>
         function assignWarden() {
             var hall_id = document.getElementById('hallid').value;
             var warden_id = document.getElementById('warden_id').value;
-            
+
 
             // Perform AJAX request to assign batch
             fetch('/hostelmanagement/assign-warden', {
@@ -78,4 +78,3 @@
     </script>
 
 {% endblock %}
-

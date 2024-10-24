@@ -16,9 +16,9 @@ Resolved, Declined-->
         <a class="item" data-tab="declinedcomplaints">
            <i class="large red x icon"></i>  Declined<br> Complaints
         </a>
-    </div> 
-    
-    
+    </div>
+
+
     <div class="ui active tab large" data-tab="pendingcomplaints">
         <div class="ui vertical segment" style="height: 700px;overflow-y: auto";>
 
@@ -29,26 +29,26 @@ Resolved, Declined-->
                                                           padding-top: 1%;
                                                           padding-bottom: 1.5%;
                                                           margin: auto;">
-             
+
              <thead>
                 <tr>
                     <!-- <td>
                         <b>S.No</b>
                     </td> -->
-                    
+
                     <td class="five wide column">
                         <b>Date</b>
                     </td>
-                    
+
                     <td>
                         <b>Complaint </br>
                         Type</b>
                     </td>
-                    
+
                     <td>
                         <b>Location</b>
                     </td>
-                    
+
                     <!-- <th>
                         Specific </br> Location
                     </th> -->
@@ -63,17 +63,17 @@ Resolved, Declined-->
                     <!-- <td class="three wide column">
                         <b>Worker </br> Name</b>
                     </td> -->
-                    
-                    
-                    
+
+
+
                 </tr>
                 </thead>
-                
+
                 {% for a in outbox %}
                     {% if a.status == 0 %}
-                        
-                    
-                    
+
+
+
                     <tbody>
                         <tr>
                             <!-- <td>
@@ -84,7 +84,7 @@ Resolved, Declined-->
 
                                 </div>
                             </div>
-                            
+
                         </h4>
                     </td> -->
                     <td>
@@ -106,12 +106,12 @@ Resolved, Declined-->
                     <!-- <td>
                         <b>NOT ASSIGN</b>
                     </td> -->
-                    
+
                 </tr>
 
 
                 </tbody>
-                
+
                    {% endif %}
                 {% endfor %}
             </table>
@@ -121,21 +121,21 @@ Resolved, Declined-->
         </div>
     </div>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
     <div class="ui tab large" data-tab="resolvedcomplaints">
         <div class="ui vertical segment">
 
@@ -148,7 +148,7 @@ Resolved, Declined-->
                 </div>
             </div>
             <div class="ui divider"></div> -->
-            
+
 
             <table class="ui very basic collapsing celled sortable table" id="resolve_super"
                    style="padding-left: 0.5%;
@@ -156,27 +156,27 @@ Resolved, Declined-->
                                                           padding-top: 1%;
                                                           padding-bottom: 1.5%;
                                                           margin: auto;">
-             
+
              <thead>
                  <tr>
                      <!-- <td>
                          <b>S.No</b>
                         </td> -->
-                        
+
                         <td class="five wide column">
                         <b>Date</b>
                     </td>
-                    
+
                     <td>
                         <b>Complaint </br>
                             Type</b>
                         </td>
-                        
+
                         <td>
                             <b>Location</b>
                         </td>
 
-                        
+
 
                     <td class="two wide column">
                         <b>Details</b>
@@ -189,8 +189,8 @@ Resolved, Declined-->
                         <b>Worker </br> Name </b>
                     </td>
                      -->
-                    
-                     
+
+
                     </tr>
                 </thead>
                 {% for a in outbox %}
@@ -202,10 +202,10 @@ Resolved, Declined-->
                             <div class="content">
                                 {{ a.serial_no }}
                                 <div class="sub header">
-                                    
+
                                 </div>
                             </div>
-                            
+
                         </h4>
                     </td> -->
                     <td>
@@ -240,17 +240,17 @@ Resolved, Declined-->
             <div class="ui divider"></div>
         </div>
     </div>
-    
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <div class="ui tab large" data-tab="declinedcomplaints">
         <div class="ui vertical segment">
-            
+
             <!-- <div class="extra content">
                 <div class="" style="text-align: center;">
                     <i class="large orange warning icon"></i> : Pending &ensp;&ensp;&ensp;&ensp;&ensp;
@@ -260,34 +260,34 @@ Resolved, Declined-->
                 </div>
             </div>
              <div class="ui divider"></div> -->
-        
-             
+
+
             <table class="ui very basic collapsing celled sortable table" id="decline_super"
                    style="padding-left: 0.5%;
                                                           padding-right: 2.5%;
                                                           padding-top: 1%;
                                                           padding-bottom: 1.5%;
                                                           margin: auto;">
-             
+
              <thead>
                  <tr>
                      <!-- <td width="1">
                          <b>S.No</b>
                         </td> -->
-                        
+
                         <td class="five wide column">
                             <b>Date</b>
                         </td>
-                        
+
                         <td>
                         <b>Complaint </br>
                             Type</b>
                         </td>
-                        
+
                         <td>
                             <b>Location</b>
                         </td>
-                        
+
                     <!-- <th>
                         Specific </br> Location
                     </th> -->
@@ -295,7 +295,7 @@ Resolved, Declined-->
                     <td class="two wide column">
                         <b>Details</b>
                     </td>
-                    
+
                     <!--  <th class="one wide column">
                         Status
                     </th> -->
@@ -303,8 +303,8 @@ Resolved, Declined-->
                         <b>Worker </br> Name</b>
                     </td>
                      -->
-                    
-                   
+
+
                 </tr>
             </thead>
                 {% for a in outbox %}
@@ -316,10 +316,10 @@ Resolved, Declined-->
                             <div class="content">
                                 {{ a.serial_no }}
                                 <div class="sub header">
-                                    
+
                                 </div>
                             </div>
-                            
+
                         </h4>
                     </td> -->
                     <td>
@@ -341,10 +341,10 @@ Resolved, Declined-->
                     <!-- <td>
                         <b> {{ a.worker_id.name }}</b>
                     </td> -->
-                    
+
                 </tr>
-                
-                
+
+
             </tbody>
             {% endif %}
             {% endfor %}

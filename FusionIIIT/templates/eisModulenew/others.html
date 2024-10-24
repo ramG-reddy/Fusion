@@ -11,7 +11,7 @@
             Experts Lectures/Invited Talks
         </a>
 
-       
+
         <!-- <a class="item" data-tab="other3">
             Keynote/Planery Address
         </a>
@@ -27,7 +27,7 @@
         <h4 class="ui dividing header" id="changes12">Add an Achievement</h4>
             <form class="ui form"  method="post" action="{% url 'eis:award_insert' %}" onsubmit="return validateaward()">
             {% csrf_token %}
-           
+
             <div style="display: none;"> <input type="text" id="achZ" name="ach_id"></div>
             <div class="field">
                 <label>Year/Month/Day</label>
@@ -71,7 +71,7 @@
                                 {% endfor %}
                             </div>
                         </div>
-                    </div>   
+                    </div>
 
                     <div class=" field">
                         <div class="ui fluid search selection dropdown">
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-              
+
 
 
                 <div class="fields">
@@ -114,10 +114,10 @@
         </form>
         <br>
         <h4 class="ui dividing header">Report:</h4>
-        
+
        <!--scrollbar -->
-  <div style="width: 45vw; height: 400px; overflow-y: scroll">   
-            
+  <div style="width: 45vw; height: 400px; overflow-y: scroll">
+
         <table class="ui fixed sortable celled table" id="ach">
             <thead>
             <tr>
@@ -164,7 +164,7 @@
                 <!-- code change starts -->
                     <div class="field">
                         <label>Presentation Type</label>
-                        
+
                           <div class="ui fluid search selection dropdown">
                             <input type="hidden" name="type"  id="lecA" required>
                             <i class="dropdown icon"></i>
@@ -172,7 +172,7 @@
                             <div class="menu">
                                 <div class="item" data-value="Invited Talk">Invited Talk</div>
                                 <div class="item" data-value="Expert Lecture">Expert Lecture</div>
-                              
+
 
 
 
@@ -197,12 +197,12 @@
                               </div>
                           <!-- code change ends -->
                     </div>
-                     
+
                 </div>
             </div>
 
             <div class="field">
-                
+
 
                 <div class="fields">
                     <div class="fourteen wide field">
@@ -229,7 +229,7 @@
         <table class="ui fixed sortable celled table" id="talk">
             <thead>
             <tr>
-              
+
 
                 <th class="sorted ascending" style="width: 7%;">Sr.</th>
                 <th class="" style="width: 15%;" >Presented</th>
@@ -257,7 +257,7 @@
 
 
         </table>
-       
+
     </div>
     </div>
 

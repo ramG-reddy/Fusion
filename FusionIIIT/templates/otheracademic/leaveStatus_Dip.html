@@ -41,7 +41,7 @@
                     <i class="right floated chevron right icon"></i>
                 </a>
             </div>
-    
+
         </div>
 
         <div class="eight wide column">
@@ -64,7 +64,7 @@
                     </thead>
                     <tbody>
                         {% for entry in form_data %}
-                        
+
                         <tr>
                             <td>{{ entry.roll_no_id }}</td>
                             <td>{{ entry.student_name }}</td>
@@ -77,7 +77,7 @@
                                 {%else%}
                                     <a href={{ entry.upload_file.url }}>Download</a>
                                 {%endif%}
-                            </td> 
+                            </td>
                             <td>{{ entry.purpose }}</td>
                             <td>{{ entry.address }}</td>
                             <td>
@@ -90,7 +90,7 @@
                                 {% endif %}
                             </td>
                         </tr>
-                        
+
                         {% endfor %}
                     </tbody>
                 </table>

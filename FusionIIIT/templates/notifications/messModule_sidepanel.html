@@ -1,5 +1,5 @@
-{% load static %} 
-{% block sidepanel %} 
+{% load static %}
+{% block sidepanel %}
   {% load notifications_tags %}
   {% for notice in notifications %}
     {% if notice.unread %}
@@ -20,7 +20,7 @@
         </a>
     </div>
 </div>
-      {% endif%} 
+      {% endif%}
     {% endif %}
   {% endfor %}
 {% endblock %}

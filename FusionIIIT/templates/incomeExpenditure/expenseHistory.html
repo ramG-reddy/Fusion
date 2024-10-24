@@ -3,14 +3,14 @@
 {% comment %}The tab menu starts here!{% endcomment %}
 
 <div class="ui vertical segment">
-      
-     {% for items in expense_history2 %} 
-    
+
+     {% for items in expense_history2 %}
+
     <div class="card" style = "margin-bottom: 5%;
     border-style: groove;
     padding: 2%;">
       <div class="card-header">
-         
+
       </div>
       <div class="card-body">
         <h5 class="card-title">Roll No :{{items.userid}}</h5>
@@ -39,7 +39,7 @@
         <div class="two wide column">
           <form action="/income-expenditure/approve/" method="POST" id="approve">{% csrf_token %}
             <input hidden type="text" name = 'id' value="{{ items.id }}">
-            
+
             <button class="ui primary button" type='submit' style="background-color: #FE7153; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); font-size: 80%;">Approve</button>
           </form>
         </div>

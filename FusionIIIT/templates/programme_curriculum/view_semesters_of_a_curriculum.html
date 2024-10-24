@@ -38,7 +38,7 @@
                         <td><a href="{% url 'programme_curriculum:view_a_semester_of_a_curriculum' semester.id %}"><B>Semester<br>{{ semester.semester_no }}</B></a></td>
                         {% endfor %}
                     </tr>
-                
+
                     {% for course_slot in semester_slots %}
                     <tr class="compact ui celled small table"
                         style="text-align: center;

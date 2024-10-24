@@ -1,7 +1,7 @@
 {% extends 'ps1/ps2.html' %}
 {% load static %}
 
-{% block filetracking_tab %} 
+{% block filetracking_tab %}
 
 <form method="POST" enctype="multipart/form-data" id="form" action="/purchase-and-store/update_stock_item_inUse/">
 
@@ -26,7 +26,7 @@
 </div>
 
 
-    
+
     <div class="ui divider"></div>
     {% if stocks %}
 
@@ -42,7 +42,7 @@
                 <th >Transferred</th>
                 <th >InUse</th>
                 <!-- <th >Transfer History</th> -->
-            
+
         </tr>
         </thead>
         <!-- -->
@@ -75,7 +75,7 @@
                             {% endif %} -->
 
                     </td>
-            
+
             </tr>
             {% endif %}
 
@@ -94,10 +94,10 @@
      {% endif %}
 
 
-       
-   
 
-    </div>  
+
+
+    </div>
 
 
     <script type="text/javascript">
@@ -125,7 +125,7 @@
                     success: function (response) {
                         console.log("success in sending stock items information");
                         if (response.success) {
-                            window.location.href = '../current_stock_view'; 
+                            window.location.href = '../current_stock_view';
                         } else {
                             console.log("Request was successful, but response indicates failure.");
                         }

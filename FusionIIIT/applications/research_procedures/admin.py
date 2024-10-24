@@ -1,11 +1,12 @@
-from django.contrib import admin
 from applications.research_procedures.models import *
-from django.utils.html import format_html
+from django.contrib import admin
 
 # Adding a custom admin view for patent
 
+
 class ResearchGroupAdmin(admin.ModelAdmin):
-    list_display = ["name","description"]
+    list_display = ["name", "description"]
+
 
 # Register your models here.
 

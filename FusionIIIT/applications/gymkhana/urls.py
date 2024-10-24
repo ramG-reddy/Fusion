@@ -1,14 +1,42 @@
+from applications.gymkhana.api.views import (
+    AddClub_BudgetAPIView,
+    AddMemberToClub,
+    ApproveEvent,
+    ChangeHeadAPIView,
+    Club_Details,
+    ClubMemberAPIView,
+    ClubMemberApproveView,
+    ClubMemberDeleteAPIView,
+    CreateClubAPIView,
+    DeleteClubAPIView,
+    DeleteClubBudgetAPIView,
+    DeleteSessionsView,
+    EventDeleteAPIView,
+    EventUpdateAPIView,
+    Fest_Budget,
+    NewEventAPIView,
+    NewSessionAPIView,
+    Registraion_form,
+    SessionUpdateAPIView,
+    ShowVotingChoicesAPIView,
+    UpdateClubBudgetAPIView,
+    UpdateClubNameAPIView,
+    UpdateClubStatusAPIView,
+    UploadActivityCalendarAPIView,
+    VoteIncrementAPIView,
+    VotingPollsDeleteAPIView,
+    club_budgetinfo,
+    club_events,
+    club_report,
+    clubname,
+    session_details,
+)
 from django.conf.urls import url
-from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
-from applications.gymkhana.api.views import AddClub_BudgetAPIView, AddMemberToClub, ApproveEvent, ChangeHeadAPIView,   ClubMemberAPIView, ClubMemberApproveView, ClubMemberDeleteAPIView, CreateClubAPIView,  DeleteClubAPIView, DeleteClubBudgetAPIView,  EventDeleteAPIView, EventUpdateAPIView, SessionUpdateAPIView, UpdateClubBudgetAPIView, UpdateClubNameAPIView, UpdateClubStatusAPIView, UploadActivityCalendarAPIView
-from applications.gymkhana.api.views import clubname,Club_Details,club_events,club_budgetinfo,Fest_Budget,club_report,Registraion_form
-from applications.gymkhana.api.views import session_details
-from applications.gymkhana.api.views import DeleteSessionsView, NewEventAPIView, NewSessionAPIView, ShowVotingChoicesAPIView, VoteIncrementAPIView,  VotingPollsDeleteAPIView
-from . import views
 from rest_framework.authtoken.views import obtain_auth_token
 
-app_name = 'gymkhana'
+from . import views
+
+app_name = "gymkhana"
 
 urlpatterns = [
     url(r"^session_details/$", session_details.as_view()),
@@ -64,10 +92,8 @@ urlpatterns = [
     url(r"^date_events/$", views.date_events, name="date_events"),
     url(r"^delete_sessions/$", views.delete_sessions, name="delete_sessions"),
     url(r"^delete_events/$", views.delete_events, name="delete_events"),
-    url(r"^(?P<event_id>\d+)/edit_event/$",
-        views.edit_event, name="edit_event"),
-    url(r"^(?P<session_id>\d+)/editsession/$",
-        views.editsession, name="editsession"),
+    url(r"^(?P<event_id>\d+)/edit_event/$", views.edit_event, name="edit_event"),
+    url(r"^(?P<session_id>\d+)/editsession/$", views.editsession, name="editsession"),
     url(r"^delete_memberform/$", views.delete_memberform, name="delete_memberform"),
     # url(r'^voting_poll/$', views.voting_poll, name='voting_poll'),
     # url(r'^delete_poll/(?P<poll_id>\d+)/$', views.delete_poll, name='delete_poll'),
@@ -81,8 +107,7 @@ urlpatterns = [
     url(r"^form_avail/$", views.form_avail, name="form_avail"),
     url(r"^faculty_data/$", views.facultyData, name="faculty_data"),
     url(r"^students_data/$", views.studentsData, name="students_data"),
-    url(r"^students_club_members/$",
-        views.studentsClubMembers, name="students_data"),
+    url(r"^students_club_members/$", views.studentsClubMembers, name="students_data"),
     url(r"^get_venue/$", views.getVenue, name="get_venue"),
     # core_team
     url(r"^core_team/$", views.core_team, name="core_team"),
@@ -91,37 +116,70 @@ urlpatterns = [
     url(r"^Inventory_update/$", views.core_team, name="Inventory_update"),
     url(r"^del_club/$", views.del_club, name="del_club"),
     url(r"^approve_events/$", views.approve_events, name="approve_events"),
-    url(r"^update-club-name/$", views.update_club_name, name='update-club-name'),
-    url(r"^update-budget-amount/$", views.update_budget_amount, name='update_budget_amount'),
+    url(r"^update-club-name/$", views.update_club_name, name="update-club-name"),
+    url(
+        r"^update-budget-amount/$",
+        views.update_budget_amount,
+        name="update_budget_amount",
+    ),
     # url(r"^update-spent-amount/$", views.update_spent_amount, name='update_spent_amount'),
-    
-    
-    
-    #app
-    
-    url(r'^api/update_clubBudget/$', UpdateClubBudgetAPIView.as_view(), name='update budget'),
-    url(r'^api/add_clubBudget/$', AddClub_BudgetAPIView.as_view(), name='edit event'),
-    url(r'^api/update_coordinator/$', ChangeHeadAPIView.as_view(), name = 'update coordinator'),
-    url(r'^api/activity_calender/$', UploadActivityCalendarAPIView.as_view(), name='update activity calendder'),
-    url(r'^api/delete_event/$', EventDeleteAPIView.as_view(), name='delete_events_api'),
-    url(r'^api/delete_sessions/$', DeleteSessionsView.as_view(), name='delete_sessions_api'),
-    url(r'^api/new_session/$',NewSessionAPIView.as_view(), name='new_session_api'),
-    url(r'^api/new_event/$',NewEventAPIView.as_view(), name='new_event_api'),
-    url(r'^api/delete_club/$',DeleteClubAPIView.as_view(), name='delete_club'),
-    url(r'^api/members_records/$', ClubMemberAPIView.as_view(), name='club_members'),
-    url(r'^api/member_approve/$', ClubMemberApproveView.as_view(), name='approval'),
-    url(r'^api/member_reject/$', ClubMemberDeleteAPIView.as_view(), name='reject'),
-    url(r'^api/club_membership/$', AddMemberToClub.as_view(), name='new_club_member'),
-    url(r'^api/show_voting_choices/$', ShowVotingChoicesAPIView.as_view(), name='voting_choices'),
-    url(r'^api/delete_poll/$', VotingPollsDeleteAPIView.as_view(), name='delete poll'),
-    url(r'^api/vote/$', VoteIncrementAPIView.as_view(), name='give vote'),
-    url(r'^api/edit_session/$', SessionUpdateAPIView.as_view(), name='edit session'),
-    url(r'^api/edit_event/$', EventUpdateAPIView.as_view(), name='edit event'),
-    url(r'^api/delete_budget/$',DeleteClubBudgetAPIView.as_view(), name='delete budget'),
-    url(r'^api/upload_activitycalender/$', UploadActivityCalendarAPIView.as_view(), name='calender'),
-    url(r'^api/create_club/$',  CreateClubAPIView.as_view(), name='new club'),
-    url(r'^api/update_clubStatus/$', UpdateClubStatusAPIView.as_view(),name = 'update club status' ),
-    url(r'^api/updateClubName/$', UpdateClubNameAPIView.as_view(), name = 'update club name'),
-    url(r'^api/approve_event/$', ApproveEvent.as_view(), name = 'approve event'),
-   
+    # app
+    url(
+        r"^api/update_clubBudget/$",
+        UpdateClubBudgetAPIView.as_view(),
+        name="update budget",
+    ),
+    url(r"^api/add_clubBudget/$", AddClub_BudgetAPIView.as_view(), name="edit event"),
+    url(
+        r"^api/update_coordinator/$",
+        ChangeHeadAPIView.as_view(),
+        name="update coordinator",
+    ),
+    url(
+        r"^api/activity_calender/$",
+        UploadActivityCalendarAPIView.as_view(),
+        name="update activity calendder",
+    ),
+    url(r"^api/delete_event/$", EventDeleteAPIView.as_view(), name="delete_events_api"),
+    url(
+        r"^api/delete_sessions/$",
+        DeleteSessionsView.as_view(),
+        name="delete_sessions_api",
+    ),
+    url(r"^api/new_session/$", NewSessionAPIView.as_view(), name="new_session_api"),
+    url(r"^api/new_event/$", NewEventAPIView.as_view(), name="new_event_api"),
+    url(r"^api/delete_club/$", DeleteClubAPIView.as_view(), name="delete_club"),
+    url(r"^api/members_records/$", ClubMemberAPIView.as_view(), name="club_members"),
+    url(r"^api/member_approve/$", ClubMemberApproveView.as_view(), name="approval"),
+    url(r"^api/member_reject/$", ClubMemberDeleteAPIView.as_view(), name="reject"),
+    url(r"^api/club_membership/$", AddMemberToClub.as_view(), name="new_club_member"),
+    url(
+        r"^api/show_voting_choices/$",
+        ShowVotingChoicesAPIView.as_view(),
+        name="voting_choices",
+    ),
+    url(r"^api/delete_poll/$", VotingPollsDeleteAPIView.as_view(), name="delete poll"),
+    url(r"^api/vote/$", VoteIncrementAPIView.as_view(), name="give vote"),
+    url(r"^api/edit_session/$", SessionUpdateAPIView.as_view(), name="edit session"),
+    url(r"^api/edit_event/$", EventUpdateAPIView.as_view(), name="edit event"),
+    url(
+        r"^api/delete_budget/$", DeleteClubBudgetAPIView.as_view(), name="delete budget"
+    ),
+    url(
+        r"^api/upload_activitycalender/$",
+        UploadActivityCalendarAPIView.as_view(),
+        name="calender",
+    ),
+    url(r"^api/create_club/$", CreateClubAPIView.as_view(), name="new club"),
+    url(
+        r"^api/update_clubStatus/$",
+        UpdateClubStatusAPIView.as_view(),
+        name="update club status",
+    ),
+    url(
+        r"^api/updateClubName/$",
+        UpdateClubNameAPIView.as_view(),
+        name="update club name",
+    ),
+    url(r"^api/approve_event/$", ApproveEvent.as_view(), name="approve event"),
 ]

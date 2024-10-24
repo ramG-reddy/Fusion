@@ -8,7 +8,7 @@
             Raised Issues
         </a>
 
-       
+
     </div>
 
     <div class="ui active tab" data-tab="respondissue">
@@ -17,10 +17,10 @@
                 {% comment %} <div class="ui header">
                     Status of issues :
                 </div> {% endcomment %}
-    
+
                 <div class="content">
                     <div class="description">
-    
+
                         <div class="ui styled fluid accordion">
 
                     {% for issue in issues %}
@@ -29,7 +29,7 @@
                         Issue {{forloop.counter}}<br/>
                         Issue {{issue.issue_category}}<br/>
                         Raised on {{issue.issue_raised_date}} <br/>
-                        Raised by {{issue.student.id.user.username}} 
+                        Raised by {{issue.student.id.user.username}}
                         </div>
                         <div class="content ">
                             <div class="ui header">
@@ -57,12 +57,12 @@
                                         Submit
                                         </button>
                                 </div>
-            
+
                             </div>
                         </form>
                         </div>
-                        
-                      
+
+
                     {% endfor %}
                     </div>
                     </div>
@@ -77,6 +77,3 @@
 {% block javascript %}
 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
 {% endblock %}
-
-
-

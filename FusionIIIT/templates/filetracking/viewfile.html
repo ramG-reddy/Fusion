@@ -68,17 +68,17 @@
                             {% endfor %}
 
                             <div class="ui divider"></div>
-                            
+
                             <button class="ui large right floated primary button" style="margin-top:20px; float: right;" {% if not forward_enable %} disabled {% endif %}>
                                 <a href="{% url 'filetracking:forward' file.id %}" style="text-decoration: none; color: inherit;"> Forward File <i class="ui send icon right floated"></i> </a>
                             </button>
 
                             <button class="ui large right floated primary button" style="margin-top: 22px; float: right; {% if not file.is_read %} display: none; {% endif %}">
-                                <a href="{% url 'filetracking:unarchive' file.id %}" style="text-decoration: none; color: inherit;"> 
-                                    Unarchive <i class="ui archive icon right floated"></i> 
-                                </a>  
+                                <a href="{% url 'filetracking:unarchive' file.id %}" style="text-decoration: none; color: inherit;">
+                                    Unarchive <i class="ui archive icon right floated"></i>
+                                </a>
                             </button>
-                                                       
+
                             <button class="ui large right floated primary button" style="margin-right:10px; margin-top:20px; float: right;" {% if not archive_enable %} disabled {% endif %}>
                                 <a href="{% url 'filetracking:archive_finish' file.id %}" style="text-decoration: none; color: inherit;">Archive File <i class="ui archive icon right floated"></i> </a>
                             </button>
@@ -135,6 +135,5 @@
         </div>
     </div>
 
-    
-{% endblock %}
 
+{% endblock %}

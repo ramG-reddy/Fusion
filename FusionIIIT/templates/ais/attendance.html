@@ -79,8 +79,8 @@ input:checked + .slider:before {
   document.getElementById(id).style.display = '';
 
   var cid = bid;
-  window.value= cid;  
-  
+  window.value= cid;
+
 }
 
 var viewAttendance = function(id){
@@ -113,16 +113,16 @@ var submitAttendance = function(id){
            OTHER
         </a>
 
-       
+
     </div>
 
 
        <div class="ui active tab segment" data-tab="cse">
 
-         <h4 class="ui dividing header">Courses</h4> 
+         <h4 class="ui dividing header">Courses</h4>
 
-              
-                  
+
+
                 <div class="ui grid" id="cse_courses">
                       {% for c in this_sem_course %}
 
@@ -142,14 +142,14 @@ var submitAttendance = function(id){
 
                 </div>
 
-                  
+
         <div class="ui divider"></div>
   </div>
 
 
    <div class="ui tab segment" data-tab="ece">
-             <h4 class="ui dividing header">Courses</h4> 
-                  
+             <h4 class="ui dividing header">Courses</h4>
+
                 <div class="ui grid" id="ece_courses">
                       {% for c in this_sem_course %}
 
@@ -171,8 +171,8 @@ var submitAttendance = function(id){
 
    <div class="ui  tab segment" data-tab="mech">
 
-         <h4 class="ui dividing header">Courses</h4> 
-                  
+         <h4 class="ui dividing header">Courses</h4>
+
                 <div class="ui grid" id="mech_courses">
                       {% for c in this_sem_course %}
 
@@ -189,7 +189,7 @@ var submitAttendance = function(id){
 
                 </div>
 
-                  
+
 
         <div class="ui divider"></div>
   </div>
@@ -197,9 +197,9 @@ var submitAttendance = function(id){
 
    <div class="ui tab segment" data-tab="design">
 
-               
-           <h4 class="ui dividing header">Courses</h4> 
-                  
+
+           <h4 class="ui dividing header">Courses</h4>
+
                 <div class="ui grid" id="design_courses">
                       {% for c in this_sem_course %}
 
@@ -220,8 +220,8 @@ var submitAttendance = function(id){
   </div>
 
   <div class="ui tab segment" data-tab="other">
-           <h4 class="ui dividing header">Courses</h4> 
-                  
+           <h4 class="ui dividing header">Courses</h4>
+
                 <div class="ui grid" id="other_courses">
                       {% for c in this_sem_course %}
 
@@ -238,21 +238,21 @@ var submitAttendance = function(id){
 
                 </div>
 
-                   
+
   </div>
 
-    <h4 class="ui dividing header"></h4> 
+    <h4 class="ui dividing header"></h4>
                 <div>
                       <div id="p" style="display:none">
                        <h4>Options<span id="mytext"></span></h4>
-                        
-                   
+
+
                         <input class="ui primary button" type="submit" value="View Attendance" onclick="viewAttendance('attendanceTable')">
                         <input class="ui primary button" type="submit" value="Submit Attendance" onclick="submitAttendance('attendanceTableSubmit')">
                       </div>
                 </div>
 
- <h4 class="ui dividing header"></h4> 
+ <h4 class="ui dividing header"></h4>
  <div>
 
     <div class="card-body" >
@@ -266,23 +266,23 @@ var submitAttendance = function(id){
             </tr>
           </thead>
           <tbody>
-            
-                <tr> 
+
+                <tr>
                   <td>{{ x.id }}</td>
                   <td>{{x.present}}</td>
                   <td>{{ x.total }}</td>
-               
+
                 </tr>
-           
+
           </tbody>
 
         </table>
 </div>
 </div>
-</div> 
+</div>
 
 
- <h4 class="ui dividing header"></h4> 
+ <h4 class="ui dividing header"></h4>
   <div>
 
     <div class="card-body" >
@@ -299,7 +299,7 @@ var submitAttendance = function(id){
                                       {% for x in Faculty %}
                                         <div class="item" data-value={{x.user}}>{{x.user}}</div>
                                       {% endfor %}
-                                        
+
                                   </div>
         </div>
       </div>
@@ -315,8 +315,8 @@ var submitAttendance = function(id){
             </tr>
           </thead>
           <tbody>
-            
-                <tr> 
+
+                <tr>
                   <td></td>
                   <td>
                     <label class="switch">
@@ -325,7 +325,7 @@ var submitAttendance = function(id){
                     </label>
                   </td>
                 </tr>
-           
+
           </tbody>
 
         </table>
@@ -335,13 +335,12 @@ var submitAttendance = function(id){
                 <input type="submit" value="Save" />
         </div>
         </div>
-      
+
       </form>
 </div>
 </div>
-</div>  
+</div>
 
 
 
  {% endblock %}
-

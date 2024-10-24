@@ -5,22 +5,22 @@
 
     {% comment %}The tab menu starts here!{% endcomment %}
     <div class="ui pointing secondary menu">
-        
+
         <a class="active item" id="billm">
             Bill
         </a>
-        
+
 
         <a class="item" id="ph">
             Payment History
         </a>
-        
+
         {% comment %} <a class="item" id="regm">
             Register for Mess
         </a> {% endcomment %}
     </div>
 
-    
+
 
     <div class="ui active tab" id="billmtab">
         <div class="ui vertical segment">
@@ -69,7 +69,7 @@
             <br>
 
             <div class="ui divider"></div>
-            
+
             <div class="extra content">
                 <!-- TODO add code to direct to a function which renders the template as a pdf file -->
                 <form method="post" target="_blank" action="{% url 'mess:BillPDFStudent' %}">
@@ -150,7 +150,7 @@
                         {% endif %}
                     </div>
                 </div>
-    </form>    
+    </form>
 
 
         </div>

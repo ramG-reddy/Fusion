@@ -6,13 +6,13 @@
      <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
      </head>
-  
+
                 <!--Assistantship Starts-->
                     <form action="{% url 'office_module:formsubmit' %}" method="POST">
                                   {% csrf_token %}
-                    
+
                      <div class="ui active  tab " data-tab="cse">
-                    
+
                     <div class="ui form">
                           <div class="inline fields">
                             <div class="field">
@@ -36,7 +36,7 @@
                           </div>
                         </div>
                     <br>
-                    
+
                     <table class="ui very basic collapsing celled table">
                         <thead>
                             <tr>
@@ -45,7 +45,7 @@
                                 <th>Student List</th>
                                 <th>Action</th>
                                 <th>Comments</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -72,7 +72,7 @@
                                         </div>
                                         <!--<button class="ui primary loading button">Loading</button>-->
                                     </div>
-                                  
+
                                 </td>
                                   {% elif assist.action == 2 %}
                                    <td>Rejected</td>
@@ -98,25 +98,25 @@
                                         <!--<button class="ui primary loading button">Loading</button>-->
                                     </div>
                                 </td>
-                                        
+
                                 {% endif %}
-                                         
-                                
-                               
+
+
+
                             </tr>
                             {% endfor %}
-                            
+
                         </tbody>
-                      
+
                     </table>
-                         
+
                                   <div class="ui   buttons">
                                         <button class="ui button" name="approve" value="approve">Accept</button>
                                         <div class="or"></div>
                                          <button class="ui positive button" name="reject" value="reject">Reject</button>
                                     </div>
                                   </form>
-                </div> 
+                </div>
                  <script>
           $("input[type=radio]").change(function(){
               var filter = this.value;
@@ -128,11 +128,11 @@
           if (filter == "CSE")
                 $("tr.dataRow").css( "visibility", "visible" );
             else $("tr.dataRow").css( "visibility", "collapse" );
-            
+
             if (filter == "ECE")
                 $("tr.dataRow").css( "visibility", "visible" );
             else $("tr.dataRow").css( "visibility", "collapse" );
-            
+
             if (filter == "ME")
                 $("tr.dataRow").css( "visibility", "visible" );
             else $("tr.dataRow").css( "visibility", "collapse" );
@@ -149,7 +149,7 @@
 
               $("tr.dataRow").find("td").each(function() {
                 $this = $(this);
-                
+
                 if (!matchFound){
                     if ($this.html() == filter){
                       matchFound = true;
@@ -158,5 +158,5 @@
                 }
               });
           });
-              </script>    
+              </script>
 {% endblock form1%}

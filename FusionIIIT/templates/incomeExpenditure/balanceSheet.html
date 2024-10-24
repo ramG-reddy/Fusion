@@ -1,7 +1,7 @@
 {% load static %}
 
 {% comment %}The tab menu starts here!{% endcomment %}
-    
+
 <div class="field" style="border : 0">
     <form action="/income-expenditure/balanceSheet_pdf/" method="POST"> {%csrf_token%}
     <select class="ui dropdown" name="fin_year" >
@@ -12,7 +12,7 @@
         {% endfor %}
     </select>
 <button class="ui large primary button right floated"> Submit</button>
-</form>    
+</form>
 </div>
 
 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
@@ -25,11 +25,11 @@ $(function() {
 
         var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
         posting.done(function(data) {
-           
+
             window.location = "/income-expenditure/main/";
         });
         posting.fail(function(data) {
-           
+
             window.location = "/income-expenditure/main/";
         });
     });

@@ -13,11 +13,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .thesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 .pthesis {
   background-color: #f1f1f1;
@@ -32,11 +32,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .pthesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .panel {
@@ -54,7 +54,7 @@ table{
 .td6
 {
     padding:0 15px;
-    
+
 }
 .td7
 {
@@ -62,27 +62,27 @@ table{
 }
 .td1{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td2{
     width: 30%;
-        padding-bottom:15px;    
+        padding-bottom:15px;
     padding-top: 15px;
 }
 .td3{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td4{
     width: 30%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td5{
     width: 2%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .previous {
@@ -125,7 +125,7 @@ table{
     </a>
 
     <a class="item" data-tab="account_approve_assis" onclick="ma()"  style="width: 30%;">
-        <p style="margin-left: 20%;">Approved</p>  
+        <p style="margin-left: 20%;">Approved</p>
     </a>
 
 </div>
@@ -162,7 +162,7 @@ table{
                 <tbody>
                     {% for obj in assistant_pen_list reversed %}
                         {% if obj.account_approval == False %}
-                            
+
                             <tr>
                                 <td>{{forloop.counter}}</td>
                                 <td>{{obj.student.id.user.first_name}}&ensp;{{obj.student.id.user.last_name}}</td>
@@ -191,8 +191,8 @@ table{
                     Submit
                 </button>
             </div>
-            
-        </form>  
+
+        </form>
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -228,7 +228,7 @@ table{
                                 <td class="td1">Year</td>
                                 <td class="td5">:</td>
                                 <td colspan="4" style="font-weight: bold;">{{obj.year}}</td>
-                            </tr>                        
+                            </tr>
                             <tr>
                                 <td class="td1">Bank Account</td>
                                 <td class="td5">:</td>
@@ -240,10 +240,10 @@ table{
                                 <td colspan="4" style="font-weight: bold;">{{obj.stipend}}</td>
                             </tr>
 
-                        </table> 
+                        </table>
                     </div>
                 </div>
-                
+
                 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
                     <script type="text/javascript">
                         $(function () {
@@ -255,7 +255,7 @@ table{
                         });
                         });
                     </script>
-              
+
            {% endif %}
 
         {% endfor %}
@@ -285,16 +285,16 @@ table{
                 <td style="margin: 20px 0;">
                     <button class="ui primary button " type="button" id="search" onclick="assis_search()" style=" margin-left: 1%;padding: 10px 10px;">
                         Search
-                    </button> 
+                    </button>
                 </td>
                 <td style="margin: 20px 0;">
                     <button class="ui primary button " type="button" id="back" onclick="back()" style=" margin-left: 1%;padding: 10px 10px; display: none;" hidden>
                         Back
-                    </button> 
+                    </button>
                 </td>
             </tr>
-        </table> 
-        
+        </table>
+
     </div>
 </div>
 <div class="ui basic modal succ">
@@ -342,12 +342,12 @@ table{
 <script type="text/javascript">
 
 function ma(){
-    
+
     document.getElementById('acc1').style="display:none";
     document.getElementById('acc2').style="display:block";
 }
 function ma1(){
-    
+
     document.getElementById('acc1').style="display:block";
     document.getElementById('acc2').style="display:none";
 }
@@ -356,9 +356,9 @@ function assis_search()
     var rollno = document.getElementById("rollno").value;
     var month = document.getElementById("mon").value;
     var year = document.getElementById("yea").value;
-    var batch = document.getElementById("batch").value; 
+    var batch = document.getElementById("batch").value;
     var len = document.getElementsByClassName("as_app").length;
-    
+
     $(".assis_app").hide();
     $("#back").show();
     for(var i=1 ; i<=len; i++)
@@ -388,43 +388,43 @@ $("#filter_acc").click(function(){
         $("#SB").show();
     else
         $("#SB").hide();
-            
-        
+
+
 });
 
 
 $(function() {
-    
+
     $("#disapprove_acc").click(function(){
         var length = $("#at tr").length;
         for(var i=1;i<length;i++)
         {
-            
+
             id = i + "checkacc";
             if(document.getElementById(id).checked == true)
-            {  
+            {
                 document.getElementById(id).checked=false;
             }
 
         }
-        
+
     });
     $("#approve_acc").click(function(){
-    
+
         var length = $("#at tr").length;
         for(var i=1;i<length;i++)
         {
-            
+
             id = i + "checkacc";
             if(document.getElementById(id).checked == false)
-            {  
+            {
                 document.getElementById(id).checked=true;
             }
 
         }
-        
+
     });
-    
+
 });
 
     $("#ac_assis_form").submit(function(event) {
@@ -436,7 +436,7 @@ $(function() {
     for(var i=1;i<len;i++)
     {
         id=i + "checkacc";
-        
+
         if(document.getElementById(id).checked == true)
         {
             var key=document.getElementById("at").rows[i].cells[2].innerHTML;
@@ -452,19 +452,15 @@ $(function() {
         'dict' : dict,
         csrfmiddlewaretoken: '{{ csrf_token }}'
     },
-    success: function( data ) 
-    {   
+    success: function( data )
+    {
         $(".succ").modal("show");
         window.location = "/academic-procedures/account/";
     }
     });
-    
-    
+
+
   });
 
 
-</script> 
-
-
- 
-
+</script>

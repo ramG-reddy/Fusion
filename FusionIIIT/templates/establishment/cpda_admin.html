@@ -47,7 +47,7 @@
   }
 </style>
 <!--
-pending cpda applications 
+pending cpda applications
 -->
 <div class="ui active tab segment" data-tab="cpdaone">
     <div class="content">
@@ -58,7 +58,7 @@ pending cpda applications
                         <div class="content">
 
                             <a class="header">Application id : {{app.id}}</a>
-                            <div class="meta"> 
+                            <div class="meta">
                                 <span>Applicant : {{app.applicant.first_name}}</span>
                             </div>
                             <div>
@@ -68,11 +68,11 @@ pending cpda applications
                             </div>
                         </div>
                     </div>
-                
+
                     <div class="ui modal assign_cpda-{{app.id}}">
                         <i class="close icon"></i>
                         <div class="header">
-                            CPDA 
+                            CPDA
                         </div>
                         <div class="content">
                             <div class="description">
@@ -96,14 +96,14 @@ pending cpda applications
                                 <!-- Add form here -->
                                 <form class="ui large form" method="post" enctype="multipart/form-data" id="form1">
                                     {% csrf_token %}
-                                    {% render_field app.reviewform.app_id %} 
+                                    {% render_field app.reviewform.app_id %}
                                     <div class="field">
-                                        {% render_field app.reviewform.remarks %} 
+                                        {% render_field app.reviewform.remarks %}
                                     </div>
                                     <button type="submit" name="cpda_assign_form" class="ui large primary button">
                                         Verify
                                     </button>
-                                    
+
                                 </form>
                             </div>
                         </div>
@@ -124,7 +124,7 @@ pending cpda applications
 
 
 <!--
-Reviewed cpda applications 
+Reviewed cpda applications
 -->
 <div class="ui tab segment" data-tab="cpdatwo">
     <div class="content">
@@ -142,11 +142,11 @@ Reviewed cpda applications
                                 <button class="ui large primary button" onclick="$('.ui.modal.view_cpda-{{app.id}}').modal('show')">
                                     View
                                 </button>
-                                
+
                             </div>
                         </div>
                     </div>
-                
+
                     <div class="ui modal view_cpda-{{app.id}}">
                         <i class="close icon"></i>
                         <div class="header">
@@ -162,7 +162,7 @@ Reviewed cpda applications
                                 <label>Purpose : {{ app.purpose }}</label><br>
                                 <label>HOD Remarks : {{app.tracking_info.remarks_rev1}}</label><br>
                                 <label>Your Remarks : {{app.tracking_info.remarks_rev2}}</label><br>
-                                
+
                                 {% if app.status == 'finished' or app.status == 'adjustments_pending' %}
 
                                     <label>Adjustment Amount : {{ app.adjustment_amount }}</label><br>

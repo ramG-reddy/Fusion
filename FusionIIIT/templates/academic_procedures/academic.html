@@ -65,7 +65,7 @@
 
     <div class="dashboard-container">
 
-        
+
 
         {% comment %}The left-rail segment starts here!{% endcomment %}
         <div class="card-container">
@@ -90,14 +90,14 @@
                         <i class="right floated chevron right icon"></i>
                     </a>
                     {% if ug_flag %}
-                        
+
                              {% if BranchFlag %}
                         <a class="item" data-tab="four">
                             Branch Change
                             <i class="right floated chevron right icon"></i>
                         </a>
-                        {%  endif %} 
-                        
+                        {%  endif %}
+
                         <a class="item disabled" data-tab="five">
                             Evaluate Teaching Credits
                             <i class="right floated chevron right icon"></i>
@@ -147,7 +147,7 @@
                         Apply for Bonafide
                         <i class="right floated chevron right icon"></i>
                     </a>
-                     
+
                 {% endif %}
             </div>
             {% comment %}The Tab-Menu ends here!{% endcomment %}
@@ -178,7 +178,7 @@
                         Final-Registration
                     </a>
                 </div>
-            
+
                 <div class="ui active tab segment" data-tab="next_courses" >
                     {%  include 'academic_procedures/registeredCourse.html' %}
                 </div>
@@ -189,7 +189,7 @@
                     {%  include 'academic_procedures/finalregister.html' %}
                 </div>
             </div>
-            
+
             <div class="ui tab segment" data-tab="Miscellaneous" style="width: 110%"  >
                 <div class="ui pointing secondary menu">
                     <a class=" active item" data-tab="miscellaneous_2" >
@@ -228,7 +228,7 @@
                         <div class="item" data-tab="overall">
                             Overall
                         </div>
-    
+
                     </div>
                     <div class="ui active tab segment" data-tab="messdue">
                         {%  include 'academic_procedures/messduehistory.html' %}
@@ -246,7 +246,7 @@
                         {%  include 'academic_procedures/dues.html' %}
                     </div>
                 </div>
-                
+
 
                 <div class="ui tab segment" data-tab="miscellaneous_3" >
                     {%  include 'academic_procedures/bonafide.html' %}
@@ -273,18 +273,18 @@
                     </div>
                     <div class="ui tab segment" data-tab="drop_courses">
                         {%  include 'academic_procedures/dropCourse.html' %}
-                    </div>                
+                    </div>
                 </div>
                 <div class="ui tab segment" data-tab="miscellaneous_6" >
                     {%  include 'academic_procedures/backlog.html' %}
-                </div>  
+                </div>
                 <div class="ui tab segment" data-tab="miscellaneous_7" >
                     {%  include 'academic_procedures/replace.html' %}
-                </div>  
-                
+                </div>
+
             </div>
-            
-            
+
+
             <div class="ui tab segment" data-tab="four">
                 {%  include 'academic_procedures/branchChange.html' %}
             </div>
@@ -335,8 +335,8 @@
                 {% comment %}
                     TODO: the right rail!
                 {% endcomment %}
-                {% block sidepanel%} 
-                {% include 'notifications/academic_procedures_sidepanel.html' %} 
+                {% block sidepanel%}
+                {% include 'notifications/academic_procedures_sidepanel.html' %}
                 {% endblock %}
             </div>
         </div>

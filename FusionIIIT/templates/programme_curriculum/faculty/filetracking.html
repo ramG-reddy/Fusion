@@ -1,11 +1,11 @@
-{% extends 'programme_curriculum/faculty/common.html' %} 
+{% extends 'programme_curriculum/faculty/common.html' %}
 
 {% block content %}
 <div class="ui segment" >
     <div class="header"><h1> Course Proposal Form</h1></div>
     <div class="ui divider"></div>
     <form class="ui large form error" method="POST">
-        
+
         {% csrf_token %}
         {% if form.non_field_errors %}
          <div class="ui message">
@@ -68,7 +68,7 @@
             <div class="ui large right floated buttons">
                 <a class="ui button" href="{% url 'programme_curriculum:view_course_proposal_forms' %}">Cancel</a>
                 <div class="or"></div>
-                 
+
                 <input class="ui primary button" type="Submit" name="Submit">
             </div>
         </td>
@@ -90,7 +90,7 @@
 {% endblock %}
 {% block rightcontent %}
 <br>
-{% block sidepanel%} 
-    {% include 'notifications/programme_curriculum.html' %} 
+{% block sidepanel%}
+    {% include 'notifications/programme_curriculum.html' %}
     {% endblock %}
 {% endblock %}

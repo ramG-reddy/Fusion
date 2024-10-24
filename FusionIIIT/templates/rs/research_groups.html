@@ -42,15 +42,15 @@
                             <th>
                                 Description
                             </th>
-                            
+
                         </tr>
                         </thead>
 
-                        
-                        
+
+
                             {% comment %} <!--{% if pat.faculty.id == request.user.extrainfo.faculty.id %} -->{% endcomment %}
-                            
-                            {% for research_group in research_groups  %}          
+
+                            {% for research_group in research_groups  %}
                         <tr>
                             <td>
                                 {{research_group.name}}
@@ -68,12 +68,10 @@
                                 {{research_group.description}}
                             </td>
                         </tr>{% endfor %}
-                                 
-                        
+
+
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
-    

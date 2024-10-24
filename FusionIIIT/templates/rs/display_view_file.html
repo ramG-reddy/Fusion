@@ -30,7 +30,7 @@
                             <div class="comment">
                                 <div class="content">
                                     <div style="display:flex;justify-content: space-between;flex-direction: row; font-weight:normal">
-                                        <div style="padding: 5px;">   
+                                        <div style="padding: 5px;">
                                             <b>Sent by:</b>
                                             <a class="author"style="text-decoration: none;color:inherit; font-weight:normal">{{ t.current_design }}
                                             </a>
@@ -55,10 +55,10 @@
                                                     <span class="meta">No Remarks</span>
                                                 {% endif %}
                                                 </div>
-                                        </div>    
+                                        </div>
                                         {% if t.upload_file %}
                                         <span class="meta" style="color: grey; padding: 5px;"><b style="color:black;">Attachment:<b> <a href="{{t.upload_file.url}}" > {{ t.upload_file }} </a> </span>
-                                       
+
                                         {% else %}
                                         <span class="meta" style="color: grey; padding: 5px;">No attachments</span>
                                         {% endif %}
@@ -70,13 +70,13 @@
 
                         <div class="ui divider"></div>
                         {% if request.user != current_user.user  %}
-                        
+
 
                             <form method="post" enctype="multipart/form-data" action="{% url 'research_procedures:forward_request' file.id  %}">
                                 {% csrf_token %}
                                 <div class="field" style="max-width: 100%;">
                                     <label for="receiver_designation">Forward to :</label>
-                                    <div class="eight wide field">                                
+                                    <div class="eight wide field">
                                         <select id="receiver_designation" name="receiver_designation" class="ui selection dropdown small">
                                             <option value="dean_rspc">RSPC Dean</option>
                                             <option value="rspc_admin">RSPC Admin</option>
@@ -88,15 +88,15 @@
                                         <option value="HOD (NS)">HOD (NS)</option>
                                         <option value="Director">Director</option>
                                     </select>
-                                </div>                             
+                                </div>
                         </div>
 
-                        
-                        
+
+
                         <div class="field">
                             <label>Remarks:<textarea rows="2" name="remarks"></textarea></label>
                         </div>
-                        
+
                         <div class="field">
                             <label for="attachment">Attach File: (Maximum File Size 10 MB) </label>
                             <input type="file" id="file" name="attachment" accept=".pdf, .jpg, .jpeg, .png">

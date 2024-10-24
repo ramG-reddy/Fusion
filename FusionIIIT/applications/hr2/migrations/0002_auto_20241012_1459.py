@@ -5,60 +5,65 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('hr2', '0001_initial'),
+        ("hr2", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='appraisalform',
-            name='employeeId',
+            model_name="appraisalform",
+            name="employeeId",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='cpdaadvanceform',
-            name='amountRequired',
+            model_name="cpdaadvanceform",
+            name="amountRequired",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='cpdaadvanceform',
-            name='employeeId',
+            model_name="cpdaadvanceform",
+            name="employeeId",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='cpdaadvanceform',
-            name='pfNo',
+            model_name="cpdaadvanceform",
+            name="pfNo",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='cpdareimbursementform',
-            name='employeeId',
+            model_name="cpdareimbursementform",
+            name="employeeId",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='cpdareimbursementform',
-            name='pfNo',
+            model_name="cpdareimbursementform",
+            name="pfNo",
             field=models.IntegerField(),
         ),
         migrations.AlterField(
-            model_name='empconfidentialdetails',
-            name='aadhar_no',
-            field=models.BigIntegerField(default=0, validators=[django.core.validators.MaxValueValidator(999999999999), django.core.validators.MinValueValidator(99999999999)]),
+            model_name="empconfidentialdetails",
+            name="aadhar_no",
+            field=models.BigIntegerField(
+                default=0,
+                validators=[
+                    django.core.validators.MaxValueValidator(999999999999),
+                    django.core.validators.MinValueValidator(99999999999),
+                ],
+            ),
         ),
         migrations.AlterField(
-            model_name='leaveform',
-            name='employeeId',
+            model_name="leaveform",
+            name="employeeId",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='leaveform',
-            name='pfNo',
+            model_name="leaveform",
+            name="pfNo",
             field=models.IntegerField(null=True),
         ),
         migrations.AlterField(
-            model_name='ltcform',
-            name='pfNo',
+            model_name="ltcform",
+            name="pfNo",
             field=models.IntegerField(),
         ),
     ]

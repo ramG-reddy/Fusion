@@ -6,7 +6,7 @@
     <div class="ui pointing secondary menu">
         <h3>
             <a class="active item" data-tab="editdraft">
-                Edit Draft 
+                Edit Draft
             </a>
         </h3>
     </div>
@@ -24,7 +24,7 @@
                 <div class="content">
                     <center>
                         <span class="ui header">Subject: </span>
-                        <br> 
+                        <br>
                         <b>
                             <input type="text" name="subject" style="margin-top:10px" value="{{ file.subject }}">
                         </b>
@@ -46,7 +46,7 @@
                             <label>Remarks:<textarea rows="2" name="remarks">{{remarks}}</textarea></label>
                         </div>
 
-                        <div class="field" style="margin-top: 25px">                                
+                        <div class="field" style="margin-top: 25px">
                             <label> Send as: {{ designation_name }}</label>
                             <input type="hidden" name="sender" value="{{ designation_id }}">
                         </div>
@@ -74,11 +74,11 @@
                                 <input type="file" id="file" name="myfile" style="margin-top:5px" accept=".pdf, .jpg, .jpeg, .png, .zip" value="
                                 {{file.upload_file.url}}">
 
-                            {% else %} 
+                            {% else %}
                                 <label for="file">Attach Files: (Maximum File Size 10 MB)</label>
                                 <input type="file" id="file" name="myfile" accept=".pdf, .jpg, .jpeg, .png, .zip">
-                            {% endif %} 
-                        </div>                        
+                            {% endif %}
+                        </div>
                     </div>
 
                     <button type="submit" name="send" class="ui large right floated primary button" style="margin-top:20px; float: right;">
@@ -153,4 +153,3 @@
     </script>
 
 {% endblock %}
-

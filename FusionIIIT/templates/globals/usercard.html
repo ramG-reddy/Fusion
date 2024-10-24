@@ -23,7 +23,7 @@
                         {{ user.first_name }}
                         {{ user.last_name }}
                     </div>
-                
+
 
                     <div class="meta" style="padding: 0.25rem;word-wrap: break-word;">
                         {{ user.extrainfo.department.name }}
@@ -48,12 +48,12 @@
                         {{ request.user.first_name }}
                         {{ request.user.last_name }}
                     </div>
-                    
+
                     <div class="meta">
                         {{ request.user.extrainfo.department.name }}
                     </div>
                 </div>
-                
+
                 <div class="ui large header">
                     {% if user.extrainfo.user_type == 'student' %}
                         {{ request.user.extrainfo.student.programme }}
@@ -62,7 +62,7 @@
                         Sem - {{ request.user.extrainfo.student.curr_semester_no }}
                     {% endif %}
                 </div>
-                
+
                 <span class="right floated meta">
                     {{ user.extrainfo.student.programme }}
                     {{ user.extrainfo.student.batch }}
@@ -71,8 +71,8 @@
             {% endif %}
             <br/>
             <div class="meta">
-               
-                <span> 
+
+                <span>
                     {{global_var|capfirst}}
                 </span>
             </div>

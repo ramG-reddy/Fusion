@@ -9,7 +9,7 @@
 
 
 <script>
-  
+
 </script>
 <style>
   .active-row:hover {
@@ -41,7 +41,7 @@
         <th style="background-color:grey; color:white">Amount Utilised</th>
 
         <th style="background-color:grey; color:white">Update</th>
-        
+
       </tr>
     </thead>
     <tbody>
@@ -60,7 +60,7 @@
             <div class="ui labeled input">
             <input class="ui label" type="number" name="used_amount">  <button type="submit" style="margin-left:5px;width:90px" id="{{ forloop.parentloop.counter }}{{forloop.counter}}" onmouseover="changeText('{{forloop.parentloop.counter }}{{forloop.counter}}')" onmouseout="restoreText('{{ forloop.parentloop.counter }}{{forloop.counter}}')" class="ui grey button"><i class="edit icon"></i></button>
             </div>
-          </td> 
+          </td>
         </form>
       </tr>
       {% endif %}

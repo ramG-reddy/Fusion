@@ -10,7 +10,7 @@
 {% block body %}
     {% block navBar %}
         {% include 'dashboard/navbar.html' %}
-    {% endblock %}    
+    {% endblock %}
 
     {% comment %}The grid starts here!{% endcomment %}
     <div class="ui stackable doubling grid">
@@ -28,8 +28,8 @@
                 {% include 'globals/usercard.html' %}
             {% endblock %}
             {% comment %}The user image card ends here!{% endcomment %}
-            
-            
+
+
 
             <div class="ui divider"></div>
 
@@ -45,7 +45,7 @@
                       <a class="item" href="{% url 'examination:authenticate' %}">Authenticate Course
                         <i class="right floated chevron right icon"></i>
                       </a>
-                    
+
 
                     <a class="active item" data-tab="first" id="announcement" href="{% url 'examination:announcement' %}">
                         <B>Make Announcement</B>
@@ -65,8 +65,8 @@
                         <i class="right floated chevron right icon"></i>
                       </a>
 
-                    
-                    
+
+
                 </div>
                 {% comment %}The Tab-Menu ends here!{% endcomment %}
 
@@ -75,7 +75,7 @@
                 The left-rail segment ends here!
             {% endcomment %}
 
-        
+
 
             {% comment %}
                 The central-rail segment starts here!
@@ -105,19 +105,19 @@
                     {% endblock %}
                 </div>
                 {% comment %}See announcement{% endcomment %}
-            
+
                 {% comment %}status of request!{% endcomment %}
                 <div class="ui tab segment" data-tab="third">
                     {% block request_status %}
-                        {% include "department/request_status.html" %} 
+                        {% include "department/request_status.html" %}
                     {% endblock %}
                 </div>
                 {% comment %}status of request!{% endcomment %}
 
-                
+
 
             </div>
-            
+
             <div class="three wide column">
                 <div class="row">
                     {% comment %}
@@ -126,7 +126,7 @@
                 </div>
             </div>
             {% comment %}The right-rail segment ends here!{% endcomment %}
-            
+
             {% comment %}The right-margin segment!{% endcomment %}
             <div class="column"></div>
 

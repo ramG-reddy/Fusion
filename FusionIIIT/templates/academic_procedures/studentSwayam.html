@@ -3,11 +3,11 @@
 <script>
     let addCourseButton = document.querySelector(".addCourseButton");
     addCourseButton.addEventListener("click",()=>
-        { 
+        {
             $('.ui.addCourseForm.modal')
             .modal('show')
             ;
-        });  
+        });
 </script>
 
 
@@ -33,8 +33,8 @@
                                                           padding-bottom: 1.5%;
                                                           margin: auto;">
             <thead>
-                
-                
+
+
                 <tr>
                     <th>
                         Reg ID#
@@ -62,7 +62,7 @@
 
             <tbody>
 
-                
+
                 {% for items in details %}
 
                 <tr class="{{ items.rid }}">
@@ -84,7 +84,7 @@
                     <!-- <td>
                         {{ items.eletive_id }}
                     </td> -->
-                    
+
                     <td>
                         <button
                           type="submit"
@@ -97,7 +97,7 @@
                 </tr>
 
                 {% endfor %}
-                
+
             </tbody>
         </table>
         <div class="ui vertical segment" id="swayam_r" style="display: none;" >
@@ -105,9 +105,9 @@
 
             </div>
             <!-- <center><b>Available Swayam Courses To re</b></center> -->
-            
+
             <form method="POST" id="swayam_r_form" action="/academic-procedures/acad_person/swayam_replace/">
-                {% csrf_token %} 
+                {% csrf_token %}
             <table
               class="ui very basic collapsing celled sortable table"
               style="
@@ -119,7 +119,7 @@
               "
             >
               <thead>
-                
+
                 <tr>
                   <th>Sl No.</th>
                   <th>Course Type</th>
@@ -128,13 +128,13 @@
                   <th>Credits</th>
                   <th>Select</th>
                 </tr>
-                
+
               </thead>
               <tbody>
-                
-                  
+
+
                       {% for course_slot in current_sem_swayam %}
-                                    
+
                                         {% for course_choice in course_slot.courses.all %}
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
@@ -147,12 +147,12 @@
                                                 <td>{{ course_slot.id }}</td> -->
                                                 <td>
                                                     <input type="checkbox"
-                                                     name="Swayam_course" 
-                                                     value="{{ course_choice.code }}" 
-                                                     data-semester-reg-id="{{ course_slot.semester_id }}" 
-                                                     data-course-slot-reg-id="{{ course_slot.id }}" 
-                                                     data-course-reg-id="{{ course_choice.id }}" 
-                                                     data-course-credit="{{ course_choice.credit }}" 
+                                                     name="Swayam_course"
+                                                     value="{{ course_choice.code }}"
+                                                     data-semester-reg-id="{{ course_slot.semester_id }}"
+                                                     data-course-slot-reg-id="{{ course_slot.id }}"
+                                                     data-course-reg-id="{{ course_choice.id }}"
+                                                     data-course-credit="{{ course_choice.credit }}"
                                                      onclick="handleCheckboxClickReg(this)">
                                                 </td>
                                             </tr>
@@ -160,7 +160,7 @@
                                 {% endfor %}
 
 
-                      
+
                       <input type="text" name='user' value='{{roll_no}}' hidden="True">
                       <input type="text" name='swayam_course_code' id="swayam_course_code"  hidden="True">
                       <input type="text" name='swayam_semester_id' id="swayam_semester_id"  hidden="True">
@@ -173,11 +173,11 @@
                   </div>
                 </form>
                     </div>
-                    
-                    
-                
-              
-            
+
+
+
+
+
           </div>
 
         <br>
@@ -191,7 +191,7 @@
 
         <div class="ui divider"></div>
         {% comment %} <button class="ui fluid positive button addCourseButton">Add Course</button> {% endcomment %}
-        
+
         <div class="ui modal addCourseForm">
             <p>Fill details for the Course you want to add</p>
             <form class="ui form" action = "/academic-procedures/acad_person/addCourse/" method = "post">
@@ -217,11 +217,11 @@
 
                 <input type = "text" value = {{dict2.roll_no}} name="roll_no" hidden/>
                 <button class="ui fluid positive button" type="submit" name = "AddCourse" value = "submit">Add Course</button>
-                
+
             </form>
           </div>
 
-        
+
     </div>
 </div>
 
@@ -234,16 +234,16 @@
       console.log("clicked");
       document.getElementById("swayam_r").style = "display:block";
       document.getElementById('course_replace_name').innerHTML= '<center><b>Available Swayam Courses To replace '+ course_name +' </b></center>'
-      
-  
+
+
       var swayam_course_form = document.getElementById('swayam_r_form');
-      
+
       // Remove existing course_slot_nameInput if present
       var existingInput = document.getElementById('course_slot_name_input');
       if (existingInput) {
         existingInput.remove();
       }
-  
+
       // Create and append new course_slot_nameInput
       var course_slot_nameInput = document.createElement('input');
       course_slot_nameInput.type = "hidden";
@@ -251,13 +251,13 @@
       course_slot_nameInput.value = course_slot_name;
       course_slot_nameInput.id = "course_slot_name_input"; // Add id to identify this input
       swayam_course_form.appendChild(course_slot_nameInput);
-  
-      
+
+
       // Implement your logic here to replace the course with Swayam
     }
-  
-  
-  
+
+
+
     function handleCheckboxClickReg(checkbox) {
     var selectedCourseCode = document.getElementById('swayam_course_code');
     var selectedSwayamCourseIds = document.getElementById('swayam_course_id');
@@ -292,7 +292,7 @@
     console.log(selectedSemesterIds.value);
     console.log(selectedSwayamCourseIds.value);s
 
-    
+
 }
 
 function submittForm() {
@@ -315,8 +315,8 @@ function submittForm() {
 
 
 
-  
-  
-  
-  
+
+
+
+
   </script>

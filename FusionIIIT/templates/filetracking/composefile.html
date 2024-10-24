@@ -141,7 +141,7 @@
             var inputValue = $(this).val();
             fetchDropdownValues(inputValue);
         });
-        
+
         function fetchDropdownValues(inputValue) {
             $.ajax({
                 url: `/filetracking/getdesignations/${inputValue}/`,
@@ -154,7 +154,7 @@
                 }
             });
         }
-        
+
         function populateDropdown(values) {
             var dropdown = $('#receiver_dropdown');
             dropdown.empty();
@@ -165,9 +165,9 @@
     });
 
     function preventUnsavedUnload(e) {
-        if (formIsModified() && notSaving(e)) { 
+        if (formIsModified() && notSaving(e)) {
             e.preventDefault();
-        } 
+        }
     };
 
     document.getElementById('form1').addEventListener('submit', function(event) {
@@ -176,31 +176,31 @@
 
     window.addEventListener('beforeunload', preventUnsavedUnload);
 
-    function notSaving(event) { 
+    function notSaving(event) {
         if(event.target.tagName == "BUTTON" && event.target.hasAttribute('name')) {
             if(event.target.getAttribute('name') == 'send' || event.target.getAttribute('name') == 'save')
-                return false;    
-            else    
+                return false;
+            else
                 return true;
         } else {
             return true;
-        } 
-    } 
-    
+        }
+    }
+
     function formIsModified() {
         var formInputs = document.querySelectorAll('input, textarea');
         var hasValue = false;
         const input_names = ['title', 'description', 'remarks', 'receiver', 'myfile']
-        
+
         formInputs.forEach(function(input) {
-            if (input.hasAttribute('name') && input_names.includes(input.getAttribute('name')) && input.value.trim() !== '') { 
+            if (input.hasAttribute('name') && input_names.includes(input.getAttribute('name')) && input.value.trim() !== '') {
                 hasValue = true;
                 return;
-            }   
+            }
         });
         return hasValue;
     }
-    
+
 </script>
 
 {% endblock %}

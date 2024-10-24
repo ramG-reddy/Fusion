@@ -14,11 +14,11 @@
                 <th rowspan="2">Rebate count</th>
                 <th rowspan="2">Rebate Amount</th>
                 <th rowspan="2">Total Bill</th>
-        
+
             </tr>
         </thead>
         <tbody>
-            
+
         {% if Mess_pay %}
         {% for obj in Mess_pay %}
             <td></td>
@@ -31,8 +31,8 @@
         {% endfor %}
         {% endif %}
         {% for obj in Mess_bill %}
-         <tr >                
-            
+         <tr >
+
             <td>{{obj.month}}</td>
             <td>{{ obj.year }}</td>
             <td>{{ obj.amount }}</td>
@@ -45,4 +45,3 @@
         {% endfor %}
         </tbody>
     </table>
-    

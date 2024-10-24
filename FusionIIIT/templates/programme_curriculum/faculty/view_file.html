@@ -12,7 +12,7 @@
     </div>
 
     <div class="ui active tab" data-tab="notesheet">
-<!-- 
+<!--
         <div class="ui two item menu">
             <a class="item"><b>Created By :-</b><b class="meta" style="text-indent: 1em; color: #1B1C1D;">{{file.current_id}}-{{file.designation}}</b></a>
             <a class="item"><b>File ID :</b><b class="meta" style="text-indent: 1em; color: #1B1C1D;">{{file.uploader.department.name}}-{{file.upload_date.year}}-{{file.upload_date.month}}-#{{file.id}}</b></a>
@@ -21,16 +21,16 @@
             <!-- <form class="ui large form" method="POST" enctype="multipart/form-data" id="form1"> -->
 
 
-        
+
             <div class="ui two item menu">
             <a class="item"><b>Created By :</b><b class="meta" style="text-indent: 1em; color: #1B1C1D;">{{ proposal.uploader }} - {{proposal.designation}}</b></a>
             <a class="item"><b>File ID :</b><b class="meta" style="text-indent: 1em; color: #1B1C1D;">{{ proposal.id }}</b></a>
             </div>
 
-            
+
             {% csrf_token %}
 
-            
+
             <form class="ui large form error" method="POST">
             <div class="ui fluid card" style=" padding-left: 18px; padding-top: 10px; height: auto; overflow-y: auto;">
                 <center><span class="ui header"><b>Subject-  {{proposal.subject}}</b></span></center>
@@ -40,7 +40,7 @@
                     <div class="ui divider"></div></div>
                 {% for t in trackings %}
                 <div class="ui comments">
-                    
+
                     <div class="comment">
                          <div class="content">
 
@@ -93,17 +93,17 @@
                     {% endif %}
                 </div>
 
-                
+
                  <div class="field">
                         <label for="{{ file_info.id_for_label }}"></label>
                         <center><span style="color: red;font-size:20px">{{ file_info }}</span></center>
-                        
+
                 </div>
                 <div class="field">
                     <label for="{{ file_info.id_for_label }}"></label>
                     <center><span style="color: green;font-size:20px">{{ file_sucess }}</span></center>
-                    
-            </div><div class="field"> 
+
+            </div><div class="field">
                     <label for="{{ form.current_id.id_for_label }}">Uploader:</label>
                     {{ form.current_id }}
                 <div class="field">
@@ -149,7 +149,7 @@
                                     {% for discipline in proposal.disciplines.all %}
                                         <h3>{{ discipline }}</h3>
                                     {% endfor %}
-            
+
                                 </td>
                             </tr>
                             {% endif %}
@@ -251,6 +251,5 @@
                 </div>
             </div>
         </div>
-        
-{% endblock %}
 
+{% endblock %}

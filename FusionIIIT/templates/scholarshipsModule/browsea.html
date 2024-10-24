@@ -40,17 +40,17 @@
                 Submitted Applications
             </a>
         </div>
-        
+
         <div class="ui active tab">
             <div class="ui vertical segment">
                     <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;">
                             {% csrf_token %}
                 <table class="ui striped table">
-                        
+
                     <thead>
                     <tr>
                         <th>Student ID</th>
-                        <th>Title</th> 
+                        <th>Title</th>
                         <th>CPI</th>
                         <th>Number of Students</th>
                         <th>File</th>
@@ -65,30 +65,30 @@
                         <td>
                             <div class="content">
                                     {{winner.student.id}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                             <div class="content">
                                     {{winner.title_name}}
-                            </div>   
+                            </div>
                         </td>
-                        
+
                         <td>
                             <div class="content">
                                     {{winner.student.cpi}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                             <div class="content">
                                     {{winner.no_of_students}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                         <form method='POST'>
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value="{{winner.id}}"/>
                                 <a href="/media/{{winner.relevant_document}}" download><button type='button' class="ui blue button" name="Form">Files</button>
-                                </a>    
+                                </a>
                             </form>
                         </td>
                         <td>
@@ -105,7 +105,7 @@
                             <button class="ui blue button" name="Reject_DM value="{{winner.id}}"">Reject</button>
                             </form>
                         </td>
-                        
+
                     </tr>
                         {% endif %}
                         {% endfor %}
@@ -113,10 +113,10 @@
                 </table>
                 </form>
             </div>
-        
+
             <div class="ui divider"></div>
         </div>
-        
+
     </div>
 
     <div class="ui modal" id="mcm">
@@ -125,17 +125,17 @@
                 Submitted Applications
             </a>
         </div>
-        
+
         <div class="ui active tab">
             <div class="ui vertical segment">
                     <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;">
                             {% csrf_token %}
                 <table class="ui striped table">
-                        
+
                     <thead>
                     <tr>
                         <th>Student ID</th>
-                        <th>Title</th> 
+                        <th>Title</th>
                         <th>CPI</th>
                         <th>Number of Students</th>
                         <th>File</th>
@@ -150,30 +150,30 @@
                         <td>
                             <div class="content">
                                     {{winner.student.id}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                             <div class="content">
                                     {{winner.title_name}}
-                            </div>   
+                            </div>
                         </td>
-                        
+
                         <td>
                             <div class="content">
                                     {{winner.student.cpi}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                             <div class="content">
                                     {{winner.no_of_students}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                         <form method='POST'>
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value="{{winner.id}}"/>
                                 <a href="/media/{{winner.relevant_document}}" download><button type='button' class="ui blue button" name="Form">Files</button>
-                                </a>    
+                                </a>
                             </form>
                         </td>
                         <td>
@@ -190,7 +190,7 @@
                             <button class="ui blue button" name="Reject_MCM" value="{{winer.id}}">Reject</button>
                             </form>
                         </td>
-                        
+
                     </tr>
                         {% endif %}
                         {% endfor %}
@@ -198,7 +198,7 @@
                 </table>
                 </form>
             </div>
-        
+
             <div class="ui divider"></div>
         </div>
 
@@ -212,13 +212,13 @@
                 Submitted Applications
             </a>
         </div>
-        
+
         <div class="ui active tab" data-tab="browsecat">
             <div class="ui vertical segment">
                     <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;">
                             {% csrf_token %}
                 <table class="ui striped table">
-                        
+
                     <thead>
                     <tr>
                         <th>Student ID</th>
@@ -235,20 +235,20 @@
                         <td>
                             <div class="content">
                                     {{winner.student.id}}
-                            </div>   
+                            </div>
                         </td>
-                        
+
                         <td>
                             <div class="content">
                                     {{winner.student.cpi}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                             <form method='POST'>
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value="{{winner.id}}"/>
                                     <a href="/media/{{winner.relevant_document}}" download><button type='button' class="ui blue button" name="Form">Files</button>
-                                    </a>    
+                                    </a>
                                 </form>
                             </td>
                         <td>
@@ -265,7 +265,7 @@
                             <button class="ui blue button" name="Reject_Silver" value="{{winner.id}}">Reject</button>
                             </form>
                         </td>
-                        
+
                     </tr>
                         {% endif %}
                         {% endfor %}
@@ -273,7 +273,7 @@
                 </table>
                 </form>
             </div>
-        
+
             <div class="ui divider"></div>
         </div>
     </div>
@@ -284,13 +284,13 @@
                 Submitted Applications
             </a>
         </div>
-        
+
         <div class="ui active tab" data-tab="browsecat">
             <div class="ui vertical segment">
                     <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;">
                             {% csrf_token %}
                 <table class="ui striped table">
-                        
+
                     <thead>
                     <tr>
                         <th>Student ID</th>
@@ -307,20 +307,20 @@
                         <td>
                             <div class="content">
                                     {{winner.student.id}}
-                            </div>   
+                            </div>
                         </td>
-                        
+
                         <td>
                             <div class="content">
                                     {{winner.student.cpi}}
-                            </div>   
+                            </div>
                         </td>
                         <td>
                         <form method='POST'>
                                 {% csrf_token %}
                                 <input type="hidden" name="id" value="{{winner.id}}"/>
                                 <a href="/media/{{winner.relevant_document}}" download><button type='button' class="ui blue button" name="Form">Files</button>
-                                </a>    
+                                </a>
                             </form>
                         </td>
                         <td>
@@ -337,7 +337,7 @@
                             <button class="ui blue button" name="Reject_Gold" value="{{winner.id}}">Reject</button>
                             </form>
                         </td>
-                        
+
                     </tr>
                         {% endif %}
                         {% endfor %}
@@ -345,9 +345,9 @@
                 </table>
                 </form>
             </div>
-        
+
             <div class="ui divider"></div>
         </div>
-        
+
     </div>
 {% endblock %}

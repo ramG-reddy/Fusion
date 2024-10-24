@@ -88,9 +88,9 @@
 
 
 <!-- <div class="ui tab segment" data-tab="exams" style="overflow:scroll;overflow-y:hidden">
-  
-  <form class="ui large form" name="entermarks" id="entermarks" method="POST" action="/ocms/{{course.code}}/edit_marks"> 
-    
+
+  <form class="ui large form" name="entermarks" id="entermarks" method="POST" action="/ocms/{{course.code}}/edit_marks">
+
     {% csrf_token %}
   <div id="refresh_table">
     <select name="examtype" id = "examtype" style="width: 100px" >
@@ -100,7 +100,7 @@
       <option value = "Mid Sem">Mid Sem</option>
       <option value = "End Sem">End sem</option>
     </select>
-    
+
     <table class="ui very basic collapsing celled table" >
       <thead>
         <tr>
@@ -117,7 +117,7 @@
               </div>
             </td>
             <td>
-              
+
               <input type="number" name="enteredmarks" id="enteredmarks{{x.r_id}}" required="true">
 
             </td>
@@ -127,7 +127,7 @@
     </table>
   </div>
     <input type="submit" class="ui primary button" id="submit_marks" value="Upload">
-    
+
   </form>
 </div> -->
 {% endblock %}
@@ -180,7 +180,7 @@ function searchStudents() {
 //   console.log("reached");
 //   var exam_name = $(this).val();
 //   var csrf = $('input[name=csrfmiddlewaretoken]').val();
-  
+
 //   $.ajax({
 //     method: "POST",
 //     url: '/ocms/{{course.code}}/get_exam_data',
@@ -190,7 +190,7 @@ function searchStudents() {
 //     var placeholder = " ";
 //     var studentCount = Object.keys(response).length;
 //     for(var i=0;i<studentCount;i++){
-      
+
 //       placeholder = response[i].fields['marks'];
 //       var student_id = response[i].fields['mid'];
 //       console.log(placeholder);
@@ -199,7 +199,7 @@ function searchStudents() {
 //       document.getElementById(student_id).defaultValue = placeholder;
 
 //     }
-    
+
 //     //$("#refresh_table").load(" #refresh_table > *");
 //   }).fail(function (err) {
 //     console.log(err);
@@ -212,5 +212,3 @@ function searchStudents() {
     $("#refresh_table").load(" #refresh_table > *");
  }*/
 </script>
-
-

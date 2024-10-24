@@ -14,7 +14,7 @@
         <B>You can only have one thesis per semester</B>
         {% else %}
         <form id="add_thesis_form" action='/academic-procedures/addThesis/'>{% csrf_token %}
-            <div class="ui form" style="border: black" > 
+            <div class="ui form" style="border: black" >
                     <div class="field">
                         <select class="ui dropdown" name="curr_id">
                             <option value="">Course Code</option>
@@ -23,11 +23,11 @@
                             {% endfor%}
                         </select>
                     </div>
-                <div class="two fields">          
-                    <input placeholder="Enter Your Broad Research Area" name='research_area' required="true" type="text"><br>                
+                <div class="two fields">
+                    <input placeholder="Enter Your Broad Research Area" name='research_area' required="true" type="text"><br>
                 </div>
                 <div class="two fields">
-                    <textarea rows="4"  placeholder="Theme of Proposed Research Work" name='thesis_topic' required="true" type="text"></textarea>                
+                    <textarea rows="4"  placeholder="Theme of Proposed Research Work" name='thesis_topic' required="true" type="text"></textarea>
                 </div>
                 <div class="two fields">
                      <div class="field">
@@ -48,7 +48,7 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <br>
 
                 <input type="text" name='user' value='{{ details.current_user}}' hidden="True">

@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-
 from .models import (
     CounsellingFAQ,
     CounsellingIssue,
@@ -10,10 +9,8 @@ from .models import (
     FacultyCounsellingTeam,
     StudentCounsellingInfo,
     StudentCounsellingTeam,
-    StudentMeetingRequest
+    StudentMeetingRequest,
 )
-
-
 
 admin.site.register(CounsellingFAQ)
 admin.site.register(CounsellingIssue)

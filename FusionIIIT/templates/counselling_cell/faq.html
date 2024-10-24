@@ -13,7 +13,7 @@
         </a>
         {% endif %}
 
-       
+
     </div>
     <div class="ui active tab" data-tab="viewfaq">
 
@@ -33,9 +33,9 @@
                     <div class="ui header">{{faq.counselling_answer}}</div>
                 <br>
                 <br>
-               
-                </div> 
-                
+
+                </div>
+
             </div>
             {% endfor %}
         </div>
@@ -72,17 +72,17 @@
 
                         </div>
                     </div>
-                   
+
                     <div class="field">
                         <label>Question*</label>
                         <textarea rows="2" id="question" name="question" required="true"></textarea>
                     </div>
-                    
+
                     <div class="field">
                         <label>Answer*</label>
                         <textarea rows="5" id="answer" name="answer" required="true"></textarea>
                     </div>
-                    
+
                     <div class="field">
                         <label><br></label>
                             <button class="ui primary fluid button" type="submit" onclick="return feedback()">
@@ -116,7 +116,7 @@
                 check = 1;
             }
         }
-       
+
         function feedback(){
             check = required_check_faq_form();
             if(check == 0){
@@ -201,7 +201,7 @@
                         $("#coordinator").load(location.href + " #coordinator>*", "");
                     }
                 });
-            
+
         return false;
     }
     const studentGuide=()=>{
@@ -230,7 +230,7 @@
                         $("#coordinator").load(location.href + " #coordinator>*", "");
                     }
                 });
-            
+
         return false;
     }
     const removestudentGuide=(sg_roll_no)=>{
@@ -260,7 +260,7 @@
         //                 $("#coordinator").load(location.href + " #coordinator>*", "");
         //             }
         //         });
-            
+
         // return false;
     }
 
@@ -302,16 +302,13 @@
                         $("#coordinator").load(location.href + " #coordinator>*", "");
                     }
                 });
-            
+
         // return false;
     }
-    
+
 
 
 
 
 </script>
 {% endblock %}
-
-
-

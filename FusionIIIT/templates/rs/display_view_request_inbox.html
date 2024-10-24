@@ -9,11 +9,11 @@
 {% block view_projects %}
 
 {% block body %}
-   
-  
+
+
 
     <script>
-       
+
         function openFile(event, index) {
             var file = files[index-1];
             var url = file.index
@@ -30,8 +30,8 @@
 
     <div class="ui pointing secondary menu" style="font-size:25px;">
         <label class="{% if mark5 != 1 and mark6 != 1 and mark7 != 1 %}active item{% else %} item {% endif %}">
-            Inbox             
-        </label>      
+            Inbox
+        </label>
     </div>
 
     <table class="ui celled table">
@@ -41,7 +41,7 @@
                 <th>from</th>
                 <th>context</th>
                 <th>attachments</th>
-                
+
             </tr>
         </thead>
         <tbody>
@@ -53,13 +53,13 @@
                 <td>{{data.file_extra_JSON.message}}</td>
                 {% comment %} <td><button></button></td> {% endcomment %}
                  <td><button class="ui small blue equal-size-button button" onclick="openFile(event,{{forloop.counter}})" >{{data.id}}</button> </td>
-                 
+
                  <td>
                     <form class="ui form"  method="post" enctype="multipart/form-data" action="{% url 'research_procedures:forward_request' %}" >
                         {% csrf_token %}
                         {% comment %} <label > File_id </label> {% endcomment %}
                         <input type="hidden" name="file_id" value="{{data.id}}" />
-    
+
                         <label  for="receiver">Select a role:</label>
                         <select id="receiver" name="receiver" class="ui selection dropdown">
                             <option value="{{request.user.username}}">RSPC Dean</option>
@@ -67,7 +67,7 @@
                             <option value="HOD">Department HOD</option>
                             <option value="Director">Director</option> {% endcomment %}
                         </select>
-    
+
                         <input type="submit"/>
                     <form/>
                 </td>
@@ -76,7 +76,7 @@
             {% endfor %}
         </tbody>
     </table>
-    
+
 {% endblock %}
 
 {% endblock %}

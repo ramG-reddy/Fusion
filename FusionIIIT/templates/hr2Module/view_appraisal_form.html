@@ -35,10 +35,10 @@ Module
                         {% comment %}
                         TODO: Add a If-Else here!
                         {% endcomment %}
-                    
+
                 </div>
 
-            
+
             </div>
 
         {% comment %}The user image card ends here!{% endcomment %}
@@ -111,10 +111,10 @@ Module
             {% csrf_token %}
 
             <div class="ui form" style="padding: 8px; padding-left: 24px; padding-right: 24px;">
-                  
+
 
                 <br><br>
-                <div class="two fields">    
+                <div class="two fields">
                     <div class="eight wide field">
                         <label name="name">Name</label>
                         <input type="text" name="name" maxlength="40" id="id_name" value="{{ appraisal_request.name}}" readonly>
@@ -133,21 +133,21 @@ Module
                         <label name="department_info">Disipline</label>
                         <input type="text" name="disciplineInfo" maxlength="40" id="disciplineInfo"  value="{{ appraisal_request.disciplineInfo}}" readonly>
                     </div>
-                </div>  
+                </div>
 
                 <div class="two fields">
                     <div class="eight wide field">
                         <label name="department_info">Specific field of knowledge</label>
                         <input type="text" name="specificFieldOfKnowledge" maxlength="40" id="specificFieldOfKnowledge" value="{{ appraisal_request.specificFieldOfKnowledge}}" readonly>
                     </div>
-                </div>  
+                </div>
 
                 <div class="two fields">
                     <div class="eight wide field">
                         <label name="department_info">Current Research Interests</label>
                         <input type="text" name="currentResearchInterests" maxlength="40" id="currentResearchInterests" value="{{ appraisal_request.currentResearchInterests}}" readonly>
                     </div>
-                </div>  
+                </div>
 
                 <div> <p> Please give information pertaining to the period of appraisal as per the format given below :- </p></div>
                 <br>
@@ -187,11 +187,11 @@ Module
                             <td><input type="number" name="info_2_6" maxlength="40" id="id_info_2_6" value="{{ appraisal_request.info_2_6}}" readonly></td>
                             <td><input type="text" name="info_2_7" maxlength="40" id="id_info_2_7" value="{{ appraisal_request.info_2_7}}" readonly></td>
                         </tr>
-                        
+
                       </table>
 
                       <p name="newCoursesIntroduced">1.1.2 New Courses/ laboratory experiments introduced and taught</p>
-                      
+
 
                       <table>
                         <tr>
@@ -214,7 +214,7 @@ Module
 
 
                         <p name="newCoursesDeveloped">1.1.3 New course material developed/instructional software developed (should be made available on the web / public domain and may be under GIAN/NPTEL/SWAYAM etc)</p>
-                      
+
 
                       <table>
                         <tr>
@@ -238,7 +238,7 @@ Module
                         </table>
 
                         <p>1.1.4 Any other instructional tasks :- </p>
-                        
+
                         <input type="text" name="otherInstructionalTasks" maxlength="40" id="otherInstructionalTasks" value="{{ appraisal_request.otherInstructionalTasks}}" readonly>
 
                         <div>
@@ -292,7 +292,7 @@ Module
                                   <td><input type="text" name="info_9_6" maxlength="40" id="id_info_9_6" value="{{ appraisal_request.info_9_6}}" readonly></td>
                                   <td><input type="text" name="info_9_7" maxlength="40" id="id_info_9_7" value="{{ appraisal_request.info_9_7}}" readonly></td>
                                 </tr>
-                                
+
                             </table>
 
                             <div class="two fields">
@@ -300,28 +300,28 @@ Module
                                     <label name="department_info">2.3 Other Research element(such as development of reseach facilities, patenet(applied for / granted) / transfer of technology, etc)</label>
                                     <input type="text" name="otherResearchElement" maxlength="40" id="otherResearchElement" value="{{ appraisal_request.otherResearchElement}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.4 Publication(s) (Journal, conference, book, book chapter, technical report,etc) (Kindly provide the details in the standered format as filled in EIS system )</label>
                                     <input type="text" name="publication" maxlength="40" id="publication" value="{{ appraisal_request.publication}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.5 Referred Conferences/ Symposia/ Seminars/ Workshops / Specialist's meetings attended</label>
                                     <input type="text" name="referredConference" maxlength="40" id="referredConference" value="{{ appraisal_request.referredConference}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.6 Conference / Workshop / STP etc Organised </label>
                                     <input type="text" name="conferenceOrganised" maxlength="40" id="conferenceOrganised" value="{{ appraisal_request.conferenceOrganised}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
 
                             <p><b>2.7 Professional Recognition</b></p>
 
@@ -330,31 +330,31 @@ Module
                                     <label name="department_info">2.7.1 Memberships of Professional Socities(National/International) </label>
                                     <input type="text" name="membership" maxlength="40" id="membership" value="{{ appraisal_request.membership}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.7.2 Honours/ Prizes/ Awards/ Fell0wship etc</label>
                                     <input type="text" name="honours" maxlength="40" id="honours" value="{{ appraisal_request.honours}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.7.3 Editors/ Guest Editor etc of Reputed Publication</label>
                                     <input type="text" name="editorOfPublications" maxlength="40" id="editorOfPublications" value="{{ appraisal_request.editorOfPublications}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.7.4 Expert/ Invited lecture delivered</label>
                                     <input type="text" name="expertLectureDelivered" maxlength="40" id="expertLectureDelivered" value="{{ appraisal_request.expertLectureDelivered}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="two fields">
                                 <div class="eight wide field">
                                     <label name="department_info">2.7.5 Membership of BoS/ BoG / Senate etc</label>
                                     <input type="text" name="membershipOfBOS" maxlength="40" id="membershipOfBOS" value="{{ appraisal_request.membershipOfBOS}}" readonly>
                                 </div>
-                            </div> 
+                            </div>
 
                             <p><b>2.8 Other Extention Taks</b></p>
                             <p>eg. involvement in government , industry and public community service</p>
@@ -368,25 +368,25 @@ Module
                                     <h2 style="text-align: center;">3. ADMINISTRATION ASSIGNMENT</h2>
                                     <p>(Please indicate duration of each assignment)</p>
                                 </div>
-    
+
                                 <div class="two fields">
                                     <div class="eight wide field">
                                         <label name="department_info">3.1 Adminitrative assignment: (please mention institue/discipline level)</label>
                                         <input type="text" name="administrativeAssignment" maxlength="40" id="administrativeAssignment" value="{{ appraisal_request.administrativeAssignment}}" readonly>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="two fields">
                                     <div class="eight wide field">
                                         <label name="department_info">3.2 Service to institute community(if any): (please mention institute/others)</label>
                                         <input type="text" name="serviceToInstitute" maxlength="40" id="serviceToInstitute" value="{{ appraisal_request.serviceToInstitute}}" readonly>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="two fields">
                                     <div class="eight wide field">
                                         <label name="department_info">Any other contribution</label>
                                         <input type="text" name="otherContribution" maxlength="40" id="otherContribution" value="{{ appraisal_request.otherContribution}}" readonly>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
 
                             <div>
@@ -398,34 +398,34 @@ Module
                                         <label name="department_info">Your comments on your performance so far and this academic year particularly.</label>
                                         <input type="text" name="performanceComments" id="performanceComments" value="{{ appraisal_request.performanceComments}}" readonly>
                                     </div>
-                                </div> 
+                                </div>
 
                             </div>
 
                         </div>
-                        
+
                 </div>
 
 
-                
 
-               
-             
+
+
+
                <br><br><br>
                <div>
                 <div class="eight wide field">
                     <label name="date">Date</label>
                     <input type="date" name="submissionDate" id="submissionDate" value="{{ appraisal_request.submissionDate|date:'Y-m-d'}}" readonly>
                 </div>
-                
+
 
                </div>
 
-                
-                
-                    
-                
-                
+
+
+
+
+
             {% if button == 1 %}
                                     <div class="two fields">
                                         <div class="eight wide field">
@@ -474,7 +474,7 @@ Module
     </form>
 
     <div id="data-of-past">
-                              
+
     </div>
 
 
@@ -497,7 +497,7 @@ Module
                 </div>
             </div>
         </div>
-                
+
 
     </div>
 
@@ -545,7 +545,7 @@ Module
         }
     });
 
-    
+
 </script>
 
 
@@ -594,7 +594,7 @@ Module
            //  var user_id = 5332;
 
             console.log(user_id)
-       
+
             var type = 'Appraisal'; // Assuming 'LTC' is the type for this request
            $.ajax({
             type: 'GET',
@@ -630,12 +630,12 @@ Module
            });
        });
    });
-  
+
 </script>
 
 <script>
     $(document).ready(function() {
-       
+
         // Handle Forward and Reject button clicks
         $('#forward-btn').click(function(event) {
             event.preventDefault();
@@ -655,7 +655,7 @@ Module
             var confirmation = confirm("Do you want to approve the request?")
 
             if(confirmation){
-                handleForwardOrReject(2);   
+                handleForwardOrReject(2);
             }
         });
 
@@ -665,7 +665,7 @@ Module
             var confirmation = confirm("Do you want to archive the file")
 
             if(confirmation){
-                handleForwardOrReject(3);   
+                handleForwardOrReject(3);
             }
         });
 
@@ -681,7 +681,7 @@ Module
             var remark_id = $('#remark_id').val();
             var remarks = $('#remarks').val();remarks
             var form_id = $('#form_id').val();
-            
+
 
             console.log(file_id);
             formData += '&context=' + JSON.stringify({
@@ -692,9 +692,9 @@ Module
                 designation_employee:designation_employee,
                 remark_id : remark_id,
                 form_id : form_id,
-               
+
                 remarks : remarks,
-               
+
             });
             // Fire an AJAX request to handle the action
             $.ajax({
@@ -702,7 +702,7 @@ Module
                 type: 'POST',
                 headers: {
                     'X-CSRFToken': getCookie('csrftoken')
-                 },  
+                 },
                 data: formData, // Send the serialized form data
                 success: function(data) {
                     // Handle success response, if needed

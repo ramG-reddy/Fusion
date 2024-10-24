@@ -1,5 +1,5 @@
-{% load static %} 
-{% block sidepanel %} 
+{% load static %}
+{% block sidepanel %}
   {% load notifications_tags %}
   {% for notice in notifications %}
     {% if notice.unread %}
@@ -12,7 +12,7 @@
             <a href="{% url 'notifications:mark_as_read_and_redirect' notice.slug %}">
               {{notice.data.cname}}
             </a>
-            
+
         </div>
         <p>{{ notice.verb }}</p>
     </div>
@@ -22,8 +22,8 @@
         </a>
     </div>
 </div>
-      {% endif%} 
-      {% endif%} 
+      {% endif%}
+      {% endif%}
     {% endif %}
   {% endfor %}
 {% endblock %}

@@ -2,13 +2,13 @@
 {% block feedback %}
 
     {% comment %}The tab menu starts here!{% endcomment %}
-    
+
 
     <div class="ui pointing secondary menu ">
         <a class="active item" data-tab="feedback">
             Feedback for Complaints
         </a>
-        
+
 
     </div>
 
@@ -23,7 +23,7 @@
                                                           margin: auto;">
                 <thead>
                 <tr>
-                   
+
                     <th class="three wide column">
                         Date &ensp;&ensp;&ensp;&ensp;&ensp;
 
@@ -36,10 +36,10 @@
                     <th>
                         Location
                     </th>
-<!-- 
+<!--
                     <th>
                         Specific <br> Location
-                        
+
                     </th> -->
 
                     <th class="one wide column">
@@ -64,7 +64,7 @@
 
                 <tbody>
                 <tr>
-            
+
                     <td>
                         {{ a.complaint_date }}
                     </td>
@@ -75,7 +75,7 @@
 
                     <td>
                         {{ a.location }} -<br>
-                    
+
                         {{ a.specific_location }}
                     </td>
 
@@ -98,7 +98,7 @@
                                        <i class="large comments icon"></i>
                                     </button>
                                     </a>
-                                  
+
                                 </center>
 
                             </div>

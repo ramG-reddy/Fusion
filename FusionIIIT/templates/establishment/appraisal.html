@@ -44,16 +44,16 @@
         <div class="description">
             <form class="ui large form" method="post" enctype="multipart/form-data" id="form1">
                 {% csrf_token %}
-                
+
                 <form class="ui large form" method="post" enctype="multipart/form-data" id="form2">
                   {% csrf_token %}
                   <div class="field">
-                      
+
                       <label>Start Date</label>
                         {% if start_date %}
                           <div class="ui calendar" id="rangestart">
                                     <div class="ui input">
-      
+
                                       <input type="date" name="start_date" id="start_date" value="{{start_date}}" required>
                                     </div>
                           </div>
@@ -66,7 +66,7 @@
                           </div>
                         {% endif %}
                         <br>
-                        
+
                       <label>End Date</label>
                           {% if end_date %}
                               <div class="ui calendar" id="rangeend">
@@ -85,12 +85,12 @@
                           {% endif %}
                         <br>
 
-                
+
                 <button name="filter_eis_details" class="ui left floated primary button" type="submit">
                   Filter<i class="ui save icon right floated"></i>
                 </button><br><br><br>
               </form>
-              
+
                 <hr style="height:5px;background-color:#333;">
                 {% if start_date %}
                     <h2>&emsp;&emsp;&emsp;Showing details from {{start_date}} to {{end_date}}</h2>
@@ -149,7 +149,7 @@
                   -->
 
                   <h3>1.2 &emsp; New Courses/Laboratory experiments Introduced and  Taught</h3>
-                  <div id="new_courses"></div>    
+                  <div id="new_courses"></div>
                   <table id="NewCoursesOffered">  <!-- the container to add the TABLE -->
                     <tr>
                       <th>Course-Name</th>
@@ -167,7 +167,7 @@
                 Table for NewCourseMaterial
               -->
                 <h3>1.3 &emsp; New Course Material / Instructional Software Developed </h3>
-                <div id="new_courses_material"></div>  
+                <div id="new_courses_material"></div>
                 <table id="NewCourseMaterial">
                   <tr>
                     <th>Course-Name</th>
@@ -177,7 +177,7 @@
                     <th>Web/Public</th>
                   </tr>
                 </table><br>
-                <p><input type="button" value="Add New Course Material" onclick="javascript:addRowNewCoursesMaterial()"/></p> 
+                <p><input type="button" value="Add New Course Material" onclick="javascript:addRowNewCoursesMaterial()"/></p>
               <!-- End of Table NewCourseMaterial -->
 
 
@@ -523,10 +523,10 @@
                                   <td>{{obj.availiability}}</td>
                                 </tr>
                               {% endif %}
-                          {% endfor %} 
+                          {% endfor %}
                           </table>
 
-                          
+
                           <hr style="height:5px;background-color:#333;">
 
 
@@ -880,7 +880,7 @@
                                   <td>{{obj.availiability}}</td>
                                 </tr>
                               {% endif %}
-                          {% endfor %} 
+                          {% endfor %}
                           </table>
 
                           <hr style="height:5px;background-color:#333;">

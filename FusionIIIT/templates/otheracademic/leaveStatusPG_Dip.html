@@ -59,11 +59,11 @@
                 <h2 class="ui header">Leave Log (PG)</h2>
                 <div class="scrollable-boundary">
                     <div class="scrollable-container">
-                        
+
                         <table class="ui celled table">
                             <thead>
                                 <tr>
-                                    
+
                                     <th>Roll No.</th>
                                     <th>Student Name</th>
                                     <th>Programme</th>
@@ -85,9 +85,9 @@
                             </thead>
                             <tbody>
                                 {% for entry in form_data %}
-                                
+
                                 <tr>
-                                    
+
                                     <td>{{ entry.roll_no_id }}</td>
                                     <td>{{ entry.student_name }}</td>
                                     <td>{{ entry.programme}}</td>
@@ -102,7 +102,7 @@
                                         {%else%}
                                             <a href={{ entry.upload_file.url }}>Download</a>
                                         {%endif%}
-                                    </td> 
+                                    </td>
                                     <td>{{ entry.purpose }}</td>
                                     <td>{{ entry.address }}</td>
                                     <td>{{ entry.mobile_no }}</td>
@@ -120,17 +120,17 @@
                                         {% else%} Pending
                                         {% endif%}
 
-                                    </td>  
+                                    </td>
                                     <td>
                                         {%if entry.hod_approved%} Approved
                                         {%elif entry.hod_rejected or entry.ta_rejected or entry.thesis_rejected%} Rejected
                                         {% else%} Pending
                                         {% endif%}
 
-                                    </td>    
-                                    
+                                    </td>
+
                                 </tr>
-                                
+
                                 {% endfor %}
                             </tbody>
                         </table>

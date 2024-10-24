@@ -27,7 +27,7 @@
 
 #     if str(user.extrainfo.user_type) == "student":
 #         designation.append(str(user.extrainfo.user_type))
-        
+
 #     for i in design:
 #         if str(i.designation) != str(user.extrainfo.user_type):
 #             # print('-------')
@@ -58,7 +58,7 @@
 #         #             healthcare_center_notif(request.user, cmp.user, 'amb_req')
 #         #         return Response(serializer.data, status=status.HTTP_201_CREATED)
 #         #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
+
 #         # elif 'ambulancecancel' in request.data and request.method == 'DELETE':
 #         #     try:
 #         #         amb_id=int(request.data['amb_id'])
@@ -68,7 +68,7 @@
 #         #     ambulance.delete()
 #         #     resp = {'message': 'ambulance request is cancelled'}
 #         #     return Response(data=resp,status=status.HTTP_200_OK)
-        
+
 #         # elif 'appointmentadd' in request.data and request.method == 'POST':
 #         #     request.data['user_id'] = get_object_or_404(User,username=request.user.username)
 #         #     try:
@@ -99,7 +99,7 @@
 #         #     appointment.delete()
 #         #     resp = {'message': 'Your appointment is cancelled'}
 #         #     return Response(data=resp,status=status.HTTP_200_OK)
-        
+
 
 #         if 'complaintadd' in request.data and request.method == 'POST':
 #             request.data['user_id'] = get_object_or_404(User,username=request.user.username)
@@ -108,7 +108,7 @@
 #                 serializer.save()
 #                 return Response(serializer.data, status=status.HTTP_201_CREATED)
 #             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#         else: 
+#         else:
 #             resp = {'message': 'invalid request'}
 #             return Response(data=resp,status=status.HTTP_404_NOT_FOUND)
 
@@ -148,30 +148,30 @@
 #         Counter.objects.create(count=0,fine=0)
 #         count= serializers.CounterSerializer(Counter.objects.get()).data
 #         resp={
-#             'complaints': complaints, 
+#             'complaints': complaints,
 #             'medicines_presc': medicines_presc,
-#             # 'ambulances': ambulances, 
-#             'doctors': doctors, 
+#             # 'ambulances': ambulances,
+#             'doctors': doctors,
 #             'pathologists': pathologists,
 #             'days': days,
 #             'count':count,
-#             # 'hospitals': hospitals, 
+#             # 'hospitals': hospitals,
 #             # 'appointments': appointments,
-#             'prescription': prescription, 
+#             'prescription': prescription,
 #             # 'schedule': schedule
 #             'doctor_schedule': doctor_schedule,
 #             'pathologist_schedule': pathologist_schedule,
 #         }
 #         return Response(data=resp,status=status.HTTP_200_OK)
 #     elif 'Compounder' in design:
-#         return redirect('/healthcenter/api/compounder/') 
+#         return redirect('/healthcenter/api/compounder/')
 #     else:
 #         resp = {'message': 'invalid request'}
 #         return Response(data=resp,status=status.HTTP_404_NOT_FOUND)
 
 # @api_view(['POST','PATCH','DELETE'])
 # @permission_classes([IsAuthenticated])
-# @authentication_classes([TokenAuthentication]) 
+# @authentication_classes([TokenAuthentication])
 # def compounder_request_api(request):
 #     design = getDesignation(request)
 #     if 'Compounder' in design:
@@ -235,7 +235,7 @@
 #         #     if serializer.is_valid():
 #         #         serializer.save()
 #         #         return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+#         #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 #         # elif 'hospitaldischarge' in request.data and request.method == 'PATCH':
 #         #     try:
@@ -249,7 +249,7 @@
 #         #         serializer.save()
 #         #         return Response(serializer.data, status=status.HTTP_201_CREATED)
 #         #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
+
 #         elif 'medicineadd' in request.data and request.method =='POST':
 #             stock = serializers.StockSerializer(data=request.data)
 #             if stock.is_valid():
@@ -330,9 +330,9 @@
 #                 pk = request.data['complaint_id']
 #             except:
 #                 return Response({'message': 'Please enter valid complaint id'}, status=status.HTTP_404_NOT_FOUND)
-#             try: 
-#                 complain = Complaint.objects.get(id = pk) 
-#             except Complaint.DoesNotExist: 
+#             try:
+#                 complain = Complaint.objects.get(id = pk)
+#             except Complaint.DoesNotExist:
 #                 return Response({'message': 'Complaint does not exist'}, status=status.HTTP_404_NOT_FOUND)
 #             serializer = serializers.ComplaintSerializer(complain,data=request.data,partial=True)
 #             if serializer.is_valid():
@@ -349,11 +349,11 @@
 
 # @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
-# @authentication_classes([TokenAuthentication])                                  
+# @authentication_classes([TokenAuthentication])
 # def compounder_view_api(request):                                                              # compounder view starts here
 #     # usertype = ExtraInfo.objects.get(user=request.user).user_type
 #     design = getDesignation(request)
-#     if 'Compounder' in design:  
+#     if 'Compounder' in design:
 #         all_complaints = serializers.ComplaintSerializer(Complaint.objects.all(),many=True).data
 #         # all_hospitals = serializers.HospitalAdmitSerializer(Hospital_admit.objects.all().order_by('-admission_date'),many=True).data
 #         # hospitals_list = serializers.HospitalSerializer(Hospital.objects.all().order_by('hospital_name'),many=True).data
@@ -380,27 +380,27 @@
 #         pathologists=serializers.PathologistSerializer(Pathologist.objects.filter(active=True),many=True).data
 
 #         resp= {
-#                 'days': days, 
+#                 'days': days,
 #                 'count': count,
 #                 'expired':expired,
-#                 'stocks': stocks, 
+#                 'stocks': stocks,
 #                 'all_complaints': all_complaints,
-#                 # 'all_hospitals': all_hospitals, 
-#                 # 'hospitals':hospitals, 
+#                 # 'all_hospitals': all_hospitals,
+#                 # 'hospitals':hospitals,
 #                 # 'all_ambulances': all_ambulances,
-#                 # 'appointments_today': appointments_today, 
+#                 # 'appointments_today': appointments_today,
 #                 'doctors': doctors,
-#                 # 'appointments_future': appointments_future, 
-#                 # 'schedule': schedule, 
+#                 # 'appointments_future': appointments_future,
+#                 # 'schedule': schedule,
 #                 'doctor_schedule': doctor_schedule,
 #                 'pathologist_schedule': pathologist_schedule,
 #                 'pathologists': pathologists,
-#                 'live_meds': live_meds, 
-#                 'presc_hist': presc_hist, 
-#                 'medicines_presc': medicines_presc, 
+#                 'live_meds': live_meds,
+#                 'presc_hist': presc_hist,
+#                 'medicines_presc': medicines_presc,
 #                 # 'hospitals_list': hospitals_list
 #             }
-#         return Response(data=resp,status=status.HTTP_200_OK) 
+#         return Response(data=resp,status=status.HTTP_200_OK)
 
 #     else:
 #         resp = {'message': 'invalid request'}

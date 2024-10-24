@@ -1,9 +1,9 @@
-/** 
+/**
  * ===================================================================
  * Main js
  *
- * ------------------------------------------------------------------- 
- */ 
+ * -------------------------------------------------------------------
+ */
 
 (function($) {
 
@@ -11,27 +11,27 @@
 
 	/* --------------------------------------------------- */
 	/* Preloader
-	------------------------------------------------------ */ 
+	------------------------------------------------------ */
    $(window).load(function() {
-      // will first fade out the loading animation 
+      // will first fade out the loading animation
     	$("#loader").fadeOut("slow", function(){
 
         // will fade out the whole DIV that covers the website.
         $("#preloader").delay(300).fadeOut("slow");
 
-      }); 
+      });
   	})
 
 
   	/* --------------------------------------------------- */
 	/*  Placeholder Plugin Settings
 	------------------------------------------------------ */
-	$('input, textarea, select').placeholder()  
+	$('input, textarea, select').placeholder()
 
 
   	/*---------------------------------------------------- */
   	/* FitText Settings
-  	------------------------------------------------------ */  
+  	------------------------------------------------------ */
   	setTimeout(function() {
 
    	$('.main-content h1').fitText(.8, { minFontSize: '42px', maxFontSize: '94px' });
@@ -42,12 +42,12 @@
   	/* --------------------------------------------------- */
 	/* lettering js
 	------------------------------------------------------ */
-	$(".kern-this").lettering(); 
+	$(".kern-this").lettering();
 
 
 	/* --------------------------------------------------- */
   	/* Menu
-   ------------------------------------------------------ */  
+   ------------------------------------------------------ */
    var toggleButton = $('.menu-toggle'),
        nav = $('#menu-nav-wrap'),
        mainContent = $('#main-404-content'),
@@ -62,12 +62,12 @@
 		nav.toggleClass('menu-is-open');
 		mainHeader.toggleClass('menu-is-open');
 		mainContent.toggleClass('menu-is-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-			// firefox transitions break when parent overflow is changed, 
+			// firefox transitions break when parent overflow is changed,
 			// so we need to wait for the end of the trasition to give the body an overflow hidden
 			$('body').toggleClass('overflow-hidden');
 		});
-			
-		// check if transitions are not supported 
+
+		// check if transitions are not supported
 		if($('html').hasClass('no-csstransitions')) {
 			$('body').toggleClass('overflow-hidden');
 		}
@@ -85,7 +85,7 @@
 			mainContent.removeClass('menu-is-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				$('body').removeClass('overflow-hidden');
 			});
-			
+
 			// check if transitions are not supported
 			if($('html').hasClass('no-csstransitions')) {
 				$('body').removeClass('overflow-hidden');
@@ -120,7 +120,7 @@
 	    curveLines: true,
 	    density: 9000,
 	    proximity: 100
-	});  	
- 
+	});
+
 
 })(jQuery);

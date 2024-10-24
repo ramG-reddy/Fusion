@@ -23,7 +23,7 @@ Edit Contest
 
               <h3> {{course.course_name}}  </h3>
         <div class="ui huge fluid vertical pointing menu" style="max-width: 320px;">
-          
+
                     <a class="active item sidetab" data-tab="first" data-num="11">
                       Course Content
                     <i class="right floated chevron right icon"></i>
@@ -191,7 +191,7 @@ Edit Contest
                   <form class="ui large form" method="post" action="/ocms/{{curriculum.course_code}}/create_bank">
                   {% csrf_token %} {% if errors %} {{errors}} {% endif %}
                   <br/>
-                  
+
                   <div class="field">
                     <label>Question Bank Name <font color="red" size="4.5">*</font></label>
                     <input type="text" name="qbname" placeholder="Name" required="True"/>
@@ -199,7 +199,7 @@ Edit Contest
                   <input type="submit" class="ui primary button" value="Create" />
                 </form>
               </div>
-				
+
             <a class="ui blue button" href="/ocms/{{curriculum.course_code}}/">
                  Done!
                 </a>

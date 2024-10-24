@@ -75,12 +75,12 @@
                     <a class="active item" data-tab="thisworker">
                         This Caretaker
                     </a>
-                     
+
                 </div>
-               
+
 
                 <div class="ui active tab large" data-tab="thiscaretaker">
-                    <!-- <div class="field">     
+                    <!-- <div class="field">
                                      <button class="ui green icon button right floated">
                                         <i class="large undo icon" ></i>
                                     </button>
@@ -98,7 +98,7 @@
             <br> -->
                     <div class="ui vertical segment">
                         <p><b>{{this_caretaker.staff_id.user.first_name}} {{this_caretaker.staff_id.user.last_name}}</b> works for <b><i>{{this_caretaker.area}}</i></b> under the Supervisor <i><b>{{request.user.first_name}} {{request.user.last_name}}</b></i></p><br>
-                      
+
                     {%if num == 0 %}
                         <div><p>The Caretaker is not Obliged to any pending Complaint</p>
                             <p>{{this_caretaker.area}} has No complaints.</p>
@@ -129,12 +129,12 @@
                             <div><b>Date:</b> {{i.complaint_date}}</div>
                             <div><b>Type:</b> {{i.complaint_type}}</div>
                             <div><b>Finish Date:</b> {{i.complaint_finish}}</div>
-                            <div><b>Status:</b> 
+                            <div><b>Status:</b>
                                 {% if i.status == 0 %}
                                     <i class="large orange warning icon"></i>
                                 {% elif i.status == 1 %}
                                     <i class="large orange add user icon"></i>
-                                
+
                                 {%endif%}
 
                             </div>
@@ -154,7 +154,7 @@
 
 
                     </div>
-                
+
             {% comment %}The ... end here!{% endcomment %}
             </div>
         {% comment %}The central-rail segment ends here!{% endcomment %}
@@ -183,5 +183,3 @@
     <script type="text/javascript" src="{% static 'globals/js/tablesort.js' %}"></script>
 
 {% endblock %}
-
-

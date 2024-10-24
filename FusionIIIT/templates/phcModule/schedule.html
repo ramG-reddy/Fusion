@@ -85,7 +85,7 @@
                             {{count.empty_fine}}
                             {% for s in schedule %}
                             {% if s.day == day %}
-                            
+
                             {% if d.id == s.doctor_id_id %}
                             <td style="white-space:nowrap;">{{s.from_time}}--{{s.to_time}}</td>
                             {{count.increment}}
@@ -289,8 +289,8 @@
                       <thead>
 
                         <tr>
-                          <td style="font-weight:bold;color:black;">Pathologist 
-                            
+                          <td style="font-weight:bold;color:black;">Pathologist
+
                           </td>
                           {% for d in pathologists %}
                           {{count.pathologist_count}}
@@ -319,7 +319,7 @@
                             {% for s1 in schedule1 %}
                             {% if s1.day == day %}
                             {% comment %} {{ s1.doctor_id.id }} {% endcomment %}
-                            
+
                             {% if d1.id == s1.pathologist_id_id %}
                             <td style="white-space:nowrap;">{{s1.from_time}}--{{s1.to_time}}</td>
                             {{ count.increment }}
@@ -406,7 +406,7 @@
           var time_in = document.getElementById('time_in1').value;
           var time_out = document.getElementById('time_out1').value;
           var room = document.getElementById('room1').value;
-          
+
 
           if(doc == "" || day == "" || time_in == ""|| room == "" || time_out == "")
           {

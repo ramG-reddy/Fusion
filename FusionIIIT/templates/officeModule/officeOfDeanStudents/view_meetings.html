@@ -10,7 +10,7 @@
                                                  <!--<th> </th>-->
                                             </tr>
                         </thead>
-                        
+
                             {% for details in final_minutes %}
                             <tr onclick="modals('{{ details.pk }}')">
                                 <td>{{  details.agenda }}</td>
@@ -25,7 +25,7 @@
                                 </button></td>-->
                         </tr>
                         {% endfor %}
-                       
+
                             {% for details in meetingMinutes%}
                              <tr class="error" onclick="modals('{{ details.pk }}')">
                                 <td>{{  details.agenda }}</td>
@@ -36,6 +36,6 @@
                                 <td> No file</td>
                                 </tr>
                                 {% endfor %}
-                        
-                         
+
+
 </table>

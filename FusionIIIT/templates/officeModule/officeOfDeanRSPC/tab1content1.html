@@ -3,7 +3,7 @@
     {% comment %}The add a new skill Accordian starts here!{% endcomment %}
     <div class="ui form" style="padding: 8px; padding-left: 24px; padding-right: 24px;">
          {% csrf_token %}
-         
+
         <div class="three fields">
             <div class="six wide field">
                 <label>Project Title</label>
@@ -14,7 +14,7 @@
                 <label>Sponsoring Agency / Client</label>
                 <input value="" class="ui large input" name="sponsored_agency">
             </div>
-            
+
             <div class="four wide field">
                 <label>Project Start Date</label>
                 <input value="" class="ui large input" type="date" name="start_date" required>
@@ -25,7 +25,7 @@
                 <input value="" class="ui large input" type="date" name="fund_recieved_date" required>
             </div>
         </div>
-        
+
         <div class="three fields">
             <div class="six wide field">
                 <label>Project Duration (In weeks)</label>
@@ -40,13 +40,13 @@
                     <option value="No">No</option>
                 </select>
             </div>
-            
+
             <div class="four wide field">
                 <label>Total amount sanctioned</label>
                 <input value="" class="ui large input" type="number" min="0" name="amount_sanctioned" required>
             </div>
         </div>
-        
+
         <div class="three fields">
             <div class="six wide field">
                 <label>Project Type</label>
@@ -67,7 +67,7 @@
                 <select class="ui search fluid dropdown" name="project_operated">
                     <option value="Only By PI">Only By PI</option>
                     <option value="PI and Co_pi">PI and Co_pi</option>
-                    
+
                 </select>
             </div>
 
@@ -113,7 +113,7 @@
         <th style="width:20%">Project Type</th>
         <th style="width:20%">duration</th>
         <th style="width:20%">Start date</th>
-        
+
 
 
     </tr>
@@ -128,7 +128,7 @@
         <td id="pr{{ forloop.counter }}D">{{ pr.project_type}}</td>
         <td id="pr{{ forloop.counter }}E">{{ pr.duration}}</td>
         <td id="pr{{ forloop.counter }}F">{{ pr.start_date  }}</td>
-        
+
 
     </tr>
     {% endfor %}

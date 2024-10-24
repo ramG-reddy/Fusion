@@ -25,7 +25,7 @@
                 <a href="/otheracademic/CSE_nodues_not" class="item">Clear No Dues
                     <i class="right floated chevron right icon"></i>
                 </a>
-                
+
             </div>
         </div>
 
@@ -38,20 +38,20 @@
                             <th>Roll No.</th>
                             <th>Name </th>
                             <th>Computer Center</th>
-                           
 
 
-                            
+
+
                         </tr>
                     </thead>
                     <tbody>
                         {% for entry in form_data %}
                         <tr>
                             {% if not entry.cc_clear and not entry.cc_notclear %}
-                        
+
                             <td>{{ entry.roll_no}}</td>
                             <td>{{ entry.name }}</td>
-                            
+
                             <td >
                                 <form action="{% url 'otheracademic:approve_CSE' no_dues_id=entry.id %}" method="post">
                                     {% csrf_token %}
@@ -61,7 +61,7 @@
                                     {% csrf_token %}
                                     <button class="ui red button reject-button" style="width:60%" type="submit">Not Clear</button>
                                 </form>
-                                
+
                             </td>
                             {% endif %}
                         </tr>

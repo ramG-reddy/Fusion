@@ -13,11 +13,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .thesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 .pthesis {
   background-color: #f1f1f1;
@@ -32,11 +32,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .pthesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .panel {
@@ -54,27 +54,27 @@ table{
 
 .td1{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td2{
     width: 30%;
-        padding-bottom:15px;    
+        padding-bottom:15px;
     padding-top: 15px;
 }
 .td3{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td4{
     width: 30%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td5{
     width: 2%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .previous {
@@ -117,7 +117,7 @@ table{
     </a>
 
     <a class="item" data-tab="approve_assis" onclick="mfun()" style="width: 30%;">
-        <p style="margin-left: 20%;">Approved</p>  
+        <p style="margin-left: 20%;">Approved</p>
     </a>
 
 </div>
@@ -132,7 +132,7 @@ table{
                 {% if fac_id == obj.ta_supervisor.id and obj.ta_supervisor_remark == False or fac_id == obj.thesis_supervisor.id and obj.thesis_supervisor_remark == False %}
                     <div  class="assis" id_thesis="assis{{forloop.counter}}" id_object="{{obj.id}}">{{obj.student.id.user.username}}</div>
                 <div class="panel" id="assis{{forloop.counter}}" hidden>
-                    
+
                     <table>
                         <tr>
                             <td class="td1">Roll No.</td>
@@ -187,8 +187,8 @@ table{
                                                                                 display: inline-block;
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
-                <button class="ui primary button" style="background-color: green" name="approve" value="yes">Submit</button> 
-                </div> 
+                <button class="ui primary button" style="background-color: green" name="approve" value="yes">Submit</button>
+                </div>
             </div>
         </form>
         </div>
@@ -204,7 +204,7 @@ table{
     {% if approved_assistantship_request_list %}
         {% for obj in approved_assistantship_request_list reversed %}
             {% if fac_id == obj.ta_supervisor.id or fac_id == obj.thesis_supervisor.id %}
-              {% if obj.ta_supervisor_remark or obj.thesis_supervisor_remark  %}   
+              {% if obj.ta_supervisor_remark or obj.thesis_supervisor_remark  %}
                 <div class="pthesis" id="assisapproved{{forloop.counter}}">{{obj.student.id.user.username}}</div>
                 <div class="ui modal assisapproved{{forloop.counter}}">
                     <i class="close icon"></i>
@@ -227,10 +227,10 @@ table{
                                 <td class="td1">Year</td>
                                 <td class="td5">:</td>
                                 <td colspan="4" style="font-weight: bold;">{{obj.year}}</td>
-                            </tr>                        
-                    
+                            </tr>
 
-                        </table> 
+
+                        </table>
                     </div>
                 </div>
                 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
@@ -298,18 +298,18 @@ table{
 <script type="text/javascript">
 
 function mfun(){
-    
+
     document.getElementById('a1').style="display:none";
     document.getElementById('a2').style="display:block";
     document.getElementById('a3').style="display:none";
     document.getElementById('myid').style="display:none";
     document.getElementById('myid2').style="display:none";
     document.getElementById('myid3').style="display:none";
-    
+
 
 }
 function mfun1(){
-    
+
     document.getElementById('a1').style="display:block";
     document.getElementById('a2').style="display:none";
     document.getElementById('a3').style="display:none";
@@ -321,7 +321,7 @@ function mfun1(){
 }
 
 function mfun2(){
-    
+
     document.getElementById('a1').style="display:none";
     document.getElementById('a2').style="display:none";
     document.getElementById('a3').style="display:block";
@@ -333,7 +333,7 @@ function mfun2(){
 
 
 $(function() {
-    
+
     var obj_id;
     $(".assis").click(function(){
         id = $(this).attr("id_thesis");
@@ -371,21 +371,17 @@ $(function() {
          obj_id : obj_id,
          csrfmiddlewaretoken: '{{ csrf_token }}'
     },
-    success: function( data ) 
+    success: function( data )
     {
         $(".succ").modal("show");
         window.location = "/academic-procedures/fac/";
     }
     });
-    
+
     }
   });
 
 });
 
 
-</script> 
-
-
- 
-
+</script>

@@ -6,11 +6,11 @@
     <title>Balance Sheet</title>
     <style>
         body {
-  
+
   margin: auto;
   margin-left: 20% ;
-  
- 
+
+
 }
 h2{
     margin-left: 25%;
@@ -23,50 +23,50 @@ td,th{
     height: 25px;
 }
     </style>
-    
+
 </head>
 <body>
     <h2>Balance Sheet</h2>
     <table style="width:60%">
         <tr>
           <th><b>SOURCES OF FUNDS</b></th>
-          <th>Amount (Rs.)</th> 
-          
+          <th>Amount (Rs.)</th>
+
         </tr>
         {% for item in fixedDetails %}
         <tr>
             <td>{{item.attribute}}</td>
             <td>{{item.value}}</td>
-            
+
           </tr>
           {% endfor %}
-       
+
       </table>
       <br>
       <br>
       <table style="width:60%">
         <tr>
           <th><b>Particulars</b></th>
-          <th style="width: 50%;">Amount (Rs.)</th> 
-          
+          <th style="width: 50%;">Amount (Rs.)</th>
+
         </tr>
         <tr>
           <td><b>A. INCOME :</b></td>
           <td></td>
-          
+
         </tr>
-        
-        
-        
+
+
+
         {% for type in incomeTypes %}
-        
+
         <tr>
             <td>
                 {{ type.income_source }}
             </td>
             {% if type.income_source in incomeDetails %}
             <td>
-                
+
 
                 {% for key,value in incomeDetails.items %}
                 {% if key == type.income_source %}
@@ -74,7 +74,7 @@ td,th{
                 {% endif %}
                 {% endfor %}
 
-                
+
             </td>
             {% else %}
             <td>
@@ -83,7 +83,7 @@ td,th{
             {% endif %}
         </tr>
         {% endfor %}
-        
+
 
 
 
@@ -99,16 +99,16 @@ td,th{
             <td><b>B. EXPENDITURE:</b></td>
             <td></td>
         </tr>
-        
+
         {% for type in expenditureTypes %}
-        
+
         <tr>
             <td>
                 {{ type.expenditure_type }}
             </td>
             {% if type.expenditure_type in expenditureDetails %}
             <td>
-                
+
 
                 {% for key,value in expenditureDetails.items %}
                 {% if key == type.expenditure_type %}
@@ -116,7 +116,7 @@ td,th{
                 {% endif %}
                 {% endfor %}
 
-                
+
             </td>
             {% else %}
             <td>
@@ -143,6 +143,6 @@ td,th{
       <br>
       <br>
 
-     
+
 </body>
 </html>

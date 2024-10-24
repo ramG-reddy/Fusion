@@ -26,12 +26,12 @@
                     <a href="/otheracademic/leaveStatusPG" class="item">Leave Status
                         <i class="right floated chevron right icon"></i>
                     </a>
-                    
-    
+
+
             </div>
-            
+
         </div>
-   
+
         <div class="eight wide column">
             <h2 class="ui header">Leave Form</h2>
             <div class="ui active tab segment" data-tab="leavePG" id="leavePG">
@@ -142,7 +142,7 @@
         document.getElementById('leavepg').addEventListener('submit', function(event) {
             var dateFrom = document.getElementById('datefrom').value;
             var dateTo = document.getElementById('dateto').value;
-        
+
             if (dateTo <= dateFrom) {
                 alert('End date must be later than start date');
                 event.preventDefault();  // Prevent form submission

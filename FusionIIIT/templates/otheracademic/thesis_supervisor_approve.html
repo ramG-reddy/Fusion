@@ -69,7 +69,7 @@
                              <td>
                                 {% if entry.Ths_approved%} Approved
                                 {% elif entry.Ths_rejected%} Rejected
-                                {% else%} 
+                                {% else%}
                                 <div style="display: flex; flex-direction: column;">
                                     <form action="{% url 'otheracademic:assistanship_thesis_approve' ass_id=entry.id %}" method="post">
                                         {% csrf_token %}
@@ -80,8 +80,8 @@
                                         <button class="ui red button forward-button" style="width: 100%;" type="submit">Reject</button>
                                     </form>
                                 </div>
-                                 {% endif%} 
-                             </td> 
+                                 {% endif%}
+                             </td>
                         </tr>
                         {%endif%}
                         {% endfor %}

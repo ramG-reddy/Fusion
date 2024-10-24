@@ -8,8 +8,8 @@
 {% block body %}
     {% block navBar %}
         {% include 'dashboard/navbar.html' %}
-    {% endblock %} 
-	
+    {% endblock %}
+
 {% comment %} {% block CSE_faculty_List  %} {% endcomment %}
 
 
@@ -22,7 +22,7 @@
 
     <div class="ui active tab" data-tab="complaint">
         {% comment %} <div class=""> {% endcomment %}
-           
+
 		   {% if fac_list %}
           <table class="ui very basic collapsing celled sortable table"
        style="padding-left: 2.5%; padding-right: 2.5%;padding-top: 1%; padding-bottom: 1.5%; margin: auto;">
@@ -36,7 +36,7 @@
                 <td> user_type </td>
 				<td> department </td>
                 <td> github </td>
-                
+
             </tr>
             </thead>
 
@@ -52,7 +52,7 @@
 				<td>{{ fcu.department.name }}</td>
                 <td>{{ fcu.id.faculty_about.github }}</td>
               </tr>
-              
+
             {% endfor %}
         </table>
 
@@ -60,7 +60,7 @@
         <p>No Records. Table Not Created.</p>
       {% endif %}
 
-            
+
             <div class="ui divider"></div>
         {% comment %} </div> {% endcomment %}
     </div>

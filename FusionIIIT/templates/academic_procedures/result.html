@@ -15,14 +15,14 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .submitted_course_marks:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 .resultBatch:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 
@@ -54,7 +54,7 @@
 	</div>
 
 	<div id="submitted_course_data">
-		
+
 	</div>
 </div>
 <div class="ui tab " data-tab="manual_grade" style="width: 100%">
@@ -87,7 +87,7 @@
 		        		curriculum_id : curriculum_id,
 		                csrfmiddlewaretoken: '{{ csrf_token }}'
 		        },
-		        success: function( data ) 
+		        success: function( data )
 		        {
 		        	$('#submitted_course_list').hide(400);
 		        	$("#submitted_course_data").show();

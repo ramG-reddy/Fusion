@@ -95,7 +95,7 @@
                                         </datalist>
                                 </label>
                             </div>
-                            
+
                             <div class="field">
                                 <label>Receiver Designation:
                                     <select id="receiver_dropdown" name="receive">
@@ -116,7 +116,7 @@
 
                     </div>
 
- 
+
                 </div>
 
                 <br>
@@ -276,7 +276,7 @@
             var inputValue = $(this).val();
             fetchDropdownValues(inputValue);
         });
-        
+
         function fetchDropdownValues(inputValue) {
             $.ajax({
                 url: `/filetracking/getdesignations/${inputValue}/`,
@@ -289,7 +289,7 @@
                 }
             });
         }
-        
+
         function populateDropdown(values) {
             console.log(values)
             var dropdown = $('#receiver_dropdown');

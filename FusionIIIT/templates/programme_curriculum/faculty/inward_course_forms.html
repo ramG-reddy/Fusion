@@ -1,4 +1,4 @@
-{% extends 'programme_curriculum/faculty/common.html' %}  
+{% extends 'programme_curriculum/faculty/common.html' %}
 {% load static %}
 {% load static %}
 {% block content %}
@@ -19,8 +19,8 @@
 
     </div>
 
-    
-        
+
+
 
 
     <div class="ui active tab" data-tab="notesheet">
@@ -68,7 +68,7 @@
     </table>
 
     <br>
-    
+
     </div>
     <div class="ui tab" data-tab="attachments">
 
@@ -83,7 +83,7 @@
                     <th>View File</th>
                 </tr>
             </thead>
-    
+
             <tbody>
             {% for courseProposal in courseProposals %}
             {%if courseProposal.receiver_archive %}
@@ -103,13 +103,12 @@
                   {%endif%}
             {% endfor %}
             </tbody>
-    
+
         </table>
-    
+
         <br>
     </div>
-        
+
     {%endif%}
 
 {% endblock %}
-

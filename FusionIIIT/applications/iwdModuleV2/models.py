@@ -1,5 +1,6 @@
-from django.db import models
 from datetime import date
+
+from django.db import models
 
 # Create your models here.
 
@@ -160,6 +161,7 @@ class NoOfTechnicalBidTimes(models.Model):
     key = models.OneToOneField(Projects, on_delete=models.CASCADE)
     number = models.IntegerField()
 
+
 class Requests(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
@@ -175,6 +177,7 @@ class Requests(models.Model):
     billProcessed = models.IntegerField(default=0)
     billSettled = models.IntegerField(default=0)
 
+
 class WorkOrder(models.Model):
     # request_id = models.IntegerField()
     request_id = models.ForeignKey(Requests, on_delete=models.CASCADE)
@@ -186,11 +189,13 @@ class WorkOrder(models.Model):
     alloted_time = models.CharField(max_length=200)
     start_date = models.DateField()
     completion_date = models.DateField()
-    
+
+
 class Bills(models.Model):
     # requestId = models.IntegerField()
     request_id = models.ForeignKey(Requests, on_delete=models.CASCADE)
     file = models.FileField()
+
 
 class Budget(models.Model):
     name = models.CharField(max_length=200)

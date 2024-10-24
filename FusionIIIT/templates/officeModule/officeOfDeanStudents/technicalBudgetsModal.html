@@ -12,16 +12,16 @@
 
 {% for i in budgets %}
 <div class="ui modal show {{ i.pk }} ">
-	
+
 	<div class="header">{{ i.pk }}</div>
 	<div class="content">
 	<div class="ui label big">Alloted Budget</div> <label>{{ i.alloted_budget }}</label>
 	<div class="ui label big">Available Budget</div> <label>{{ i.avail_budget }}</label>
 	<div class="ui vertical segment">
 	<h3>Spendings this year</h3>
-	
+
 		<table class="ui very basic celled table">
-		
+
 			<thead>
                 <tr>
                     <th class="two wide column">
@@ -54,10 +54,10 @@
              	{% endif %}
                 {% endfor %}
              </tbody>
-             
-		
+
+
 </table>
-	
+
 
 </div>
 

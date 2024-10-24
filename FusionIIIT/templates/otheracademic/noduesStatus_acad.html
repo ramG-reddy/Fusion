@@ -45,7 +45,7 @@
                         <table class="ui celled table">
                             <thead>
                                 <tr>
-                                    
+
                                     <th>Roll No.</th>
                                     <th>Student Name</th>
                                     <th>I-Card Submit</th>
@@ -72,9 +72,9 @@
                             </thead>
                             <tbody>
                                 {% for entry in form_data %}
-                                
+
                                 <tr>
-                                    
+
                                     <td>{{ entry.roll_no }}</td>
                                     <td>{{ entry.name }}</td>
                                     <td>
@@ -197,10 +197,10 @@
                                         {% else%} Pending
                                         {% endif%}
                                     </td>
-                                       
-                                    
+
+
                                 </tr>
-                                
+
                                 {% endfor %}
                             </tbody>
                         </table>

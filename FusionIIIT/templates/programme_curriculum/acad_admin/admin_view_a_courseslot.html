@@ -82,7 +82,7 @@
                         </tr>
                     </table>
                 {% endif %}
-                    
+
         </div>
     </div>
 </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="actions">
             <form action="{% url 'programme_curriculum:delete_courseslot' course_slot.id %}" method="POST">
-                {% csrf_token %} 
+                {% csrf_token %}
                 <input class="ui negative button" type="Submit" name="Submit" value="Remove">
                 <div class="ui cancel button">Cancel</div>
             </form>

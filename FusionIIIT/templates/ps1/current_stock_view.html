@@ -1,7 +1,7 @@
 {% extends 'ps1/ps2.html' %}
 {% load static %}
 
-{% block filetracking_tab %} 
+{% block filetracking_tab %}
 
 
     <div class="ui pointing secondary menu">
@@ -11,7 +11,7 @@
             </a>
         </h3>
     </div>
-    <div class="ui divider"></div> 
+    <div class="ui divider"></div>
 
     <div class="ui active tab" data-tab="composefile">
         <div class="ui vertical stripe team segment" style="padding-left: 3.5%;
@@ -22,10 +22,10 @@
             Stock View
             </a>
         </h3>
-    
-    </div> 
 
-    
+    </div>
+
+
     <div class="ui divider"></div>
     {% if stocks %}
     <div class="table-container" style="overflow-x: scroll;max-height: 500px;  overflow-y: scroll;">
@@ -38,13 +38,13 @@
                     <!-- <th>Item SubType</th> -->
                     <th>department/Section</th>
                     <th>Quantity</th>
-                
+
             </tr>
             </thead>
             <tbody>
                 {% for s in stocks %}
                 <tr>
-                    
+
                     <td> {{s.item_type}} </td>
                     <!-- <td> {{s.item_subtype}} </td> -->
                     <td> {{s.department}} </td>
@@ -70,7 +70,7 @@
                     <th >Transferred</th>
                     <th >Vendor</th>
                     <th >Bill</th>
-                
+
             </tr>
             </thead>
             <!-- -->
@@ -90,10 +90,10 @@
                             No bill available
                         {% endif %}
                     </td>
-                
+
                   </tr>
                   {% endif %}
-    
+
                     {% endfor %}
             </tbody>
         </table>
@@ -105,6 +105,6 @@
         <h4 >No Records present in database</h4>
     {% endif %}
 
-    </div>  
+    </div>
 
     {% endblock %}

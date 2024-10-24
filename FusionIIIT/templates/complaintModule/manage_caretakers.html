@@ -11,7 +11,7 @@
         </a> -->
     </div>
 
-   
+
 
 
 
@@ -26,7 +26,7 @@
                     These Caretakers are present under Supervisor :   <b>{{ request.user.first_name}}
                                                              {{ request.user.last_name}}</b>
                 <br><br><br>
-                
+
             <div class="ui items">
             {% for a in all_caretaker %}
                 <div class="item">
@@ -44,12 +44,12 @@
                 <div>Date Of Birth: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{a.staff_id.date_of_birth}}</div>
                 <div>Address:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{a.staff_id.address}}</div>
                 <div>Phone Number: &nbsp&nbsp{{a.staff_id.phone_no}}</div>
-                
+
                 </div>
                 </div>
                 </div><br><br>
             {%endfor%}
-      
+
 
 
 
@@ -61,7 +61,7 @@
 
 
 
-  
+
 {% endblock %}
 
 {% block javascript %}

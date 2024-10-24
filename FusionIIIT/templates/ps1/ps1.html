@@ -13,7 +13,7 @@
         {% include 'dashboard/navbar.html' %}
     {% endblock %}
 
-    
+
     {% comment %}The grid starts here!{% endcomment %}
     <div class="ui stackable doubling grid">
 
@@ -39,14 +39,14 @@
 
                  {% with dept_admin_designations="['ps_admin', 'deptadmin_cse', 'deptadmin_ece', 'deptadmin_me', 'deptadmin_sm', 'deptadmin_design', 'deptadmin_liberalarts', 'deptadmin_ns','Admin IWD','Compounder']" %}
 
-             
+
                 {% if request.session.currentDesignationSelected  not in dept_admin_designations %}
 
                     <a href="/purchase-and-store" class="item {% if '/purchase-and-store/create_proposal' in request.path %}active{% endif %}">
                         File an Indent
                         <i class="right floated chevron right icon"></i>
                     </a>
-                    
+
                     <a href="/purchase-and-store/composed_indents" class="item {% if '/purchase-and-store/indentview/' in request.path %}active{% endif %}">
                         All Filed Indents
                         <i class="right floated chevron right icon"></i>
@@ -64,14 +64,14 @@
                         Inbox
                         <i class="right floated chevron right icon"></i>
                     </a>
-            
+
                     <a href="/purchase-and-store/outboxview" class="item {% if '/purchase-and-store/outboxview2/' in request.path %}active{% endif %}">
                         Outbox
                         <i class="right floated chevron right icon"></i>
                     </a>
 
 
-                    <a href="/purchase-and-store/archieved_indents" class="item {% if '/purchase-and-store/archieveview/' in request.path %}active{% endif %}"> 
+                    <a href="/purchase-and-store/archieved_indents" class="item {% if '/purchase-and-store/archieveview/' in request.path %}active{% endif %}">
                         Archieved Indents
                         <i class="right floated chevron right icon"></i>
                         </a>
@@ -85,7 +85,7 @@
 
                 {% endwith %}
 
-                <!-- <a href="/purchase-and-store/drafts1" class="item"> 
+                <!-- <a href="/purchase-and-store/drafts1" class="item">
                     Saved Indents(New)
                     <i class="right floated chevron right icon"></i>
                 </a> -->
@@ -129,7 +129,7 @@
                 {% comment %}
                     TODO: the right rail!
                 {% endcomment %}
-                {% block sidepanel%} {% include 'notifications/ps1_sidepanel.html' %} 
+                {% block sidepanel%} {% include 'notifications/ps1_sidepanel.html' %}
                 {% endblock %}
             </div>
         </div>

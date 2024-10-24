@@ -13,7 +13,7 @@
             Appointed Coordinators
         </a>
 
-       
+
     </div>
 
     <div class="ui active tab" data-tab="counsellor" id="counsellor">
@@ -44,7 +44,7 @@
 
                         </div>
                     </div>
-                
+
                     <div class="field">
                         <label><br></label>
                             <button class="ui primary fluid button" type="submit" onclick="return counsellor()">
@@ -63,24 +63,24 @@
     </div>
 
     <div class="ui tab" data-tab="viewcoordinator">
-        
-        
+
+
         <div id="coordinator_history" class="ui very relaxed fluid selection list" style="padding-left: 24px; padding-top: 16px; padding-bottom: 16px; max-height: 70vh; overflow-y: auto;">
         <a class="header" id="user_name" style="padding: 8px; padding-left: 24px; padding-right: 24px;">{{info.user.username}}</a>
         <div class="ui header ">
             List of Appointed Student Coordinators  :
-        </div>  
+        </div>
             {% for counsellor in student_counsellors %}
                 <!--<img class="ui mini circular image" src="{% static 'globals/img/zlatan.jpg' %}"> --->
             <div class="item">
-              
+
                 <div class="description">
                     <div class="header">{{counsellor.student.id.user.username}} {{counsellor.student.id.user.first_name}}</div>
                     <h2 class="ui header">{{counsellor.student.hall_no}} {{counsellor.student.room_no}}</h1>
                     <!-- <div class="header">Answer {{forloop.counter}} :</div>
                     <h3 class="ui header">{{faq.counselling_answer}}</h3> -->
-                </div> 
-                
+                </div>
+
             </div>
             {% endfor %}
         </div>
@@ -143,14 +143,11 @@
                         // $("#coordinator").load(location.href + " #coordinator>*", "");
                     }
                 });
-            
+
         return false;
     }
-    
+
 
 
 </script>
 {% endblock %}
-
-
-

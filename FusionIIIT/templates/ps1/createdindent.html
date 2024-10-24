@@ -252,7 +252,7 @@ function limitToOneFile(input) {
                                     <datalist  id="input_list">
 
                                     </datalist>
-                               
+
                             </label>
                         </div>
 
@@ -265,7 +265,7 @@ function limitToOneFile(input) {
 
                                 <select id="receiver_dropdown" name="recieve">
                                 </select>
-                               
+
                             </label>
                         </div>
                                 <br>
@@ -288,9 +288,9 @@ function limitToOneFile(input) {
                                     <label for="file">Attach File: </label>
                                     <input type="file" id="file" name="myfile" accept=".pdf, .jpg, .jpeg, .png" onchange="limitToOneFile(this)">
                                 </div>
-                                
-                                
-                                
+
+
+
 
                             </div>
                         </div>
@@ -413,7 +413,7 @@ function limitToOneFile(input) {
                 var inputValue = $(this).val();
                 fetchDropdownValues(inputValue);
             });
-            
+
             function fetchDropdownValues(inputValue) {
                 $.ajax({
                     url: `/filetracking/getdesignations/${inputValue}/`,
@@ -426,7 +426,7 @@ function limitToOneFile(input) {
                     }
                 });
             }
-            
+
             function populateDropdown(values) {
                 console.log(values)
                 var dropdown = $('#receiver_dropdown');

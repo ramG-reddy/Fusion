@@ -73,8 +73,8 @@
             Stock View
             </a>
         </h3>
-    
-    </div> 
+
+    </div>
     <div class="table-container" style="overflow-x: scroll;max-height: 200px;  overflow-y: scroll;">
 
 
@@ -86,14 +86,14 @@
                     <th>department/section</th>
                     <th>Quantity</th>
                     <th>View Stocks</th>
-                
+
             </tr>
             </thead>
             <tbody>
                 {% for s in stocks %}
 
                 <tr>
-                    
+
                     <td> {{s.item_type}} </td>
                     <td> {{s.item_subtype}} </td>
                     <td> {{s.department.name}} </td>
@@ -108,7 +108,7 @@
                         </form>
                     </td>
                     <td>
-                
+
                 </tr>
 
                 {% endfor %}
@@ -121,6 +121,3 @@
 
 
 {% endblock %}
-
-
-

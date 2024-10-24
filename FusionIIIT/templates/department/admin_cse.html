@@ -8,7 +8,7 @@
 {% block body %}
     {% block navBar %}
         {% include 'dashboard/navbar.html' %}
-    {% endblock %}    
+    {% endblock %}
 
     {# The grid starts here! #}
     <div class="ui stackable doubling grid">
@@ -22,7 +22,7 @@
                 {% include 'globals/usercard.html' %}
             {% endblock %}
             {# The user image card ends here! #}
-            
+
             <div class="ui divider"></div>
 
             {# The Tab-Menu starts here! #}
@@ -61,7 +61,7 @@
                     <i class="right floated chevron right icon"></i>
                 </a>
             </div>
-            
+
             {# The Tab-Menu ends here! #}
         </div>
         {# The left-rail segment ends here! #}
@@ -118,7 +118,7 @@
             {# Status of request! #}
             <div class="ui tab segment" data-tab="seventh">
                 {% block request_status %}
-                    {% include "department/update_department_information.html" %} 
+                    {% include "department/update_department_information.html" %}
                 {% endblock %}
             </div>
         </div>

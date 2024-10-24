@@ -21,7 +21,7 @@
 
         {% comment %}The left-rail segment starts here!{% endcomment %}
         <div class="three wide column">
-            
+
             {% comment %}The user image card starts here!{% endcomment %}
             {% block usercard %}
                 {% include 'globals/usercard.html' %}
@@ -52,7 +52,7 @@
         </a>
         <div class="ui dropdown">
             <div class="item" >Course Proposal Form&nbsp<i class="dropdown icon"></i></div>
-            
+
             <div class="menu">
               <a class="item" href="{% url 'programme_curriculum:view_course_proposal_forms' %}">Course Proposal Form
                 <i class="right floated chevron right icon"></i>
@@ -81,12 +81,12 @@
         {% comment %}
             The central-rail segment starts here!
         {% endcomment %}
-        
+
         <div class="eight wide column">
 
             {% block content %}
             {% endblock %}
-            
+
         </div>
         {% comment %}The central-rail segment ends here!{% endcomment %}
 
@@ -97,10 +97,10 @@
                     TODO: the right rail!
                 {% endcomment %}
                 {% block rightcontent %}
-                
+
                 {% endblock %}
-                {% block sidepanel%} 
-    {% include 'notifications/programme_curriculum.html' %} 
+                {% block sidepanel%}
+    {% include 'notifications/programme_curriculum.html' %}
     {% endblock %}
             </div>
         </div>

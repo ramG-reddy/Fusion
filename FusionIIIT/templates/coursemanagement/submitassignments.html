@@ -110,7 +110,7 @@
         </a>
     <a class="item" data-tab="objective">
           Objective
-        </a>  
+        </a>
 </div> -->
 
 <div class="ui active tab segment" data-tab="assignment" id="add_assignment_refresh">
@@ -170,7 +170,7 @@
     </form>
     <br>
     <h4 class="ui dividing header">Report:</h4>
-   
+
     <div style="overflow:scroll;height:20em; overflow-x:hidden;">
         <table class="ui fixed single line sortable celled table" style="overflow:scroll;height:100px;">
             <thead>
@@ -210,7 +210,7 @@
                     <thead>
                       <tr>
                         <th>Name</th>
-                       
+
                         <th>Number of Questions</th>
                         <th>Total Marks</th>
                         <th></th>
@@ -234,21 +234,21 @@
                               <label><br></label>
                              //  <a href="/ocms/quiz/{{quiz.pk}}" > comment
                               {% if Lecturer is 0 %}
-                           comment// if the student have not give n the quiz already then only show the enter button 
-                                
+                           comment// if the student have not give n the quiz already then only show the enter button
+
                                 <div class="ui primary button disabled practice_btn" data-pk="{{practice.pk}}"id="practice{{practice.pk}}">
                                  Enter
                                  <i class="arrow right icon"></i>
                                </div>
-                               
+
                                {% else %}
                                <a class="remove_practice_contest" style="margin-bottom:10px;padding-left:10px" id="practice{{practice.pk}}" data-pk="{{practice.pk}}"><i class="remove large icon"></i></a>
                                <br>
                                <a class="ui blue button" href="/ocms/{{course.course_id}}/edit_practice_contest/{{practice.pk}}">
-                                Edit 
+                                Edit
                                </a>
                                {% endif %}
-                            comment</a> 
+                            comment</a>
                            </div>
                          </div>
                         </td>
@@ -269,7 +269,7 @@
 
 <script type="text/javascript" src="{% static 'globals/js/semantic.min.js' %}"></script>
 <script type="text/javascript">
-   /* this part for implementing the objective practice assignment 
+   /* this part for implementing the objective practice assignment
     $(document).ready(function() {
         var vptab = 'objectivetab';
             $('#objectivetab').addClass('active');
@@ -285,6 +285,6 @@
         });
     });
 */
-      
+
 </script>
 {% endblock %}

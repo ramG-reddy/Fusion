@@ -25,7 +25,7 @@
                 <a href="/otheracademic/ME_nodues_not" class="item">Clear No Dues
                     <i class="right floated chevron right icon"></i>
                 </a>
-                
+
             </div>
         </div>
 
@@ -39,17 +39,17 @@
                             <th>Name </th>
                             <th>Workshop</th>
                             <th>Mechatronics Lab<th>
-                           
 
 
-                            
+
+
                         </tr>
                     </thead>
                     <tbody>
                         {% for entry in form_data %}
                         <tr>
                             {% comment %} {% if not entry.workshop_clear and not entry.workshop_notclear or not entry.mechatronics_lab_clear and entry.mechatronics_lab_notclear %} {% endcomment %}
-                        
+
                                 <td>{{ entry.roll_no}}</td>
                                 <td>{{ entry.name }}</td>
                                 {%if entry.workshop_clear%}
@@ -66,7 +66,7 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:80%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                 </td>
                                 {%endif%}
 
@@ -84,12 +84,12 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:80%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                 </td>
                                 {%endif%}
 
-                                
-                            
+
+
                             {% comment %} {% endif %} {% endcomment %}
                         </tr>
                         {% endfor%}

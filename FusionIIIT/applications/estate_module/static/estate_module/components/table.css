@@ -227,7 +227,7 @@
   .ui.table:not(.unstackable) > tfoot > tr > td:first-child {
     font-weight: bold;
   }
-  
+
 /* Definition Table */
   .ui.definition.table:not(.unstackable) > thead > tr > th:first-child {
     -webkit-box-shadow: none !important;
@@ -717,7 +717,7 @@
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  
+
 /* Definition Table */
   .ui.definition[class*="tablet stackable"].table > thead > tr > th:first-child {
     -webkit-box-shadow: none !important;
@@ -2206,4 +2206,3 @@
 /*******************************
          Site Overrides
 *******************************/
-

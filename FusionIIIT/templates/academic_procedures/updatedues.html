@@ -13,11 +13,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .thesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 .pthesis {
   background-color: #f1f1f1;
@@ -32,11 +32,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .pthesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .panel {
@@ -54,27 +54,27 @@ table{
 
 .td1{
     width: 28%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td2{
     width: 30%;
-        padding-bottom:15px;    
+        padding-bottom:15px;
     padding-top: 15px;
 }
 .td3{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td4{
     width: 30%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td5{
     width: 2%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .previous {
@@ -138,7 +138,7 @@ table{
             {% if obj1.student_id.batch == 2016 %}
                     <div  class="dues b2016" id_b="btech2016{{forloop.counter}}" id_dobject="{{obj.id}}">{{obj1.student_id}}</div>
                 <div class="panel" id="btech2016{{forloop.counter}}" hidden>
-                    
+
                     <table class="ui celled table"
                                         style="padding-left: 2.5%;
                                         padding-right: 2.5%;
@@ -147,7 +147,7 @@ table{
                                         width: 100%">
                         <thead>
                             <tr style="border-radius: 3px;">
-                                
+
                                 <th rowspan="2">Month</th>
                                 <th rowspan="2">Year</th>
                                 <th rowspan="2">Description</th>
@@ -158,8 +158,8 @@ table{
                         <tbody>
                         {% for obj in Mess_due %}
                             {% if obj1.student_id == obj.student %}
-                            <tr>                
-                                
+                            <tr>
+
                                 <td>{{obj.month}}</td>
                                 <td>{{ obj.year }}</td>
                                 <td>{{ obj.description }}</td>
@@ -169,7 +169,7 @@ table{
                             {% endif %}
                         {% endfor %}
                         </tbody>
-                        
+
                     </table>
                     <div class="ui divider"></div><br>
                     <div class="bn"><div href="" class="dueprevious16" style="text-decoration: none;
@@ -177,12 +177,12 @@ table{
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
                     </div>
-                    
+
                 </div>
             {% endif %}
             {% endfor %}
-        
-        
+
+
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -196,7 +196,7 @@ table{
             {% if obj1.student_id.batch == 2017 %}
                     <div  class="dues b2017" id_b="btech2017{{forloop.counter}}" id_dobject="{{obj.id}}">{{obj1.student_id}}</div>
                 <div class="panel" id="btech2017{{forloop.counter}}" hidden>
-                    
+
                     <table class="ui celled table"
                                         style="padding-left: 2.5%;
                                         padding-right: 2.5%;
@@ -205,7 +205,7 @@ table{
                                         width: 100%">
                         <thead>
                             <tr style="border-radius: 3px;">
-                                
+
                                 <th rowspan="2">Month</th>
                                 <th rowspan="2">Year</th>
                                 <th rowspan="2">Description</th>
@@ -216,8 +216,8 @@ table{
                         <tbody>
                         {% for obj in Mess_due %}
                             {% if obj1.student_id == obj.student %}
-                            <tr>                
-                                
+                            <tr>
+
                                 <td>{{obj.month}}</td>
                                 <td>{{ obj.year }}</td>
                                 <td>{{ obj.description }}</td>
@@ -227,7 +227,7 @@ table{
                             {% endif %}
                         {% endfor %}
                         </tbody>
-                        
+
                     </table>
                     <div class="ui divider"></div><br>
                     <div class="bn"><div href="" class="dueprevious17" style="text-decoration: none;
@@ -235,12 +235,12 @@ table{
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
                     </div>
-                    
+
                 </div>
             {% endif %}
             {% endfor %}
-        
-        
+
+
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -254,7 +254,7 @@ table{
             {% if obj1.student_id.batch == 2018 %}
                     <div  class="dues b2018" id_b="btech2018{{forloop.counter}}" id_dobject="{{obj.id}}">{{obj1.student_id}}</div>
                 <div class="panel" id="btech2018{{forloop.counter}}" hidden>
-                    
+
                     <table class="ui celled table"
                                         style="padding-left: 2.5%;
                                         padding-right: 2.5%;
@@ -263,7 +263,7 @@ table{
                                         width: 100%">
                         <thead>
                             <tr style="border-radius: 3px;">
-                                
+
                                 <th rowspan="2">Month</th>
                                 <th rowspan="2">Year</th>
                                 <th rowspan="2">Description</th>
@@ -274,8 +274,8 @@ table{
                         <tbody>
                         {% for obj in Mess_due %}
                             {% if obj1.student_id == obj.student %}
-                            <tr>                
-                                
+                            <tr>
+
                                 <td>{{obj.month}}</td>
                                 <td>{{ obj.year }}</td>
                                 <td>{{ obj.description }}</td>
@@ -285,7 +285,7 @@ table{
                             {% endif %}
                         {% endfor %}
                         </tbody>
-                        
+
                     </table>
                     <div class="ui divider"></div><br>
                     <div class="bn"><div href="" class="dueprevious18" style="text-decoration: none;
@@ -293,12 +293,12 @@ table{
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
                     </div>
-                    
+
                 </div>
             {% endif %}
             {% endfor %}
-        
-        
+
+
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -312,7 +312,7 @@ table{
             {% if obj1.student_id.batch == 2019 %}
                     <div  class="dues b2019" id_b="btech2019{{forloop.counter}}" id_dobject="{{obj.id}}">{{obj1.student_id}}</div>
                 <div class="panel" id="btech2019{{forloop.counter}}" hidden>
-                    
+
                     <table class="ui celled table"
                                         style="padding-left: 2.5%;
                                         padding-right: 2.5%;
@@ -321,7 +321,7 @@ table{
                                         width: 100%">
                         <thead>
                             <tr style="border-radius: 3px;">
-                                
+
                                 <th rowspan="2">Month</th>
                                 <th rowspan="2">Year</th>
                                 <th rowspan="2">Description</th>
@@ -332,8 +332,8 @@ table{
                         <tbody>
                         {% for obj in Mess_due %}
                             {% if obj1.student_id == obj.student %}
-                            <tr>                
-                                
+                            <tr>
+
                                 <td>{{obj.month}}</td>
                                 <td>{{ obj.year }}</td>
                                 <td>{{ obj.description }}</td>
@@ -343,7 +343,7 @@ table{
                             {% endif %}
                         {% endfor %}
                         </tbody>
-                        
+
                     </table>
                     <div class="ui divider"></div><br>
                     <div class="bn"><div href="" class="dueprevious19" style="text-decoration: none;
@@ -351,12 +351,12 @@ table{
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
                     </div>
-                    
+
                 </div>
             {% endif %}
             {% endfor %}
-        
-        
+
+
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -370,7 +370,7 @@ table{
             {% if obj1.student_id.batch == 1814 %}
                     <div  class="dues m2018" id_b="mtech2018{{forloop.counter}}" id_dobject="{{obj.id}}">{{obj1.student_id}}</div>
                 <div class="panel" id="mtech2018{{forloop.counter}}" hidden>
-                    
+
                     <table class="ui celled table"
                                         style="padding-left: 2.5%;
                                         padding-right: 2.5%;
@@ -379,7 +379,7 @@ table{
                                         width: 100%">
                         <thead>
                             <tr style="border-radius: 3px;">
-                                
+
                                 <th rowspan="2">Month</th>
                                 <th rowspan="2">Year</th>
                                 <th rowspan="2">Description</th>
@@ -390,8 +390,8 @@ table{
                         <tbody>
                         {% for obj in Mess_due %}
                             {% if obj1.student_id == obj.student %}
-                            <tr>                
-                                
+                            <tr>
+
                                 <td>{{obj.month}}</td>
                                 <td>{{ obj.year }}</td>
                                 <td>{{ obj.description }}</td>
@@ -401,7 +401,7 @@ table{
                             {% endif %}
                         {% endfor %}
                         </tbody>
-                        
+
                     </table>
                     <div class="ui divider"></div><br>
                     <div class="bn"><div href="" class="duepreviousm18" style="text-decoration: none;
@@ -409,12 +409,12 @@ table{
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
                     </div>
-                    
+
                 </div>
             {% endif %}
             {% endfor %}
-        
-        
+
+
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -428,7 +428,7 @@ table{
             {% if obj1.student_id.batch == 1914 %}
                     <div  class="dues m2019" id_b="mtech2019{{forloop.counter}}" id_dobject="{{obj.id}}">{{obj1.student_id}}</div>
                 <div class="panel" id="mtech2019{{forloop.counter}}" hidden>
-                    
+
                     <table class="ui celled table"
                                         style="padding-left: 2.5%;
                                         padding-right: 2.5%;
@@ -437,7 +437,7 @@ table{
                                         width: 100%">
                         <thead>
                             <tr style="border-radius: 3px;">
-                                
+
                                 <th rowspan="2">Month</th>
                                 <th rowspan="2">Year</th>
                                 <th rowspan="2">Description</th>
@@ -448,8 +448,8 @@ table{
                         <tbody>
                         {% for obj in Mess_due %}
                             {% if obj1.student_id == obj.student %}
-                            <tr>                
-                                
+                            <tr>
+
                                 <td>{{obj.month}}</td>
                                 <td>{{ obj.year }}</td>
                                 <td>{{ obj.description }}</td>
@@ -459,7 +459,7 @@ table{
                             {% endif %}
                         {% endfor %}
                         </tbody>
-                        
+
                     </table>
                     <div class="ui divider"></div><br>
                     <div class="bn"><div href="" class="duepreviousm19" style="text-decoration: none;
@@ -467,12 +467,12 @@ table{
                                                                                 padding: 8px 16px;
                                                                                 cursor: pointer;">&laquo; Back</div>
                     </div>
-                    
+
                 </div>
             {% endif %}
             {% endfor %}
-        
-        
+
+
         {% else %}
        <h3>no requests</h3>
        {% endif %}
@@ -488,13 +488,13 @@ table{
 
 
 $(function() {
-    
+
     $(".b2016").click(function(){
         id16 = $(this).attr("id_b");
         $("#"+id16).show();
         $(".b2016").hide();
         obj_id = $(this).attr("id_dobject");
-        
+
     });
     $(".dueprevious16").click(function(){
         $("#"+id16).hide();
@@ -505,7 +505,7 @@ $(function() {
         $("#"+id17).show();
         $(".b2017").hide();
         obj_id = $(this).attr("id_dobject");
-        
+
     });
     $(".dueprevious17").click(function(){
         $("#"+id17).hide();
@@ -516,7 +516,7 @@ $(function() {
         $("#"+id18).show();
         $(".b2018").hide();
         obj_id = $(this).attr("id_dobject");
-        
+
     });
     $(".dueprevious18").click(function(){
         $("#"+id18).hide();
@@ -527,7 +527,7 @@ $(function() {
         $("#"+id19).show();
         $(".b2019").hide();
         obj_id = $(this).attr("id_dobject");
-        
+
     });
     $(".dueprevious19").click(function(){
         $("#"+id19).hide();
@@ -538,7 +538,7 @@ $(function() {
         $("#"+idm18).show();
         $(".m2018").hide();
         obj_id = $(this).attr("id_dobject");
-        
+
     });
     $(".duepreviousm18").click(function(){
         $("#"+idm18).hide();
@@ -549,7 +549,7 @@ $(function() {
         $("#"+idm19).show();
         $(".m2019").hide();
         obj_id = $(this).attr("id_dobject");
-        
+
     });
     $(".duepreviousm19").click(function(){
         $("#"+idm19).hide();
@@ -566,7 +566,7 @@ $(function() {
 //     document.getElementById('p1').style="display:none";
 //     document.getElementById('p2').style="display:block";
 // }
-    
+
 
 });
 

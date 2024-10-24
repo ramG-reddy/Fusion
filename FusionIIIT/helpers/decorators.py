@@ -13,8 +13,7 @@ def get_object_or_none(model, **kwargs):
 
 
 def critical_section(critical_view):
-
-    @login_required(login_url='/accounts/login')
+    @login_required(login_url="/accounts/login")
     @wraps
     def wrapper(request, *args, **kwargs):
         now = timezone.now()
@@ -28,6 +27,7 @@ def critical_section(critical_view):
         # page, to reauthenticate the user.
 
     return wrapper
+
 
 # designation_filter
 def designation_filter(view):

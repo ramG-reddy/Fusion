@@ -65,15 +65,15 @@
                     <a class="active item" data-tab="thisworker">
                         This Worker
                     </a>
-                     
+
                 </div>
-               
+
 
                 <div class="ui active tab large" data-tab="thisworker">
-                    
+
                     <div class="ui vertical segment">
                         <p><b>{{this_worker.name}}</b> works under <b><i>{{work_under_secincharge1}} {{work_under_secincharge2}}</i></b> </p><br><br><br>
-                      
+
                     {%if numpend == 0 %}
                         <div><p>The Worker does not hold any pending complaints.</p>
                             <p>You can go ahead and remove him.</p></div>
@@ -108,7 +108,7 @@
 
                          <a href="javascript:history.go(-1)"><button class="ui primary button right floated">Back</button></i></a><br><br>
                     {%endif%}
-                  
+
                     </div>
                 </div>
             {% comment %}The ... end here!{% endcomment %}
@@ -143,4 +143,3 @@
 {% block css %}
 
 {% endblock %}
-

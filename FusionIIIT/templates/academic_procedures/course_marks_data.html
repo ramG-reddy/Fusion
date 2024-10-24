@@ -5,7 +5,7 @@
 <br>
 {% if grade_submission_date_eligibility %}
 <p id="warning" style="color: red"></p>
-<div class="ui form" style="border: black; width: 100%;" > 
+<div class="ui form" style="border: black; width: 100%;" >
 	<div style="display: inline-block; width: 19%;">
 		<center><b>O</b></center>
 		<div class="fields" style="padding-left: 5px; padding-right: 5px;">
@@ -215,10 +215,10 @@ table tr td {
   align-content: center;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 ::-webkit-scrollbar {
   width: 3px;
@@ -226,17 +226,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
   </style>
 
@@ -266,8 +266,8 @@ $(".field input").change(function(){
 });
 
 $(document).ready(function () {
-   myFunction(); 
-   change_grade();    
+   myFunction();
+   change_grade();
    fill_class_data();
 });
 
@@ -298,12 +298,12 @@ function change_grade(){
       else{
   		document.getElementsByName("total_marks")[x].value = total;
     }
-  	} 
+  	}
 
 
   	var marks;
-  	for (i = 0; i < count; i++) { 
-  		
+  	for (i = 0; i < count; i++) {
+
   		marks = document.getElementsByName("total_marks")[i].value;
   		if( marks >= Number($('#ih0').val()) && marks <= Number($('#hi0').val()))
   		{
@@ -389,7 +389,7 @@ function fill_class_data(){
     else if(g == 'F'){
         f = f+1;
     }
-  } 
+  }
   document.getElementById("class_data").rows[0].cells[1].innerHTML = a1;
   document.getElementById("class_data").rows[0].cells[3].innerHTML = a;
   document.getElementById("class_data").rows[0].cells[5].innerHTML = b1;
@@ -417,7 +417,7 @@ $(function() {
                 alert('Submission Failed');
                 window.location = "/academic-procedures/main/";
             });
-            
+
     });
     $('.back1').on('click',function(e){
       $('#course_data').hide(400);

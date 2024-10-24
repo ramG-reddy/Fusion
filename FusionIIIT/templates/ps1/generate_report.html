@@ -41,9 +41,9 @@
                         <th>Current Location</th>
                     </tr>
                 </thead>
-               
+
                 <tbody>
-                    {% for s in stock.StockItems %} 
+                    {% for s in stock.StockItems %}
                         {% if s.StockEntryId.item_id.purchased %}
 
                     <tr>
@@ -52,7 +52,7 @@
 
                         <td>{{s.location}}</td>
                     </tr>
-                    {% endif %} 
+                    {% endif %}
                     {% endfor %}
                 </tbody>
             </table>
@@ -83,7 +83,7 @@
         const { jsPDF } = window.jspdf;
         let doc = new jsPDF('l', 'mm', [500000, 1400]);
         let pdfjs = document.querySelector('#generate_report');
-        
+
         // Clone the element
         let clonedPdfjs = pdfjs.cloneNode(true);
 
@@ -99,6 +99,6 @@
     });
 });
 
-</script> 
+</script>
 
 {% endblock %}

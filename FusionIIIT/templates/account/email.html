@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
 {% block content %}
-<div class="ui stackable grid" > 
+<div class="ui stackable grid" >
   <div class="sixteen wide column">
     <div class="ui top attached segment">
       <h1>{% trans "E-mail Addresses" %}</h1>
@@ -34,7 +34,7 @@
           <div style="float:right;">
             <i class="red remove icon">
             </i><span class="unverified">{% trans "Unverified" %}</span>
-          </div>  
+          </div>
           {% endif %}
             {% if emailaddress.primary %}<span class="primary">{% trans "Primary" %}</span>{% endif %}
       </label>

@@ -143,8 +143,8 @@
                         <td>
                             <input type="number" name="F_Upper" id="F_Upper" value="{{ gradingscheme_grades.F_Upper }}" />
                         </td>
-                    </tr> 
-                   
+                    </tr>
+
                 </tbody>
             </table>
         </div>
@@ -168,13 +168,13 @@
     //     const add_item_btn = document.getElementById('add_item_btn');
     //     const tbody = document.getElementById('grading_scheme_table');
     //     const addItem_Row = document.getElementById('addItem_Row');
-    
+
     //     const itemType = document.getElementById('addItem_Row').childNodes[1].childNodes[1] ;
     //     const itemWtg = document.getElementById('addItem_Row').childNodes[3].childNodes[1] ;
 
     //     if (itemType.value == '') {return}
     //     if (itemWtg.value == '') {return}
-    
+
     //     const newElement = document.createElement('tr');
     //     newElement.id = 'new_row';
     //     newElement.innerHTML = `<td style="padding-left:28px;"><input value="` + itemType.value + `"></input></td> <td> <input style="width:85%;" type="number" name="`+itemType.value+`" id="`+itemType.value+`" value= `+itemWtg.value+` /> <div class="ui button" style="width:10px; margin-right:5px; float:right;" onclick="const new_row = document.getElementById('new_row'); new_row.parentNode.removeChild(new_row);" > <i style="margin-left:-8px;" class="close icon"></i> </div> </td> `;
@@ -190,7 +190,7 @@
         // Get references to the necessary elements
         const tbody = document.getElementById('grading_scheme_table');
         const addItem_Row = document.getElementById('addItem_Row');
-        
+
         const itemType = document.getElementById('add_eval_type');
         const itemWtg = addItem_Row.querySelector('input[name="add_item_wtg"]');
 
@@ -237,7 +237,7 @@
     function submitForm() {
         var form = document.getElementById("gradingScheme_submit");
         var formData = new FormData(form);
-        
+
         var xhr = new XMLHttpRequest();
         xhr.open(form.method, form.action, true);
         xhr.onload = function () {

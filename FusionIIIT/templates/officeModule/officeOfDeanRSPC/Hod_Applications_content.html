@@ -41,7 +41,7 @@
     <form action="{% url 'office_module:hod_action' %}" method="POST">
         {% csrf_token %}
          {% for pr in project %}
-        
+
     <tr>
 
         <td class="collapsing">
@@ -69,13 +69,13 @@
         <td>
 
             {{pr.start_date}}
-            
+
         </td>
         <td>
            <a href="/office/officeOfDeanRSPC/{{pr.id}}/" target="_blank">Details</a>
         </td>
 
-   
+
  </tr>
  {% endfor%}
     </tbody>
@@ -124,7 +124,7 @@
     </thead>
 
     <tbody>
-   
+
     <form action="{% url 'office_module:hod_closure' %}" method="POST">
         {% csrf_token %}
        {% for pr in project2 %}
@@ -149,7 +149,7 @@
                     {{pr1.project_title}}
                 {%endif%}
             {%endfor%}
-             
+
         </td>
 
         <td>
@@ -158,7 +158,7 @@
                     {{pr1.project_type}}
                 {%endif%}
             {%endfor%}
-             
+
         </td>
 
         <td>
@@ -171,8 +171,8 @@
                     {{pr1.start_date}}
                 {%endif%}
             {%endfor%}
-            
-            
+
+
         </td>
         <td>
            <a href="/office/officeOfDeanRSPC/{{pr.id}}/" target="_blank">Details</a>
@@ -253,7 +253,7 @@
                     {{pr1.project_title}}
                 {%endif%}
             {%endfor%}
-             
+
         </td>
 
         <td>
@@ -262,7 +262,7 @@
                     {{pr1.project_type}}
                 {%endif%}
             {%endfor%}
-             
+
         </td>
 
         <td>
@@ -275,8 +275,8 @@
                     {{pr1.start_date}}
                 {%endif%}
             {%endfor%}
-            
-            
+
+
         </td>
         <td>
            <a href="/office/officeOfDeanRSPC/{{pr.id}}/" target="_blank">Details</a>
@@ -359,7 +359,7 @@
                     {{pr1.project_title}}
                 {%endif%}
             {%endfor%}
-             
+
         </td>
 
         <td>
@@ -368,7 +368,7 @@
                     {{pr1.project_type}}
                 {%endif%}
             {%endfor%}
-             
+
         </td>
 
         <td>
@@ -381,8 +381,8 @@
                     {{pr1.start_date}}
                 {%endif%}
             {%endfor%}
-            
-            
+
+
         </td>
         <td>
            <a href="/office/officeOfDeanRSPC/{{pr.id}}/" target="_blank">Details</a>
@@ -409,4 +409,3 @@
         <i class="large red x icon"></i> : Declined
     </div>
 </div>
-

@@ -23,6 +23,3 @@ function create_member() {
         }
     });
 };
-    
-    
-       

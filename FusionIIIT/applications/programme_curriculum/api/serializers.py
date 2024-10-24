@@ -1,5 +1,14 @@
+from applications.programme_curriculum.models import (
+    Batch,
+    Course,
+    CourseInstructor,
+    CourseSlot,
+    Curriculum,
+    Discipline,
+    Programme,
+    Semester,
+)
 from rest_framework import serializers
-from applications.programme_curriculum.models import Programme, Discipline, Curriculum, Semester, Course, Batch, CourseSlot, CourseInstructor
 
 # this is for Programme model ....
 
@@ -10,15 +19,16 @@ class ProgrammeSerializer(serializers.ModelSerializer):
 
     def get_discipline(self, obj):
         disciplines = obj.get_discipline_objects.all()
-        return ', '.join([discipline.name for discipline in disciplines])  # Join disciplines into a single string
+        return ", ".join(
+            [discipline.name for discipline in disciplines]
+        )  # Join disciplines into a single string
 
     def get_programmes(self, obj):
         return obj.name
 
     class Meta:
         model = Programme
-        fields = [ 'programmes', 'discipline']
-
+        fields = ["programmes", "discipline"]
 
 
 # this is for Discipline ...
@@ -28,25 +38,24 @@ class DisciplineSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
 # this is for Curriculum ....
 # fields in fronted form --> name, version , batch , no of semester
 class BatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Batch
-        fields = ['name', 'year']
-
+        fields = ["name", "year"]
 
 
 class CurriculumBatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curriculum
-        fields = ['name', 'version', 'no_of_semester']
+        fields = ["name", "version", "no_of_semester"]
+
 
 class CurriculumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curriculum
-        fields = ['name', 'version', 'batches', 'no_of_semester']
+        fields = ["name", "version", "batches", "no_of_semester"]
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
@@ -54,23 +63,19 @@ class CurriculumSerializer(serializers.ModelSerializer):
         representations = []
         for batch in batches:
             batch_representation = {
-                'name': representation['name'],
-                'version': representation['version'],
-                'no_of_semester': representation['no_of_semester'],
-                'batch': f"{representation['name']} {batch.year}"
+                "name": representation["name"],
+                "version": representation["version"],
+                "no_of_semester": representation["no_of_semester"],
+                "batch": f"{representation['name']} {batch.year}",
             }
             representations.append(batch_representation)
         return representations
 
 
-
 class ProgrammeInfoSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Programme
-        fields = ['category', 'name', 'programme_begin_year']
-
-
+        fields = ["category", "name", "programme_begin_year"]
 
 
 # this is for Semester model ...
@@ -81,18 +86,16 @@ class SemesterSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
 # this is for course model ...
-# fields in frontend form --> coursecode, coursename, credit         
+# fields in frontend form --> coursecode, coursename, credit
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = "__all__"
 
 
-
 # this is for Batch model ...
-# field in frontend form  --> name, discipline, year, curriculum .         
+# field in frontend form  --> name, discipline, year, curriculum .
 # class BatchSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Batch
@@ -109,7 +112,6 @@ class CourseSlotSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
 # CourseInstructor model serializers ...
 class CourseInstructorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -120,4 +122,4 @@ class CourseInstructorSerializer(serializers.ModelSerializer):
 class ProgrammePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Programme
-        fields = ['id', 'category', 'name', 'programme_begin_year']
+        fields = ["id", "category", "name", "programme_begin_year"]

@@ -1,7 +1,4 @@
-from django import forms
-
 from .models import *
-from django.contrib.auth.models import User
 
 # class ResearchGroupForm(forms.ModelForm):
 
@@ -9,11 +6,11 @@ from django.contrib.auth.models import User
 #     faculty = forms.ModelMultipleChoiceField(queryset=User.objects.all(), widget=forms.SelectMultiple(attrs={'class':'ui fluid search dropdown'}))
 
 #     def __init__(self, *args, **kwargs):
-#         if kwargs.get('instance'):      
+#         if kwargs.get('instance'):
 #             initial = kwargs.setdefault('initial', {})
 #             initial['students_under_group'] = [t.pk for t in kwargs['instance'].students_under_group.all()]
 #             initial['faculty_under_group'] = [t.pk for t in kwargs['instance'].faculty_under_group.all()]
-        
+
 #         forms.ModelForm.__init__(self, *args, **kwargs)
 
 #     def save(self, commit=True):

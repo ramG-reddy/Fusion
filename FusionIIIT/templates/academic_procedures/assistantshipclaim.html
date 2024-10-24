@@ -11,7 +11,7 @@
         </a>
 
     </div>
-    
+
     <div class="ui active tab" data-tab="assistantship">
         <div class="ui vertical segment">
             {% if assistantship_flag == "True" %}
@@ -58,16 +58,16 @@
                         </div>
 
                     </div>
-                    
+
 
                     <div class="one fields">
                         <div class="eight wide field">
-                            
+
                             <label for="bank">Bank Account Number</label>
                             <input type="text" name="bank_account" id="bank" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this)" maxlength="11"  />
                         </div>
                     </div>
-                    
+
                     <div class="two fields">
                         <div class="eight wide field">
                             <label>Thesis Suervisor</label>
@@ -95,17 +95,17 @@
                                     <div class="item" data-value="NET">NET</div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
 
                 </div>
 
-    
+
                 <div class="field">
                     <button class="ui primary button right floated" type="submit" onclick="validateAssistantship('new_assistantshipclaim',event)" >
                             Submit
                     </button>
-                </div>            
-                
+                </div>
+
             </form>
             {%else%}
             <h3>Not Available</h3>
@@ -132,12 +132,12 @@
                     <th rowspan="2">Thesis Supervisor</th>
                     <th rowspan="2">Academic department</th>
                     <th rowspan="2">Account department</th>
-            
+
                 </tr>
             </thead>
             <tbody>
             {% for obj in assistantship_list reversed%}
-             <tr id="statusid{{forloop.counter}}">                
+             <tr id="statusid{{forloop.counter}}">
                 <td>{{obj.month}}</td>
                 <td>{{ obj.year }}</td>
                 <td>
@@ -176,20 +176,20 @@
             {% endfor %}
             </tbody>
         </table>
-    
+
     </div>
     <div hidden>
         <center><i class="ui orange hourglass half icon" id="hg"></i>
 
     </div>
-    
-    
+
+
 {% endblock %}
 
 {% block javascript %}
 
 <script>
-    
+
     //setting the year drop down menu
     var d =new Date();
         document.getElementById("1").innerHTML = d.getFullYear()-1;
@@ -225,7 +225,7 @@
             });
         });
 
-    
+
     function ValidateExtension() {
         var allowedFiles = [".doc", ".docx", ".pdf"];
         var fileUpload = document.getElementById("fileUpload");
@@ -238,7 +238,7 @@
         lblError.innerHTML = "";
         return true;
     }
-  
+
 
     function validateAssistantship(form,event){
             event.preventDefault();
@@ -266,7 +266,7 @@
             {
                 var formData = new FormData(form);
                 console.log(formData);
-                
+
                 $.ajax({
                     url: '/academic-procedures/ACF/',
                     data: formData,
@@ -301,13 +301,13 @@
                     }
                 });
             }
-            
-               
 
-        
+
+
+
         }
-    
-    
-</script> 
+
+
+</script>
 
 {% endblock %}

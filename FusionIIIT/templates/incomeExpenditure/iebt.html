@@ -28,14 +28,14 @@
             <div class="ui divider"></div>
 
             {% comment %}The Tab-Menu starts here!{% endcomment %}
-            <div class="ui huge fluid vertical pointing menu" id="vtab" 
+            <div class="ui huge fluid vertical pointing menu" id="vtab"
                  style="max-width: 320px;">
-              
+
                 <a class="active item" data-tab="one">
                     View Stats
                     <i class="right floated chevron right icon"></i>
                 </a>
-               
+
             </div>
             {% comment %}The Tab-Menu ends here!{% endcomment %}
         </div>
@@ -55,7 +55,7 @@
                     <a class="item" data-tab="balance_sheet" style="width: 50%;">
                         <p style="margin-left: 25%;">Balance Sheet</p>
                     </a>
-                    
+
                 </div>
                 <div class="ui active tab segment" data-tab="view_stats" >
                     {%  include 'incomeExpenditure/viewStats.html' %}
@@ -63,13 +63,13 @@
                 <div class="ui tab segment" data-tab="balance_sheet">
                     {%  include 'incomeExpenditure/balanceSheet.html' %}
                 </div>
-                
-                
+
+
             </div>
-            
-            
+
+
         </div>
-       
+
         {% comment %}The central-rail segment ends here!{% endcomment %}
     </div>
 

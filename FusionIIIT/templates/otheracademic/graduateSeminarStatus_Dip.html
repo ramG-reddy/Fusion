@@ -39,17 +39,17 @@
                             <th>Roll No.</th>
                             <th>Semester</th>
                             <th>Seminar Date</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
                         {% for entry in form_data %}
-                        
+
                         <tr>
                             <td>{{ entry.roll_no }}</td>
                             <td>{{ entry.semester }}</td>
                             <td>{{ entry.date_of_seminar }}</td>
-                           
+
                         </tr>
                         {% endfor %}
                     </tbody>

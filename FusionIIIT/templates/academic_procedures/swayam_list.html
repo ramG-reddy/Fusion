@@ -9,7 +9,7 @@
             event.preventDefault();
             var friendForm = $(this);
             console.log("hello", friendForm);
-            console.log(friendForm.serialize()); 
+            console.log(friendForm.serialize());
             var posting = $.post(friendForm.attr('action'), friendForm.serialize());
             posting.done(function (jsondata) {
                 $("#loading").hide();

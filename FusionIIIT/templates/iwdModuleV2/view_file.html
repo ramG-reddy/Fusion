@@ -62,7 +62,7 @@ Academic
                             <div class="comment">
                                 <div class="content">
                                     <div style="display:flex;justify-content: space-between;flex-direction: row; font-weight:normal">
-                                        <div style="padding: 5px;">   
+                                        <div style="padding: 5px;">
                                             <b>Sent by:</b>
                                             <a class="author"style="text-decoration: none;color:inherit; font-weight:normal">{{ t.current_design }}
                                             </a>
@@ -87,10 +87,10 @@ Academic
                                                     <span class="meta">No Remarks</span>
                                                 {% endif %}
                                                 </div>
-                                        </div>    
+                                        </div>
                                         {% if t.upload_file %}
                                         <span class="meta" style="color: grey; padding: 5px;"><b style="color:black;">Attachment:<b> <a href="{{t.upload_file.url}}" > {{ t.upload_file }} </a> </span>
-                                       
+
                                         {% else %}
                                         <span class="meta" style="color: grey; padding: 5px;">No attachments</span>
                                         {% endif %}
@@ -102,14 +102,14 @@ Academic
 
                         <div class="ui divider"></div>
                         {% if request.user == current_user and eligible != "Accounts Admin"  %}
-                        
+
 
                             <form method="post" enctype="multipart/form-data" action="{% url 'iwdModuleV2:'|add:url %}">
                                 {% csrf_token %}
                                 <input type="hidden" value="{{ file.id }}" name = "fileid">
                                 <div class="field" style="max-width: 100%;">
                                     <label for="receiver_designation">Forward to :</label>
-                                    <div class="eight wide field">                                
+                                    <div class="eight wide field">
                                         <select id="receiver_designation" name="designation" class="ui selection dropdown small">
                                             {% for queryset in holdsDesignations %}
                                                 {% for hd in queryset %}
@@ -117,15 +117,15 @@ Academic
                                                 {% endfor %}
                                             {% endfor %}
                                         </select>
-                                    </div>                             
+                                    </div>
                                 </div>
 
-                                
-                                
+
+
                                 <div class="field">
                                     <label>Remarks:<textarea rows="2" name="remarks"></textarea></label>
                                 </div>
-                                
+
                                 <div class="field">
                                     <label for="attachment">Attach File: (Maximum File Size 10 MB) </label>
                                     <input type="file" id="file" name="attachment" accept=".pdf, .jpg, .jpeg, .png">

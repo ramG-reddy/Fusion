@@ -2,7 +2,7 @@
 {% comment %}The tab menu starts here!{% endcomment %}
 
 <div class="ui vertical segment">
-    
+
         <table class="ui celled table"
                 style="padding-left: 2.5%;
                         padding-right: 2.5%;
@@ -24,7 +24,7 @@
             </thead>
             <tbody >
                 {% for obj in thesis_request_list%}
-                <tr >                
+                <tr >
                     <td>{{forloop.counter}} .</td>
                     <td>{{obj.course_id.course_id}}</td>
                     <td>{{ obj.thesis_topic }}</td>
@@ -52,4 +52,3 @@
             </tbody>
         </table>
     </div>
-

@@ -25,7 +25,7 @@
                 <a href="/otheracademic/library_nodues_not" class="item">Clear No Dues
                     <i class="right floated chevron right icon"></i>
                 </a>
-                
+
             </div>
         </div>
 
@@ -38,14 +38,14 @@
                             <th>Roll No.</th>
                             <th>Name </th>
                             <th>Library</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
                         {% for entry in form_data %}
                         <tr>
                             {% if not entry.library_clear and not entry.library_notclear  %}
-                        
+
                                 <td>{{ entry.roll_no}}</td>
                                 <td>{{ entry.name }}</td>
                                 {%if entry.library_clear%}
@@ -62,12 +62,12 @@
                                         {% csrf_token %}
                                         <button class="ui red button reject-button" style="width:50%" type="submit">Not Clear</button>
                                     </form>
-                                    
+
                                 </td>
                                 {%endif%}
 
-                                
-                            
+
+
                             {% endif %}
                         </tr>
                         {% endfor%}

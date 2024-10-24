@@ -3,7 +3,7 @@
 <form action="{% url 'hostelmanagement:staff_edit_schedule' %}" method ="POST" id="hall_staff_edit_form">
    <div class="ui form" style="padding: 8px; padding-left: 24px; padding-right: 24px;">
         {% csrf_token %}
-        
+
        <div class="two fields">
            <div class="six wide field">
                <label>Staff Type</label>
@@ -14,7 +14,7 @@
                </select>
            </div>
         </div>
-    
+
         <div class="two fields">
            <div class="six wide field">
                 <label>Staff Name</label>
@@ -45,9 +45,9 @@
                    <option value="Sunday">Sunday</option>
                </select>
            </div>
-           
+
        </div>
-       
+
        <div class="two fields">
             <div class="six wide field">
                 <label>Start Time</label>
@@ -72,7 +72,7 @@
 <br>
 <div class="ui divider"></div>
 <script type="text/javascript">
-   
+
    function isNumberKey(evt){
    var charCode = (evt.which) ? evt.which : event.keyCode
    if (charCode > 31 && (charCode < 48 || charCode > 57))
@@ -82,9 +82,4 @@
 
 </script>
 
- {% endblock %} 
-
-
-
-
-
+ {% endblock %}

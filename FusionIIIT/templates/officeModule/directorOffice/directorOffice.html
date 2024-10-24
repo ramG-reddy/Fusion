@@ -39,16 +39,16 @@
             {% comment %}The Tab-Menu starts here!{% endcomment %}
             <div class="ui huge fluid vertical pointing menu"
                  style="max-width: 320px;">
-             
+
                 <div class="item" id="faculty_profile" >
                    View Faculty Details
                     <i class="right floated chevron right icon"></i>
                 </div>
                 <div id="staff_profile2" class="item"  >
-                    View Staff Department Wise 
+                    View Staff Department Wise
                      <i class="right floated chevron right icon"></i>
                 </div>
-                
+
 
                  <div  id="student_profile" class="item">
                     View Student Details
@@ -67,7 +67,7 @@
                 </div>
 
                 <a class="item" data-tab="tab1content1" onclick="pnd()">
-                   Office of Dean P & D 
+                   Office of Dean P & D
                    <i class="right floated chevron right icon"></i>
                 </a>
 
@@ -97,7 +97,7 @@
                 </a>
 
 
-        </div>            
+        </div>
 
             <br/><br/><br/>
             {% comment %}The Tab-Menu ends here!{% endcomment %}
@@ -114,12 +114,12 @@
             The central-rail segment starts here!
         {% endcomment %}
 
-      
+
 
 
 
         <div class="ten wide column">
-             
+
             <div class="ui tab" data-tab="tab1content1" id="pnd">
                 <div class="ui vertical segment">
                     {% block tab1content1 %}
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-    
+
 
         <!-- Div for important links -->
         <div id="imp_links">
@@ -182,7 +182,7 @@
                     </a>
                </div>
 
-               <br><br>     
+               <br><br>
                <div style="width: 600px; padding: 10px; margin: 0; border-radius: 5px; background: #f0f0f0;">
                     <a class = "item" href="http://www.iiitdmj.ac.in/annual_report.php" target="_blank">
                         Annual Report
@@ -190,7 +190,7 @@
                     </a>
                </div>
 
-               <br><br>     
+               <br><br>
                <div style="width: 600px; padding: 10px; margin: 0; border-radius: 5px; background: #f0f0f0;">
                     <a class = "item" href="http://www.iiitdmj.ac.in/downloads/IIITDMJ%20Telephone%20Directory.pdf" target="_blank">
                         Phone Directory
@@ -198,7 +198,7 @@
                     </a>
                </div>
 
-               <br><br>     
+               <br><br>
                <div style="width: 600px; padding: 10px; margin: 0; border-radius: 5px; background: #f0f0f0;">
                     <a class = "item" href="http://www.iiitdmj.ac.in/annual_account.php" target="_blank">
                         Annual Account
@@ -206,7 +206,7 @@
                     </a>
                </div>
 
-               <br><br>     
+               <br><br>
                <div style="width: 600px; padding: 10px; margin: 0; border-radius: 5px; background: #f0f0f0;">
                     <a class = "item" href="http://www.iiitdmj.ac.in/downloads/Closed%20Holiday%202019.pdf" target="_blank">
                         Closed Holidays
@@ -217,13 +217,13 @@
         <!-- End of important links section -->
 
     <!-- Faculty info -->
-     
-     
 
 
-    
 
-     <div id="staff2" style="display: none;"> 
+
+
+
+     <div id="staff2" style="display: none;">
 
         {% comment %}The tab menu starts here!{% endcomment %}
         <div>
@@ -231,7 +231,7 @@
             <h2>Department wise staff</h2>
             <div class="ui divider"></div>
         <div class="ui pointing secondary menu" style="border: 1px solid lightgray">
-            
+
             <a class="active item" data-tab="tab9content1">
                 Academic
             </a>
@@ -275,15 +275,15 @@
 
                     </tr>
                     </thead>
-     
+
                     <tbody>
-                    
+
                     </tbody>
 
                     </table>
 
-                    
-               
+
+
                 {% endblock %}
             </div>
         </div>
@@ -314,16 +314,16 @@
                         Department
                     </th>
 
-                    
+
                 </tr>
                 </thead>
 
                 <tbody>
-                
+
                 </tbody>
             </table>
 
-           
+
                 {% endblock %}
             </div>
         </div>
@@ -353,16 +353,16 @@
                         Department
                     </th>
 
-                   
+
                 </tr>
                 </thead>
 
                 <tbody>
-                
+
                 </tbody>
             </table>
 
-           
+
                 {% endblock %}
             </div>
         </div>
@@ -397,11 +397,11 @@
                 </thead>
 
                 <tbody>
-                
+
                 </tbody>
             </table>
 
-           
+
                 {% endblock %}
             </div>
         </div>
@@ -435,11 +435,11 @@
                 </thead>
 
                 <tbody>
-                
+
                 </tbody>
             </table>
 
-           
+
                 {% endblock %}
             </div>
         </div>
@@ -450,13 +450,13 @@
 
     <!-- Div for student search form -->
     <div id="student_form" style="display:none;">
-        
+
         <form method="GET" id="stud_form">
             {% csrf_token %}
         <div class="ui form" style="padding: 8px; padding-left: 56px; padding-right: 12px;">
-        <div class="two fields"> 
+        <div class="two fields">
 
-     
+
           <label><b>Programme: </b></label> &nbsp;
             <select class="ui search fluid dropdown selection" name="programme" id="programme">
             <option value=""> Select </option>
@@ -468,7 +468,7 @@
             </select>
 
       &nbsp;
-    
+
         <label><b>Year: </b></label> &nbsp;
        <select class="ui search fluid dropdown selection" name="year" id="year">
         <option value=""> Select </option>
@@ -479,7 +479,7 @@
 
       &nbsp;
 
-      <label><b>Department: </b></label> &nbsp; 
+      <label><b>Department: </b></label> &nbsp;
         <select class="ui search fluid dropdown selection" name="department" id="department">
         <option value=""> Select </option>
          <option value="CSE"> Computer Science & Engineering </option>
@@ -492,9 +492,9 @@
     <button class="ui primary submit button" type="submit" name="stud" value="stud"> Search</button>
     </div>
     </div>
-    
+
     </form>
-    
+
     </div>
 
 
@@ -508,7 +508,7 @@
 <div id="student" style="display: none;">
 
    <div id="heading">    </div>
-    <!-- Result table--> 
+    <!-- Result table-->
 
                 <table id="student_table" class="ui very basic collapsing celled sortable table"
                                         style="padding-left: 5%;
@@ -519,38 +519,38 @@
                                                                   ">
                     <thead>
                     <tr>
-        
+
                         <th class="one wide column">
                             Roll Number
                         </th>
-        
+
                         <th class="two wide column">
                             Name
                         </th>
-        
+
                         <th class="one wide column">
                             Department
                         </th>
-        
+
                         <th class="one wide column">
                             CPI
                         </th>
-        
-                     
+
+
                     </tr>
                     </thead>
 
                      <tbody>
-                
+
                     </tbody>
-        
+
                     </table>
-        
-              
+
+
                 <div class="ui divider"></div>
 </div>
 <!-- End -->
-  
+
 <!-- Div for meeting form -->
 <div id="meeting_form"  style="display:none;">
 
@@ -590,7 +590,7 @@
             </div>
 
             <div class="two fields">
-                <div class="field"> 
+                <div class="field">
                     <div>
                     <label>Member Name</label>
                     <select required="required" class="ui search fluid dropdown" placeholder="Name" class="ui large input" id="member" name="member">
@@ -601,7 +601,7 @@
 
                 <div class="field">
                     <br>
-                    <input type="button" value="Add More" name="addmore" style="margin-top: 5px" id="add_button" onclick="addmember()" />  
+                    <input type="button" value="Add More" name="addmore" style="margin-top: 5px" id="add_button" onclick="addmember()" />
                 </div>
 
 
@@ -609,7 +609,7 @@
             </div>
 
             <div id="moremem"></div>
-            
+
             <br>
 
             <div class="field">
@@ -622,14 +622,14 @@
     </form>
     <br>
     <br>
-</div> 
-<!-- End of meeting form --> 
+</div>
+<!-- End of meeting form -->
 <br>
 </div>
 
-<!-- div for viewing meetings --> 
+<!-- div for viewing meetings -->
 <div id="allmeetings" style="display: none;">
-        
+
     <h3>Scheduled Meetings</h3>
     <form id="myform" method="POST" action="/office/directorOffice/planMeetings">
             <table id="meeting_table" style='border: 1px solid lightgray' class="ui very basic collapsing celled sortable table" style="padding-left: 5%;
@@ -642,7 +642,7 @@
                 <tr>
                     <th></th>
                     <th class="two wide column">
-                        Agenda 
+                        Agenda
                     </th>
 
                     <th class="two wide column">
@@ -664,7 +664,7 @@
                 </thead>
 
                 <tbody>
-                    
+
                 </tbody>
 
             </table>
@@ -701,7 +701,7 @@
     <!--<script type="text/javascript" src="{% static 'globals/js/jquery.autocomplete.min.js' %}"> </script>-->
     <script type="text/javascript" src="{% static 'globals/js/datepicker.js' %}"></script>
     <script type="text/javascript" src="{% static 'globals/js/tablesort.js' %}"></script>
-    <!-- <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script> --> 
+    <!-- <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script> -->
 
     <script>
         $(document).ready(function(){
@@ -735,7 +735,7 @@
             $("#stud").css("display", "none");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-        
+
         }
     </script>
 
@@ -756,7 +756,7 @@
         $("#stud").css("display", "none");
         $("#purchase").css("display", "none");
         $("#registrar").css("display", "none");
-    
+
     }
 </script>
 
@@ -779,7 +779,7 @@
         $("#stud").css("display", "none");
         $("#purchase").css("display", "none");
         $("#registrar").css("display", "none");
-    
+
     }
 </script>
     <script type="text/javascript">
@@ -799,7 +799,7 @@
             $("#stud").css("display", "block");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-        
+
         }
     </script>
 
@@ -821,7 +821,7 @@
         $("#stud").css("display", "none");
         $("#purchase").css("display", "block");
         $("#registrar").css("display", "none");
-    
+
     }
 </script>
 
@@ -843,7 +843,7 @@
         $("#stud").css("display", "none");
         $("#purchase").css("display", "none");
         $("#registrar").css("display", "block");
-    
+
     }
 </script>
 
@@ -867,8 +867,8 @@
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
 
-        
-            
+
+
             //alert("hey")
             $.ajax({
                 type: 'POST',
@@ -885,7 +885,7 @@
                         $('#cse_table').children('tbody').append('<tr>');
                         $('#cse_table').children('tbody').append('<td>' + response.cse_faculty[i] + '</td> <td>' + response.cse_faculty[i+1] + '</td> <td>' + response.cse_faculty[i+2] + '</td>');
                         $('#cse_table').children('tbody').append('</tr>');
-                  
+
                     }
                     //$('#cse_table').children('tbody').append('</tr>')
 
@@ -894,14 +894,14 @@
 
                     $('#ece_table').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.ece_faculty.length;i=i+3){
                         $('#ece_table').children('tbody').append('<tr>');
                         $('#ece_table').children('tbody').append('<td>' + response.ece_faculty[i] + '</td> <td>' + response.ece_faculty[i+1] + '</td> <td>' + response.ece_faculty[i+2] + '</td>');
                         $('#ece_table').children('tbody').append('</tr>')
-                  
+
                     }
-                    
+
 
 
 
@@ -909,14 +909,14 @@
 
                     $('#me_table').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.me_faculty.length;i=i+3){
                         $('#me_table').children('tbody').append('<tr>');
                         $('#me_table').children('tbody').append('<td>' + response.me_faculty[i] + '</td> <td>' + response.me_faculty[i+1] + '</td> <td>' + response.me_faculty[i+2] + '</td>');
                         $('#me_table').children('tbody').append('</tr>')
-                  
+
                     }
-                    
+
 
 
 
@@ -924,13 +924,13 @@
 
                     $('#ns_table').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.ns_faculty.length;i=i+3){
                         $('#ns_table').children('tbody').append('<tr>');
                         $('#ns_table').children('tbody').append('<td>' + response.ns_faculty[i] + '</td> <td>' + response.ns_faculty[i+1] + '</td> <td>' + response.ns_faculty[i+2] + '</td>');
                         $('#ns_table').children('tbody').append('</tr>')
                     }
-                    
+
 
 
 
@@ -938,13 +938,13 @@
 
                     $('#des_table').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.des_faculty.length;i=i+3){
                         $('#des_table').children('tbody').append('<tr>');
                         $('#des_table').children('tbody').append('<td>' + response.des_faculty[i] + '</td> <td>' + response.des_faculty[i+1] + '</td> <td>' + response.des_faculty[i+2] + '</td>');
                         $('#des_table').children('tbody').append('</tr>')
                     }
-                    
+
 
                 },
                 error: function(rs, e){
@@ -953,7 +953,7 @@
             });
         });
     </script>
-    <!-- End of script for faculty --> 
+    <!-- End of script for faculty -->
 
 
     <!-- Script for showing Staff Department wise -->
@@ -977,9 +977,9 @@
             $("#stud").css("display", "none");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-           
-            
-            
+
+
+
             $.ajax({
                 type: 'POST',
                 url: '/office/directorOffice/viewStaffProfile',
@@ -1000,21 +1000,21 @@
                         $('#academic').children('tbody').append('<tr>');
                         $('#academic').children('tbody').append('<td>' + response.academic[i] + '</td> <td>' + response.academic[i+1] + '</td> <td>' + response.academic[i+2] + '</td>');
                         $('#academic').children('tbody').append('</tr>');
-                  
+
                     }
-                    
+
 
 
                     $('#admin').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.administration.length;i=i+3){
                         $('#admin').children('tbody').append('<tr>');
                         $('#admin').children('tbody').append('<td>' + response.administration[i] + '</td> <td>' + response.administration[i+1] + '</td> <td>' + response.administration[i+2] + '</td>');
                         $('#admin').children('tbody').append('</tr>')
-                  
+
                     }
-                    
+
 
 
 
@@ -1022,14 +1022,14 @@
 
                     $('#office').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.office.length;i=i+3){
                         $('#office').children('tbody').append('<tr>');
                         $('#office').children('tbody').append('<td>' + response.office[i] + '</td> <td>' + response.office[i+1] + '</td> <td>' + response.office[i+2] + '</td>');
                         $('#office').children('tbody').append('</tr>')
-                  
+
                     }
-                    
+
 
 
 
@@ -1037,13 +1037,13 @@
 
                     $('#placement').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.placement.length;i=i+3){
                         $('#placement').children('tbody').append('<tr>');
                         $('#placement').children('tbody').append('<td>' + response.placement[i] + '</td> <td>' + response.placement[i+1] + '</td> <td>' + response.placement[i+2] + '</td>');
                         $('#placement').children('tbody').append('</tr>')
                     }
-                    
+
 
 
 
@@ -1051,13 +1051,13 @@
 
                     $('#others').children('tbody').html('')
                     //$('#particular_stats').html('');
-                    
+
                     for(var i=0;i<response.others.length;i=i+3){
                         $('#others').children('tbody').append('<tr>');
                         $('#others').children('tbody').append('<td>' + response.others[i] + '</td> <td>' + response.others[i+1] + '</td> <td>' + response.others[i+2] + '</td>');
                         $('#others').children('tbody').append('</tr>')
                     }
-                    
+
 
                 },
                 error: function(rs, e){
@@ -1066,7 +1066,7 @@
             });
         });
     </script>
-    <!-- End of staff script --> 
+    <!-- End of staff script -->
 
     <!-- script to show student form -->
     <script type="text/javascript">
@@ -1087,12 +1087,12 @@
             $("#stud").css("display", "none");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-       
-            
+
+
         });
 
     </script>
-    <!-- End of student form script --> 
+    <!-- End of student form script -->
 
 
     <!-- script for submitting student form -->
@@ -1117,8 +1117,8 @@
             $("#stud").css("display", "none");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-         
-            
+
+
             $.ajax({
                 type: 'GET',
                 url: '/office/directorOffice/viewStudentProfile',
@@ -1127,7 +1127,7 @@
                     programme : $('#programme').val(),
                     year : $('#year').val(),
                     department:$('#department').val(),
-                    
+
                 },
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
@@ -1139,7 +1139,7 @@
                         $("#error_div").css("display","block");
                         $('#error_div').children('h4').html('');
                         $('#error_div').children('h4').append('<center> Invalid Request. Please try again. </center>');
-                        
+
                     }
 
                     else{
@@ -1152,12 +1152,12 @@
                         $('#student_table').children('tbody').append('<tr>');
                         $('#student_table').children('tbody').append('<td>' + response.student_detail[i] + '</td> <td>' + response.student_detail[i+1] + '</td> <td>' + response.student_detail[i+2] + '</td><td>' + response.student_detail[i+3] + '</td> ' );
                         $('#student_table').children('tbody').append('</tr>')
-                  
+
                     }
                     $('#heading').children('center').html('');
                     $('#heading').append(' <center> <h3>' + response.info[0] + '&nbsp;&nbsp' + response.info[1]  + '&nbsp;&nbsp'+ response.info[2] + '&nbsp;&nbsp' +'  </h3> </center>');
                 }
-                    
+
                 },
                 error: function(rs, e){
                 console.log('error');
@@ -1187,7 +1187,7 @@
             $("#stud").css("display", "none");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-         
+
             $.ajax({
                 type: 'GET',
                 url: '/office/directorOffice/meeting_dropdown',
@@ -1198,7 +1198,7 @@
                 success: function(response){
                     console.log(response);
                     for(i=0;i<response.faculty.length;i++){
-                        $("#member").append('<option >' + response.faculty[i] + '</option>') 
+                        $("#member").append('<option >' + response.faculty[i] + '</option>')
                     }
 
                 },
@@ -1208,7 +1208,7 @@
             });
 
 
-                        
+
         });
 
     </script>
@@ -1216,7 +1216,7 @@
 
 
     <!-- Script for submitting meeting form -->
-        
+
     <script type="text/javascript">
 
         $(function() {
@@ -1254,11 +1254,11 @@
             });
         });
 
-    </script> 
-    <!-- End of script for meeting form script --> 
+    </script>
+    <!-- End of script for meeting form script -->
 
 
-    <!-- Script for add member --> 
+    <!-- Script for add member -->
     <script type="text/javascript">
         function addmember(){
             $("#moremem").append('<select  class="field ui search fluid dropdown" type="text" name="member" style="width: 301px" placeholder="Name" /></select> ' );
@@ -1274,7 +1274,7 @@
                     console.log(response);
                     $("select[name=member]").append('<option value=""> Select </option>')
                     for(i=0;i<response.faculty.length;i++){
-                        $("select[name=member]").append('<option>' + response.faculty[i] + '</option>') 
+                        $("select[name=member]").append('<option>' + response.faculty[i] + '</option>')
                     }
 
                 },
@@ -1286,12 +1286,12 @@
 
              //$("#moremem").append('<br>');
 
-                     
+
         }
     </script>
     <!-- End of script -->
 
-   
+
    <!-- Script to view Scheduled meetings -->
 
 
@@ -1313,8 +1313,8 @@
             $("#stud").css("display", "none");
             $("#purchase").css("display", "none");
             $("#registrar").css("display", "none");
-        
-            
+
+
 
             $.ajax({
                 type: 'POST',
@@ -1323,7 +1323,7 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function(response){
-                    console.log(response) 
+                    console.log(response)
                     $('#meeting_table').children('tbody').html('')
                     for(var i=0;i<response.meeting.length;i=i+6){
                         //alert("hey")
@@ -1343,9 +1343,9 @@
                         $('#meeting_table').children('tbody').append('</ol>')
                         $('#meeting_table').children('tbody').append('</td>')
                         $('#meeting_table').children('tbody').append('</tr>')
-                  
+
                     }
-                    
+
                 },
                 error: function(rs, e){
                 console.log('error');
@@ -1353,10 +1353,10 @@
             });
         });
     </script>
-    <!--End of script to view Scheduled meetings -->    
+    <!--End of script to view Scheduled meetings -->
 
     <!-- Plan Meeting (Cancelling ) -->
-        
+
     <script type="text/javascript">
 
         $(function() {
@@ -1395,7 +1395,7 @@
             });
         });
 
-    </script> 
+    </script>
     <!-- End of script of plan meetings -->
 
 

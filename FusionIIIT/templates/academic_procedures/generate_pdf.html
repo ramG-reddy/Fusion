@@ -18,7 +18,7 @@
     </style>
   </head>
 <body>
-  
+
   <h1 style="text-decoration: underline;" align="center">{{verified_marks_students_curr.course_code}} : {{verified_marks_students_curr.course_id.course_name}}</h1>
   <br>
   <div>
@@ -40,7 +40,7 @@
   			<td> :&nbsp &nbsp &nbsp {{ verified_marks_students_curr.sem }}</td>
   		</tr>
   	</table>
-  	
+
   </div>
 <br>
   <div class="student_marks">
@@ -59,7 +59,7 @@
                 <td style="20%"><center>{{ obj.0.id.user.username }}</center></td>
                 <td style="60%"><center>{{ obj.0.id.user.first_name }} {{ obj.0.id.user.last_name }}</center></td>
                 <td style="20%"><center>{{ obj.1 }}</center></td>
-            </tr>        
+            </tr>
             {% endif %}
             {% endfor %}
         </tbody>

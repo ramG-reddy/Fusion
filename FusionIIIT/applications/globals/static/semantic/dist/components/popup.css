@@ -18,7 +18,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  
+
 /* Fixes content being squished when inline (moz only) */
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
@@ -785,4 +785,3 @@
 /*******************************
         User Overrides
 *******************************/
-

@@ -136,7 +136,7 @@ body.pushable.dimmed {
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease;
   z-index: 2;
-  
+
 /* Pusher should inherit background from context */
   background: inherit;
 }
@@ -624,4 +624,3 @@ body.pushable > .pusher {
 /*******************************
          Site Overrides
 *******************************/
-

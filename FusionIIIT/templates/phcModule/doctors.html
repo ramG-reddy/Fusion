@@ -27,7 +27,7 @@
                 <button type="button"  id="pr_docs" name="PDF" value="PDF" class="ui primary button right floated">
                     Download
                     <i class="ui download icon right floated"></i>
-                </button> 
+                </button>
 
                 <script>
     $('#pr_docs').click(function(e){
@@ -65,7 +65,7 @@
 
         <tr>
           <td style="font-weight:bold;color:black;">Doctor</td>
-          
+
           {% for d in doctors %}
           {{count.doctor_count}}
           <td style="font-weight:bold;color:black; word-wrap:break-word;">{{d.doctor_name}}</td>
@@ -231,7 +231,7 @@ $('#phc_docs tbody').append("<tr><td>" + data.doctor + "</td><td>" + data.specia
                 <button type="button"  id="pr_pathos" name="PDF" value="PDF" class="ui primary button right floated">
                     Download
                     <i class="ui download icon right floated"></i>
-                </button> 
+                </button>
 
                 <script>
     $('#pr_pathos').click(function(e){
@@ -269,7 +269,7 @@ $('#phc_docs tbody').append("<tr><td>" + data.doctor + "</td><td>" + data.specia
 
         <tr>
           <td style="font-weight:bold;color:black;">Pathologist</td>
-          
+
           {% for p in pathologists %}
           {{count.pathologist_count}}
           <td style="font-weight:bold;color:black; word-wrap:break-word;">{{p.pathologist_name}}</td>

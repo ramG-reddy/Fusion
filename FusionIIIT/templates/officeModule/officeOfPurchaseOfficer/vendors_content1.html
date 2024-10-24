@@ -7,7 +7,7 @@
                 <label>Item</label>
                 <input type="text" placeholder="Search" class="ui search large input" name="item">
             </div>
-            
+
 
             <div class="four wide field">
                 <label><br></label>
@@ -59,7 +59,7 @@
         <td>
            {{ j.vendor_name }}
         </td>
-            
+
         <td>
                 {{ j.vendor_address }}
         </td>
@@ -69,11 +69,11 @@
         </td>
         <td>
                 <div class="collapsing">
-                        <a href="{% url 'office_module:delete_vendor' j.pk %}" class="ui red right floated button">Delete</a> 
+                        <a href="{% url 'office_module:delete_vendor' j.pk %}" class="ui red right floated button">Delete</a>
                 </div>
         </td>
-        
-       
+
+
     </tr>
     {% endfor %}
     {% endif %}
@@ -87,7 +87,7 @@
         <td>
            {{ j.vendor_name }}
         </td>
-            
+
         <td>
                 {{ j.vendor_address }}
         </td>
@@ -98,19 +98,19 @@
 
         <td>
                 <div class="collapsing">
-                        <a href="{% url 'office_module:delete_vendor' j.pk %}" class="ui red right floated button">Delete</a> 
+                        <a href="{% url 'office_module:delete_vendor' j.pk %}" class="ui red right floated button">Delete</a>
                 </div>
         </td>
 
         <td>
             <div class="collapsing">
-                <a href="{% url 'office_module:edit_vendor' j.pk %}" class="ui blue right floated button">Edit</a> 
+                <a href="{% url 'office_module:edit_vendor' j.pk %}" class="ui blue right floated button">Edit</a>
             </div>
     </td>
-               
+
     </tr>
     {% endfor %}
-   
+
     </tbody>
 
 
@@ -126,4 +126,3 @@
 -->
 
 <div class="ui divider"></div>
-

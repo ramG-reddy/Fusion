@@ -1,8 +1,14 @@
-from django.contrib import admin
-
 # Register your models here.
-
-from applications.otheracademic.models import GraduateSeminarFormTable,LeaveFormTable,BonafideFormTableUpdated,AssistantshipClaimFormStatusUpd,NoDues,LeavePG,LeavePGUpdTable
+from applications.otheracademic.models import (
+    AssistantshipClaimFormStatusUpd,
+    BonafideFormTableUpdated,
+    GraduateSeminarFormTable,
+    LeaveFormTable,
+    LeavePG,
+    LeavePGUpdTable,
+    NoDues,
+)
+from django.contrib import admin
 
 admin.site.register(LeaveFormTable)
 
@@ -14,5 +20,3 @@ admin.site.register(AssistantshipClaimFormStatusUpd)
 admin.site.register(NoDues)
 admin.site.register(LeavePGUpdTable)
 admin.site.register(LeavePG)
-
-

@@ -102,7 +102,7 @@ Fusion - Feedback
                         </div>
                     </div>
                     <br><br><br><br>
-                    {% if issue.images.all.count > 0 %} 
+                    {% if issue.images.all.count > 0 %}
                     <center>
                         <div class="ui checkbox">
                             <input type="checkbox" name="remove-images">
@@ -122,13 +122,13 @@ Fusion - Feedback
                         <p> The Title can have atmost 255 letters and exceeding the limit might give unwanted results so keep it short.</p>
                         <p> New images will be added to the previously existing images if you haven't checked the remove checkbox.</p>
                     </div>
-                </form>    
+                </form>
             {% endif %}
             <div class="ui segment" id="issue-content">
             	<div class="ui huge header">
             		<i class="bug icon"></i> Issue
-                    
-            	</div>	
+
+            	</div>
                 <div class="ui horizontal divider">{% if request.user == issue.user and not issue.closed %}<button id="edit-issue" class="ui green large button"><i class="edit icon"></i>Edit</button>{% endif %}</div>
                 <div class="ui segments">
                     <div class="ui large header segment">
@@ -159,7 +159,7 @@ Fusion - Feedback
         {% comment %}The right-rail segment starts here!{% endcomment %}
         <div class="three wide column">
             <div class="ui segment" id="image-preview" style="display: none;">
-                
+
                 {% comment %}
                     TODO: the right rail!
                 {% endcomment %}
@@ -170,7 +170,7 @@ Fusion - Feedback
         {% comment %}The right-margin segment!{% endcomment %}
         <div class="column"></div>
 
-    </div> 	
+    </div>
 
 {% endblock %}
 
@@ -254,9 +254,9 @@ Fusion - Feedback
                     $("#image-preview").append("<div id='" + i + "-image-div' class='ui container'><img id='" + i + "-image' class='ui prev-image responsive image' src='"+ e.target.result +"' /></div><br>");
                 }
                 reader.readAsDataURL(this.files[i]);
-                 
-                
-                
+
+
+
             }
             $(".image-loader").remove();
         }

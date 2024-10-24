@@ -39,7 +39,7 @@
                 <div class="menu">
                   {% for course in courses_info %}
                   <div class="item" data-value="{{ course.id }}"> {{ course.code }}- {{ course.name }} -{{ course.version    }}</div>
-              {% empty %}   
+              {% empty %}
                   <div class="item">No Courses Available</div>
               {% endfor %}
                 </div>
@@ -56,7 +56,7 @@
                 <div class="menu">
                   {% for working_year in working_years %}
                   <div class="item" data-value="{{working_year.working_year }}"> {{ working_year.working_year }}</div>
-              {% empty %}   
+              {% empty %}
                   <div class="item">No Courses Available</div>
               {% endfor %}
                 </div>
@@ -67,7 +67,7 @@
     <div style="display: flex; flex-direction: row; gap: 50px; margin-left: 10px; ">
 
       <button class="ui primary button" onclick="search()">Search</button>
-  
+
   </div>
 
   </div>
@@ -76,7 +76,7 @@
       // Get selected course and semester values
       var selectedCourse = $('#course-dropdown .menu .item.active').attr('data-value');
       var selectedYear = $('#year-dropdown .menu .item.active').attr('data-value');
-  
+
       // Check if both course and semester are selected
       if (selectedCourse && selectedYear) {
         // Redirect to the new page with parameters
@@ -86,7 +86,6 @@
       }
     }
   </script>
-  
+
 
 {% endblock %}
-

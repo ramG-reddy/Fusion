@@ -68,9 +68,9 @@
                                                 </div>
                                                     {% endif %}
                                                 {% endfor %}
-                                                
+
                                             </div>
-                                        </div> 
+                                        </div>
 
                                         <div class="ui row">
                                             <br>
@@ -120,7 +120,7 @@
                                     <form class="ui form" method="post" action="{% url 'mess:placeorder' %}">
                                         {% csrf_token %}
                                         <div class="ui row">
-                                            
+
                                             <div class="two fields">
                                                 {% for x in nonveg %}
                                                     {% if x.order_interval == 'Dinner' %}
@@ -159,7 +159,7 @@
 
             <div class="ui divider"></div>
 
-        
+
         </div>
     </div>
 
@@ -241,7 +241,7 @@
             <br>
             <div class="ui divider"></div>
         </div>
-    </div> 
+    </div>
     {% endblock %}
     {% endblock %}
     -->

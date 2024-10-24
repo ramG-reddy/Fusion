@@ -17,7 +17,7 @@
 
     {% if global_var == 'Compounder' %}
     <div class="ui active tab" data-tab="dep">
-        
+
         <div class="ui vertical segment">
             <!-- fill the form details -->
             <form class="ui form" style="padding-left: 24px; padding-right: 24px;">
@@ -28,20 +28,20 @@
                 </div>
 
                 <br>
-                
+
                 <div class="field">
                     <label>Announcement Details<sup><i class="small red asterisk icon"></i></sup></label>
                     <textarea placeholder="What is the Announcement?" name="announcement" id="announcement" required></textarea>
-                </div> 
+                </div>
 
                 <div class = "file">
                       <label for="file">Attach Files ( PDF, JPEG, PNG, JPG )</label>
                       <input type="file" id="file" name="upload_announcement" accept=".pdf, .jpg, .jpeg, .png" >
-                </div>                   
+                </div>
 
                 <br>
 
-                
+
                 <input class="ui large primary button right floated" type="button" name="Submit" value="Publish" id="announce"/>
 
 
@@ -57,25 +57,25 @@
             $('#announce').click(function(e) {
                 // Prevent the default form submission
                 e.preventDefault();
-                
+
                 // Get the file input element
                 var fileInput = document.getElementById('file');
-                
+
                 // Get the files from the input element
                 var file = fileInput.files[0];
-                
+
                 // Create a new FormData object
                 var formData = new FormData();
-            
+
                 // Append the CSRF token and other form data
                 formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
                 formData.append('announcement', $('#announcement').val())
                 formData.append('comp_announce', $('#announce').val())
-               
-            
+
+
                 // Append the file
                 formData.append('file', file);
-            
+
                 // Perform the AJAX request using jQuery's $.ajax()
                 $.ajax({
                     type: 'POST',
@@ -95,9 +95,9 @@
                     }
                 });
             });
-            
-        
-        </script>        
+
+
+        </script>
         {% endif %}
     </div>
 
@@ -112,16 +112,16 @@
                     <td style="font-weight:bold;color:black; ">
                         Announcement Details
                     </td>
-{% comment %} 
+{% comment %}
                     <td style="font-weight:bold;color:black;" >
                         Announcement Files
                     </td> {% endcomment %}
-                   
+
 
                 </tr>
                 </thead>
                     <h1>{{ user_designation }}</h1>
-                    
+
                 <tbody>
                 {% for anno in announcement %}
                 <tr>
@@ -134,7 +134,7 @@
 
 
                     </td>
-                   
+
                     {% comment %} <td style="white-space:nowrap;">
                         {% if anno.upload_announcement != None %}
                         <a href="{{ anno.upload_announcement }}" download>

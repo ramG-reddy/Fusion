@@ -19,7 +19,7 @@
             <td><input name="choice" type="checkbox" value="{{ i.course_id }}"></td>
         </tr>
     {% endfor %}
-    
+
 </table>
 <button class="ui button black create_btn" type="submit">Submit</button>
 </form>
@@ -27,11 +27,11 @@
 
 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
 <script type="text/javascript">
-    
+
     $(function() {
     $("#select_opt").submit(function(event) {
             event.preventDefault();
-            var friendForm = $(this);            
+            var friendForm = $(this);
             var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
             posting.done(function(data) {
                 alert('Optional Course Selected');
@@ -40,7 +40,7 @@
             posting.fail(function(data) {
                 alert('Failed to Select Optional Course');
                 window.location = "/aims/";
-            });             
+            });
         });
     });
 </script>

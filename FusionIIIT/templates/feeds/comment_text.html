@@ -10,7 +10,7 @@
 <div class="hidden">
 	<div id="style-1" class="ui message scrollbar">
 		<!-- <div class="ui segment force-overflow"> -->
-		{% for comment in question.comments_set.all|dictsortreversed:"commented_at" %}						
+		{% for comment in question.comments_set.all|dictsortreversed:"commented_at" %}
 			<br>
 			<div id="comment{{comment.id}}">
 			<div style="display: inline;">
@@ -23,7 +23,7 @@
 
 			<!-- Comment_Like Button Section starts here -->
 			<div style="display: inline;" id="like-section-comment{{comment.id}}">
-				{% include 'feeds/like_section_comment.html' %}		
+				{% include 'feeds/like_section_comment.html' %}
 			</div>
 			<!-- Comment Like Button section ends here -->
 
@@ -35,7 +35,7 @@
 			<button class="ui button" style="background-color: transparent;" onclick="edit_reply_btn('{{question.id}}','{{comment.id}}');">
 				<span style="color: #6495ed;font-size: 12px;">- edit</span>
 			</button>
-			
+
 			<button class="ui button" style="background-color: transparent;" onclick="delete_reply_btn('{{question.id}}','{{comment.id}}');">
 				<span style="color: #6495ed;font-size: 12px;">- delete</span>
 			</button>
@@ -55,7 +55,7 @@
 					<form method="post"  class="delete_comment" id={{question.id}}-{{comment.id}}>
 						<a class="ui item">
 							<button class="ui button" type="submit" name="delete" value="delete">
-							<i class="trash icon" id="delete"></i>Delete Comment 
+							<i class="trash icon" id="delete"></i>Delete Comment
 							</button>
 						</a>
 					</form>
@@ -81,13 +81,13 @@
 			</div>
 			<!-- Modal ends here -->
 			{% endif %}
-			
+
 			<div id="reply{{comment.id}}" style="display: none;">
 				<div class="ui grid">
 					<div class="ui two wide column"></div>
 
 					<div class="ui fourteen wide column">
-						<blockquote style="margin-left: 15px;">		
+						<blockquote style="margin-left: 15px;">
 							<form id="{{comment.id}}" class="reply-form">{% csrf_token %}
 								<div style="display: none;" id="unique_{{comment.id}}">{{question.id}}</div>
 								<div class="ui form">
@@ -119,7 +119,7 @@
 				</div>
 			</div>
 
-			<div class="ui divider"></div>	
+			<div class="ui divider"></div>
 		</div>
 		{% empty %}
 			<p>No comments here yet :(</p>

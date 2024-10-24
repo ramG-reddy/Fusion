@@ -1,12 +1,25 @@
 from django.contrib import admin
 
-from .models import (Assignment, CourseDocuments, CourseVideo, Forum,
-                     ForumReply, Quiz, QuizQuestion, QuizResult, StudentAnswer,
-                     StudentAssignment, Topics,Student_grades)
+from .models import (
+    Assignment,
+    CourseDocuments,
+    CourseVideo,
+    Forum,
+    ForumReply,
+    Quiz,
+    QuizQuestion,
+    QuizResult,
+    Student_grades,
+    StudentAnswer,
+    StudentAssignment,
+    Topics,
+)
+
 
 class QuizResultAdmin(admin.ModelAdmin):
     model = QuizResult
     raw_id_fields = ("student_id",)
+
 
 admin.site.register(CourseDocuments)
 admin.site.register(CourseVideo)

@@ -96,16 +96,16 @@
             var leaveTypeSelect = document.getElementById('leaveType').value;
             if (leaveTypeSelect=== "") {
                 alert('Please select a leave type ');
-                event.preventDefault(); 
-              
+                event.preventDefault();
+
             }
         });
 
- 
+
             document.getElementById('leaveForm').addEventListener('submit', function(event) {
                 var dateFrom = document.getElementById('datefrom').value;
                 var dateTo = document.getElementById('dateto').value;
-            
+
                 if (dateTo <= dateFrom) {
                     alert('End date must be later than start date');
                     event.preventDefault();  // Prevent form submission

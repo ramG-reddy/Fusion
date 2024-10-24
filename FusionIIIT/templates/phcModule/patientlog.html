@@ -5,7 +5,7 @@
         <a class="active item" data-tab="prescribe">
             Patient log
         </a>
-       
+
         <a class="item" data-tab="prescriptionhistory">
             History
         </a>
@@ -93,21 +93,21 @@
                         <label>Quantity</label>
                         <div class="">
                             <input placeholder="Quantity" id="quantity_b" name="quantity_b" type="number">
-   
+
                         </div>
                      </div>
                        <div class="field">
                          <label>No of days</label>
                          <div class="">
                              <input placeholder="No of days" id="days_b" name="days_b" type="number">
-   
+
                          </div>
                         </div>
                         <div class="field">
                           <label>Times per day</label>
                           <div class="">
                               <input placeholder="No of times per day" id="times_b" name="times_b" type="number">
-   
+
                           </div>
                        </div>
                    </div>
@@ -204,7 +204,7 @@
                     document.getElementById("stock_expiry").value = stock_val[0]
                     document.getElementById("stock_quantity").value = stock_val[2]
                     })
-                
+
                 $("#patient_b").change(function(){
                     dependent_select = document.getElementById('dep_name')
                     dependent_select.options.length = 0
@@ -282,7 +282,7 @@
                                 select_stock.options[select_stock.options.length] = new Option(med_name +","+id , expiry+","+supplier+","+qty+","+id , false , false );
                             });
                             }
-                            
+
                             console.log($("#stock_b").val())
                             if (data.status == 2) {
                                 var manufacturer_name_b =
@@ -377,13 +377,13 @@
                                                     }
 
                                                     console.log(medicine)
-                                                     
+
                                                     // Get the file input element
                                                     var fileInput = document.getElementById('file');
-                                                    
+
                                                     // Get the files from the input element
                                                     var file = fileInput.files[0];
-                                                    
+
                                                     // Create a new FormData object
                                                     if(tbl.rows.length==0){
                                                         $('#usr_b').html("Please prescribe some medicine!");
@@ -394,7 +394,7 @@
                                                         $('#usr_b').html("Please enter all the details!");
                                                         return false;
                                                     }
-                                                    var formData = new FormData();                                           
+                                                    var formData = new FormData();
                                                     formData.append('csrfmiddlewaretoken', '{{ csrf_token }}')
                                                     formData.append('file', file);
                                                     formData.append('user', $("#patient_b").val());
@@ -439,7 +439,7 @@
                                                   });
                                                   });
               </script>
-         
+
 
 
 
@@ -527,8 +527,8 @@
                 </div>
                 <button id="next-page" data-page="{{ presc_hist.page.next_page_number }}" class="ui small muted button">Next</button>
             </div>
-       
-        
+
+
         <style>
             .view-followup-btn {
                 font-size: 13px;
@@ -560,7 +560,7 @@
 
         <script>
 
-            
+
         function rem1(id){
 
         var dis = this;
@@ -607,7 +607,7 @@
                     success: function(data){
                         console.log(data)
                         $('#prescriptions-list').empty();
-                        const view_button_prescription = `<td><button class="view-followup-btn"><a style="color: white;" href='{% url 'healthcenter:view_prescription' prescription_id=0 %}'>View/Follow-up</a></button></td>` 
+                        const view_button_prescription = `<td><button class="view-followup-btn"><a style="color: white;" href='{% url 'healthcenter:view_prescription' prescription_id=0 %}'>View/Follow-up</a></button></td>`
                         $.each( data.presc_context.page.object_list , function(index, prescription) {
                                 console.log("inside",$('#prescriptions-list'))
                                  $('#prescriptions-list').append(
@@ -625,7 +625,7 @@
                              } else {
                                  $('#previous-page').hide();
                              }
-         
+
                              if (data.presc_context.page.has_next) {
                                  $('#next-page').data('page', data.presc_context.page.next_page_number).show();
                              } else {
@@ -633,7 +633,7 @@
                              }
                              document.getElementById('log_page_number').value=data.presc_context.page.number
                              document.getElementById('log_total_pages').innerHTML=data.presc_context.count
-                        
+
                     }
                 })
             })
@@ -649,7 +649,7 @@
                          },
                          success: function(data) {
                              $('#prescriptions-list').empty();
-                             const view_button_prescription = `<td><button class="view-followup-btn"><a style="color: white;" href='{% url 'healthcenter:view_prescription' prescription_id=0 %}'>View/Follow-up</a></button></td>` 
+                             const view_button_prescription = `<td><button class="view-followup-btn"><a style="color: white;" href='{% url 'healthcenter:view_prescription' prescription_id=0 %}'>View/Follow-up</a></button></td>`
                              $.each(data.report, function(index, prescription) {
                                 console.log("inside",$('#prescriptions-list'))
                                  $('#prescriptions-list').append(
@@ -662,30 +662,30 @@
                                     '</tr>'
                                  );
                              });
-                             
+
                              if (data.has_previous) {
                                  $('#previous-page').data('page', data.previous_page_number).show();
                              }
-         
+
                              if (data.has_next) {
                                  $('#next-page').data('page', data.next_page_number).show();
                              }
-                            
+
                              document.getElementById('log_page_number').value=data.page
                              document.getElementById('log_total_pages').innerHTML=data.total_pages
                          }
                      });
                  }
-         
+
                  $('#previous-page').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPage(pageNumber);
                  });
-         
+
                  $('#next-page').click(function() {
                     const pageNumber = $(this).data('page');
                      loadPage(pageNumber);
-                     
+
                  });
                  $('#log_page_number').change(function(){
                     if( document.getElementById('log_page_number').value<=0 || document.getElementById('log_page_number').value > document.getElementById('log_total_pages').innerHTML){

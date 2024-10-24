@@ -24,7 +24,7 @@
 
 
   <div>
-    <div class="ui form" style="display: flex;margin-top: 10px; margin-bottom: 10px;">       
+    <div class="ui form" style="display: flex;margin-top: 10px; margin-bottom: 10px;">
       <input
         type="text"
         id="roll_no_search"
@@ -133,7 +133,7 @@
                                     </td>
                                   </tr>
                                     `
-                                    
+
                                   });
 
                                   students_data=students_data+`
@@ -141,15 +141,15 @@
                                             </table>
                                         `
 
-                                mess_students.innerHTML=students_data;        
-   
-   
+                                mess_students.innerHTML=students_data;
+
+
                    },
                    error: function(data, err) {
                        alert(err.message);
                    }
                });
-   
+
             }
 
 
@@ -214,7 +214,7 @@
                                     <td data-label="reg end date">${element.end_date}</td>
                                     </tr>
                                     `
-                                    
+
                                   });
 
                                   students_data=students_data+`
@@ -244,7 +244,7 @@
                                     <td data-label="Initial Amount">${element.amount_paid}</td>
                                     </tr>
                                     `
-                                    
+
                                   });
 
                                   students_data=students_data+`
@@ -278,7 +278,7 @@
                                     <td data-label="Total amount">${element.total_bill}</td>
                                     </tr>
                                     `
-                                    
+
                                   });
 
                                   students_data=students_data+`
@@ -286,11 +286,11 @@
                                             </table>
                                             </div>
                                             <hr>
-                                        `      
+                                        `
 
 
                                 mess_students.innerHTML=students_data;
-                                $('#student-reg-modal').modal('show');        
+                                $('#student-reg-modal').modal('show');
                    },
                    error: function(data, err) {
                        alert(err.message);
@@ -345,7 +345,7 @@
                       // alert(err.message);
                   }
               });
-   
+
   }
 </script>
 

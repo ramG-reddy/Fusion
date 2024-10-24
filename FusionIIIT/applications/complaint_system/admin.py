@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Caretaker, StudentComplain, Supervisor, Workers,  SectionIncharge
+from .models import Caretaker, SectionIncharge, StudentComplain, Supervisor, Workers
 
 admin.site.register(Caretaker)
 admin.site.register(Workers)

@@ -22,7 +22,7 @@
 
                             </thead>
 
-                            
+
                             {% for stu in request_to.all %}
                                 <tr>
                                     <td class="row-data">{{ stu.request_date.date }}</td>
@@ -36,8 +36,8 @@
                                     {% endif %}
                                 </tr>
                             {% endfor %}
-                            
-                            
+
+
 
                         </table>
                         {% comment %} {% endif %} {% endcomment %}

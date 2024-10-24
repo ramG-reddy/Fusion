@@ -1,9 +1,9 @@
 $(document).ready(function(){
     console.log("TTTTTTTT");
   });
-  
-  
-  
+
+
+
 function announce(event)
     {
     var message= $('input[name="announcement"]').val();
@@ -36,7 +36,7 @@ function announce(event)
                     window.location.reload();
                 }, 1500);
 
-                
+
             },
             error : function (data,err){
                 alert('Announcement successfully made ... ');
@@ -120,4 +120,3 @@ function request(event)
 function editStatus(event){
     alert("working but dont know what to do");
 };
-

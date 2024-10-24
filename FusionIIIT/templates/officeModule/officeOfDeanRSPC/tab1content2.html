@@ -14,13 +14,13 @@
                 <label>Previous Duration</label>
                 <input value="" class="ui large input" name="" type="number" min="0" required>
             </div>
-            
+
              <div class="six wide field">
                 <label>Current Duration</label>
                 <input value="" class="ui large input" name="extended_duration" placeholder="Current duration in weeks" type="number" min="0" required>
             </div>
         </div>
-        
+
 <!--         <div class="three fields">
             <div class="six wide field">
                 <label>Previous Duration</label>
@@ -31,7 +31,7 @@
                 <label>Current Duration(Extended in Years)</label>
                 <input value="" class="ui large input" name="extended_duration">
             </div>
-            
+
         </div> -->
 
         <div class="two fields">
@@ -48,13 +48,13 @@
 
             <div class="six wide field">
                 <label>Any relevant additional details on extension sought/sanctioned.
-	
+
                 </label>
                <textarea rows="3" name="extension_details"></textarea>
             </div>
         </div>
 
-       
+
 
         <div class="field">
             <button class="ui primary button right floated" type="submit">
@@ -79,7 +79,7 @@
 
         <th style="width:20%">Extended duration</th>
         <th style="width:20%">Date</th>
-     
+
 
     </tr>
     </thead>
@@ -92,7 +92,7 @@
         <td id="pr{{ forloop.counter }}C">{{ pr.DRSPC_response }}</td>
         <td id="pr{{ forloop.counter }}D">{{ pr.extended_duration}}</td>
         <td id="pr{{ forloop.counter }}E">{{ pr.date }}</td>
-       
+
     </tr>
     {% endfor %}
     </tbody>

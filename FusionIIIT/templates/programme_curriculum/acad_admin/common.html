@@ -22,7 +22,7 @@
 
         {% comment %}The left-rail segment starts here!{% endcomment %}
         <div class="three wide column">
-            
+
             {% comment %}The user image card starts here!{% endcomment %}
             {% block usercard %}
                 {% include 'globals/usercard.html' %}
@@ -35,7 +35,7 @@
             {% block sidetabmenu %}
             <div class="ui medium fluid vertical pointing menu"
             style="max-width: 320px;">
-        
+
         <a class="item" href="{% url 'programme_curriculum:admin_view_all_programmes' %}">Programmes & Curriculums
             <i class="right floated chevron right icon"></i>
         </a>
@@ -63,12 +63,12 @@
         {% comment %}
             The central-rail segment starts here!
         {% endcomment %}
-        
+
         <div class="eight wide column">
 
             {% block content %}
             {% endblock %}
-            
+
         </div>
         {% comment %}The central-rail segment ends here!{% endcomment %}
 

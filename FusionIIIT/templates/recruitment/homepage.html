@@ -13,7 +13,7 @@ Home
 <style type="text/css">
 
     .post{
-        justify-content: center;  
+        justify-content: center;
         align-items: center;
         display: flex;
     }
@@ -124,7 +124,7 @@ Home
 <div class="ui massive top fixed menu transition hidden">
     <div class="ui container">
         <a class="active item">Home</a>
-        
+
         <div class="right menu">
         {% if user.is_authenticated %}
             <div class="item">
@@ -133,7 +133,7 @@ Home
                 </a>
             </div>
             {% else %}
-            
+
             <div class="item">
                 <a class="ui button" href="/recruitment/login">
                     Log in

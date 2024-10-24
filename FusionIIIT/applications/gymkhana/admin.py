@@ -1,9 +1,25 @@
 from django.contrib import admin
 
-from .models import (Club_budget,Club_info,Club_member,Club_report,Core_team,Fest_budget,Other_report,Session_info,Voting_choices,Voting_polls,Voting_voters,Event_info,Registration_form,Form_available,Inventory)
-
+from .models import (
+    Club_budget,
+    Club_info,
+    Club_member,
+    Club_report,
+    Core_team,
+    Event_info,
+    Fest_budget,
+    Form_available,
+    Inventory,
+    Other_report,
+    Registration_form,
+    Session_info,
+    Voting_choices,
+    Voting_polls,
+    Voting_voters,
+)
 
 # Register your models here.
+
 
 class ClubInfoAdmin(admin.ModelAdmin):
     raw_id_fields = ("co_ordinator", "co_coordinator")

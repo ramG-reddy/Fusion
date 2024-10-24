@@ -40,7 +40,7 @@
                 <form id="assistantshipclaimform" method="POST" enctype="multipart/form-data" action="{% url 'otheracademic:assistantship_form_submission' %}">
                     {% csrf_token %}
                     <div class="ui form">
-                       
+
                         <div class="field">
                             <label>Discipline</label>
                             <input type="text" name="discipline" required>
@@ -53,7 +53,7 @@
                             <div class="field">
                                 <label>Date To</label>
                                 <input type="date" id="dateto" name="date_to" style="display: inline-block; width: auto;" required>
-                               
+
                             </div>
                         </div>
                         <div class="field">
@@ -100,7 +100,7 @@
         document.getElementById('assistantshipclaimform').addEventListener('submit', function(event) {
             var dateFrom = document.getElementById('datefrom').value;
             var dateTo = document.getElementById('dateto').value;
-        
+
             if (dateTo <= dateFrom) {
                 alert('End date must be later than start date');
                 event.preventDefault();  // Prevent form submission
@@ -108,5 +108,3 @@
         });
     </script>
 {% endblock %}
-
-

@@ -195,18 +195,18 @@ function limitToOneFile(input) {
                                 </div>
 
 
-                              
-
-
-                       
 
 
 
 
-                               
-                                
-                                
-                                
+
+
+
+
+
+
+
+
 
                             </div>
                         </div>
@@ -319,7 +319,7 @@ function limitToOneFile(input) {
                 var inputValue = $(this).val();
                 fetchDropdownValues(inputValue);
             });
-            
+
             function fetchDropdownValues(inputValue) {
                 $.ajax({
                     url: `/filetracking/getdesignations/${inputValue}/`,
@@ -332,7 +332,7 @@ function limitToOneFile(input) {
                     }
                 });
             }
-            
+
             function populateDropdown(values) {
                 console.log(values)
                 var dropdown = $('#receiver_dropdown');

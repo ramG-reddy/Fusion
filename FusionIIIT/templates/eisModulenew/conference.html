@@ -6,7 +6,7 @@
             Conference/Symposium
         </a>
 
-       
+
     </div>
 
  <div class="ui active tab segment" data-tab="Conference/Symposium">
@@ -19,7 +19,7 @@
                     <div class="field">
                         <label>Role </label>
                          <!--  <input placeholder="Published" type="text"> -->
-                        <!-- code change starts --> 
+                        <!-- code change starts -->
                               <div class="ui fluid search selection dropdown">
                                 <input type="hidden" id="conference_role" name="conference_role">
                                 <i class="dropdown icon"></i>
@@ -28,9 +28,9 @@
                                      <div class="item" data-value="Organised" onclick="myFunction3(); myFunction4();">Organised</div>
                                     <div class="item" data-value="Conference Chair" onclick="myFunction3(); myFunction5();">Conference Chair</div>
                                     <div class="item" data-value="Advisory Committee" onclick="myFunction3(); myFunction5();">Advisory Committee</div>
-                                    <div class="item" data-value="Program Committee" onclick="myFunction3(); myFunction5();">Program Committee</div> 
+                                    <div class="item" data-value="Program Committee" onclick="myFunction3(); myFunction5();">Program Committee</div>
                                     <div class="item" data-value="Any other" onclick="myFunction2(); myFunction5();">Any other</div>
-                                   
+
                                 </div>
                         </div>
                     </div>
@@ -38,11 +38,11 @@
                                <label><br></label>
                              <input placeholder="please specify"  type="text" id="myDIV1" name="myDIV1" style="display:none;">
                         </div>
-                     
+
                            <div class="field">
                             <label><br> </label>
                              <!--  <input placeholder="Published" type="text"> -->
-                            <!-- code change starts --> 
+                            <!-- code change starts -->
                                   <div class="ui fluid search selection dropdown" id="myDIV2" name="myDIV2"  style="display:none;">
                                 <input type="hidden" id="conference_organised" name="conference_organised">
                                 <i class="dropdown icon"></i>
@@ -57,30 +57,30 @@
                                     <div class="item" data-value="Treasure" onclick="myFunction3();">Treasurer</div>
                                      <div class="item" data-value="Any other" onclick="myFunction2();">Any other</div>
 
-                                   
+
                                 </div>
                             </div>
                         </div>
-                     <!-- code change ends --> 
-                   
+                     <!-- code change ends -->
+
                 </div>
             </div>
 
             <div class="field">
-                
-                
+
+
                     <div class=" three fields">
-                          
+
                             <div class="field">
                                      <label>Venue</label>
                                      <input placeholder="" type="text" id="conference_venue" name="conference_venue">
                                 </div>
-                        
-                       
+
+
                             <div class="field">
                                     <label>Start Date</label>
                                      <!--  <input placeholder="" type="text"> -->
-                                        <!-- code change starts --> 
+                                        <!-- code change starts -->
                                  <div class="ui calendar" id="rangestart5">
                                       <div class="ui input left icon">
                                         <i class="calendar icon"></i>
@@ -89,12 +89,12 @@
                                 </div>
                                 <!-- code change ends -->
                              </div>
-                      
-                       
+
+
                             <div class="field">
                                     <label>End Date</label>
                                      <!-- <input placeholder="" type="text"> -->
-                                        <!-- code change starts --> 
+                                        <!-- code change starts -->
                                          <div class="ui calendar" id="rangestart6">
                                               <div class="ui input left icon">
                                                 <i class="calendar icon"></i>
@@ -107,12 +107,12 @@
 
 
                 <div class="fields">
-               <!-- code change starts --> 
+               <!-- code change starts -->
                  <div class="fourteen wide field">
                         <label>Conference Name</label>
                         <input placeholder="Co-author" type="text" id="conference_name" name="conference_name">
                     </div>
-            <!-- code change ends-->    
+            <!-- code change ends-->
 
                     <div class="two wide field">
                         <label><br></label>
@@ -126,10 +126,10 @@
                         </button>
                         <input type="text" id="conferencepk2" name="conferencepk2" hidden>
                         <input type="text" id="index13" name="index13" hidden>
-                    </div> 
+                    </div>
                 </div>
 
-                 
+
             </div>
         </form>
         <br>{% endif %}
@@ -175,7 +175,7 @@
                             {% else %}
                                 {{ e.role1 }}
                             {% endif %}
-                            
+
                         </td>
                         <td>{{ e.name }}</td>
                         <td>{{ e.venue }}</td>
@@ -186,8 +186,8 @@
                                    id="editButton13"
                                    class="ui button left floated" onclick="editconference2(
                                     '{{ forloop.counter }}','{{ e.pk }}', {% if e.role1 == 'Organised' %}
-                                    '{{e.role1}}', '{{e.role2}}', 
-                                    {% else %} '{{e.role1}}', 'None', 
+                                    '{{e.role1}}', '{{e.role2}}',
+                                    {% else %} '{{e.role1}}', 'None',
                                     {% endif %}
                                     '{{e.name}}', '{{e.venue}}',
                                     '{{e.start_date}}', '{{e.end_date}}')"
@@ -200,7 +200,7 @@
                                    value = "Delete">
                                    <i class="ui red delete icon"></i>
                                 </a>
-                                
+
                             </td>
                         {% endif %}
                     </tr>
@@ -227,7 +227,6 @@
                     {% endif %}
                 </span></h4>
             </div>
-        
+
     </div>
     {% endblock %}
-    

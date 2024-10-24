@@ -16,7 +16,7 @@
 .slider {
   pointer-events: none;
   cursor: pointer;
-  
+
   width: 100%;
   background-color: #17694f;
   box-sizing: border-box;
@@ -27,7 +27,7 @@
   cursor: pointer;
   border-color: #333;
   border-style: solid;
-  
+
   width: 4px;
   height: 4px;
   background-color: #0f4534;
@@ -66,13 +66,13 @@ $(function() {
         		by : "something",
                  csrfmiddlewaretoken: '{{ csrf_token }}'
         },
-        success: function( data ) 
+        success: function( data )
         {
         	$("#t").html(data.d);
             alert('done');
         }
     });
     });
-    
+
 });
 </script> -->

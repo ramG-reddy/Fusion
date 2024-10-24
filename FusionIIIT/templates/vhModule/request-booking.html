@@ -6,14 +6,14 @@
   <!-- <div class="scrolling content"> -->
 
     <div class="ui pointing secondary menu">
-         
+
         <a class="item active" data-tab="request-booking" id="booking-detail-data-tab">
             Booking Details
         </a>
         <a class="item" data-tab="visitors-detail" id="visitor-detail-data-tab">
             Visitor's Details
         </a>
-         
+
     </div>
 
 
@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-            
+
                     <div class="field">
                         <!-- <div class="eight wide column"> -->
                             <label>Arrival Time * : Hours</label>
@@ -327,7 +327,7 @@
                 </div>
 
                 <div class="four fields">
-                    
+
                     <div class="field">
                         <label>Departure Date *</label>
                             <div class="ui calendar" id="rangestart1" >
@@ -349,7 +349,7 @@
                                 <div class="default text">Select</div>
 
                                 <div class="menu">
-                                    
+
                                     <div class="item" data-value="01">
                                         01
                                     </div>
@@ -604,7 +604,7 @@
                     </div>
 
 
-                    
+
                 </div>
 
 
@@ -679,17 +679,17 @@
 
                 </div>
 
-                
-                   
+
+
                 <div class="field">
                     <label>Purpose Of Visit *</label>
                     <div class="ui fluid input">
                             <input type="text" name="purpose-of-visit" required="">
                     </div>
                 </div>
-                
-            
-                
+
+
+
                 <div class="field">
                     <label>Remarks</label>
                     <div class="ui fluid input">
@@ -726,7 +726,7 @@
                         Next
                     </div>
                     &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                
+
                 </div>
             </form>
         </div>
@@ -734,18 +734,18 @@
 <!--         <input type="hidden" name="csrf" value="{{ csrf_token }}">
                 <div class="field">
                     <label></label>
-                    <button class="ui large primary button right floated" id="request_booking_button" 
+                    <button class="ui large primary button right floated" id="request_booking_button"
                         onclick="request_booking(event); ll()">
                                         <script type='text/javascript'>
                                         ll = function () {
-                                            document.getElementById("request_booking_button").disabled=true; 
-                                            console.log("lllllllllllllllllll");    
+                                            document.getElementById("request_booking_button").disabled=true;
+                                            console.log("lllllllllllllllllll");
                                             setTimeout('jj()', 5000);
                                             }
-                                        
+
                                         jj=function(){
-                                            document.getElementById("request_booking_button").disabled=false; 
-                                            console.log("ooooooooooo"); 
+                                            document.getElementById("request_booking_button").disabled=false;
+                                            console.log("ooooooooooo");
                                         }
                                         </script>
                         Place Request
@@ -783,7 +783,7 @@
 
 
 
-                            
+
                         </div>
                     </div>
 
@@ -798,7 +798,7 @@
                                 <input placeholder="Organization" type="text" name="organization-1">
                             </div>
 
-                            
+
                         </div>
                     </div>
 
@@ -811,7 +811,7 @@
                                     <input class="ui textarea" name="address-1">
                                 </div>
                             </div>
-                            
+
 
                             <div class="field">
                                 <label>Nationaliy</label>
@@ -1068,9 +1068,9 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
-                
+
 
             </form>
 
@@ -1080,18 +1080,18 @@
                     <input type="hidden" name="csrf" value="{{ csrf_token }}">
                 <div class="field"  style="display: flex; justify-content: center;">
                     <label></label>
-                    <button class="ui large primary button right floated" id="request_booking_button" 
+                    <button class="ui large primary button right floated" id="request_booking_button"
                         onclick="request_booking(event); ll()">
                                         <script type='text/javascript'>
                                         ll = function () {
-                                            document.getElementById("request_booking_button").disabled=true; 
-                                            console.log("1111111111111111111");    
+                                            document.getElementById("request_booking_button").disabled=true;
+                                            console.log("1111111111111111111");
                                             setTimeout('jj()', 5000);
                                             }
-                                        
+
                                         jj=function(){
-                                            document.getElementById("request_booking_button").disabled=false; 
-                                            console.log("00000000000"); 
+                                            document.getElementById("request_booking_button").disabled=false;
+                                            console.log("00000000000");
                                         }
 
                                         </script>
@@ -1115,5 +1115,3 @@
 </div>
 
 {% endblock %}
-
-

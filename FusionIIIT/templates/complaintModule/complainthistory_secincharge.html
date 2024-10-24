@@ -9,7 +9,7 @@
         <a class="active item" data-tab="complainthistory">
             Resolved Complaints
         </a>
-        
+
 
     </div>
 
@@ -18,10 +18,10 @@
 
     <div class="ui active  tab" data-tab="complainthistory">
         <div class="ui vertical segment" style="height: 700px;overflow-y: auto";>
-            
-            
-        
-       
+
+
+
+
             {% csrf_token %}
             <table class="ui very basic collapsing celled sortable table"
                    style="padding-left: 2.5%;
@@ -31,7 +31,7 @@
                                                           margin: auto;">
                 <thead>
                 <tr>
-                  
+
                     <td>
                         <b>Student</b>
                     </td>
@@ -54,7 +54,7 @@
                         <b>Details</b>
                     </td>
 
-                    
+
                     <td class="four large column">
                         <b>Worker <br> Name</b>
                     </td>
@@ -67,9 +67,9 @@
                 {% for a in history %}
                     {% if a.status == 2 %}
                 <tbody>
-                
+
                   <tr>
-                
+
                     <td>
                         <h4 class="ui image header">
                             <img src="{% static 'globals/img/zlatan.jpg' %}" class="ui mini circular image">
@@ -92,24 +92,24 @@
 
                     <td>
                         {{ a.location }} <br>
-                   
+
                         {{ a.specific_location }}
                     </td>
-                    
+
                     <td>
                         <a href="./detail2/{{ a.id }}/"> <button class="ui inverted basic button" data-tooltip="Click here to view details" ><i class="large green info icon"></i></button></a>
                     </td>
-                   
 
-                  
+
+
                     <td>
                         {% if a.worker_id == NULL %}
                             NOT ASSIGN
                             <td></td>
                         {% else %}
                             <b>{{ a.worker_id.name }}</b>
-                          
-                            
+
+
                         {% endif %}
                     </td>
                     {% if a.feedback != "" %}
@@ -124,7 +124,7 @@
 
 
                 </tr>
-                
+
 
                 </tbody>
                     {%endif%}
@@ -136,7 +136,7 @@
             <div class="ui divider"></div>
 
 
-    
+
     <div class="extra content">
                 <div class="" style="text-align: center;">
                     <i class="large green checkmark icon"></i> : These Complaints have been  RESOLVED! &ensp;&ensp;&ensp;&ensp;&ensp;

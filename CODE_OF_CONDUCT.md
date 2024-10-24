@@ -18,7 +18,7 @@ All the contributors need to strictly follow this Code of Conduct to provide smo
 
 - Routes must be kept clear and consice to avoid any confusions.
     - If a given route allows more than one CRUD operations, they must not have differing names. The API method achieves that result for us.
-    
+
 
 ## Designing Database
 

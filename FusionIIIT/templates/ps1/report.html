@@ -38,47 +38,47 @@
 
                                     <div class="description">
                                         {% comment %} <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';">{{file.description}}</pre> {% endcomment %}
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Stock Name:</b> {{indent.item_name}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Stock Quantity Received:</b> {{indent.quantity}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Present Stock:</b> {{total_stock}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Estimated Cost:</b> {{indent.estimated_cost}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Purpose:</b> {{indent.purpose}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Specification:</b> {{indent.specification}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Stock Type:</b> {{indent.item_type}}</pre>
 
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Vendor:</b> {{sto.vendor}}</pre>
-                                        
+
                                         {% if indent.nature == True %}
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Item Nature: </b>Consumable</pre>
                                         {% else %}
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Item Nature: </b>Non Consumable</pre>
                                         {% endif %}
-                                        
+
                                         {% if indent.indigenous == True %}
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Indigenous:</b> Yes</pre>
                                         {% else %}
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Indigenous:</b> No</pre>
                                         {% endif %}
-                                        
+
                                         {% if indent.replaced == True %}
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Replaced:</b> Yes</pre>
                                         {% else %}
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Replaced:</b> No</pre>
                                         {% endif %}
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Budgetary Head:</b> {{indent.budgetary_head}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Received Date:</b> {{sto.recieved_date}}</pre>
-                                        
+
                                         <pre class="overflow-visible" style="white-space:initial; font-family: 'Arial';"><b>Indent Sources of Supply:</b> {{indent.sources_of_supply}}</pre>
-                                        
+
 
                                         <div class="ui divider"></div>
                                     </div>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
 
-                    <br>                                                           
+                    <br>
 
                 <br>
 

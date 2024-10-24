@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import hidden_grades,authentication,grade
+
+from .models import authentication, grade, hidden_grades
 
 # Register your models here.
 

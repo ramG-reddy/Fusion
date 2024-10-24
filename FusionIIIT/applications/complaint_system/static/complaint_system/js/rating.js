@@ -48,7 +48,7 @@ $(document).ready(function(){
                 window.location.replace('http://localhost:8000/complaint/user');
             }, 1500);
 
-                    
+
                 },
                 error : function (data,err){
                     alert('Complaint successfully lodged ... ');
@@ -91,7 +91,7 @@ $(document).ready(function(){
                 window.location.replace('http://localhost:8000/complaint/caretaker');
             }, 1500);
 
-                    
+
                 },
                 error : function (data,err){
                     alert('Complaint successfully lodged ... ');
@@ -133,7 +133,7 @@ $(document).ready(function(){
                 window.location.replace('http://localhost:8000/complaint/supervisor');
             }, 1500);
 
-                    
+
                 },
                 error : function (data,err){
                     alert('Complaint successfully lodged ... ');
@@ -156,7 +156,7 @@ $(document).ready(function(){
 
 
 
-    
+
 
 
 
@@ -167,7 +167,7 @@ $(document).ready(function(){
 
 
 function addwork(event) {
-   
+
 
    var complaint_type = $('input[name="complaint_type"]').val();
    var name = $('input[name="name"]').val();
@@ -213,7 +213,7 @@ function addwork(event) {
            // 'csrfmiddlewaretoken': csrfmiddlewaretoken,
             'phone_no' : str_phone_no,
             'age' : age,
-            
+
         },
         success: function(data) {
             alert(" Congratulations! The Worker has been added successfully\n Please wait for confirmation");
@@ -239,17 +239,17 @@ function feedsubmit()
    var feedback = $('input[name="feedback"]').val();
    var rating = 0;
    rating = document.getElementById("thedropdown");
-  
+
    if (feedback == "")
    {
     alert("Please fill all the details");
-    
+
    }
- 
+
     else
    {
  alert(" Feedback succesfully submitted");
- 
+
     return;
   }
 
@@ -259,11 +259,11 @@ function assignworkersubmit()
 {
 
    var assign_worker = $('input[name="assign_worker"]').val();
-  
+
    if (assign_worker == "")
    {
     alert("Please fill all the details");
-   
+
    }
    else
    {
@@ -277,12 +277,12 @@ function assignworkersubmit()
         url: '.',
         data: {
           'assign_worker':assign_worker,
-            
-            
+
+
         },
         success: function(data) {
             alert(" Worker assigned succesfully");
-           
+
         },
         error: function(data, err) {
             alert('Something went wrong! Please refill the form');
@@ -297,11 +297,11 @@ function redirectsubmit()
 {
 
    var assign_caretaker = $('input[name="assign_caretaker"]').val();
-  
+
    if (assign_caretaker == "")
    {
     alert("Please fill all the details");
-   
+
    }
   /* else
    {
@@ -315,12 +315,12 @@ function redirectsubmit()
         url: '.',
         data: {
           'assign_caretaker':assign_caretaker,
-            
-            
+
+
         },
         success: function(data) {
             alert(" Ccomplaint succesfully redirected");
-           
+
         },
         // error: function(data, err) {
         //     alert('Something went wrong! Please refill the form');
@@ -333,9 +333,9 @@ function redirectsubmit()
 
 function resolvependingsubmit()
 {
-  
+
    var yesorno = $('input[name="yesorno"]').val();
-  
+
    if (yesorno == "")
    {
     alert("Please fill all the details");

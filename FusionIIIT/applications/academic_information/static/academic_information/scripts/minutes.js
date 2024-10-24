@@ -24,6 +24,3 @@ function create_member() {
         }
     });
 };
-    
-    
-       

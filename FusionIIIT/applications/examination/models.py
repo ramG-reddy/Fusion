@@ -1,8 +1,6 @@
+from applications.programme_curriculum.models import Course as Courses
 from django.db import models
-from applications.academic_procedures.models import (course_registration)
-from applications.online_cms.models import (Student_grades)
-from applications.academic_information.models import Course
-from applications.programme_curriculum.models import Course as Courses, CourseInstructor
+
 # Create your models here.
 
 
@@ -35,5 +33,5 @@ class authentication(models.Model):
 class grade(models.Model):
     student = models.CharField(max_length=20)
     curriculum = models.CharField(max_length=50)
-    semester_id = models.CharField(max_length=10, default='')
+    semester_id = models.CharField(max_length=10, default="")
     grade = models.CharField(max_length=5, default="B")

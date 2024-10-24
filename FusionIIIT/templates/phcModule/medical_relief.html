@@ -10,14 +10,14 @@
     {% endcomment %}
     <div class="ui pointing secondary menu">
         <a class="active item" data-tab="relief">
-           
+
             Apply For Medical Relief
         </a>
 
         <a class="item" data-tab="inbox">
             Approval Status
         </a>
-        
+
     </div>
     <div class="ui active tab" data-tab="relief">
         <div class="ui vertical segment">
@@ -28,18 +28,18 @@
                         <input type="file" name="file" id="file" required="true">
                     </div>
                 </div>
-                
+
                 <br>
-        
+
                 <div class="field">
                     <label for="description">Description</label>
                     <div class="ui fluid input">
                         <textarea id="description" class="ui textarea" name="description" type="text" required="true"></textarea>
                     </div>
                 </div>
-        
+
                 <br>
-        
+
                 <div class="field">
                     <label for="designation">Send to</label>
                     <div class="ui fluid input">
@@ -52,40 +52,40 @@
                         </select>
                     </div>
                 </div>
-        
+
                         <div class="field">
                             <label><br></label>
-        
+
                             <div>
                               <input type="button" id="Submit" name="Submit" value="Send" class="ui small right floated primary button" />
                             </div>
-        
+
                         </div>
                     </form>
-                                       
+
                         <script type="text/javascript">
                             $('#Submit').click(function(e) {
                                 // Prevent the default form submission
                                 e.preventDefault();
-                                
+
                                 // Get the file input element
                                 var fileInput = document.getElementById('file');
-                                
+
                                 // Get the files from the input element
                                 var file = fileInput.files[0];
-                                
+
                                 // Create a new FormData object
                                 var formData = new FormData();
-                            
+
                                 // Append the CSRF token and other form data
                                 formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
                                 formData.append('description', $('#description').val());
                                 formData.append('designation', $('#designation').val());
                                 formData.append('medical_relief_submit', $('#Submit').val());
-                            
+
                                 // Append the file
                                 formData.append('file', file);
-                            
+
                                 // Perform the AJAX request using jQuery's $.ajax()
                                 $.ajax({
                                     type: 'POST',
@@ -105,23 +105,23 @@
                                     }
                                 });
                             });
-                            
-                        
-                        </script>                    
-              
+
+
+                        </script>
+
 
 
 
     </div>
 </div>
-    
+
 <div class="ui tab" data-tab="inbox">
     <div class="ui vertical segment" >
         <table  border=1 class="ui very basic collapsing celled large sortable table"
               style="padding-left: 2.5%;padding-right: 2.5%;margin: auto;" >
             <thead>
             <tr>
-                
+
                 <td style="font-weight:bold;color:black;">
                     Upload Date
                 </td>
@@ -131,13 +131,13 @@
                 </td>
                 <td style="font-weight:bold;color:black;">
                     Description
-                </td>               
+                </td>
                 <td style="font-weight:bold;color:black;">
                     File
-                </td>               
+                </td>
                 <td style="font-weight:bold;color:black;">
                     Status
-                </td>               
+                </td>
 
             </tr>
             </thead>
@@ -146,19 +146,19 @@
             {% for inbox in medicalRelief %}
             <tr>
 
-                <td style="white-space:nowrap;">                    
+                <td style="white-space:nowrap;">
                     {{ inbox.upload_date}}
 
                 </td>
-                <td style="white-space:nowrap;">                
-                           
-                    {{inbox.approval_date}}   
-    
+                <td style="white-space:nowrap;">
+
+                    {{inbox.approval_date}}
+
                 </td>
 
                 <td style="white-space:nowrap;">
-                    {{ inbox.desc}}       
-                   
+                    {{ inbox.desc}}
+
                 </td>
                 <td style="white-space:nowrap;">
                     <a href="{{ inbox.file }}" download>
@@ -166,7 +166,7 @@
                     </a>
                 </td>
 
-                
+
                 <td>
                     {% if inbox.status == True %}
                         Approved
@@ -176,7 +176,7 @@
 
                 </td>
 
-               
+
 
             </tr>
             {% endfor %}
@@ -184,7 +184,7 @@
             </tbody>
         </table>
 
-            
+
 
     </div>
 </div>
@@ -192,4 +192,3 @@
 
 
 {% endblock %}
-

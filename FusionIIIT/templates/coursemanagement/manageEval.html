@@ -9,7 +9,7 @@
     <p>(Please Click on Generate button before uploading)</p>
     <form class="ui form" id="manageEval" method="post" action="/ocms/{{ course.code }}/{{course.version}}/submit_marks">
         {% csrf_token %}
-        
+
         <div style="height:45em;width:100%;overflow:auto;overflow-x:hidden;">
             <!-- <div class="ui fluid input">
                 <input type="text" id="usernameSearchInput" placeholder="Search by Roll No." onkeyup="searchByUsername()">
@@ -38,8 +38,8 @@
                             <td>
                                 <input name="stu_marks" id="grade{{forloop.counter}}" value="{{row.grade}}" placeholder="Add manually" />
                             </td>
-                        </tr> 
-                        {% endfor %} 
+                        </tr>
+                        {% endfor %}
                         {% else%}
                         {% for stu in registered_students %}
                             {% if marks_with_roll %}
@@ -55,10 +55,10 @@
                             <td>
                                 <input name="stu_marks" id="grade{{forloop.counter}}" value="" placeholder="Add manually" />
                             </td>
-                        </tr> 
-                        
+                        </tr>
+
                         {% endif %}
-                        {% endfor %} 
+                        {% endfor %}
                         {% else %}
                         <tr>
                             <td>
@@ -70,10 +70,10 @@
                             <td>
                                 <input name="stu_marks" id="grade{{forloop.counter}}" value="" placeholder="Add manually" />
                             </td>
-                        </tr> 
+                        </tr>
                         {% endif %}
-                        {% endfor %} 
-                        {% endif %}                     
+                        {% endfor %}
+                        {% endif %}
                     </tbody>
                 </table>
             </div>
@@ -112,7 +112,7 @@
     let D_plus_Upper = {{gradingscheme_grades.D_plus_Upper}};
     let F_Lower = {{gradingscheme_grades.F_Lower}};
     let F_Upper = {{gradingscheme_grades.F_Upper}};
-    
+
     const generate_btn = document.getElementById('generate_btn');
     generate_btn.addEventListener('click', function() {
         // Your code to execute when the input is clicked
@@ -122,7 +122,7 @@
             let grade = document.getElementById('grade'+num.toString());
             if (marks.value >= O_Lower && marks.value <= O_Upper) {
                 grade.value = "O";
-            } 
+            }
             else if (marks.value >= A_plus_Lower && marks.value <= A_plus_Upper) {
                 grade.value = "A+";
             }
@@ -150,7 +150,7 @@
             else if (marks.value >= F_Lower && marks.value <= F_Upper) {
                 grade.value = "F";
             }
-            
+
             num = num + 1;
         }
     });
@@ -164,7 +164,7 @@
       position: 'top-center',
       });
     }
-    
+
 
     $(document).ready(function(){
         $('#grading_table th').click(function(){
@@ -192,7 +192,7 @@
     function submitForm() {
         var form = document.getElementById("manageEval");
         var formData = new FormData(form);
-        
+
         var xhr = new XMLHttpRequest();
         xhr.open(form.method, form.action, true);
         $('#load_submit_grades').show();

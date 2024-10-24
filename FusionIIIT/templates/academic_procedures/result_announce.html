@@ -14,12 +14,12 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 
 .resultBatch:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 
@@ -32,7 +32,7 @@
 			<div class="batch_data" id="batch_data{{forloop.counter}}" hidden="true" style="width: 100%" data="hid">
 				<hr>
 				<p><b>Computer Science Engineering :</b></p>
-				
+
 				<center>
 				<table style="width: 90%">
 					<tr>
@@ -57,7 +57,7 @@
 					{% endfor %}
 				</table>
 				</center>
-				
+
 				<p><b>Electronics and Communication Engineering :</b></p>
 				<center>
 				<table style="width: 90%">
@@ -149,7 +149,7 @@
 		        		id : id,
 		                csrfmiddlewaretoken: '{{ csrf_token }}'
 		        },
-		        success: function( data ) 
+		        success: function( data )
 		        {
 		        	alert('Results Announced for this Batch');
 		        }

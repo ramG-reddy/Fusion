@@ -26,13 +26,13 @@
 
 {% if info.user_type == 'student' %}
         {% if d.designation.name == 'student' %}
-        
+
             <a class="active item" data-tab="thirteenth">
                 View Menu
             </a>
 
             <a class="item"  data-tab="fourth">
-            View Bill and Payments 
+            View Bill and Payments
             </a>
 
             <a class=" item" data-tab="first" {%if reg_main_stud.current_mess_status == "Deregistered" %} style="display: none;" {% endif %}
@@ -40,7 +40,7 @@
                 Feedback
             </a>
 
-            
+
             {% comment %} <a class="item" data-tab="sixth">
                 Apply For Non-veg | Check History
             </a> {% endcomment %}
@@ -119,11 +119,11 @@
     {% if info.user_type == 'staff' and d.designation.name == 'mess_manager' %}
     <a class="item" data-tab="forteenth">
         View Feedback | Statistics
-    </a> 
+    </a>
         <a class="item" data-tab="seventh">
             Respond to rebate requests
         </a>
-        
+
         <a class="item" data-tab="twentysix">
             Reg/Dereg/UpdatePayment  Requests
         </a>
@@ -135,7 +135,7 @@
         <!-- <a class="item" data-tab="nineteenth">
             Menu Requests
         </a> -->
-        
+
         <a class="item" data-tab="eleventh">
             View Special Food Request
         </a>
@@ -154,14 +154,14 @@
             Manage Registrations
         </a>
         {%comment %}
-        <a class="item" data-tab="twentyfour"> 
+        <a class="item" data-tab="twentyfour">
             Upload Due Amount
         </a>
         {%endcomment%}
         <a class="item" data-tab="twentyfive">
             Update Menu
         </a>
-        
+
         <a class="item" data-tab="twentyseven">
             Update Sem Dates
         </a>

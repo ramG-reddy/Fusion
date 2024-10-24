@@ -75,7 +75,7 @@ input:checked + .slider:before {
         <a class=" item" data-tab="submit">
             Submit Attendance
         </a>
-        
+
 </div>
 
 
@@ -101,8 +101,8 @@ input:checked + .slider:before {
         		</tr>
             {% endfor %}
                        -->
-                   
-			{% for roll_no, present in present_attendance.items %}    
+
+			{% for roll_no, present in present_attendance.items %}
 			<tr>
         			<td>{{roll_no}}</td>
         			<td>{{present.count}}</td>
@@ -110,9 +110,9 @@ input:checked + .slider:before {
         		</tr>
         	{% endfor %}
 
-                  
+
         </tbody>
-    </table>  
+    </table>
 </div>
 </div>
 <div class="ui tab segment" id="refresh_submit_tab" data-tab="submit">
@@ -123,7 +123,7 @@ input:checked + .slider:before {
         <label>Date</label>
         <input type="date" name="date">
     </div>
-    
+
     <div class="field">
         <label>Number of Attendances Taken</label>
         <input type="number" name="total_attendance" id="total_attendance" min="1">
@@ -163,7 +163,7 @@ input:checked + .slider:before {
   <br>
   <h4 class="ui dividing header" style="margin-left: 2px;">Upload Attendance file</h4>
   <div class="ui blue button" id="add_att_button">
-      Upload File   
+      Upload File
   </div>
   <form class="ui form" id="form5" enctype="multipart/form-data" style="display: none">
     {% csrf_token %}

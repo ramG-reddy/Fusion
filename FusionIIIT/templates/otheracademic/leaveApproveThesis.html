@@ -74,7 +74,7 @@
                     <table class="ui celled table">
                         <thead>
                             <tr>
-                                
+
                                 <th>Roll No.</th>
                                 <th>Student Name</th>
                                 <th>Programme</th>
@@ -91,7 +91,7 @@
                                 <th>Parent Mobile No. </th>
                                 <th>Mobile No. during leave </th>
                                 <th>Action </th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -99,7 +99,7 @@
                             {% if entry.thesis_supervisor == roll_no%}
                             <tr>
                                 {% if not entry.thesis_approved and not entry.thesis_rejected %}
-                                    
+
                                     <td>{{ entry.roll_no_id }}</td>
                                     <td>{{ entry.student_name }}</td>
                                     <td>{{ entry.programme}}</td>
@@ -114,7 +114,7 @@
                                         {%else%}
                                             <a href={{ entry.upload_file.url }}>Download</a>
                                         {%endif%}
-                                    </td> 
+                                    </td>
                                     <td>{{ entry.purpose }}</td>
                                     <td>{{ entry.address }}</td>
                                     <td>{{ entry.mobile_no }}</td>
@@ -130,8 +130,8 @@
                                             <button class="ui red button reject-button" style="width:100%" type="submit">Reject</button>
                                         </form>
                                         </td>
-                        
-                                    
+
+
                                 {% endif %}
                             </tr>
                             {%endif%}
@@ -150,7 +150,7 @@
     </div>
 
 {% endblock %}
-{% comment %} 
+{% comment %}
 {% block javascript %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>

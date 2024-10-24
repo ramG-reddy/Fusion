@@ -3,23 +3,23 @@
 {% comment %}The tab menu starts here!{% endcomment %}
 
 
-    
+
 <div class="ui vertical segment">
-    
+
     <form id="add_expense_form" action='/income-expenditure/otherExpense/' method="POST">{% csrf_token %}
-        <div class="ui form" style="border: black" > 
+        <div class="ui form" style="border: black" >
 
             <div class="field">
                 <input placeholder ="Spent On" name = "spent_on"  type="text">
             </div>
             <br>
-            <div class="field">          
-                <input class="Amount" placeholder="Amount" name='amount' required="true" type="number"><br>            
+            <div class="field">
+                <input class="Amount" placeholder="Amount" name='amount' required="true" type="number"><br>
             </div>
 
             <div class="field">
                 <div class = "field">
-                   
+
                     <input class="Date"  name = "date_spent" required="true" type="date" min="{{min_date}}" max="{{max1_date}}" >
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <input placeholder ="Remarks" name = "remarks"  type="text">
                 </div>
             </div>
-            
+
             <br>
 
 

@@ -48,7 +48,7 @@
         </div>
 
         <div class="field">
-            <label>Batch</label>    
+            <label>Batch</label>
             <input placeholder="Batch" type="number" name="batch" id="batch_curr" required>
         </div>
 
@@ -97,13 +97,13 @@
             // if failure
             posting.fail(function(data) {
                 alert('Error');
-                
+
             });
         });
     </script>
 
     <div id="st_list">
-    
+
     </div>
 </div>
 
@@ -408,10 +408,10 @@
 var i=1;
 var a = $('<tr> <td><input type="number" name="semester_'+i+'" required></td> <td><input name="course_code_'+i+'" required></td> <td><select name="course_name_'+i+'" required><option value=""></option>{% for i in courses %} <option value="{{ i.course_name }}">{{i.course_name}}</option> {% endfor%} </select> </td> <td><select name="course_type_'+i+'" required> <option value=""></option> {% for i in course_type %} <option value="{{ i.0 }}">{{i.0}}</option>> {% endfor %}</select> </td> <td><input type="number" name="credits_'+i+'" required></td> <td><input type="radio" name="optional_'+i+'" class="ui radio checkbox"></td></tr>');
 $(document).ready(function(){
-  $("#add").click(function(){   
+  $("#add").click(function(){
     $("tbody").append(a);
     i++;
   });
-}); 
+});
 </script>
 {% endblock %}

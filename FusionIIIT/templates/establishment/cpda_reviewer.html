@@ -86,7 +86,7 @@ Y8b  d8 88      88  .8D 88   88      88 `88. 88.     `8P  d8' 88b  d88 88.     d
                     {% render_field cpda_form.purpose %}
                 </div>
                 <br>
-                
+
                 <div class="field">
                     <b>Advance Requested</b>
                     <br><br>
@@ -122,8 +122,8 @@ Y8b  d8 88      88  .8D 88   88      88   88 Y8b  d8    88      .88.    `8bd8'  
                     <div class="item">
                         <div class="content">
                             <div class="header">Application id : {{app.id}}</div>
-                            
-                            
+
+
                             <div class="meta"> Applicant : {{app.applicant.first_name}}</div>
                             <div class="meta"><label>Purpose : {{app.purpose}}<br>
                             </div>
@@ -131,26 +131,26 @@ Y8b  d8 88      88  .8D 88   88      88   88 Y8b  d8    88      .88.    `8bd8'  
                                 <button class="ui large primary button" onclick="$('.ui.modal.view_cpda1-{{app.id}}').modal('show')">
                                     View
                                 </button>
-                                
+
                             {% if app.status == 'approved' %}
-                                
+
                                     <button class="ui large primary button" onclick="$('.ui.modal.form-{{app.id}}').modal('show')">
                                         Submit Bills
                                     </button>
-                                
+
                             {% endif %}
                         </div>
                         </div>
                     </div>
-                    
+
                     <div class="ui modal view_cpda1-{{app.id}}">
-                    
+
                         <i class="close icon"></i>
                         <div class="header">
                              CPDA Application
                         </div>
                         <div class="content">
-                            
+
                             <div class="description" id='cpda_form_v{{app.id}}'>
                                 CPDA Form details<br>
                                 <br>
@@ -160,7 +160,7 @@ Y8b  d8 88      88  .8D 88   88      88   88 Y8b  d8    88      .88.    `8bd8'  
                                 <label>PF Number : {{ app.pf_number }}</label><br><br>
                                 <label>Requested Advance : {{ app.requested_advance }}</label><br><br>
                                 <label>Purpose : {{ app.purpose }}</label><br><br>
-                                
+
 
                                 {% if app.status == 'finished' %}
                                     <label>Adjustment Amount : {{ app.adjustment_amount }}</label><br><br>
@@ -171,16 +171,16 @@ Y8b  d8 88      88  .8D 88   88      88   88 Y8b  d8    88      .88.    `8bd8'  
                                     <label>Bill :  <a href="{{app.tracking_info.bill.url}}"> CLick to View Bill</a></label><br>
                                     {%endif%}
                                 {% endif %}
-                                
-                                
-                                
+
+
+
                                 </div>
-                        
-                                <button class="ui large primary button" onclick="printDiv('cpda_form_v{{app.id}}')" value="Print">Print </button>           
+
+                                <button class="ui large primary button" onclick="printDiv('cpda_form_v{{app.id}}')" value="Print">Print </button>
                     </div>
-                    
-                    </div>   
-                    
+
+                    </div>
+
                     <br>
                     {% empty %}
                         <tr><td colspan="3">No Active Request</td><tr>
@@ -263,7 +263,7 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                 </div>
                                 <div class="meta"><label>Purpose : {{app.purpose}}<br>
                                     </div>
-                            
+
                             <div>
                                 <button class="ui large primary button" onclick="$('.ui.modal.view_cpda-{{app.id}}').modal('show')">
                                     View
@@ -288,7 +288,7 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                 <label>PF Number : {{ app.pf_number }}</label><br><br>
                                 <label>Requested Advance : {{ app.requested_advance }}</label><br><br>
                                 <label>Purpose : {{ app.purpose }}</label><br><br>
-                                
+
 
                                 {% if app.status == 'finished' %}
                                     <label>Adjustment Amount : {{ app.adjustment_amount }}</label><br><br>
@@ -302,11 +302,11 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                 <label> HOD Remarks : {{app.tracking_info.remarks_rev1}}</label><br>
                                 <br>
                                 <label> Director Remarks : {{app.tracking_info.remarks_rev3}}</label><br><br>
-                                
+
                             </div>
                             <button class="ui large primary button" onclick="printDiv('cpda_form_v_a{{app.id}}')" value="Print">Print </button>
                         </div>
-                        
+
                     </div>
                     <br>
                     {% empty %}
@@ -349,13 +349,13 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                 <div class="field">
                                     <div class="disabled field">
                                         <label>Application No. : {{app.id}}</label>
-                                
+
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="disabled field">
                                         <label>Applicant Name : {{app.applicant.first_name}}</label>
-                                
+
                                     </div>
                                 </div>
                                 <div class="field">
@@ -373,7 +373,7 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                         <label>Requested Advance : ₹ {{app.requested_advance}}</label>
                                     </div>
                                 </div>
-                                
+
                                 {% if app.status == 'adjustments_pending' %}
                                     <label>Adjustment Amount : ₹ {{app.adjustment_amount}}</label><br>
                                     <label>Total Bills Amount : ₹ {{app.total_bills_amount}}</label><br>
@@ -402,14 +402,14 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                 <button type="submit" name="cpda_reject" class="ui large primary button">
                                     {% if app.tracking_info.current_reviewer_id == 1%}
                                         Reward
-                                    {% else %}                                    
+                                    {% else %}
                                         Reject
                                         {%endif%}
                                 </button>
                             </form>
                             </div>
                         </div>
-    
+
                     </div>
                     {% empty %}
                         <tr><td colspan="3">No Application To Review</td><tr>
@@ -432,13 +432,13 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                             <div class="meta"> Status : {% if app.status == 'finished' %} Adjustments Approved {% else %} {{app.status|title}} {%endif%}</div>
                             <div class="meta"> Applicant : {{app.applicant.first_name}}</div>
                             <div class="meta"> Purpose : {{app.purpose}}</div>
-                            
+
                             <div>
                                 <button class="ui large primary button" onclick="$('.ui.modal.reviewed_cpda-{{app.id}}').modal('show')">
                                     View
                                 </button>
                             </div>
-                                
+
 
                         </div>
                     </div>
@@ -452,13 +452,13 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                 <div class="field">
                                     <div class="disabled field">
                                         <label>Application No. : {{app.id}}</label>
-                                
+
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="disabled field">
                                         <label>Applicant Name : {{app.applicant.first_name}}</label>
-                                
+
                                     </div>
                                 </div>
                                 <div class="field">
@@ -476,7 +476,7 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                         <label>Requested Advance : ₹ {{app.requested_advance}}</label>
                                     </div>
                                 </div>
-                                
+
                                 {% if app.status == 'finished' %}
                                     <label>Adjustment Amount : ₹ {{app.adjustment_amount}}</label><br>
                                     <label>Total Bills Amount : ₹ {{app.total_bills_amount}}</label><br>
@@ -484,16 +484,16 @@ Y8b  d8 88      88  .8D 88   88      88   88 88 `88. Y8b  d8 88   88   .88.    `
                                     <label>Bill :  <a href="{{app.tracking_info.bill.url}}"> CLick to View Bill</a></label><br>
                                     {%endif%}
                                     {% endif %}
-                                
+
                                 <div class="field">
                                     <div class="disabled field">
                                         <label>Your Remarks : {{app.tracking_info.remarks_rev1}}</label>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
-    
+
                     </div>
                     {% empty %}
                         <tr><td colspan="3">No Reviewed Application</td><tr>

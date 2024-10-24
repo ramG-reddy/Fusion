@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Building, Work, SubWork, InventoryType, InventoryConsumable, InventoryNonConsumable
+
+from .models import (
+    Building,
+    InventoryConsumable,
+    InventoryNonConsumable,
+    InventoryType,
+    SubWork,
+    Work,
+)
 
 # Register your models here.
 

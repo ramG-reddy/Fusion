@@ -113,9 +113,9 @@
                         </div>
                     </div>
 
-                    
-                       
-                    
+
+
+
                 </div>
 
 
@@ -173,7 +173,7 @@
                     <td id="research{{ forloop.counter }}C">{{ project.funding_agency }}</td>
                     <td id="research{{ forloop.counter }}D">
                         <input type="button" id="view"
-                           class="ui red mini button left floated" 
+                           class="ui red mini button left floated"
                            onclick="viewproject('{{ forloop.counter }}', '{{ project.pi }}',
                             '{{ project.co_pi }}','{{ project.title }}','{{ project.funding_agency }}',
                             '{{ project.date_submission }}','{{ project.start_date }}','{{ project.finish_date }}',
@@ -182,7 +182,7 @@
                     </td>
                     {% if request.user == user %}
                     <td>
-                    <a class="ui button left floated" onclick="updateRESEARCH({{ forloop.counter }})"><i id="bt" class="edit icon" ></i></a>     
+                    <a class="ui button left floated" onclick="updateRESEARCH({{ forloop.counter }})"><i id="bt" class="edit icon" ></i></a>
                     <a class="ui blue button left floated " href="{% url 'eis:emp_research_projectsDelete' project.pk forloop.counter 1%}"><i id="bt" class="ui red delete icon"></i>
                                 </a>
                      </td>
@@ -276,8 +276,8 @@
                         </div>
                     </div>
 
-                        
-                    
+
+
                 </div>
 
             </div>
@@ -384,7 +384,7 @@
                                 <div class="item" data-value="Granted">Granted </div>
                                 <div class="item" data-value="Published">Published</div>
                                 <div class="item" data-value="Owned">Owned</div>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -449,9 +449,9 @@
                         </div>
                     </div>
 
-                    
-                       
-                    
+
+
+
                 </div>
 
             </div>
@@ -482,7 +482,7 @@
         </div>
           <!--scrollbar -->
   <div style="width: 45vw; height: 500px; overflow-y: scroll">
-     
+
         <table class="ui celled table">
             <thead>
             <tr>
@@ -552,14 +552,14 @@
                     </div>
                 </div>
 
-                
-                   
+
+
             </div>
             <button class="ui right floated primary button" type="submit">
                             Save<i class="ui save icon right floated"></i>
             </button>
         </form>
-        
+
         <br>
         {% endif %}
 
@@ -584,7 +584,7 @@
         </div>
           <!--scrollbar -->
   <div style="width: 45vw; height: 500px; overflow-y: scroll">
-     
+
         <table class="ui celled table">
             <thead>
             <tr>

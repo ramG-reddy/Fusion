@@ -275,7 +275,7 @@ Gymkhana Module
             </a>
             {%endif%}
 
-           
+
 
 
             <a class="active item" data-tab="twelth">
@@ -294,7 +294,7 @@ Gymkhana Module
                 <i class="right floated chevron right icon"></i>
             </a>
             {% endif %}
-            
+
             {% if "Dean_s" not in global_var %}
             <a class="item" data-tab="third">
                 Member Records
@@ -302,7 +302,7 @@ Gymkhana Module
             </a>
             {% endif %}
 
-            
+
             {% if "Counsellor" in global_var or "Dean_s" in global_var%}
             <a class="item" data-tab="seventh">
                 Approval Requests
@@ -312,7 +312,7 @@ Gymkhana Module
                 Change Co and Co-Co
                 <i class="right floated chevron right icon"></i>
             </a>
-              
+
             {% endif %}
 
             {% if "Counsellor" in global_var%}
@@ -359,7 +359,7 @@ Gymkhana Module
             </a> {% endcomment %}
 
             {% endif %}
-           
+
 
             {% if "co-ordinator" not in global_var and "Co-coordinator" not in global_var and "Counsellor" not in global_var and "student" not in global_var and "Convener" not in global_var and "Dean_s" not in global_var %}
             <a class="item" data-tab="seventh">
@@ -385,7 +385,7 @@ Gymkhana Module
              <a class="item" href="/filetracking">
                 Event Report To Co/Co-coordinator-(Back)
                 <i class="right floated chevron right icon"></i>
-            </a> 
+            </a>
 
             {% endif %} {% endcomment %}
 
@@ -419,7 +419,7 @@ Gymkhana Module
 
             {% endif %}
 
-            
+
 
 
             {% if "fic" in global_var %}
@@ -447,7 +447,7 @@ Gymkhana Module
 
             {% endif %} {% endcomment %}
 
-  
+
         </div>
         {% comment %}The Tab-Menu ends here!{% endcomment %}
 
@@ -456,7 +456,7 @@ Gymkhana Module
     <div class="eight wide column">
 
         {% comment %}The Details start here!{% endcomment %}
-{% comment %} 
+{% comment %}
         <div class="ui tab segment" data-tab="voting_polls">
             {% block voting_polls %}
             {% include 'gymkhanaModule/voting_polls.html' %}
@@ -472,7 +472,7 @@ Gymkhana Module
         </div>
 
         {% endif %}
- 
+
 
 
         <div class="ui active tab segment" data-tab="twelth">
@@ -492,24 +492,24 @@ Gymkhana Module
         {% endif %}
 
         {% if "Convenor" in global_var %}
-        
+
         <div class="ui tab segment" data-tab="twentyth">
             {% block nomination_details %}
             {% include 'gymkhanaModule/nomination_details.html' %}
             {% endblock %}
         </div>
-        
+
         {% endif %}
         {% if "co-ordinator" in global_var %}
-        
+
         <div class="ui tab segment" data-tab="del">
             {% block delete %}
             {% include 'gymkhanaModule/deletemembers.html' %}
             {% endblock %}
         </div>
-        
+
         {% endif %}
-        
+
         {% if "Dean_s" in global_var %}
         <div class="ui tab segment" data-tab="delclub">
             {% block deleteclub %}
@@ -603,7 +603,7 @@ Gymkhana Module
             {% endblock %}
         </div>
 
-       
+
         {% comment %} <div class="ui tab segment" data-tab="ficfirst">
             {% block viewinventory %}
             {% include 'gymkhanaModule/viewinventory.html' %}
@@ -614,7 +614,7 @@ Gymkhana Module
             {% include 'gymkhanaModule/updateinventory.html' %}
             {% endblock %}
         </div> {% endcomment %}
-        
+
 
 
         {% endif %}
@@ -629,8 +629,8 @@ Gymkhana Module
     <div class="three wide column " id="dateDetails">
         <div class="row">
 
-            {% block sidepanel%} 
-            {% include 'notifications/gymkhana_sidepanel.html' %} 
+            {% block sidepanel%}
+            {% include 'notifications/gymkhana_sidepanel.html' %}
             {% endblock %}
 
             {% comment %}

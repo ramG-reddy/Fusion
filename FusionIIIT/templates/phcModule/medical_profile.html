@@ -14,10 +14,10 @@
     </div>
 
     <div class="ui tab" data-tab="edit_med_profile">
-        
+
         <div class="ui vertical segment">
             <!-- fill the form details -->
-            <form class="ui form" style="padding-left: 24px; padding-right: 24px;" method="POST" enctype="multipart/form-data" 
+            <form class="ui form" style="padding-left: 24px; padding-right: 24px;" method="POST" enctype="multipart/form-data"
                   action="../views/medical_profile/">
                 {% csrf_token %}
 
@@ -29,7 +29,7 @@
         </div>
 
         <br>
-        
+
         <div class="form-group">
             <label for="id_gender">Gender:</label>
             <select name="gender" id="id_gender">
@@ -38,7 +38,7 @@
                 <option value="O" {% if medical_profile.gender == 'O' %} selected {% endif %}>Other</option>
             </select>
         </div>
-        
+
         <br>
 
         <div class="form-group">
@@ -54,25 +54,25 @@
                 <option value="O-" {% if medical_profile.blood_type == 'O-' %} selected {% endif %}>O-</option>
             </select>
         </div>
-        
+
         <br>
 
         <div class="form-group">
             <label for="id_height">Height (in cm):</label>
             <input type="text" name="height" id="id_height" value="{{ medical_profile.height }}">
         </div>
-        
+
         <br>
 
         <div class="form-group">
             <label for="id_weight">Weight (in kg):</label>
             <input type="text" name="weight" id="id_weight" value="{{ medical_profile.weight }}">
         </div>
-        
+
         <br>
 
         <input class="ui large primary button right floated" type="submit" name="Submit" value="Submit" />
-        
+
         <br>
             </form>
 
@@ -96,7 +96,7 @@
                     <td style="font-weight:bold;color:black;" >
                         DOB
                     </td>
-                    
+
                     <td style="font-weight:bold;color:black;" >
                         Blood Group
                     </td>
@@ -130,7 +130,7 @@
 
                 </tr>
                 </thead>
-                  
+
                 <tbody>
                 {% for prof in medical_profile %}
                 <tr>
@@ -160,7 +160,7 @@
                     <td>
                         {{prof.blood_type}}
                     </td>
-                    
+
                     <td>
                         {{prof.height}}
                     </td>
@@ -169,7 +169,7 @@
                         {{prof.weight}}
                     </td>
 
-                    
+
                 </tr>
 
                 {% endfor %}
@@ -181,7 +181,7 @@
 
 <script>
             function rem(id){
-           
+
 			var dis = this;
             var d = window.confirm('Are you sure, you want to delete the Request?');
             if(d == false){
@@ -203,7 +203,7 @@
                                                     }
                           });
 
-            
+
       }
       </script>
 
@@ -216,4 +216,3 @@
     <script type="text/javascript" src="{% static 'globals/js/tablesort.js' %}"></script>
     <script type="text/javascript" src="{% static 'department/js/function.js' %}"></script>
 {% endblock %}
-

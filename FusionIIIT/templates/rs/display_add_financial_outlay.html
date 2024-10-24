@@ -7,7 +7,7 @@
 {% block body %}
 
 <script>
-  
+
   function populate(categoriesId, category_subcategory_map, year) {
     console.log(category_subcategory_map)
     let id1 = "subcategory-select-" + year + "-";
@@ -77,7 +77,7 @@
     clonedSubcategorySelect.setAttribute('name', newSubcategoryName);
     clonedAmount.setAttribute('name', newAmountName);
 
-    // Append the cloned section to the container 
+    // Append the cloned section to the container
 
     var container_id = 'container-' + year
     console.log(container_id)
@@ -144,9 +144,9 @@
 
 <div class="ui active tab" style="width:100%">
 
-  
+
   <form method="POST" enctype="multipart/form-data" action="{% url 'research_procedures:update_time_period' project_id %}" >
-    
+
     {% csrf_token %}
     Change Project Duration
     <div class="ui labeled input">
@@ -154,7 +154,7 @@
     </div>
     <button class="ui small grey equal-size-button button"  type="submit" > Update </button>
   </form>
-  
+
 <form method="post" enctype="multipart/form-data"
 action="{% url 'research_procedures:add_financial_outlay' project_id %}">
 {% csrf_token %}

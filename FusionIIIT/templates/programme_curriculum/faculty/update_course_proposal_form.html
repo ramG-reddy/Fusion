@@ -1,10 +1,10 @@
-{% extends 'programme_curriculum/faculty/common.html' %} 
+{% extends 'programme_curriculum/faculty/common.html' %}
 {% block content %}
 <div class="ui segment" >
     <div class="header"><h1>Course Update Proposal Form</h1></div>
     <div class="ui divider"></div>
     <form class="ui large form error" method="POST">
-        
+
         {% csrf_token %}
         {% if form.non_field_errors %}
         <div class="ui message">
@@ -158,24 +158,24 @@
                 {{ form.percent_quiz_1 }}
             </div>
             <div class="six wide field">
-                
+
                 <label for="{{ form.percent_midsem.id_for_label }}">Midsem %:</label>
                 {{ form.percent_midsem }}
             </div>
             <div class="two wide field">
-                
+
                 <label for="{{ form.percent_quiz_2.id_for_label }}">Quiz 2 %:</label>
                 {{ form.percent_quiz_2 }}
             </div>
             <div class="six wide field">
-                
+
                 <label for="{{ form.percent_endsem.id_for_label }}">Endsem %:</label>
                 {{ form.percent_endsem }}
             </div>
         </div>
         <div class="fields">
             <div class="seven wide field">
-                
+
                 <label for="{{ form.percent_project.id_for_label }}">Project %:</label>
                 {{ form.percent_project }}
             </div>

@@ -1,14 +1,10 @@
 # import
-import datetime
-from django.utils import timezone
+from applications.academic_information.models import Student
+from applications.globals.models import ExtraInfo, Faculty
 from django import template
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
-from django.urls import reverse
-
-from applications.academic_information.models import Student
-from applications.globals.models import ExtraInfo, Faculty
 
 register = template.Library()
 

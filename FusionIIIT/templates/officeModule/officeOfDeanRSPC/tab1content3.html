@@ -30,12 +30,12 @@
                 <label>Budget Head</label>
                 <input value="" class="ui large input" type="text" type="text" name="p_budget_head" required>
             </div>
-            
+
             <div class="four wide field">
                 <label>Amount </label>
                 <input value="" class="ui large input" type="number" min="0" name="p_amount" required>
             </div>
-            
+
         </div>
         <p><b>Project Head to which expenditure is to be booked</b></p>
         <div class="three fields">
@@ -43,18 +43,18 @@
                 <label>Budget Head</label>
                 <input value="" class="ui large input" type="text" name="n_budget_head" required>
             </div>
-            
+
             <div class="four wide field">
                 <label>Amount </label>
                 <input value="" class="ui large input" type="number" min="0" name="n_amount" required>
             </div>
         </div>
-        
+
         <div class="field">
             <label>Details & Description</label>
             <textarea rows="2" name="reason"></textarea>
         </div>
-       
+
 
         <div class="field">
             <button class="ui primary button right floated" type="submit">
@@ -79,7 +79,7 @@
 
         <th style="width:20%">Reason</th>
         <th style="width:20%">Date</th>
-       
+
 
     </tr>
     </thead>
@@ -92,7 +92,7 @@
         <td id="pr{{ forloop.counter }}C">{{ pr.new_amount }}</td>
         <td id="pr{{ forloop.counter }}D">{{ pr.transfer_reason}}</td>
         <td id="pr{{ forloop.counter }}E">{{ pr.date }}</td>
-        
+
     </tr>
     {% endfor %}
     </tbody>

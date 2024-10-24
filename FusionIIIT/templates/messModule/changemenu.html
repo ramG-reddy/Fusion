@@ -1,6 +1,6 @@
 {% load static %}
 {% block changemenu %}
-    
+
     <div class="ui pointing secondary menu">
         <a class="active item" data-tab="changemenu">
             Request For Menu Change
@@ -15,7 +15,7 @@
             <a class="ui item" data-tab="" id="req_2">
                 Status
             </a>
-    </div> 
+    </div>
 
     <div class="ui active tab" data-tab="changemenu" id="menu_change_div">
         <div class="ui vertical segment">
@@ -30,7 +30,7 @@
                             <div class="ui active tab" data-tab="changemenu">
                                 {% for d in desig %}
                                 {% if d.designation.name == 'mess_convener' or d.designation.name == 'mess_committee' %}
-                            
+
                                 <form class="ui form" method="post" action="{% url 'mess:messmenusubmit'%}">
                                         {% csrf_token %}
                                         <div class="ui row">
@@ -41,8 +41,8 @@
                                                     </label>
                                                     <br>
                                                     <label style="margin-top: 20px;">
-                                                        Day - Meal Time - Dish *   
-                                                    </label> 
+                                                        Day - Meal Time - Dish *
+                                                    </label>
                                                     <br/>
                                                     <select class="ui dropdown" style="min-width:20rem" name="dish" id="dish">
                                                         <option>
@@ -51,9 +51,9 @@
                                                         {% for item in menu %}
                                                         {% if item.mess_option == 'mess1' %}
                                                         <option value="{{item.pk}}" id="{{item.pk}}">
-                                                            
+
                                                             {% if item.meal_time == 'MB' %}
-                                                                <div>Monday -|- Breakfast</div> -|- <div>{{item.dish}}</div> 
+                                                                <div>Monday -|- Breakfast</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'TB' %}
                                                                 <div>Tuesday -|- Breakfast</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'WB' %}
@@ -81,7 +81,7 @@
                                                             {% elif item.meal_time == 'SUL' %}
                                                                 <div>Sunday -|- Lunch</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'MD' %}
-                                                                <div>Monday -|- Dinner</div> -|- <div>{{item.dish}}</div>    
+                                                                <div>Monday -|- Dinner</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'TD' %}
                                                                 <div>Tuesday -|- Dinner</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'WD' %}
@@ -95,7 +95,7 @@
                                                             {% elif item.meal_time == 'SUD' %}
                                                                 <div>Sunday -|- Dinner</div> -|- <div>{{item.dish}}</div>
                                                             {% endif %}
-                                        
+
                                                         </option>
                                                         {% endif %}
                                                         {% endfor %}
@@ -103,17 +103,17 @@
                                                     <br>
                                                     <br>
                                                     <label>
-                                                        Change To * 
+                                                        Change To *
                                                     </label>
                                                     <br/>
-                                                 
+
                                                     <div class="ui input">
                                                         <input placeholder="Food" style="width:20rem" name="newdish" id = "newdish" >
                                                     </div>
                                                     <br>
                                                     <br>
                                                     <label>
-                                                        Reason * 
+                                                        Reason *
                                                     </label>
                                                     <br/>
                                                     <div class="ui input">
@@ -128,14 +128,14 @@
                                                 Place Request
                                             </button>
                                         </div>
-                                </form> 
+                                </form>
                                 {%endif%}
                                 {%endfor%}
-                                
-                                
+
+
                             {% for d in desig %}
                                 {% if d.designation.name == 'mess_convener_mess2' or d.designation.name == 'mess_committee_mess2' %}
-                                
+
                                 <form class="ui form" method="post" action="{% url 'mess:messmenusubmit'%}">
                                     {% csrf_token %}
                                     <div class="ui row">
@@ -146,12 +146,12 @@
                                                     </label>
                                                     <br>
                                                     <label>
-                                                        Day - Meal Time - Dish * 
+                                                        Day - Meal Time - Dish *
                                                     </label>
                                                     <br/>
-            
-                                                    
-                                               
+
+
+
 {#                                                   <select class="ui fluid search selection dropdown"  name="dish" id="dish">#}
                                                 <div style="width:30rem">
                                                     <select class="ui dropdown" style="width:20rem" name="dish" id="dish">
@@ -162,7 +162,7 @@
                                                         {% if item.mess_option == 'mess2' %}
                                                         <option value="{{item.pk}}" id="{{item.pk}}">
                                                             {% if item.meal_time == 'MB' %}
-                                                                <div>Monday -|- Breakfast</div> -|- <div>{{item.dish}}</div> 
+                                                                <div>Monday -|- Breakfast</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'TB' %}
                                                                 <div>Tuesday -|- Breakfast</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'WB' %}
@@ -190,7 +190,7 @@
                                                             {% elif item.meal_time == 'SUL' %}
                                                                 <div>Sunday -|- Lunch</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'MD' %}
-                                                                <div>Monday -|- Dinner</div> -|- <div>{{item.dish}}</div>    
+                                                                <div>Monday -|- Dinner</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'TD' %}
                                                                 <div>Tuesday -|- Dinner</div> -|- <div>{{item.dish}}</div>
                                                             {% elif item.meal_time == 'WD' %}
@@ -210,7 +210,7 @@
                                                     </select>
                                                     </div>
                                                     <br>
-                                                    <br> 
+                                                    <br>
                                                     <label>
                                                         Change To *
                                                     </label>
@@ -221,17 +221,17 @@
                                                     <br>
                                                     <br>
                                                     <label>
-                                                        Reason * 
+                                                        Reason *
                                                     </label>
                                                     <br/>
-                                                  
+
                                                     <div class="ui input">
                                                         <input placeholder="Why?" style="width:30rem" name="reason" id="reason" >
                                                     </div>
 
                                                 </div>
-                                                
-                                            </div> 
+
+                                            </div>
                                         </div>
                                         <div class="ui row">
                                             <br>
@@ -243,7 +243,7 @@
                                 {%endif%}
                                 {%endfor%}
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -300,7 +300,7 @@
                         <td>
                             {{item.dish}}
                         </td>
-                        
+
                         <td>
                             {{item.request}}
                         </td>

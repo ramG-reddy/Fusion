@@ -13,11 +13,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .thesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 .pthesis {
   background-color: #f1f1f1;
@@ -32,11 +32,11 @@
   transition: 0.4s;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 3px; 
+  border-radius: 3px;
 }
 
 .pthesis:hover {
-  background-color: #ddd; 
+  background-color: #ddd;
 }
 
 .panel {
@@ -54,27 +54,27 @@ table{
 
 .td1{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td2{
     width: 30%;
-        padding-bottom:15px;    
+        padding-bottom:15px;
     padding-top: 15px;
 }
 .td3{
     width: 18%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td4{
     width: 30%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .td5{
     width: 2%;
-    padding-bottom:15px;    
+    padding-bottom:15px;
     padding-top: 15px;
 }
 .previous {
@@ -130,12 +130,12 @@ table{
 <!--  pending requests -->
 <div class="ui active tab segment"  data-tab="pen_req">
     <div id="myid" class="ui vertical segment">
-        
+
         {% if pending_thesis_request_list %}
             {% for obj in pending_thesis_request_list %}
                     <div  class="thesis" id_thesis="{{forloop.counter}}" id_object="{{obj.id}}">{{obj.thesis_topic}}</div>
                 <div class="panel" id="{{forloop.counter}}" hidden>
-                    
+
                     <table>
                         <tr>
                             <td class="td1">Roll No.</td>
@@ -154,7 +154,7 @@ table{
                             <td class="td1">Research Area</td>
                             <td class="td5">:</td>
                             <td colspan="4" style="font-weight: bold;">{{obj.research_area}}</td>
-                        </tr>                        
+                        </tr>
                         <tr>
                             <td class="td1">Course</td>
                             <td class="td5">:</td>
@@ -201,7 +201,7 @@ table{
                                                                         padding: 8px 16px;
                                                                         cursor: pointer;">&laquo; Back</div>
                         <button class="ui primary button" style="background-color: green" name="approve" value="yes">Forward</button>
-                        <button class="ui secondary button" style="background-color: #E31C1C" name="disapprove" value="no">Disapprove</button> 
+                        <button class="ui secondary button" style="background-color: #E31C1C" name="disapprove" value="no">Disapprove</button>
                     </div>
                 </div>
             </form>
@@ -216,7 +216,7 @@ table{
         <div class="ui tab segment" data-tab="app_thesis" id="myid1">
             {% if approved_thesis_request_list %}
                 {% for obj in approved_thesis_request_list %}
-            
+
                     <div  class="pthesis" id="pthesis{{forloop.counter}}">{{obj.thesis_topic}}</div>
                     <div class="ui modal pthesis{{forloop.counter}}">
                         <i class="close icon"></i>
@@ -239,7 +239,7 @@ table{
                                         <td class="td1">Research Area</td>
                                         <td class="td5">:</td>
                                         <td colspan="4" style="font-weight: bold;">{{obj.research_area}}</td>
-                                    </tr>                        
+                                    </tr>
                                     <tr>
                                         <td class="td1">Course</td>
                                         <td class="td5">:</td>
@@ -259,7 +259,7 @@ table{
                         });
                         });
                     </script>
-              
+
                 {% endfor %}
                 {%else%}nothing here
             {%endif%}
@@ -296,7 +296,7 @@ table{
                                         <td class="td1">Research Area</td>
                                         <td class="td5">:</td>
                                         <td colspan="4" style="font-weight: bold;">{{obj.research_area}}</td>
-                                    </tr>                        
+                                    </tr>
                                     <tr>
                                         <td class="td1">Course</td>
                                         <td class="td5">:</td>
@@ -327,14 +327,14 @@ table{
 
 
 function myfun(){
-    
+
     document.getElementById('myid').style="display:none";
     document.getElementById('myid1').style="display:block";
     document.getElementById('myid2').style="display:none";
 
 }
 function myfun1(){
-    
+
     document.getElementById('myid').style="display:block";
     document.getElementById('myid1').style="display:none";
         document.getElementById('myid2').style="display:none";
@@ -343,7 +343,7 @@ function myfun1(){
 }
 
 function myfun2(){
-    
+
     document.getElementById('myid').style="display:none";
     document.getElementById('myid1').style="display:none";
         document.getElementById('myid2').style="display:block";
@@ -352,7 +352,7 @@ function myfun2(){
 }
 
 $(function() {
-    
+
     var obj_id;
     $(".thesis").click(function(){
         id = $(this).attr("id_thesis");
@@ -389,13 +389,13 @@ $(function() {
                  by : 'fac',
                  csrfmiddlewaretoken: '{{ csrf_token }}'
         },
-        success: function( data ) 
+        success: function( data )
         {
             alert('done');
             window.location = "/academic-procedures/fac/";
         }
     });
     });
-    
+
 });
 </script>

@@ -59,9 +59,9 @@
         </div>
             {% comment %}The Tab-Menu starts here!{% endcomment %}
             {% comment %}A single modules row starts here!{% endcomment %}
-               
+
                         {% if  request.user.extrainfo.user_type == "staff"    %}
-             
+
             <div class="ui huge fluid vertical pointing menu"
                  style="max-width: 320px;">
                 <a class="active item" data-tab="first">
@@ -79,9 +79,9 @@
                     <i class="right floated chevron right icon"></i>
                 </a>
                 {% endif %}
-                
+
                 {% comment %}A single modules row ends here!{% endcomment %}
-                
+
                 {% if  "caretaker" in global_var %}
                 <a class=" item" data-tab="fourth">
                     Resolved Complaints
@@ -112,7 +112,7 @@
             The central-rail segment starts here!
         {% endcomment %}
         <div class="eight wide column">
-           
+
             {% comment %}The ... start here!{% endcomment %}
             <div class="ui active tab segment" data-tab="first">
                 {% block lodgecomplaint %}
@@ -171,7 +171,7 @@
                     {%  include 'complaintModule/complaint_notification.html' %}
                 {%  endblock %}
             </div>
-            
+
         </div>
         {% comment %}The right-rail segment ends here!{% endcomment %}
 
@@ -187,8 +187,6 @@
     <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
     <script type="text/javascript" src="{% static 'globals/js/datepicker.js' %}"></script>
     <script type="text/javascript" src="{% static 'globals/js/tablesort.js' %}"></script>
-    
+
 
 {% endblock %}
-
-

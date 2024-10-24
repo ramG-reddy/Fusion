@@ -9,7 +9,7 @@
                     <div class="active content">
                         <div class="ui form" style="padding: 8px; padding-left: 24px; padding-right: 24px;">
                           {% csrf_token %}
-                            
+
                                 <div class="field">
                                     <label for="{{ form.hall.id_for_label }}">
                                         Hall
@@ -29,7 +29,7 @@
                                     </label>
                                     <input type="text" name="head_line" required="required" value="{{ form.head_line }}"  class="ui large input">
                                 </div>
-                       
+
                                 <div class="field">
                                     {{ form.content.errors }}
                                     <label  for="{{ form.content.id_for_label }}">
@@ -41,11 +41,11 @@
                                     {{ form.description.errors }}
                                     <label for="{{ form.description.id_for_label }}">
                                         Description
-                                    </label>                                    
-                                    <textarea name="description">{{ form.description }}</textarea>                                     
+                                    </label>
+                                    <textarea name="description">{{ form.description }}</textarea>
                                 </div>
 
-                            
+
                             <div class="two fields">
                               <div class="four wide field">
                                   <label><br></label>

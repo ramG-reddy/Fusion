@@ -46,7 +46,7 @@ Hostel
             <input value="{{fines.amount}}" type="number" id="amount" name="amount" min="0" step="1" required />
         </div>
 
-        
+
         <div class="field">
             <label for="status">Status:</label>
             <select name="status" onchange="updateStatus('{{ fines.fine_id }}', this.value)">

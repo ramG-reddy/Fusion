@@ -14,7 +14,7 @@
 
         </a>
         <a class="ui item" data-tab="Update Bill">
-            Update Bill 
+            Update Bill
         </a>
         {% endif %}
         {% endfor %}
@@ -23,10 +23,10 @@
         </a>
     </div>
 
-        
+
 
         <div class="ui tab {% for d in desig %} {% if d.designation.name == 'mess_warden' %} active {% endif %} {% endfor %}" data-tab="View Student Bills">
-      
+
             {% block reg_list_bills %}
             {% include 'messModule/view_payments_bills.html' %}
             {% endblock %}
@@ -39,21 +39,21 @@
                     <div class="ui form" style="padding: 8px; padding-left: 12px; padding-right: 12px;">
                         <div class ="one field">
                             <div class= "field" style="width:100%;">
-                                    <label for="rollNo">Roll No.</label>                                       
+                                    <label for="rollNo">Roll No.</label>
                                     <input type="text" name="rollNo" placeholder="Roll_No of Student" style="border:1px solid black;" required="true" id="rollNo">
 
                             </div>
                         </div>
                         <div class ="one field">
-                            <div class= "field" style="width:100%;">  
-                                    <label for="new_amount">New Amount</label>                                  
+                            <div class= "field" style="width:100%;">
+                                    <label for="new_amount">New Amount</label>
                                     <input type="text" name="new_amount" placeholder="New amount for this month bill" style="border:1px solid black;" required="true" id="new_amount">
 
                             </div>
                         </div>
                         <div class ="two fields">
                             <div class= "field" style="width:100%;">
-                                <label for="Month">Month</label>   
+                                <label for="Month">Month</label>
                                 {% comment %} <input type="text" name="Month" placeholder="Month of bill update" style="border:1px solid black;" required="true" id="Month"> {% endcomment %}
                                 <select name="Month" class="ui fluid dropdown" required="true" id="Month">
                                     <option value="january">January</option>
@@ -71,7 +71,7 @@
                             </select>
                             </div>
                             <div class= "field" style="width:100%;">
-                                <label for="Year">Year</label>   
+                                <label for="Year">Year</label>
                                 {% comment %} <input type="text" name="Month" placeholder="Month of bill update" style="border:1px solid black;" required="true" id="Month"> {% endcomment %}
                                 <select name="Year" class="ui fluid dropdown" required="true" id="Year">
                                     <option value="2020">2020</option>
@@ -79,18 +79,18 @@
                                     <option value="2022">2022</option>
                                     <option value="2023">2023</option>
                                     <option value="2024">2024</option>
-                                    
+
                             </select>
                             </div>
-                            
+
                         </div>
                         {% comment %} <div class ="two fields">
                             <div class= "field" style="width:100%;">
-                                <label for="RebateCount">Rebate Count</label>   
+                                <label for="RebateCount">Rebate Count</label>
                                 <input type="number" name="RebateCount" placeholder="Rebate count for this month" style="border:1px solid black;" required="true" id="RebateCount">
                             </div>
                             <div class= "field" style="width:100%;">
-                                <label for="RebateAmount">Rebate Amount</label>   
+                                <label for="RebateAmount">Rebate Amount</label>
                                 <input type="number" name="RebateAmount" placeholder="Rebate amount for this month" style="border:1px solid black;" required="true" id="RebateAmount">
                             </div>
                         </div> {% endcomment %}
@@ -100,7 +100,7 @@
                         </button>
                     </div>
                 </form>
-                
+
             </div>
         </div>
 
@@ -138,9 +138,9 @@
                         <br>
                     </form>
                     <br>
-                    
+
                 </div> -->
-                
+
 
             </div>
 
@@ -202,7 +202,7 @@
         document.getElementById('bill_dwn').addEventListener('click', download);
 
         function download() {
-            
+
         }
 
         function required_check_registration() {

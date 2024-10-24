@@ -10,7 +10,7 @@
 {% block body %}
     {% block navBar %}
         {% include 'dashboard/navbar.html' %}
-    {% endblock %}    
+    {% endblock %}
 
     {% comment %}The grid starts here!{% endcomment %}
     <div class="ui stackable doubling grid">
@@ -47,14 +47,14 @@
             The left-rail segment ends here!
         {% endcomment %}
 
-        
+
 
         {% comment %}
             The central-rail segment starts here!
         {% endcomment %}
         <div class="eight wide column">
 
-            
+
             {% comment %}CSE Department!{% endcomment %}
             <div class="ui active tab segment" data-tab="first">
                 {% block SM_Dep %}
@@ -88,7 +88,7 @@
             </div>
             {% comment %}SM{% endcomment %}
         </div>
-        
+
         <div class="three wide column">
             <div class="row">
                 {% comment %}
@@ -97,7 +97,7 @@
             </div>
         </div>
         {% comment %}The right-rail segment ends here!{% endcomment %}
-        
+
         {% comment %}The right-margin segment!{% endcomment %}
         <div class="column"></div>
 

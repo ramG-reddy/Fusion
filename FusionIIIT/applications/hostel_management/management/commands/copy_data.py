@@ -1,10 +1,9 @@
-from applications.academic_information.models import Student 
+from applications.academic_information.models import Student
 from applications.hostel_management.models import StudentDetails
 from django.contrib.auth.models import User
 
 
 def copy_data():
-    
     # Fetch data from the Student table with a join to the User table
     student_data = Student.objects.all()
 
@@ -12,7 +11,7 @@ def copy_data():
     for student_instance in student_data:
         # Extract data from the related User instance
         id = student_instance.id_id
-        user_instance = User.objects.filter(username=id).first();
+        user_instance = User.objects.filter(username=id).first()
         user_instance = User.objects.get(username=id)
 
         # Create a StudentDetails instance using data from the Student and User instances
@@ -31,6 +30,7 @@ def copy_data():
 
         # Save the StudentDetails instance to the database
         student_details_instance.save()
+
 
 # Call the function to initiate the data copying process
 copy_data()

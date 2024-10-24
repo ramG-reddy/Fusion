@@ -17,12 +17,12 @@
                                 <th><h4>Date</h4></th>
                                 <th><h4>View</h4></th>
                                 <th><h4>Track</h4></th>
-                               
-                              
+
+
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                             {% for archived_file in archived_files %}
                                 <tr>
                                     <td>{{ archived_file.id }}</td>
@@ -32,7 +32,7 @@
                                     <td><a href="http://127.0.0.1:8000/hr2/form_view_ltc/{{ archived_file.src_object_id }}?param1={{ archived_file.sent_by_user }}&param2={{ archived_file.sent_by_designation }}&param3={{ archived_file.id }}">View</a></td>
                                     <td><a href="http://127.0.0.1:8000/hr2/track_file/{{ archived_file.id }}">Track</a></td>
 
-        
+
 
                                 </tr>
                             {% empty %}

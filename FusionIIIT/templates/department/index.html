@@ -10,7 +10,7 @@
 {% block body %}
     {% block navBar %}
         {% include 'dashboard/navbar.html' %}
-    {% endblock %}    
+    {% endblock %}
 
     {% comment %}The grid starts here!{% endcomment %}
     <div class="ui stackable doubling grid">
@@ -28,15 +28,15 @@
                 {% include 'globals/usercard.html' %}
             {% endblock %}
             {% comment %}The user image card ends here!{% endcomment %}
-            
-            
+
+
 
             <div class="ui divider"></div>
 
             {% comment %}The Tab-Menu starts here!{% endcomment %}
             <div class="ui huge fluid vertical pointing menu" style="max-width: 320px;">
 
-                
+
                 <a class="active item" data-tab="first" id="CSE_Dep">
                     CSE Department
                     <i class="right floated chevron right icon"></i>
@@ -56,7 +56,7 @@
                     SM Department
                     <i class="right floated chevron right icon"></i>
                 </a>
-            
+
             </div>
             {% comment %}The Tab-Menu ends here!{% endcomment %}
 
@@ -65,14 +65,14 @@
             The left-rail segment ends here!
         {% endcomment %}
 
-        
+
 
         {% comment %}
             The central-rail segment starts here!
         {% endcomment %}
         <div class="eight wide column">
 
-            
+
             {% comment %}CSE Department!{% endcomment %}
             <div class="ui active tab segment" data-tab="first">
                 {% block CSE_Dep %}
@@ -106,7 +106,7 @@
             </div>
             {% comment %}SM{% endcomment %}
         </div>
-        
+
         <div class="three wide column">
             <div class="row">
                 {% comment %}
@@ -115,7 +115,7 @@
             </div>
         </div>
         {% comment %}The right-rail segment ends here!{% endcomment %}
-        
+
         {% comment %}The right-margin segment!{% endcomment %}
         <div class="column"></div>
 

@@ -1,6 +1,5 @@
-from django import forms
-
 from applications.globals.models import Feedback, Issue
+from django import forms
 
 
 class WebFeedbackForm(forms.ModelForm):

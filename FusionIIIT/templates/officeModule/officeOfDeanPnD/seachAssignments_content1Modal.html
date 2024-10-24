@@ -8,7 +8,7 @@
     }
 
 </script>
- 
+
 {% for object in req %}
 <div class="ui modal {{ object.pk }} " id={{object.pk}}>
     <div class="header"> </div>
@@ -57,7 +57,7 @@
                     <input value="{{object.description}}" readonly></input>
                 </div>
             </div>
-             
+
              <h4> Work Assignment </h4>
             <div class="eight wide field">
                 <label>Title</label>
@@ -76,9 +76,9 @@
                 {% elif object.tag == 1 %}
                  <input value="Completed" readonly></input>
                  {% endif %}
-            </div>  
+            </div>
 
-            
+
 
 
 

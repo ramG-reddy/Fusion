@@ -1,6 +1,25 @@
 from django.contrib import admin
 
-from .models import Projects,PageOneDetails,AESDetails,PageTwoDetails,CorrigendumTable,Addendum,PreBidDetails,TechnicalBidDetails,TechnicalBidContractorDetails,FinancialBidDetails,FinancialContractorDetails,LetterOfIntentDetails,WorkOrderForm,Agreement,Milestones,PageThreeDetails,ExtensionOfTimeDetails,NoOfTechnicalBidTimes
+from .models import (
+    Addendum,
+    AESDetails,
+    Agreement,
+    CorrigendumTable,
+    ExtensionOfTimeDetails,
+    FinancialBidDetails,
+    FinancialContractorDetails,
+    LetterOfIntentDetails,
+    Milestones,
+    NoOfTechnicalBidTimes,
+    PageOneDetails,
+    PageThreeDetails,
+    PageTwoDetails,
+    PreBidDetails,
+    Projects,
+    TechnicalBidContractorDetails,
+    TechnicalBidDetails,
+    WorkOrderForm,
+)
 
 # Register your models here.
 admin.site.register(Projects)

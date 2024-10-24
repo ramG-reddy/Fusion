@@ -39,7 +39,7 @@
             <a class="active item" data-tab="dandm">
                 Proficiency Medals
             </a>
-        
+
             <a class="right floated item" href="http://site.iiitdmj.ac.in/IIITDM/SPACS-fellowships.pdf" download>
                 <button class="ui primary button" href="http://site.iiitdmj.ac.in/IIITDM/SPACS-fellowships.pdf" download>
                     Download
@@ -47,11 +47,11 @@
                 </button>
             </a>
         </div>
-        
+
         <div class="ui active tab" data-tab="dandm">
             <div class="ui vertical segment">
                 <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;" enctype="multipart/form-data">
-                    {% csrf_token %} 
+                    {% csrf_token %}
                         <div class="eight wide field">
                         <label>PBI Project/Design Project</label>
                         <div class="ui large input">
@@ -68,11 +68,11 @@
                                 <option value="3">3</option>
                             </select>
                             </div>
-                            
+
                             <div class="six wide field">
                                     <label>Type</label>
                                     <select class="ui fluid search selection large dropdown" name="type">
-                                            <option selected hidden>Select</option> 
+                                            <option selected hidden>Select</option>
                                             {% for award in awards %}
                                             <option value="{{award.id}}">{{award.award_name}}</option>
                                             {% endfor %}
@@ -84,7 +84,7 @@
                                       <label>Permanent Address:</label>
                                       <textarea rows="2" name="p_address">{{request.user.extrainfo.address}}</textarea>
                                   </div>
-              
+
                                  <div class="field">
                                       <label>Correspondence Address:</label>
                                       <textarea rows="2" name="c_address"></textarea>
@@ -104,11 +104,11 @@
                                   </div>
                           </div>
                       </div>
-        
+
                     <div class="two fields">
                             <div class="field">
                                     <a class="right floated item">
-                                   <label><br></label>               
+                                   <label><br></label>
                                    <div class="seven wide field">
                                        <label>Upload file</label>
                                        <div class="ui fluid input">
@@ -135,7 +135,7 @@
             <a class="active item" data-tab="mcm">
                 MCM Form
             </a>
-        
+
             <a class="right floated item" href="http://site.iiitdmj.ac.in/IIITDM/SPACS-fellowships.pdf" download>
                 <button name="Download" class="ui primary button">
                     Download
@@ -143,11 +143,11 @@
                 </button>
             </a>
         </div>
-        
+
         <div class="ui active tab" data-tab="mcm">
             <div class="ui vertical segment">
                 <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;" enctype="multipart/form-data">
-                    {% csrf_token %}  
+                    {% csrf_token %}
                     <div class="two fields">
                         <div class="eight wide field ">
                             <label>Father Occupation</label>
@@ -156,7 +156,7 @@
                                     {% for p,v in source %}
                                     <option value="{{p}}">{{v}}</option>
                                     {% endfor %}
-        
+
                                 </select>
                         </div>
                         <div class="eight wide field ">
@@ -166,7 +166,7 @@
                                     {% for p,v in mother_occ %}
                                     <option value="{{p}}">{{v}}</option>
                                     {% endfor %}
-        
+
                             </select>
                         </div>
                     </div>
@@ -211,20 +211,20 @@
                                 <input placeholder="Income" name="mother_income" type="number">
                             </div>
                         </div>
-                       
+
                         <div class=" field">
                             <label>Other sources Annual Income</label>
                             <div class="ui large input">
                                 <input placeholder="Income" name="other_income" type="number">
                             </div>
                         </div>
-                             
+
                     </div>
-                    
+
                             <div class="two fields">
                                     <div class="field">
                                             <a class="right floated item">
-                                           <label><br></label>               
+                                           <label><br></label>
                                            <div class="seven wide field">
                                                <label>Upload file</label>
                                                <div class="ui fluid input">
@@ -242,7 +242,7 @@
                                 </div>
                             </div>
                     </form>
-        
+
                     </div>
             </div>
     </div>
@@ -252,7 +252,7 @@
             <a class="active item" data-tab="goldmedal">
               Director's Silver Medal
             </a>
-    
+
             <a class="right floated item" href="http://site.iiitdmj.ac.in/IIITDM/SPACS-fellowships.pdf" download>
             <button name="Download" class="ui primary button">
                 Download
@@ -260,12 +260,12 @@
             </button>
         </a>
         </div>
-    
-    
+
+
      <div class="ui active tab" data-tab="goldmedal">
             <div class="ui vertical segment">
                 <form method="POST" class="ui form" style="padding-left: 36px; padding-right: 36px;" enctype="multipart/form-data">
-                    {% csrf_token %} 
+                    {% csrf_token %}
             <div class="three fields">
                     <div class="six wide field">
                             <label>Hall no</label>
@@ -273,25 +273,25 @@
                                     <input placeholder="Room no."  name="room_no" value="{{request.user.extrainfo.student.hall_no}}" type="number">
                                 </div>
                             </div>
-                    
+
                         <div class="six wide field">
                             <label>Room no</label>
                             <div class="ui large input">
                                 <input placeholder="Room no."  name="room_no" type="text" value="{{request.user.extrainfo.student.room_no}}">
                             </div>
                         </div>
-    
+
                         <div class="six wide field">
                                 <label>Type</label>
                                 <select class="ui fluid search selection large dropdown" name="type">
-                                        <option selected hidden>Select</option> 
+                                        <option selected hidden>Select</option>
                                         {% for award in awards %}
                                         <option value="{{award.id}}">{{award.award_name}}</option>
                                         {% endfor %}
                                     </select>
                          </div>
                     </div>
-   
+
                <div class="two fields">
                     <div class="eight wide field ">
                         <label>Father's Name</label>
@@ -311,7 +311,7 @@
                             <label>Permanent Address:</label>
                             <textarea rows="2" name="p_address" value="{{request.user.extrainfo.address}}"></textarea>
                         </div>
-    
+
                        <div class="field">
                             <label>Correspondence Address:</label>
                             <textarea rows="2" name="c_address"></textarea>
@@ -331,12 +331,12 @@
                         </div>
                 </div>
             </div>
-    
-                  
+
+
                         <div class="two fields">
                                 <div class="field">
                                         <a class="right floated item">
-                                       <label><br></label>               
+                                       <label><br></label>
                                        <div class="seven wide field">
                                            <label>Upload file</label>
                                            <div class="ui fluid input">
@@ -353,7 +353,7 @@
                                 </a>
                             </div>
                         </div>
-    
+
                 </form>
         </div>
      </div>

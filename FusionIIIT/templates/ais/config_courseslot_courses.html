@@ -1,5 +1,5 @@
 <style>
-    
+
     .get-info{
         display: flex;
         flex-direction: column;
@@ -49,7 +49,7 @@
   </div>
 
 <div class="ui active tab ui-form get-info" data-tab="this" style="max-width: 50%;" >
-    
+
     <div class="field">
         <input placeholder="Course Slot Here" type="text" name="course_slot_name" id="course_slot_name">
     </div>
@@ -70,16 +70,16 @@
 </div>
 
 
-            
-            
+
+
 {% endblock %}
-            
+
 <script type="text/javascript" src="{% static 'globals/js/jquery.min.js' %}"></script>
 <script>
     function addCourse() {
         var course_slot_name = document.getElementById('course_slot_name').value;
         var course_name = document.getElementById('course_name').value;
-        
+
         fetch('/academic-procedures/acad_person/add_course_to_slot/', {
             method: 'POST',
             headers: {
@@ -100,7 +100,7 @@
     function removeCourse() {
         var course_slot_name = document.getElementById('course_slot_name').value;
         var course_name = document.getElementById('course_name').value;
-        
+
         fetch('/academic-procedures/acad_person/remove_course_from_slot/', {
             method: 'POST',
             headers: {
@@ -135,6 +135,3 @@
         return cookieValue;
     }
 </script>
-
-
-

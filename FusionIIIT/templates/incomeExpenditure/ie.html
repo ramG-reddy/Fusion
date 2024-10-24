@@ -28,7 +28,7 @@
             <div class="ui divider"></div>
 
             {% comment %}The Tab-Menu starts here!{% endcomment %}
-            <div class="ui huge fluid vertical pointing menu" id="vtab" 
+            <div class="ui huge fluid vertical pointing menu" id="vtab"
                  style="max-width: 320px;">
                 <a class="active item" data-tab="one">
                     Income Details
@@ -41,7 +41,7 @@
                 <a class="item" data-tab="four">
                     Fixed-Attributes
                     <i class="right floated chevron right icon"></i>
-                </a> 
+                </a>
                 <a class="item" data-tab="three">
                     View Stats
                     <i class="right floated chevron right icon"></i>
@@ -50,7 +50,7 @@
                     Expense History
                     <i class="right floated chevron right icon"></i>
                 </a>
-                
+
             </div>
             {% comment %}The Tab-Menu ends here!{% endcomment %}
         </div>
@@ -72,7 +72,7 @@
                     <a class="item" data-tab="view_income_history" style="width: 33%;">
                         <p style="margin-left: 25%;">View History</p>
                     </a>
-               
+
                 </div>
 
                 <div class="ui active tab segment" data-tab="add_income">
@@ -83,9 +83,9 @@
                     {%  include 'incomeExpenditure/viewIncomeHistory.html' %}
                 </div>
 
-                
+
             </div>
-            
+
             <div class="ui tab segment" data-tab="two" >
 
                 <div class="ui pointing secondary menu">
@@ -95,7 +95,7 @@
                     <a class="item" data-tab="view_expenditure_history" style="width: 33%;">
                         <p style="margin-left: 25%;">View History</p>
                     </a>
-                   
+
                 </div>
 
                 <div class="ui active tab segment" data-tab="add_expenditure" >
@@ -106,7 +106,7 @@
                     {%  include 'incomeExpenditure/viewExpenditureHistory.html' %}
                 </div>
 
-                
+
 
             </div>
             <div class="ui tab segment" data-tab="four">
@@ -122,7 +122,7 @@
                     <a class="item" data-tab="balance_sheet" style="width: 33%;">
                         <p style="margin-left: 25%;">Balance Sheet</p>
                     </a>
-                    
+
                 </div>
                 <div class="ui active tab segment" data-tab="view_stats" >
                     {%  include 'incomeExpenditure/viewStats.html' %}
@@ -130,22 +130,22 @@
                 <div class="ui tab segment" data-tab="balance_sheet">
                     {%  include 'incomeExpenditure/balanceSheet.html' %}
                 </div>
-                
+
             </div>
             <div class="ui tab segment" data-tab="five" >
                 <div class="ui pointing secondary menu">
                     <a class=" active item" data-tab="view_stats" style="width: 100%;">
                         <p style="margin-left: 30%;">Expense History</p>
                     </a>
-                   
+
                 </div>
                 <div class="ui active tab segment" data-tab="view_stats" >
                     {%  include 'incomeExpenditure/expenseHistory.html' %}
                 </div>
-               
-                
+
+
             </div>
-            
+
         </div>
         {% comment %}The central-rail segment ends here!{% endcomment %}
     </div>

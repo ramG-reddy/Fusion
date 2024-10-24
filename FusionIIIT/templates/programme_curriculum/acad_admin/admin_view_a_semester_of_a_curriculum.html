@@ -138,7 +138,7 @@
                 </div>
                 <div class="actions">
                     <form action="{% url 'programme_curriculum:delete_courseslot' slot.id %}" method="POST">
-                        {% csrf_token %} 
+                        {% csrf_token %}
                         <input class="ui negative button" type="Submit" name="Submit" value="Remove">
                         <div class="ui cancel button">Cancel</div>
                     </form>
@@ -171,7 +171,7 @@
             <div class="visible content"><p>INSTIGATE SEMESTER</p></div>
             <div class="hidden content">
             <i class="bell icon"></i>
-            
+
             </div>
         </a>
         <br>
@@ -183,6 +183,6 @@
             <i class="add icon"></i>
             </div>
         </a>
-        
+
 </div>
 {% endblock %}

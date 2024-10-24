@@ -5,11 +5,11 @@
 
         <form method="post" id="editDetail" enctype="multipart/form-data">
             {% csrf_token %}
-           
+
 
             <div class="ui form" style="padding: 8px; padding-left: 24px; padding-right: 24px;">
 
-                
+
 
                 <div class="eight wide field">
                     <label for="post_title">Name</label>
@@ -37,22 +37,22 @@
                 </div>
 
 
-           
-                
-                
+
+
+
                 <div class="eight wide field" style="float: right;">
-                   
+
                     <div class="eight wide field">
                         <label for="post_title">Date</label>
                         <input type="date" name="submissionDate" maxlength="40" required id="idSubmissionDate">
                     </div>
                 </div>
                 <br><br><br><br><br><br><br><br>
-                    
-              
-                
-               
-                
+
+
+
+
+
 
                 <hr>
 
@@ -60,15 +60,15 @@
                     <h4><u>Internal Audit</u></h4>
                 </div>
                 <br><br>
-                
+
                 <div class="eight wide field" {% if global_var != "asst. registrar fa" %}disabled{% endif %}>
                     <label for="post_title">Bill checked in Audit for Rs.</label>
                     <input type="number" name="amountCheckedInPDA" maxlength="40" id="amountCheckedInPDA" >
                 </div>
-                
+
                 <br><br>
-                
-                
+
+
                 <hr>
 
                 <div style="text-align: center;">
@@ -76,7 +76,7 @@
                     <h1>{{gobal_var}}</h1>
                 </div>
                 <br><br>
-                
+
                 <div class="eight wide field" {% if global_var != "asst. registrar fa" %}disabled{% endif %}>
                     <label for="post_title">Balance available as on date</label>
                     <input type="number" name="balanceAvailable" maxlength="40" id="balanceAvailable" >
@@ -88,15 +88,15 @@
                     <input type="number" name="advanceDueAdjustment" maxlength="40" id="advanceDueAdjustment" >
                 </div>
                 <br><br>
-                
-                
+
+
 
                 <hr>
 
-              
+
                 <br>
-               
-               
+
+
 
                 <div class="two fields">
                     <div class="eight wide field">
@@ -163,6 +163,6 @@
         });
     });
 
-   
-    
+
+
 </script>

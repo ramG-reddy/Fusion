@@ -64,11 +64,11 @@ Fusion - Feedback
         {% endcomment %}
         <div class="eight wide column">
 
-            <div class="ui active tab segment" data-tab="first"> 
+            <div class="ui active tab segment" data-tab="first">
             	<div class="ui huge header">
             		<i class="bug icon"></i>
             		Issue
-            	</div>	
+            	</div>
             	<div class="ui horizontal divider"><button id="new-issue" class="ui green large button"><i class="plus icon"></i>New</button></div>
             	<form class="ui form" method="post" action="{% url 'globals:issue' %}" id="issue-form" style="display: none;" enctype= multipart/form-data>
             		<!-- <div class="ui warning message" id="issue-warning" style="display: none;">
@@ -83,13 +83,13 @@ Fusion - Feedback
                     {% for field in form %}
                         {% if field.name == "module" or field.name == "report_type" %}
                             {% render_field field %}
-                        {% endif %} 
+                        {% endif %}
                     {% endfor %}
                     </div>
                     {% for field in form %}
                         {% if field.name == "module" or field.name == "report_type" %}
                         {% else %}
-                            {% render_field field %} 
+                            {% render_field field %}
                         {% endif %}
                     {% endfor %}
                     <label id="image-input-label"><b>Images&emsp;&emsp;&emsp;&emsp;</b></label>
@@ -114,7 +114,7 @@ Fusion - Feedback
                     </a>
                     <a class=" item" data-tab="closed">
                         Closed Issues
-                    </a>        
+                    </a>
                 </div>
                 <div class="ui active tab" data-tab="open">
                     {% for issue in openissue %}
@@ -149,7 +149,7 @@ Fusion - Feedback
         {% comment %}The right-rail segment starts here!{% endcomment %}
         <div class="three wide column">
             <div class="ui segment" id="image-preview" style="display: none;">
-                
+
                 {% comment %}
                     TODO: the right rail!
                 {% endcomment %}
@@ -160,7 +160,7 @@ Fusion - Feedback
         {% comment %}The right-margin segment!{% endcomment %}
         <div class="column"></div>
 
-    </div> 	
+    </div>
 
 {% endblock %}
 
@@ -214,9 +214,9 @@ Fusion - Feedback
                     $("#image-preview").append("<div id='" + i + "-image-div' class='ui container'><img id='" + i + "-image' class='ui prev-image responsive image' src='"+ e.target.result +"' /></div><br>");
                 }
                 reader.readAsDataURL(this.files[i]);
-                 
-                
-                
+
+
+
             }
             $(".image-loader").remove();
         }

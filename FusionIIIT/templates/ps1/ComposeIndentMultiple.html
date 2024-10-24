@@ -1,4 +1,4 @@
-{% extends 'ps1/ps1.html' %} {% load static %} {% block filetracking_tab %} 
+{% extends 'ps1/ps1.html' %} {% load static %} {% block filetracking_tab %}
 {% comment %}the compounder prescription tab starts here {% endcomment %}
 
 <div class="ui pointing secondary menu">
@@ -16,8 +16,8 @@
       class="ui large form"
       id="multiple_indent_form"
     >
-      {% csrf_token %} 
-      
+      {% csrf_token %}
+
       <div class="field">
         <label>Title of Indent File*</label>
         <textarea rows="1" name="title" required></textarea>
@@ -94,7 +94,7 @@
       </div>
 
       <br />
-     
+
       <div>
         <a class="right floated item">
           <button
@@ -174,7 +174,7 @@
               </div>
             </div>
           </div>
-         
+
 
           <div class="field">
             <label>Stocks and Costs</label>
@@ -405,7 +405,7 @@
   );
 
 
-  
+
 
   document.getElementById('multiple_indent_form').addEventListener('submit',function (event){
     event.preventDefault();
@@ -445,7 +445,7 @@
     }catch(error){
       console.log(error);
     }
-    
+
 
   },false)
 

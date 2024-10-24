@@ -55,7 +55,7 @@
                         <th>Quantity</th>
                     </tr>
                 </thead>
-            
+
                 <tbody>
                     {% for item in inventory %}
                     {% if item.consumable == False %}
@@ -63,7 +63,7 @@
                         <td>
                             {{ item.item_name }}
                         </td>
-            
+
                         <td>
                             <div class="field" style="display: none" id=select-{{item.id}}>
                                 <div class="ui input">
@@ -71,7 +71,7 @@
                                         onchange='submit_inventory_form("{{ item.id}}")' id="input-{{item.id}}">
                                 </div>
                             </div>
-            
+
                             <span style="display: inline;" id=show-{{item.id}}>
                                 {{ item.quantity }}
                             </span>
@@ -99,5 +99,3 @@
   </div>
 </div>
 {% endblock %}
-
-

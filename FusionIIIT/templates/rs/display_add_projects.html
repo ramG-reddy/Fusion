@@ -44,20 +44,20 @@
 
 
 
-    
+
         document.addEventListener('DOMContentLoaded', function () {
-   
+
             document.getElementById('start_date').addEventListener('change', function () {
                 try {
-                 
+
                     var startDate = new Date(document.getElementById('start_date').value);
                     var finishDateInput = document.getElementById('finish_date');
                     var finishDate = new Date(finishDateInput.value);
 
-                   
+
                     finishDateInput.min = startDate.toISOString().split('T')[0];
 
-                  
+
                     if (finishDate <= startDate) {
                         finishDateInput.value = '';
                     }
@@ -68,7 +68,7 @@
         });
 
 
-       
+
         document.addEventListener('DOMContentLoaded', function () {
                 var numberOfYearsInput = document.getElementById('number_of_years');
                 var numberOfYearsError = document.getElementById('number_of_years_error');
@@ -78,7 +78,7 @@
                         numberOfYearsError.style.display = 'block';
                         // submitButton.disabled = true;
                     } else {
-                        // submitButton.disabled = false;   
+                        // submitButton.disabled = false;
                         numberOfYearsError.style.display = 'none';
                     }
                 });
@@ -117,7 +117,7 @@
     .invisible
     {
         display: none;
-        
+
     }
 
     .inputf1 {
@@ -211,14 +211,14 @@
                                 <datalist  id="input_list">
                                 </datalist>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div style="margin-bottom: 20px; ">
-                    
+
                     <div class="">
 
-                        
+
                         <div style="flex: 1; " class="copis" >
                             <label class="labels1" for="co_project_investigator_id"
                             style="font-size:18px ;font-weight:bold;text-transform: uppercase">Co-Project Investigator ID:</label>
@@ -227,7 +227,7 @@
                             style="width: 100%; border: 1px solid grey; margin-bottom: 10px;">
                         </div>
                         <div style="display: flex; justify-content: space-between;">
-                            
+
                             <button onclick={addCopis(event)} >
                                 <i class="plus icon"></i>
                             </button>
@@ -236,7 +236,7 @@
                                 <button onclick={removeCopis(event)} >
                                     <i class="minus icon"></i>
                                 </button>
-                                
+
                             </div>
                         </div>
 
@@ -256,7 +256,7 @@
                             <input class="input-f1" type="number" id="number_of_years" placeholder="Number of Years"
                                 name="number_of_years" required style="width: 100%; border: 1px solid grey;">
                             <div id="number_of_years_error" style="color: red; display: none;">Number of years must be greater than 0.</div>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                                 style="width: 100%; border: 1px solid grey;">
                         </div>
                     </div>
-                </div> 
+                </div>
                 {% comment %} <div style="margin-bottom: 20px;">
                     <label class="labels1" for="project_info_file" style="font-size:18px ;font-weight:bold">Select a
                         file:</label>
@@ -291,7 +291,7 @@
                     <input type="file" class="ui button input-f1" id="project_info_file" name="project_info_file"
                         style="display: none;" onchange="displaySelectedFile()" required>
 
-                        
+
                 </div>
                 <p style="color:blue" id="selectedFile"></p>
                 <input type="submit" value="Submit" id="submit-button"

@@ -37,7 +37,7 @@
                 </thead>
 
                 <tbody>
-                
+
                 <form action = "/finance/verifying/" method="post">
                 {% csrf_token %}
                         {% for info in b %}
@@ -80,23 +80,23 @@
                                 {{ info.net_payment }}
                             </td>
 
-                            
+
                     </tr>
                         {% endfor %}
-                
+
                 </tbody>
             </table>
 
             <br>
 
-            
-            
+
+
                 <div class="ui green right floated button">
                     <button class="ui green button right floated" type="submit" name = "verify" style="width: 150px; height: 20px; padding: 0px;">
                         Send For Verification
                     </button>
                 </div>
-                
+
                 <div class="ui red right floated button">
                     <button class="ui red button right floated" type="submit" name = "delete" style="width: 150px; height: 20px; padding: 0px;">
                         REVERT
