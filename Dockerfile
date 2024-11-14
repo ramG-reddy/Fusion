@@ -1,30 +1,48 @@
-# base image  
-FROM python:3.8
+# Comments are put in this file to help everyone understand what each line does
 
-# setup environment variable for work directory  
-ENV FUSION_HOME=/home/app
+# syntax=docker/dockerfile:1
 
-# make work directory  
-RUN mkdir -p $FUSION_HOME
+# Use the official Python image as the base image.
+ARG PYTHON_VERSION=3.8.10
+FROM python:${PYTHON_VERSION}-slim AS base
 
-# set work directory  
-WORKDIR $FUSION_HOME
+# Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# set environment variables  
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Keeps Python from buffering stdout and stderr to avoid situations where
+# the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
 
-# copy requirements file
-COPY requirements.txt $FUSION_HOME
+WORKDIR /fusion
 
-# install dependencies  
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Create a non-privileged user that the app will run under.
+# See https://docs.docker.com/go/dockerfile-user-best-practices/
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 
-# copy api directory to docker's work directory. 
-COPY . $FUSION_HOME
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
+# Leverage a bind mount to requirements.txt to avoid having to copy them into
+# into this layer.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 
-# port where the Django app runs  
+# Switch to the non-privileged user to run the application.
+USER appuser
+
+# Copy the source code into the container.
+COPY . .
+
+# Expose the port that the application listens on.
 EXPOSE 8000
 
-# start server  
-CMD ["/bin/bash","docker-entrypoint.sh"]
+# Run the application.
+ENTRYPOINT [ "/bin/bash", "./docker-entrypoint.sh" ]
